@@ -14,9 +14,6 @@
       "configurations": {
         "production": {
           "devServerTarget": "webapp:serve:production"
-        },
-        "ci": {
-          "devServerTarget": "webapp:serve-static"
         }
       }
     },
