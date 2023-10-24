@@ -12,7 +12,7 @@ export default function NavLinks(props: INavLinksProps) {
         options.map((option: ILink) => (
           <a
             key={option.id}
-            className="mr-5 hover:text-gray-900 cursor-pointer"
+            className="mr-5 md:mr-20 hover:text-gray-900 cursor-pointer"
           >
             {option.title}
           </a>
