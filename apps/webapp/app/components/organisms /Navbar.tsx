@@ -7,7 +7,7 @@ export interface ILink {
   title: string;
 }
 
-export default function NavBar() {
+export default function Navbar() {
   const links: ILink[] = [
     { id: 'industry', title: 'Industria' },
     { id: 'solutions', title: 'Arma tu solución' },

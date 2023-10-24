@@ -1,12 +1,12 @@
 "use client"
 
-import NavBar from "./components/organisms /Navbar";
+import Navbar from "./components/organisms /Navbar";
 
 export default async function Index() {
 
   return (
     <div>
-       <NavBar/>
+       <Navbar/>
     </div>
   );
 }
