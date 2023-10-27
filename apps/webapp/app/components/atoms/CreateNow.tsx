@@ -1,7 +1,14 @@
-export default function CreateNow() {
+interface ICreateNowProps {
+  mobileHidden?: boolean;
+  customStyle: string;
+}
+
+export default function CreateNow(props: ICreateNowProps) {
+  const { mobileHidden, customStyle } = props
+  const show = mobileHidden ? 'hidden' : ''
   return (
-    <button className="hidden sm:flex items-center text-white bg-[#00B8EC] border-0 py-3.5 px-6 focus:outline-none rounded text-base">
-      Crear ahora
+    <button className={`${show} sm:flex justify-center text-white bg-[#00B8EC] border-0 ${customStyle} focus:outline-none rounded`}>
+      <span>  Crear ahora</span>
     </button>
   );
 }

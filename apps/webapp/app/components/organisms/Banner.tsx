@@ -12,32 +12,39 @@ export default function Banner() {
         <div className="flex my-4 ml-2 items-start ">
           <BsCheck2 className="text-green-400 flex-shrink-0 mt-1" />
           <p className="ml-2">
-          <b>Metodologías ágiles</b>, modulado y versionado.
+            <b>Metodologías ágiles</b>, modulado y versionado.
           </p>
         </div>
         <div className="flex items-start my-4 ml-2">
           <BsCheck2 className="text-green-400 flex-shrink-0 mt-1" />
           <p className="ml-2 xl:w-1/2">
-          <b>Detectamos oportunidades</b> en tu modelo de negocio.
+            <b>Detectamos oportunidades</b> en tu modelo de negocio.
           </p>
         </div>
         <div className="flex my-4 items-start ml-2">
           <BsCheck2 className="text-green-400 flex-shrink-0 mt-1" />
           <p className="ml-2 xl:w-1/2">
-          <b>Te recomendamos </b>herramientas actualizadas para implementar.
+            <b>Te recomendamos </b>herramientas actualizadas para implementar.
           </p>
         </div>
         <div className="flex my-4 ml-2">
           <BsCheck2 className="text-green-400 flex-shrink-0 mt-1" />
-          <p className="ml-2"><b>Entrega valor</b> en poco tiempo a tus clientes.</p>
+          <p className="ml-2">
+            <b>Entrega valor</b> en poco tiempo a tus clientes.
+          </p>
         </div>
         <div className="flex my-4 ml-2">
           <BsCheck2 className="text-green-400 flex-shrink-0 mt-1" />
-          <p className="ml-2"><b>Mejores opciones</b> en costo y calidad.</p>
+          <p className="ml-2">
+            <b>Mejores opciones</b> en costo y calidad.
+          </p>
         </div>
-        <div className="mt-12 ml-10">
-          <CreateNow />
+        <div className="mt-12 ml-10 hidden sm:flex">
+          <CreateNow customStyle="py-3.5 w-4/12" />
         </div>
+      </div>
+      <div className="mt-12 flex sm:hidden">
+        <CreateNow customStyle="py-3.5 w-full" />
       </div>
       <Image
         src="/assets/marketplace.svg"
