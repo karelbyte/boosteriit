@@ -15,10 +15,10 @@ export default function Navbar() {
   ];
   return (
     <header className="text-gray-900 body-font">
-      <div className="mx-auto flex items-center justify-between p-5 border-b-2 shadow-sm">
+      <div className="mx-auto flex items-center justify-between py-2 px-8 md:flex-row sm:py-4 sm:px-20 border-b-1 shadow-sm">
         <Logo />
         <NavLinks options={links}/>
-        <CreateNow />
+        <CreateNow mobileHidden customStyle='py-3.5 px-6'/>
         <MobileNav options={links}/>
       </div>
     </header>

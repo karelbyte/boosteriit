@@ -1,4 +1,4 @@
-import { ILink } from "../organisms /Navbar";
+import { ILink } from "../organisms/Navbar";
 
 
 interface INavLinksProps {

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { useState } from 'react';
-import { ILink } from '../organisms /Navbar';
+import { ILink } from '../organisms/Navbar';
 
 interface INavLinksProps {
   options: ILink[];
