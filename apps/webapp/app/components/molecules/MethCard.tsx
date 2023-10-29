@@ -17,9 +17,9 @@ export default function MethCard(props: IMethCard) {
           src={imagePath}
           width="100"
           height="140"
-          className="w-auto "
-          loading={'lazy'}
+          className="w-auto"
           alt="marketplace."
+          priority
         />
       </div>
       <div className="lg:ml-4">

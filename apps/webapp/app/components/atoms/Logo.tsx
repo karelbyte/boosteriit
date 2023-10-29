@@ -6,8 +6,9 @@ export default function Logo() {
         src="/assets/logo.png"
         width="150"
         height="140"
-        loading={"lazy"}
+        priority
         alt="Boosteriit"
+        className="w-auto"
         />
     </a>
   );

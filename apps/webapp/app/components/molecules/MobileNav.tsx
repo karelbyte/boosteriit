@@ -24,7 +24,7 @@ export default function MobileNav(props: INavLinksProps) {
       <div
         className={`${
           !toggle ? 'hidden' : 'flex'
-        } p-6 bg-white absolute top-12 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar border`}
+        } p-6 bg-white absolute top-12 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar border z-50`}
       >
         <ul className="list-none flex justify-end items-start flex-1 flex-col">
           {options.map((nav: ILink, index) => (
