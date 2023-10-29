@@ -14,7 +14,6 @@ export default async function Index() {
        <Banner/>
        <Methodologies/>
        <Stories/>
-       <Methodologies/>
     </div>
   );
 }
