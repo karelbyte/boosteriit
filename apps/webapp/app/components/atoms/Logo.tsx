@@ -1,14 +1,16 @@
-import Image from 'next/image'
-export default function Logo() {
+import Image from 'next/image';
+import { JSX } from 'react';
+export default function Logo(): JSX.Element {
   return (
     <a className="flex title-font font-medium items-center text-gray-900">
-        <Image
+      <Image
         src="/assets/logo.png"
         width="150"
         height="140"
-        loading={"lazy"}
+        priority
         alt="Boosteriit"
-        />
+        className="w-auto"
+      />
     </a>
   );
 }
