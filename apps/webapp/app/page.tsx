@@ -6,6 +6,7 @@ import Navbar from './components/organisms/Navbar';
 import Methodologies from './components/organisms/Methodologies';
 import Stories from './components/organisms/Stories';
 import ProfileOfOurExperts from './components/organisms/ProfileOfOurExperts';
+import Flow from './components/organisms/Flow';
 import { JSX } from "react";
 export default async function Index(): Promise<JSX.Element> {
   return (
@@ -14,8 +15,8 @@ export default async function Index(): Promise<JSX.Element> {
       <Banner />
       <Methodologies />
       <Stories />
+      <Flow/>
       <ProfileOfOurExperts />
-      <Banner />
     </div>
   );
 }

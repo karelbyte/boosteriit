@@ -1,16 +1,18 @@
 import Image from 'next/image';
-import { FaMobileAlt } from 'react-icons/fa';
+import { FaMobileAlt, FaHeadSideVirus, FaRegObjectGroup } from 'react-icons/fa';
 import { MdWeb } from 'react-icons/md';
+import { BiDesktop } from 'react-icons/bi';
+import { BsShieldCheck, BsCloudArrowDown } from 'react-icons/bs';
+import { GoProjectSymlink } from 'react-icons/go';
+import { TbShieldCog, TbUserHexagon } from 'react-icons/tb';
 import type { JSX } from 'react';
-
 interface IItem {
   iconLeft: JSX.Element;
   textLef: string;
   iconRight: JSX.Element;
   textRight: string;
 }
-
-export default function ProfileOfOurExperts() {
+export default function ProfileOfOurExperts(): JSX.Element {
   const skills: IItem[] = [
     {
       iconLeft: <FaMobileAlt />,
@@ -19,28 +21,28 @@ export default function ProfileOfOurExperts() {
       textRight: 'Desarrollador Web',
     },
     {
-      iconLeft: <FaMobileAlt />,
-      textLef: 'Desarrollador Móvil',
-      iconRight: <MdWeb />,
-      textRight: 'Desarrollador Web',
+      iconLeft: <BiDesktop />,
+      textLef: 'Desarrollador Desktop',
+      iconRight: <FaHeadSideVirus />,
+      textRight: 'Machine Learning Engineer (IA)',
     },
     {
-      iconLeft: <FaMobileAlt />,
-      textLef: 'Desarrollador Móvil',
-      iconRight: <MdWeb />,
-      textRight: 'Desarrollador Web',
+      iconLeft: <BsShieldCheck />,
+      textLef: 'Arquitecto de Software',
+      iconRight: <FaRegObjectGroup />,
+      textRight: 'Diseñador Gráfico UX/UI',
     },
     {
-      iconLeft: <FaMobileAlt />,
-      textLef: 'Desarrollador Móvil',
-      iconRight: <MdWeb />,
-      textRight: 'Desarrollador Web',
+      iconLeft: <GoProjectSymlink />,
+      textLef: 'Project Manager',
+      iconRight: <BsCloudArrowDown />,
+      textRight: 'Analista de Sistema',
     },
     {
-      iconLeft: <FaMobileAlt />,
-      textLef: 'Desarrollador Móvil',
-      iconRight: <MdWeb />,
-      textRight: 'Desarrollador Web',
+      iconLeft: <TbUserHexagon />,
+      textLef: 'Lider Técnico',
+      iconRight: <TbShieldCog />,
+      textRight: 'Tester Ingeniero de Pruebas',
     },
   ];
   return (
@@ -67,16 +69,19 @@ export default function ProfileOfOurExperts() {
         <div className="flex flex-col items-start">
           {skills &&
             skills.map((skill: IItem, index: number) => (
-              <div key={index} className="flex flex-col sm:flex-row">
-                <div className="flex m-2 sm:m-6 items-center">
-                  <div className="p-4 text-[#00B8EC] border rounded-full mr-6 border-[#CCF1FB] bg-[#CCF1FB]">
+              <div
+                key={index}
+                className="flex flex-col sm:flex-row w-full justify-between"
+              >
+                <div className="flex m-2 sm:m-6 items-center lg:w-1/2">
+                  <div className="p-4 text-xl text-[#00B8EC] border rounded-full mr-6 border-[#CCF1FB] bg-[#CCF1FB]">
                     {skill.iconLeft}
                   </div>
                   <p className="text-[#161616]">{skill.textLef}</p>
                 </div>
-                <div className="flex m-2 sm:m-6 items-center">
-                  <div className="p-4 text-[#00B8EC] border rounded-full mr-6 border-[#CCF1FB] bg-[#CCF1FB]">
-                    {skill.iconLeft}
+                <div className="flex m-2 sm:m-6 items-center lg:w-1/2">
+                  <div className="p-4 text-xl text-[#00B8EC] border rounded-full mr-6 border-[#CCF1FB] bg-[#CCF1FB]">
+                    {skill.iconRight}
                   </div>
                   <p className="text-[#161616]">{skill.textRight}</p>
                 </div>
