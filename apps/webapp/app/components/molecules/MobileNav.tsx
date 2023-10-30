@@ -1,12 +1,11 @@
 import Image from 'next/image';
-import { useState } from 'react';
+import { JSX, useState } from 'react';
 import { ILink } from '../organisms/Navbar';
-
 interface INavLinksProps {
   options: ILink[];
 }
-export default function MobileNav(props: INavLinksProps) {
-  const { options } = props;
+export default function MobileNav(props: INavLinksProps): JSX.Element {
+  const { options }: INavLinksProps = props;
 
   const [active, setActive] = useState('Home');
   const [toggle, setToggle] = useState(false);

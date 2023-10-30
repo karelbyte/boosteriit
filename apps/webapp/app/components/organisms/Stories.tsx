@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { JSX } from 'react';
 import Slider from 'react-slick';
 import Image from 'next/image';
 import Stars from '../atoms/Stars';
 import { BsChevronRight, BsChevronLeft } from 'react-icons/bs';
-const Stories = () => {
+export default function Stories(): JSX.Element {
   const settings = {
     infinite: true,
     speed: 500,
@@ -37,19 +37,18 @@ const Stories = () => {
     ],
   };
 
-  const slider = React.useRef<any>(Slider);
+  const slider: React.MutableRefObject<any> = React.useRef<any>(Slider);
 
   const next = () => {
     if (slider.current) {
       slider.current.slickNext();
-    } 
+    }
   };
 
   const previous = () => {
-    if ( slider.current) {
+    if (slider.current) {
       slider.current.slickPrev();
     }
-
   };
 
   return (
@@ -93,7 +92,8 @@ const Stories = () => {
             </p>
             <div className="flex flex-col xl:flex-row items-center mb-6">
               <div className="flex flex-col text-center sm:text-left">
-                <p className="font-bold">Lic. Alejandro Quezada</p> <p>CEO Opción Financiera</p>
+                <p className="font-bold">Lic. Alejandro Quezada</p>{' '}
+                <p>CEO Opción Financiera</p>
               </div>
               <div className="hidden xl:flex h-12 border-e-2 mx-6"></div>
               <div>
@@ -137,16 +137,19 @@ const Stories = () => {
         </div>
       </Slider>
       <div className="self-center lg:hidden">
-        <button className="rounded-full border p-4 border-[#00B8EC] mr-6" onClick={previous}>
-
-        <BsChevronLeft className="text-2xl text-[#00B8EC]"/>
+        <button
+          className="rounded-full border p-4 border-[#00B8EC] mr-6"
+          onClick={previous}
+        >
+          <BsChevronLeft className="text-2xl text-[#00B8EC]" />
         </button>
-        <button className="rounded-full border p-4 border-[#00B8EC]" onClick={next}>
-        <BsChevronRight className="text-2xl text-[#00B8EC]"/>
+        <button
+          className="rounded-full border p-4 border-[#00B8EC]"
+          onClick={next}
+        >
+          <BsChevronRight className="text-2xl text-[#00B8EC]" />
         </button>
       </div>
     </div>
   );
-};
-
-export default Stories;
+}

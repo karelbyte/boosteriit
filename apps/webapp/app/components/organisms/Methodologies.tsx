@@ -1,6 +1,7 @@
 import MethCard, { IMethCard } from '../molecules/MethCard';
+import { JSX } from "react";
 
-export default function Methodologies() {
+export default function Methodologies(): JSX.Element {
   const methodologies: IMethCard[] = [
     {
       imagePath: '/assets/marketplace.svg',
@@ -10,7 +11,7 @@ export default function Methodologies() {
     {
       imagePath: '/assets/marketplace.svg',
       title: 'Aplicación para escritorio',
-      description: `Un programa de escritorio se instala en tu ordenador y funciona sin necesidad de una conexión a internet. Un ejemplo conocido de esto es 'Uber'`,
+      description: `Un programa de escritorio se instala en tu ordenador y funciona sin necesidad de una conexión a internet. Un ejemplo conocido de esto es 'Microsoft Office'`,
     },
     {
       imagePath: '/assets/marketplace.svg',
