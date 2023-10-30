@@ -14,7 +14,7 @@ export default function MobileNav(props: INavLinksProps): JSX.Element {
     <div className="sm:hidden flex flex-1 justify-end items-center">
       <Image
         src={toggle ? '/assets/x.svg' : '/assets/menu.svg'}
-        alt="menu"
+        alt="Boosteriit"
         className="w-[28px] h-[28px] object-contain"
         onClick={() => setToggle(!toggle)}
         width="50"

@@ -52,7 +52,7 @@ export default function Banner() {
         height="140"
         className="w-auto md:w-1/2 lg:w-2/5"
         loading={'lazy'}
-        alt="marketplace."
+        alt="Boosteriit"
       />
     </div>
   );

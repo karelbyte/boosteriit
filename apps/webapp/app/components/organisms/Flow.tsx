@@ -1,5 +1,4 @@
 import Image from 'next/image';
-
 export default function Flow() {
   return (
     <div className="flex flex-col justify-between items-center py-12 px-8 sm:py-12 sm:px-10 lg:px-20">
@@ -12,21 +11,20 @@ export default function Flow() {
         estructuras adecuados
       </p>
       <Image
-        src='/assets/grafico-desktop.svg'
+        src="/assets/grafico-desktop.svg"
         width="0"
         height="0"
         className="hidden sm:flex w-auto"
-        alt="marketplace."
+        alt="Boosteriit"
         priority
         quality={100}
       />
-
       <Image
-        src='/assets/grafico-mobile.svg'
+        src="/assets/grafico-mobile.svg"
         width="0"
         height="0"
         className="fle sm:hidden w-auto"
-        alt="marketplace."
+        alt="Boosteriit"
         priority
       />
     </div>

@@ -4,7 +4,7 @@ export default function Logo(): JSX.Element {
   return (
     <a className="flex title-font font-medium items-center text-gray-900">
       <Image
-        src="/assets/logo.png"
+        src="/assets/boosteriit.svg"
         width="150"
         height="140"
         priority
