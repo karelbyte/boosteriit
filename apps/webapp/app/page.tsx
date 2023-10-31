@@ -11,6 +11,7 @@ import Flow from './components/organisms/Flow';
 import Footer from "./components/organisms/Footer";
 import IndustryOrBuild from "./components/organisms/IndustryOrBuild";
 import CatalogIndustry from "./components/organisms/CatalogIndustry";
+import CatalogBuild from "./components/organisms/CatalogBuild";
 export default async function Index(): Promise<JSX.Element> {
   return (
     <div className="overflow-hidden">
@@ -19,6 +20,7 @@ export default async function Index(): Promise<JSX.Element> {
       <Methodologies />
       <IndustryOrBuild/>
       <CatalogIndustry/>
+      <CatalogBuild/>
       <Stories />
       <Flow/>
       <ProfileOfOurExperts />
