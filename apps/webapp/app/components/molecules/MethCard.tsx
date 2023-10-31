@@ -17,7 +17,7 @@ export default function MethCard(props: IMethCard): JSX.Element {
           width="100"
           height="140"
           className="w-auto"
-          alt="marketplace."
+          alt="Boosteriit"
           priority
         />
       </div>

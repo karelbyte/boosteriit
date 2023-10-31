@@ -1,8 +1,7 @@
+@import "https://fonts.googleapis.com/css2?family=Public+Sans&display=swap";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
-
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Public Sans', sans-serif;
 }

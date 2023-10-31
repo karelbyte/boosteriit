@@ -63,7 +63,7 @@ export default function ProfileOfOurExperts(): JSX.Element {
             height="140"
             className="w-auto mt-4"
             priority
-            alt="marketplace."
+            alt="Boosteriit"
           />
         </div>
         <div className="flex flex-col items-start">

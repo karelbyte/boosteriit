@@ -75,7 +75,7 @@ export default function Stories(): JSX.Element {
                   height="140"
                   className="w-auto mt-4"
                   priority
-                  alt="marketplace."
+                  alt="Boosteriit"
                 />
               </div>
             </div>
@@ -103,7 +103,7 @@ export default function Stories(): JSX.Element {
                   height="140"
                   className="w-auto mt-4"
                   priority
-                  alt="marketplace."
+                  alt="Boosteriit"
                 />
               </div>
             </div>
@@ -129,7 +129,7 @@ export default function Stories(): JSX.Element {
                   height="140"
                   className="w-auto mt-4"
                   priority
-                  alt="marketplace."
+                  alt="Boosteriit"
                 />
               </div>
             </div>
