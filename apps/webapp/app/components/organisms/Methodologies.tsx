@@ -4,17 +4,17 @@ import { JSX } from "react";
 export default function Methodologies(): JSX.Element {
   const methodologies: IMethCard[] = [
     {
-      imagePath: '/assets/marketplace.svg',
+      imagePath: '/assets/methodologies/cel.svg',
       title: 'Aplicación para móvil',
       description: `Una aplicación móvil disponible para su descarga en las tiendas de aplicaciones de Apple y Google, similar al ejemplo de 'Uber'.`,
     },
     {
-      imagePath: '/assets/marketplace.svg',
+      imagePath: '/assets/methodologies/screen.svg',
       title: 'Aplicación para escritorio',
       description: `Un programa de escritorio se instala en tu ordenador y funciona sin necesidad de una conexión a internet. Un ejemplo conocido de esto es 'Microsoft Office'`,
     },
     {
-      imagePath: '/assets/marketplace.svg',
+      imagePath: '/assets/methodologies/www.svg',
       title: 'Página web',
       description: `Un sitio web responsivo que permite a las personas acceder desde cualquier dispositivo a tu página web 'www', siguiendo el ejemplo de 'apple.com'`,
     },
