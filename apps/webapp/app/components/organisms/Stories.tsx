@@ -3,6 +3,7 @@ import Slider from 'react-slick';
 import Image from 'next/image';
 import Stars from '../atoms/Stars';
 import { BsChevronRight, BsChevronLeft } from 'react-icons/bs';
+import SlidesBtn from "../molecules/SlidesBtn";
 export default function Stories(): JSX.Element {
   const settings = {
     infinite: true,
@@ -54,6 +55,7 @@ export default function Stories(): JSX.Element {
   return (
     <div className="flex flex-col pb-12 bg-[#ECF5FE]">
       <p className="self-center my-6 font-bold">Casos de éxito</p>
+      <p className="self-center w-24 border-t-2 mb-6 border-[#00B8EC]"></p>
       <Slider ref={slider} {...settings}>
         <div className="h-96 lg:h-[450px] xl:h-96 p-4">
           <div className="flex flex-col justify-between items-center border rounded-2xl border-blue-100 h-full bg-white">
@@ -136,20 +138,7 @@ export default function Stories(): JSX.Element {
           </div>
         </div>
       </Slider>
-      <div className="self-center lg:hidden">
-        <button
-          className="rounded-full border p-4 border-[#00B8EC] mr-6"
-          onClick={previous}
-        >
-          <BsChevronLeft className="text-2xl text-[#00B8EC]" />
-        </button>
-        <button
-          className="rounded-full border p-4 border-[#00B8EC]"
-          onClick={next}
-        >
-          <BsChevronRight className="text-2xl text-[#00B8EC]" />
-        </button>
-      </div>
+      <SlidesBtn style={'self-center lg:hidden'} next={next} previous={previous}/>
     </div>
   );
 }

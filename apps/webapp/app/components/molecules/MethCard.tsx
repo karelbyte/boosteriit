@@ -22,7 +22,7 @@ export default function MethCard(props: IMethCard): JSX.Element {
         />
       </div>
       <div className="lg:ml-4 p-2">
-        <div className="flex items-center mb-5">
+        <div className="flex items-center mb-5 mt-6">
           <AiOutlineCheckCircle className="text-green-600" />
           <p className="ml-2 font-bold">{title}</p>
         </div>
