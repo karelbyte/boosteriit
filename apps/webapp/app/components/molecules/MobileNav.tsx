@@ -1,44 +1,60 @@
-import Image from 'next/image';
-import { JSX, useState } from 'react';
+import React, { JSX, useState } from 'react';
 import { ILink } from '../organisms/Navbar';
+import { BsArrowRightShort } from 'react-icons/bs';
+import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
+import Glue from '../organisms/Glue';
+import Logo from '../atoms/Logo';
 interface INavLinksProps {
   options: ILink[];
 }
+
 export default function MobileNav(props: INavLinksProps): JSX.Element {
   const { options }: INavLinksProps = props;
 
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  const openDrawer = () => {
+    setIsDrawerOpen(true);
+  };
+
+  const closeDrawer = () => {
+    setIsDrawerOpen(false);
+  };
+
   const [active, setActive] = useState('Home');
-  const [toggle, setToggle] = useState(false);
 
   return (
-    <div className="sm:hidden flex flex-1 justify-end items-center">
-      <Image
-        src={toggle ? '/assets/x.svg' : '/assets/menu.svg'}
-        alt="Boosteriit"
-        className="w-[28px] h-[28px] object-contain"
-        onClick={() => setToggle(!toggle)}
-        width="50"
-        height="40"
-      />
-      <div
-        className={`${
-          !toggle ? 'hidden' : 'flex'
-        } p-6 bg-white absolute top-12 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar border z-50`}
-      >
-        <ul className="list-none flex justify-end items-start flex-1 flex-col">
-          {options.map((nav: ILink, index) => (
-            <li
-              key={nav.id}
-              className={` font-medium cursor-pointer text-[16px] ${
-                active === nav.title ? 'text-gray-900 ' : 'text-gray-600'
-              } ${index === options.length - 1 ? 'mb-0' : 'mb-4'}`}
-              onClick={() => setActive(nav.title)}
+    <div className="sm:hidden flex items-center">
+      <AiOutlineMenu      onClick={() => openDrawer()}/>
+      {isDrawerOpen && (
+        <div className="bg-white h-screen w-full fixed top-0 left-0 transform transition-transform duration-300 ease-in-out z-20 p-8">
+          <div className="flex items-center justify-between mb-3">
+            <Logo/>
+            <button
+              onClick={closeDrawer}
+              className=" top-4 right-4"
             >
-              {nav.title}
-            </li>
-          ))}
-        </ul>
-      </div>
+              <AiOutlineClose />
+            </button>
+          </div>
+
+          <ul className="list-none flex justify-end items-start flex-1 flex-col">
+            {options.map((nav: ILink, index) => (
+              <li
+                key={nav.id}
+                className={`flex justify-between w-full items-center font-medium cursor-pointer text-[16px] ${
+                  active === nav.title ? 'text-gray-900 ' : 'text-gray-600'
+                } ${index === options.length - 1 ? 'mb-0' : 'mb-4'}`}
+                onClick={() => setActive(nav.title)}
+              >
+                <span>{nav.title}</span>
+                <BsArrowRightShort className="text-[#00B8EC]" />
+              </li>
+            ))}
+          </ul>
+          <Glue />
+        </div>
+      )}
     </div>
   );
 }

@@ -35,7 +35,7 @@ export default function Footer(): JSX.Element {
       <div className="flex flex-col md:flex-row border-t justify-center border-gray-200 mt-6 py-3 mx-8 sm:mx-2 lg:mx-20">
         <div className="text-sm md:text-md mb-4 sm:mb-0">© 2023 Boosteriit todos los derechos reservados</div>
         <div className="mx-0 sm:mx-12 text-sm md:text-md mb-4 sm:mb-0">Términos y condiciones</div>
-        <div className="text-sm md:text-md mb-4 sm:mb-0">Política de privacidad</div>
+        <div className="text-sm md:text-md mb-[5rem]">Política de privacidad</div>
       </div>
     </>
   );
