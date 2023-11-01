@@ -40,36 +40,31 @@ export default function CatalogBuild(): JSX.Element {
   const items: IItem[] = [
     {
       id: 1,
-      title: 'Viajes',
-      subtitle: 'Reservas de viajes y hospedaje',
+      title: 'Inicio de sesión',
+      subtitle: 'Con app de google y redes sociales',
     },
     {
       id: 2,
-
-      title: 'Fintech',
-      subtitle: 'Para compañías de tecnología financiera',
+      title: 'Perfil de cliente',
+      subtitle: 'Configuración y edición de datos',
     },
     {
       id: 3,
-
-      title: 'Bienes y raíces',
-      subtitle: 'Compra, venta y renta de inmuebles',
+      title: 'Gestión de vuelos',
+      subtitle: 'Disponibles y filtrado ',
     },
     {
       id: 4,
-
-      title: 'Restaurante',
-      subtitle: 'Actividades de servicio de comidas y bebidas',
+      title: 'Carrito de compra',
+      subtitle: 'Listado de artículos selccionados',
     },
     {
       id: 5,
-
       title: 'Salud y cuidado',
       subtitle: 'Empresas del giro salud y cuidado personal',
     },
     {
       id: 6,
-
       title: 'Entretenimiento',
       subtitle: 'Eventos, conciertos y espectáculos',
     },
