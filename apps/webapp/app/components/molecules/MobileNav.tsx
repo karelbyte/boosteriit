@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import React, { JSX, useState } from 'react';
 import { ILink } from '../organisms/Navbar';
 import { BsArrowRightShort } from 'react-icons/bs';
