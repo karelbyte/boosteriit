@@ -8,7 +8,7 @@ export default function CreateNow(props: ICreateNowProps): JSX.Element {
   const show = mobileHidden ? 'hidden' : '';
   return (
     <button
-      className={`${show} sm:flex justify-center text-white bg-[#00B8EC] border-0 ${customStyle} focus:outline-none rounded`}
+      className={`${show} sm:flex justify-center text-white bg-[#00B8EC] border-0 ${customStyle} focus:outline-none rounded hover:bg-[#007799]`}
     >
       <span> Crear ahora</span>
     </button>

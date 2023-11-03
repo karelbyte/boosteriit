@@ -6,7 +6,7 @@ export default function Banner() {
   return (
     <div className="flex flex-col justify-between py-2 px-8 mt-24 md:flex-row sm:py-4 sm:px-10 lg:px-20 ">
       <div className="flex flex-col">
-        <p className="text-2xl font-bold mb-4 leading-[25px] lg:text-[32px] lg:leading-[32px] lg:w-4/5 xl:text-[43px] xl:leading-[45px] 2xl:w-3/4 2xl:text-[63px] 2xl:leading-[75px]">
+        <p className="text-2xl font-black mb-4 leading-[25px] lg:text-[32px] lg:leading-[32px] lg:w-4/5 xl:text-[43px] xl:leading-[45px] 2xl:w-3/4 2xl:text-[63px] 2xl:leading-[75px]">
           Soluciones tecnológicas para tu negocio
         </p>
         <div className="flex my-4 ml-2 items-start ">
@@ -15,25 +15,25 @@ export default function Banner() {
             <b>Metodologías ágiles</b>, modulado y versionado.
           </p>
         </div>
-        <div className="flex items-start my-4 ml-2">
+        <div className="flex items-start my-2 ml-2">
           <BsCheck2 className="text-green-400 flex-shrink-0 mt-1" />
           <p className="ml-2 xl:w-1/2">
             <b>Detectamos oportunidades</b> en tu modelo de negocio.
           </p>
         </div>
-        <div className="flex my-4 items-start ml-2">
+        <div className="flex items-start my-2 ml-2">
           <BsCheck2 className="text-green-400 flex-shrink-0 mt-1" />
           <p className="ml-2 xl:w-1/2">
             <b>Te recomendamos </b>herramientas actualizadas para implementar.
           </p>
         </div>
-        <div className="flex my-4 ml-2">
+        <div className="flex my-2 ml-2">
           <BsCheck2 className="text-green-400 flex-shrink-0 mt-1" />
           <p className="ml-2">
             <b>Entrega valor</b> en poco tiempo a tus clientes.
           </p>
         </div>
-        <div className="flex my-4 ml-2">
+        <div className="flex my-2 ml-2">
           <BsCheck2 className="text-green-400 flex-shrink-0 mt-1" />
           <p className="ml-2">
             <b>Mejores opciones</b> en costo y calidad.
@@ -47,7 +47,7 @@ export default function Banner() {
         <CreateNow customStyle="py-3.5 w-full" />
       </div>
       <Image
-        src="/assets/marketplace.svg"
+        src="/assets/hero.svg"
         width="100"
         height="140"
         className="w-auto md:w-1/2 lg:w-2/5"
