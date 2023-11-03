@@ -47,10 +47,10 @@ export default function ProfileOfOurExperts(): JSX.Element {
   ];
   return (
     <div className="flex flex-col justify-between items-center py-6 px-8 sm:py-12 sm:px-10 lg:px-20">
-      <p className="mb-12 font-bold text-xl lg:text-center lg:text-4xl ">
+      <p className="mb-12 font-black text-xl lg:text-center lg:text-4xl ">
         Conoce el Perfil de Nuestros Expertos
       </p>
-      <p className="mb-12 lg:w-10/12 xl:w-6/12 text-justify sm:text-center ">
+      <p className="mb-12 lg:w-11/12 xl:w-5/12 text-justify sm:text-center ">
         Nuestro equipo en Boosteriit está compuesto por profesionales altamente
         calificados y apasionados por la tecnología. Estos equipos trabajan en
         conjunto para ofrecer resultados sobresalientes.

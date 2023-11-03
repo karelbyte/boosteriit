@@ -21,10 +21,10 @@ export default function Methodologies(): JSX.Element {
   ];
   return (
     <div className="flex flex-col items-center py-4 px-8 sm:py-12 sm:px-10 lg:px-20">
-      <p className="mb-12 font-bold text-xl lg:text-center lg:text-4xl lg:w-8/12 xl:w-4/12">
+      <p className="mb-12 font-black text-xl lg:w-8/12 lg:text-4xl lg:text-center xl:w-6/12">
         Hemos creado una metodología exclusiva en el mercado
       </p>
-      <p className="mb-12 lg:w-8/12 xl:w-5/12 sm:text-center ">
+      <p className="mb-12 md:w-8/12 lg:w-10/12 xl:w-10/12 sm:text-center ">
         Tendrás la posibilidad de elegir tu desarrollo por industria o construir
         tu aplicación desde cero al combinar componentes. En este proceso,
         podrás visualizar estimaciones de precios y plazos.

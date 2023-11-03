@@ -120,7 +120,7 @@ export default function CatalogIndustry(): JSX.Element {
                 <p className="mb-2 mt-2 text-md">{item.title}</p>
                 <p className="text-[#686767] mb-6 text-xs">{item.subtitle}</p>
                 <button
-                  className={`flex py-3.5 px-6 w-full justify-center text-white bg-[#00B8EC] border-0 focus:outline-none rounded`}
+                  className={`flex py-3.5 px-6 w-full justify-center text-white bg-[#00B8EC] border-0 focus:outline-none rounded hover:bg-[#007799]`}
                 >
                   <span className="flex items-center">
                     <BsPlusLg />
@@ -146,7 +146,7 @@ export default function CatalogIndustry(): JSX.Element {
               atención personalizada.
             </p>
             <button
-              className={`flex py-3.5 px-6 w-full justify-center text-white bg-[#00B8EC] border-0 focus:outline-none rounded`}
+              className={`flex py-3.5 px-6 w-full justify-center text-white bg-[#00B8EC] border-0 focus:outline-none rounded hover:bg-[#007799]`}
             >
               Ver soluciones
             </button>

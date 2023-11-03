@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { AiOutlineCheckCircle } from 'react-icons/ai';
+import { BsCheckCircleFill } from 'react-icons/bs';
 import { JSX } from 'react';
 export interface IMethCard {
   imagePath: string;
@@ -23,10 +23,10 @@ export default function MethCard(props: IMethCard): JSX.Element {
       </div>
       <div className="lg:ml-4 p-2">
         <div className="flex items-center mb-5 mt-6">
-          <AiOutlineCheckCircle className="text-green-600" />
+          <BsCheckCircleFill className="text-green-600" />
           <p className="ml-2 font-bold">{title}</p>
         </div>
-        <p className="mt-2 text-justify">{description}</p>
+        <p className="mt-2 text-justify text-[#686767]">{description}</p>
       </div>
     </div>
   );

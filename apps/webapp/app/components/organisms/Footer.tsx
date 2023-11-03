@@ -1,6 +1,6 @@
 import Logo from '../atoms/Logo';
 import { JSX } from 'react';
-import { AiFillLinkedin } from 'react-icons/ai';
+import { BiLogoLinkedin } from 'react-icons/bi';
 import { FaFacebookF } from 'react-icons/fa';
 import { BiLogoInstagram } from 'react-icons/bi';
 export default function Footer(): JSX.Element {
@@ -26,7 +26,7 @@ export default function Footer(): JSX.Element {
         <div className="flex flex-col justify-start w-full md:w-1/4">
           <span className="mb-4">Encuéntranos en:</span>
           <div className="flex">
-            <AiFillLinkedin className="mr-6" />
+            <BiLogoLinkedin className="mr-6" />
             <BiLogoInstagram className="mr-6" />
             <FaFacebookF />
           </div>
