@@ -14,7 +14,7 @@ export default function SolutionSelectorModal(
   const [showModalSelectSolution, setShowModalSelectSolution] =
     useState<boolean>(false);
 
-  const childrenWithProps = React.Children.map(children, (child, index) => {
+  const childrenWithProps = React.Children.map(children, (child) => {
     return React.cloneElement(child, {
       actionFn: () => {
         setShowModalSelectSolution(true);

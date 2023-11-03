@@ -1,6 +1,6 @@
 import React, { JSX } from 'react';
 import Slider from 'react-slick';
-import { BsPlusLg, BsCurrencyBitcoin, BsBuildings, BsChevronLeft, BsChevronRight } from "react-icons/bs";
+import { BsPlusLg, BsCurrencyBitcoin, BsBuildings } from "react-icons/bs";
 import { CiPlane } from 'react-icons/ci';
 import { PiHamburgerBold } from 'react-icons/pi';
 import { FaHandHoldingHeart, FaGuitar } from 'react-icons/fa';
