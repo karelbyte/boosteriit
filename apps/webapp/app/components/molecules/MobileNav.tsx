@@ -1,5 +1,5 @@
 import React, { JSX, useState } from 'react';
-import { ILink } from '../organisms/Navbar';
+import { ILink } from '../organisms/MainNavbar';
 import { BsArrowRightShort } from 'react-icons/bs';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import Glue from '../organisms/Glue';

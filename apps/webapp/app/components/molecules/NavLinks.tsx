@@ -1,4 +1,4 @@
-import { ILink } from '../organisms/Navbar';
+import { ILink } from '../organisms/MainNavbar';
 import { JSX } from 'react';
 interface INavLinksProps {
   options: ILink[];
