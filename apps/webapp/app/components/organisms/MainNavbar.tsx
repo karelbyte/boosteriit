@@ -3,12 +3,12 @@ import Logo from '../atoms/Logo';
 import NavLinks from '../molecules/NavLinks';
 import MobileNav from '../molecules/MobileNav';
 import type { JSX } from 'react';
-import ShoppingCart from '../molecules/ShoppingCart';
+import ShoppingCart from '../atoms/ShoppingCart';
 export interface ILink {
   id: string;
   title: string;
 }
-export default function Navbar(): JSX.Element {
+export default function MainNavbar(): JSX.Element {
   const links: ILink[] = [
     { id: 'industry', title: 'Industria' },
     { id: 'solutions', title: 'Arma tu solución' },

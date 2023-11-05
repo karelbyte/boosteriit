@@ -1,9 +1,14 @@
 import React, { JSX} from 'react';
+import { useRouter } from 'next/navigation'
 import Image from 'next/image';
-import SolutionSelectorModal from './SolutionSelectorModal';
+import SolutionSelectorModal from '../molecules/SolutionSelectorModal';
 import ActionBtn from '../atoms/ActionBtn';
 
 export default function IndustryOrBuild(): JSX.Element {
+  const router = useRouter()
+  const goToUrl = (url: string) => {
+    router.push(url)
+  }
   return (
     <div className="flex flex-col items-center py-4 px-8 sm:py-12 sm:px-10 lg:px-20 bg-[#ECF5FE]">
       <p className="mb-12 font-black text-xl lg:text-center lg:text-4xl lg:w-8/12 xl:w-8/12">
@@ -29,9 +34,12 @@ export default function IndustryOrBuild(): JSX.Element {
                 Industria y agrega componentes extras si lo requieres.
               </p>
             </div>
-            <SolutionSelectorModal>
-              <ActionBtn title="Escógelo" />
-            </SolutionSelectorModal>
+            <button
+              className={`py-3.5 px-6 w-full justify-center text-white bg-[#00B8EC] border-0 focus:outline-none rounded hover:bg-[#007799]`}
+              onClick={() => goToUrl('/industries')}
+            >
+              <span>Escógelo</span>
+            </button>
           </div>
         </div>
         <div className="flex flex-col h-96 md:flex-row border p-12 mr-0 sm:mr-12 w-full  bg-white rounded-2xl shadow-sm">
@@ -53,12 +61,9 @@ export default function IndustryOrBuild(): JSX.Element {
                 necesitas. Una solución a tu medida e imaginación.
               </p>
             </div>
-
-            <button
-              className={`py-3.5 px-6 w-full justify-center text-white bg-[#00B8EC] border-0 focus:outline-none rounded hover:bg-[#007799]`}
-            >
-              <span>Ármalo</span>
-            </button>
+            <SolutionSelectorModal nextPath={'/'}>
+              <ActionBtn title="Ármalo" />
+            </SolutionSelectorModal>
           </div>
         </div>
       </div>
