@@ -2,7 +2,7 @@ import type { JSX } from 'react';
 import React, { useEffect } from 'react';
 import ActionBtn from '../atoms/ActionBtn';
 import useAppContext from '../../contexts/hookAppContext';
-import { ISolution, solutions } from '../../contexts/appData.ts';
+import { ISolution, solutions } from '../../contexts/appData';
 
 export default function SolutionsNav(): JSX.Element {
   const { selectedSolutions, setSelectedSolutions } = useAppContext();
@@ -29,11 +29,11 @@ export default function SolutionsNav(): JSX.Element {
     }
   };
 
-  useEffect(() => {
-    return () => {
-      setSelectedSolutions([]);
-    };
-  }, [setSelectedSolutions]);
+  // useEffect(() => {
+  //   return () => {
+  //     setSelectedSolutions([]);
+  //   };
+  // }, [setSelectedSolutions]);
 
   return (
     <div className="p-6 bg-[#ECF5FE] text-black mt-16 md:mt-20 xl:text-center p-8 md:flex-row sm:px-10 lg:px-20">

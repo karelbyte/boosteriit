@@ -10,8 +10,8 @@ const useAppContext = (): ContextType => {
   const {
     selectedSolutions,
     setSelectedSolutions,
-    selectedIndustries,
-    setSelectedIndustries,
+    selectedIndustry,
+    setSelectedIndustry,
     selectedModules,
     setSelectedModules,
   }: ContextType = context;
@@ -19,8 +19,8 @@ const useAppContext = (): ContextType => {
   return {
     selectedSolutions,
     setSelectedSolutions,
-    selectedIndustries,
-    setSelectedIndustries,
+    selectedIndustry,
+    setSelectedIndustry,
     selectedModules,
     setSelectedModules,
   };

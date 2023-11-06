@@ -1,18 +1,10 @@
 import React, { JSX } from 'react';
 import Slider from 'react-slick';
-import { BsPlusLg, BsCurrencyBitcoin, BsBuildings } from "react-icons/bs";
-import { CiPlane } from 'react-icons/ci';
-import { PiHamburgerBold } from 'react-icons/pi';
-import { FaHandHoldingHeart, FaGuitar } from 'react-icons/fa';
+import { BsPlusLg } from "react-icons/bs";
 import { BiHelpCircle } from 'react-icons/bi';
 import SlidesBtn from "../molecules/SlidesBtn";
+import { IIndustry, industries } from "../../contexts/appData";
 
-interface IItem {
-  id: number;
-  icon: JSX.Element;
-  title: string;
-  subtitle: string;
-}
 interface ISettings {
   dots?: boolean;
   infinite?: boolean;
@@ -41,44 +33,7 @@ export default function CatalogIndustry(): JSX.Element {
     ],
   };
 
-  const items: IItem[] = [
-    {
-      id: 1,
-      icon: <CiPlane />,
-      title: 'Viajes',
-      subtitle: 'Reservas de viajes y hospedaje',
-    },
-    {
-      id: 2,
-      icon: <BsCurrencyBitcoin />,
-      title: 'Fintech',
-      subtitle: 'Para compañías de tecnología financiera',
-    },
-    {
-      id: 3,
-      icon: <BsBuildings />,
-      title: 'Bienes y raíces',
-      subtitle: 'Compra, venta y renta de inmuebles',
-    },
-    {
-      id: 4,
-      icon: <PiHamburgerBold />,
-      title: 'Restaurante',
-      subtitle: 'Actividades de servicio de comidas y bebidas',
-    },
-    {
-      id: 5,
-      icon: <FaHandHoldingHeart />,
-      title: 'Salud y cuidado',
-      subtitle: 'Empresas del giro salud y cuidado personal',
-    },
-    {
-      id: 6,
-      icon: <FaGuitar />,
-      title: 'Entretenimiento',
-      subtitle: 'Eventos, conciertos y espectáculos',
-    },
-  ];
+  const items = industries.slice(0, 4)
 
   const slider: React.MutableRefObject<any> = React.useRef<any>(Slider);
 
@@ -94,8 +49,6 @@ export default function CatalogIndustry(): JSX.Element {
     }
   };
 
-
-
   return (
     <div className="flex flex-col my-12 px-6 sm:my-24 sm:px-12 xl:my-12 xl:px-24">
       <p className="mb-6 font-bold text-xl text-justify md:text-center md:text-2xl lg:text-4xl">
@@ -108,7 +61,7 @@ export default function CatalogIndustry(): JSX.Element {
       </p>
       <Slider ref={slider} {...settings}>
         {items &&
-          items.map((item: IItem, index: number) => (
+          items.map((item:IIndustry, index: number) => (
             <div key={index} className="p-2">
               <div className="flex flex-col border rounded-lg p-6 h-[28rem]">
                 <div className="h-64">

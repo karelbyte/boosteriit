@@ -2,7 +2,7 @@ import React, { JSX, useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import { useRouter } from 'next/navigation';
 import useAppContext from '../../contexts/hookAppContext';
-import { solutions, ISolution } from '../../contexts/appData.ts';
+import { solutions, ISolution } from '../../contexts/appData';
 
 interface ISolutionSelectorModalProps {
   children: JSX.Element;
@@ -23,6 +23,7 @@ export default function SolutionSelectorModal(
   const childrenWithProps = React.Children.map(children, (child) => {
     return React.cloneElement(child, {
       actionFn: () => {
+        if (child.props.actionFn) child.props.actionFn()
         setShowModalSelectSolution(true);
       },
     });
@@ -77,7 +78,7 @@ export default function SolutionSelectorModal(
                     key={solution.id}
                     className="flex border justify-between rounded-lg py-4 px-6 my-2 items-center"
                   >
-                    <div className="p-4 mr-2 text-xs md:text-xl text-[#00B8EC] border rounded-full border-[#CCF1FB] bg-[#CCF1FB] ">
+                    <div className="p-4 mr-2 text-xs md:text-xl text-[#00B8EC] border rounded-full border-[#CCF1FB] bg-[#CCF1FB]">
                       {solution.icon}
                     </div>
                     <div className="w-9/12">

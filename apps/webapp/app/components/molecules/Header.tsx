@@ -1,18 +1,20 @@
 import type { JSX } from 'react';
 import Back from '../atoms/Back';
 import Logo from '../atoms/Logo';
+import { MouseEventHandler } from "react";
 export interface IHeader {
   title: string;
-  children: JSX.Element;
+  children?: JSX.Element;
   urlBack: string;
+  actionFn?: () => void | MouseEventHandler;
 }
 export default function Header(props: IHeader): JSX.Element {
-  const { title, children, urlBack }: IHeader = props;
+  const { title, children, urlBack,  actionFn }: IHeader = props;
   return (
     <header className="text-gray-900 body-font fixed bg-white w-full z-50">
       <div className="mx-auto flex items-center justify-between sm:border-slate-700 py-2 px-8 sm:py-4 sm:px-10 lg:px-20 md:flex-row  border-b-1 shadow-sm">
         <div className="flex items-center gap-4">
-          <Back url={urlBack} />
+          <Back url={urlBack} actionFn={actionFn} />
           <Logo />
         </div>
         <span className="hidden md:flex text-lg">{title}</span>
