@@ -3,7 +3,7 @@ import Logo from '../atoms/Logo';
 import NavLinks from '../molecules/NavLinks';
 import MobileNav from '../molecules/MobileNav';
 import type { JSX } from 'react';
-import ShoppingCart from '../atoms/ShoppingCart';
+import ShoppingCartBtn from '../atoms/ShoppingCartBtn';
 export interface ILink {
   id: string;
   title: string;
@@ -22,7 +22,7 @@ export default function MainNavbar(): JSX.Element {
         <Logo />
         <NavLinks options={links} />
         <div className="flex items-center">
-          <ShoppingCart />
+          <ShoppingCartBtn />
           <CreateNow mobileHidden customStyle="py-3.5 px-6" />
         </div>
       </div>

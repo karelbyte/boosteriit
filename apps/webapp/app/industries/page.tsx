@@ -5,10 +5,12 @@ import Search from '../components/atoms/Search';
 import ActionBtn from '../components/atoms/ActionBtn';
 import SolutionSelectorModal from '../components/molecules/SolutionSelectorModal';
 import Footer from '../components/organisms/Footer';
-import IndustriesBannerFooter from "../components/molecules/IndustriesBannerFooter";
-import { IAvailable, IIndustry, industries } from "../contexts/appData.ts";
+import IndustriesBannerFooter from '../components/molecules/IndustriesBannerFooter';
+import { IAvailable, IIndustry, industries } from '../contexts/appData';
+import useAppContext from '../contexts/hookAppContext';
 
 export default function Industries(): JSX.Element {
+  const { setSelectedIndustry } = useAppContext();
 
   return (
     <div className="overflow-hidden">
@@ -26,7 +28,11 @@ export default function Industries(): JSX.Element {
             className="flex flex-col justify-between py-2 px-8 md:flex-row sm:py-4 sm:px-10 lg:px-20"
           >
             <div className="flex flex-col md:flex-row justify-between w-full border-b p-4">
-              <div className="border w-full md:w-1/2 h-72 rounded-lg bg-slate-50 md:mr-12"></div>
+              <div className="border w-full md:w-1/2 h-72 rounded-lg bg-slate-50 md:mr-12 p-4">
+                <div className="w-8 h-8 rounded-full flex items-center justify-center text-[#00B8EC] border border-[#CCF1FB] bg-[#CCF1FB]">
+                  {industry.icon}
+                </div>
+              </div>
               <div className="flex flex-col w-full md:w-1/2 mt-4 md:mt-0 justify-between">
                 <div className="flex flex-col">
                   <span className="font-bold text-lg mb-3">
@@ -43,7 +49,10 @@ export default function Industries(): JSX.Element {
                     {industry.available &&
                       industry.available.map(
                         (item: IAvailable, index: number) => (
-                          <div className="flex items-center mt-2 lg:mt-0 lg:mr-6" key={index}>
+                          <div
+                            className="flex items-center mt-2 lg:mt-0 lg:mr-6"
+                            key={index}
+                          >
                             {item.icon}
                             <span className="ml-2">{item.title}</span>
                           </div>
@@ -52,16 +61,18 @@ export default function Industries(): JSX.Element {
                   </div>
                   <div className="w-full md:w-8/12">
                     <SolutionSelectorModal nextPath="/modules">
-                      <ActionBtn title="+ Agregar" />
+                      <ActionBtn
+                        title="+ Agregar"
+                        actionFn={() => setSelectedIndustry(industry.id)}
+                      />
                     </SolutionSelectorModal>
                   </div>
-
                 </div>
               </div>
             </div>
           </div>
         ))}
-      <IndustriesBannerFooter/>
+      <IndustriesBannerFooter />
       <Footer />
     </div>
   );
