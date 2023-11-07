@@ -113,7 +113,7 @@ export default function Modules(): JSX.Element {
                   </div>
                   <div className="border p-4 rounded-b-lg">
                     <input
-                      className="accent-green-400"
+                      className="accent-green-400 cursor-pointer"
                       type="checkbox"
                       id={module.id}
                       onChange={addModules}

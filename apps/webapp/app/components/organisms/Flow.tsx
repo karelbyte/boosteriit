@@ -15,7 +15,7 @@ export default function Flow() {
         height="0"
         className="hidden sm:flex w-auto"
         alt="Boosteriit"
-        priority
+        loading={'lazy'}
         quality={100}
       />
       <Image
@@ -24,7 +24,7 @@ export default function Flow() {
         height="0"
         className="fle sm:hidden w-auto"
         alt="Boosteriit"
-        priority
+        loading={'lazy'}
       />
     </div>
   );

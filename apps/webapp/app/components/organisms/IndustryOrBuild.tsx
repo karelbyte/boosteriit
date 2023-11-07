@@ -21,7 +21,7 @@ export default function IndustryOrBuild(): JSX.Element {
             width="100"
             height="140"
             className="w-1/3 self-center mb-8 md:mr-8"
-            priority
+            loading={'lazy'}
             alt="Boosteriit"
           />
           <div className="flex flex-col justify-between">
@@ -61,7 +61,7 @@ export default function IndustryOrBuild(): JSX.Element {
                 necesitas. Una solución a tu medida e imaginación.
               </p>
             </div>
-            <SolutionSelectorModal nextPath={'/'}>
+            <SolutionSelectorModal nextPath={'/modules'}>
               <ActionBtn title="Ármalo" />
             </SolutionSelectorModal>
           </div>

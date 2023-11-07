@@ -18,7 +18,7 @@ export default function MethCard(props: IMethCard): JSX.Element {
           height="140"
           className="w-auto"
           alt="Boosteriit"
-          priority
+          loading={'lazy'}
         />
       </div>
       <div className="lg:ml-4 p-2">
