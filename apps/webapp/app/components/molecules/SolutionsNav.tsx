@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 import ActionBtn from '../atoms/ActionBtn';
 import useAppContext from '../../contexts/hookAppContext';
 import { ISolution, solutions } from '../../contexts/appData';
-
 export default function SolutionsNav(): JSX.Element {
   const { selectedSolutions, setSelectedSolutions } = useAppContext();
 
@@ -29,12 +28,6 @@ export default function SolutionsNav(): JSX.Element {
     }
   };
 
-  // useEffect(() => {
-  //   return () => {
-  //     setSelectedSolutions([]);
-  //   };
-  // }, [setSelectedSolutions]);
-
   return (
     <div className="p-6 bg-[#ECF5FE] text-black mt-16 md:mt-20 xl:text-center p-8 md:flex-row sm:px-10 lg:px-20">
       <div className="flex flex-col md:flex-row justify-start md:items-center mb-6">
@@ -46,23 +39,20 @@ export default function SolutionsNav(): JSX.Element {
           las diferentes versiones
         </span>
       </div>
-      <div className="flex flex-col md:flex-row md:items-center justify-between">
-        <div className="flex flex-col  md:flex-row gap-4 md:gap-12">
+      <div className="flex flex-col md:flex-row justify-between">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-12">
           {solutions &&
             solutions.map((solution: ISolution) => (
-              <div key={solution.id}>
+              <div key={solution.id} className="border px-6 xl:px-12 py-1 bg-white rounded-lg ">
                 <input
                   type="checkbox"
-                  className="mr-2 accent-green-400"
+                  className="mr-2 accent-green-400 cursor-pointer"
                   id={solution.id}
                   onChange={checkOptions}
                 />
                 <span>{solution.title}</span>
               </div>
             ))}
-        </div>
-        <div className="mt-8 md:mt-0">
-          <ActionBtn title={'Aplicar cambios'} />
         </div>
       </div>
     </div>

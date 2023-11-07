@@ -247,15 +247,6 @@ const modules: IModule[] = [
     days: 8
   },
   {
-    id: 'notifications',
-    image: '',
-    title: 'Notificaciones',
-    description: '',
-    price: 15000,
-    timeStr: 'Lista en: 8 días',
-    days: 8
-  },
-  {
     id: 'customer_profile',
     image: '',
     title: 'Perfil de cliente',

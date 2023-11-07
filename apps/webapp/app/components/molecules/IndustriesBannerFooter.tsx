@@ -13,7 +13,7 @@ export default function IndustriesBannerFooter() {
           height="140"
           className="w-auto lg:w-1/3"
           alt="Boosteriit"
-          priority
+          loading={'lazy'}
         />
         <div className="flex flex-col my-8 md:mt-2  md:ml-12 md:py-12 lg:p-6 justify-between w-full">
           <span className="text-xl font-black pb-4">¿No ves tu industria entre las opciones?</span>
