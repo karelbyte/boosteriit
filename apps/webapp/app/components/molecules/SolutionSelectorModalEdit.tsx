@@ -2,11 +2,14 @@ import React, { JSX, useEffect } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import useAppContext from '../../contexts/hookAppContext';
 import { solutions, ISolution } from '../../contexts/appData';
+import { useRouter } from 'next/navigation';
 
 interface ISolutionSelectorModalProps {
   currentSolutions: string[];
   showModalEdit: boolean;
   setShowModalEdit: React.Dispatch<React.SetStateAction<boolean>>;
+  edit?: boolean;
+  nextPath?: string;
 }
 
 export default function SolutionSelectorModalEdit(
@@ -16,9 +19,12 @@ export default function SolutionSelectorModalEdit(
     currentSolutions,
     showModalEdit,
     setShowModalEdit,
+    edit,
+    nextPath,
   }: ISolutionSelectorModalProps = props;
   const { setSelectedSolutions, selectedSolutions } = useAppContext();
 
+  const router = useRouter();
   const checkOptions = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { id, checked } = event.target;
     if (checked) {
@@ -31,6 +37,7 @@ export default function SolutionSelectorModalEdit(
   };
 
   const closeModal = () => {
+    setSelectedSolutions([])
     setShowModalEdit(false);
   };
 
@@ -46,6 +53,16 @@ export default function SolutionSelectorModalEdit(
       }
     }
   }, [currentSolutions, showModalEdit]);
+
+  const goToUrl = () => {
+    router.push(nextPath || '/');
+  };
+
+  const getStyle = (options: string[]) => {
+    return options.length === 0
+      ? 'py-2 px-4 text-white bg-gray-300 rounded w-5/12'
+      : 'py-2 px-4 text-white bg-[#00B8EC] rounded hover:bg-[#007799] w-5/12';
+  };
 
   return (
     <>
@@ -69,14 +86,14 @@ export default function SolutionSelectorModalEdit(
                     key={solution.id}
                     className="flex border justify-between rounded-lg py-4 px-6 my-2 items-center"
                   >
-                    <div className="p-4 mr-2 text-xs md:text-xl text-[#00B8EC] border rounded-full border-[#CCF1FB] bg-[#CCF1FB]">
+                    <div className="p-4 mr-2 text-xs md:text-xl text-boo-btn-bg border rounded-full border-boo-blue-2 bg-boo-blue-2">
                       {solution.icon}
                     </div>
                     <div className="w-9/12">
                       <p className="font-bold text-xs md:text-lg">
                         {solution.title}
                       </p>
-                      <p className="text-xs md:text-sm text-[#161616]">
+                      <p className="text-xs md:text-sm text-boo-gray-hard">
                         {solution.subtitle}
                       </p>
                     </div>
@@ -88,16 +105,34 @@ export default function SolutionSelectorModalEdit(
                     />
                   </div>
                 ))}
-
-              <div className="flex justify-end py-3 text-right">
-                <button
-                  type="button"
-                  className="py-2 px-4 rounded mr-2 border border-[#00B8EC] text-[#00B8EC] hover:bg-[#007799] hover:text-white w-5/12"
-                  onClick={closeModal}
-                >
-                  Aceptar
-                </button>
-              </div>
+              {edit ? (
+                <div className="flex justify-end py-3 text-right">
+                  <button
+                    type="button"
+                    className="py-2 px-4 rounded mr-2 border border-boo-btn-bg text-boo-btn-bg hover:bg-boo-btn-bg-hover hover:text-white w-5/12"
+                    onClick={closeModal}
+                  >
+                    Aceptar
+                  </button>
+                </div>
+              ) : (
+                <div className="flex justify-between py-3 text-right">
+                  <button
+                    type="button"
+                    className="py-2 px-4 rounded mr-2 border border-boo-btn-bg text-boo-btn-bg hover:bg-boo-btn-bg-hover hover:text-white w-5/12"
+                    onClick={closeModal}
+                  >
+                    Cancelar
+                  </button>
+                  <button
+                    type="button"
+                    className={getStyle(selectedSolutions)}
+                    onClick={goToUrl}
+                  >
+                    <i className="fas fa-plus"></i> Continuar
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>

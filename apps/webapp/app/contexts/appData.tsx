@@ -213,6 +213,7 @@ export interface IModule {
   id: string;
   image: string;
   title: string;
+  subtitle: string;
   description: string,
   price: number,
   timeStr: string,
@@ -223,6 +224,7 @@ const modules: IModule[] = [
     id: 'login_social_networks',
     image: '',
     title: 'Inicio de sesión, con app de google y redes sociales',
+    subtitle: 'Con app de google y redes sociales',
     description: 'El módulo permite al usuario ingresar a una plataforma mediante su usuario o correo y una contraseña, o bien accediendo a través de su cuenta de google o redes sociales: facebook. Incluye el flujo de recuperación de contraseña',
     price: 20000,
     timeStr: 'Lista en: 12 días',
@@ -232,7 +234,8 @@ const modules: IModule[] = [
     id: 'payment_management',
     image: '',
     title: 'Gestión de pagos',
-    description: '',
+    subtitle: 'Gestión de pagos',
+    description: 'Gestión de pagos',
     price: 40000,
     timeStr: 'Lista en: 12 días',
     days: 12
@@ -241,7 +244,8 @@ const modules: IModule[] = [
     id: 'notifications',
     image: '',
     title: 'Notificaciones',
-    description: '',
+    subtitle: 'Notificaciones',
+    description: 'Notificaciones',
     price: 15000,
     timeStr: 'Lista en: 8 días',
     days: 8
@@ -250,6 +254,7 @@ const modules: IModule[] = [
     id: 'customer_profile',
     image: '',
     title: 'Perfil de cliente',
+    subtitle: 'Perfil de cliente',
     description: '',
     price: 28000,
     timeStr: 'Lista en: 15 días',
@@ -259,7 +264,8 @@ const modules: IModule[] = [
     id: 'geo',
     image: '',
     title: 'Geolocalización',
-    description: '',
+    subtitle: 'Geolocalización',
+    description: 'Geolocalización',
     price: 50000,
     timeStr: 'Lista en: 20 días',
     days: 20
@@ -268,7 +274,8 @@ const modules: IModule[] = [
     id: 'checkin_checkout',
     image: '',
     title: 'Sistema Check In & Check Out',
-    description: '',
+    subtitle: 'Sistema Check In & Check Out',
+    description: 'Sistema Check In & Check Out',
     price: 23000,
     timeStr: 'Lista en: 10 días',
     days: 10
@@ -277,7 +284,8 @@ const modules: IModule[] = [
     id: 'shopping_cart',
     image: '',
     title: 'Carrito de compra',
-    description: '',
+    subtitle: 'Carrito de compra',
+    description: 'Carrito de compra',
     price: 28000,
     timeStr: 'Lista en: 10 días',
     days: 10
@@ -286,7 +294,8 @@ const modules: IModule[] = [
     id: 'online_reservation_system',
     image: '',
     title: 'Sistema de reservas en línea',
-    description: '',
+    subtitle: 'Sistema de reservas en línea',
+    description: 'Sistema de reservas en línea',
     price: 30000,
     timeStr: 'Lista en: 20 días',
     days: 20
@@ -295,7 +304,8 @@ const modules: IModule[] = [
     id: 'menu_price_management',
     image: '',
     title: 'Gestión de menús y precios',
-    description: '',
+    subtitle: 'Gestión de menús y precios',
+    description: 'Gestión de menús y precios',
     price: 23000,
     timeStr: 'Lista en: 10 días',
     days: 10
@@ -304,7 +314,8 @@ const modules: IModule[] = [
     id: 'inventory_supplier_control',
     image: '',
     title: 'Control de inventario y proveedores',
-    description: '',
+    subtitle: 'Control de inventario y proveedores',
+    description: 'Control de inventario y proveedores',
     price: 18000,
     timeStr: 'Lista en: 15 días',
     days: 15
@@ -313,7 +324,8 @@ const modules: IModule[] = [
     id: 'help_module',
     image: '',
     title: 'Módulo de ayuda',
-    description: '',
+    subtitle: 'Módulo de ayuda',
+    description: 'Módulo de ayuda',
     price: 30000,
     timeStr: 'Lista en: 10 días',
     days: 10
@@ -322,7 +334,8 @@ const modules: IModule[] = [
     id: 'home_delivery_system',
     image: '',
     title: 'Sistema de entrega a domicilio',
-    description: '',
+    subtitle: 'Sistema de entrega a domicilio',
+    description: 'Sistema de entrega a domicilio',
     price: 35,
     timeStr: 'Lista en: 20 días',
     days: 20

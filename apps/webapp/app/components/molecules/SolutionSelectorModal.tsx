@@ -60,18 +60,18 @@ export default function SolutionSelectorModal(
           solution.id
         ) as HTMLInputElement;
         if (elem) {
-          console.log('encontrado ', solution.id)
           elem.checked = selectedSolutions.includes(solution.id);
         }
       }
     }
-  }, [selectedSolutions]);
+  }, [selectedSolutions, showModalSelectSolution]);
 
   const getStyle = (options: string[]) => {
     return options.length === 0
       ? 'py-2 px-4 text-white bg-gray-300 rounded w-5/12'
-      : 'py-2 px-4 text-white bg-[#00B8EC] rounded hover:bg-[#007799] w-5/12';
+      : 'py-2 px-4 text-white bg-boo-btn-bg rounded hover:bg-boo-btn-bg-hover w-5/12';
   };
+
 
   return (
     <>
@@ -96,14 +96,14 @@ export default function SolutionSelectorModal(
                     key={solution.id}
                     className="flex border justify-between rounded-lg py-4 px-6 my-2 items-center"
                   >
-                    <div className="p-4 mr-2 text-xs md:text-xl text-[#00B8EC] border rounded-full border-[#CCF1FB] bg-[#CCF1FB]">
+                    <div className="p-4 mr-2 text-xs md:text-xl text-boo-btn-bg border rounded-full border-boo-blue-2 bg-boo-blue-2]">
                       {solution.icon}
                     </div>
                     <div className="w-9/12">
                       <p className="font-bold text-xs md:text-lg">
                         {solution.title}
                       </p>
-                      <p className="text-xs md:text-sm text-[#161616]">
+                      <p className="text-xs md:text-sm text-boo-gray-hard">
                         {solution.subtitle}
                       </p>
                     </div>
@@ -119,7 +119,7 @@ export default function SolutionSelectorModal(
               <div className="flex justify-between py-3 text-right">
                 <button
                   type="button"
-                  className="py-2 px-4 rounded mr-2 border border-[#00B8EC] text-[#00B8EC] hover:bg-[#007799] hover:text-white w-5/12"
+                  className="py-2 px-4 rounded mr-2 border border-boo-btn-bg text-boo-btn-bg hover:bg-boo-btn-bg-hover hover:text-white w-5/12"
                   onClick={closeModal}
                 >
                   Cancelar

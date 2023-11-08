@@ -29,7 +29,7 @@ export default function SolutionsNav(): JSX.Element {
   };
 
   return (
-    <div className="p-6 bg-[#ECF5FE] text-black mt-16 md:mt-20 xl:text-center p-8 md:flex-row sm:px-10 lg:px-20">
+    <div className="p-6 bg-[#ECF5FE] text-black mt-16 md:mt-20 xl:text-center md:flex-row sm:px-10 lg:px-20">
       <div className="flex flex-col md:flex-row justify-start md:items-center mb-6">
         <span className="mb-6 md:mb-0 md:mr-6 md:border-r-2 text-sm md:pr-6">
           Versión de producto a desarrollar

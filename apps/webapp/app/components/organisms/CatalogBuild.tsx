@@ -1,8 +1,11 @@
-import React, { JSX } from 'react';
+import React, { JSX, useState } from 'react';
 import Slider from 'react-slick';
 import { BsPlusLg } from 'react-icons/bs';
 import { BiHelpCircle } from 'react-icons/bi';
 import SlidesBtn from '../molecules/SlidesBtn';
+import SolutionSelectorModalEdit from '../molecules/SolutionSelectorModalEdit';
+import useAppContext from "../../contexts/hookAppContext";
+import { IModule, industries, modules } from "../../contexts/appData";
 
 interface IItem {
   id: number;
@@ -22,6 +25,8 @@ interface ISettings {
 }
 
 export default function CatalogBuild(): JSX.Element {
+
+  const { selectedSolutions, setSelectedModules } = useAppContext();
   const settings: ISettings = {
     speed: 500,
     slidesToShow: 4,
@@ -37,38 +42,7 @@ export default function CatalogBuild(): JSX.Element {
     ],
   };
 
-  const items: IItem[] = [
-    {
-      id: 1,
-      title: 'Inicio de sesión',
-      subtitle: 'Con app de google y redes sociales',
-    },
-    {
-      id: 2,
-      title: 'Perfil de cliente',
-      subtitle: 'Configuración y edición de datos',
-    },
-    {
-      id: 3,
-      title: 'Gestión de vuelos',
-      subtitle: 'Disponibles y filtrado ',
-    },
-    {
-      id: 4,
-      title: 'Carrito de compra',
-      subtitle: 'Listado de artículos selccionados',
-    },
-    {
-      id: 5,
-      title: 'Salud y cuidado',
-      subtitle: 'Empresas del giro salud y cuidado personal',
-    },
-    {
-      id: 6,
-      title: 'Entretenimiento',
-      subtitle: 'Eventos, conciertos y espectáculos',
-    },
-  ];
+  const items = modules.slice(0, 4);
 
   const slider: React.MutableRefObject<any> = React.useRef<any>(Slider);
 
@@ -92,66 +66,82 @@ export default function CatalogBuild(): JSX.Element {
     );
   };
 
+  const [showModal, setShowModal] = useState<boolean>(false);
+
+  const setShowModalAndModule = (id: string) => {
+    setShowModal(true);
+    setSelectedModules([id]);
+  };
+
   return (
-    <div className="flex flex-col my-12 px-6 sm:my-24 sm:px-12 xl:my-12 xl:px-24">
-      <p className="mb-6 font-bold text-xl text-justify md:text-center md:text-2xl lg:text-4xl">
-        Arma tu solución
-      </p>
-      <p className="self-center w-24 border-t-2 mb-6 border-[#00B8EC]"></p>
-      <p className="self-center mb-12 lg:w-10/12 xl:w-6/12 text-justify sm:text-center">
-        Construye una aplicación a tu medida integrando los módulos que le den
-        valor a tu producto.
-      </p>
-      <Slider ref={slider} {...settings}>
-        {items &&
-          items.map((item: IItem, index: number) => (
-            <div key={index} className="p-2">
-              <div className="flex flex-col border rounded-lg p-6 h-[28rem]">
-                <div className="h-64"></div>
+    <>
+      <SolutionSelectorModalEdit
+        setShowModalEdit={setShowModal}
+        showModalEdit={showModal}
+        currentSolutions={selectedSolutions}
+        nextPath={'/modules'}
+      />
+      <div className="flex flex-col my-12 px-6 sm:my-24 sm:px-12 xl:my-12 xl:px-24">
+        <p className="mb-6 font-bold text-xl text-justify md:text-center md:text-2xl lg:text-4xl">
+          Arma tu solución
+        </p>
+        <p className="self-center w-24 border-t-2 mb-6 border-boo-btn-bg"></p>
+        <p className="self-center mb-12 lg:w-10/12 xl:w-6/12 text-justify sm:text-center">
+          Construye una aplicación a tu medida integrando los módulos que le den
+          valor a tu producto.
+        </p>
+        <Slider ref={slider} {...settings}>
+          {items &&
+            items.map((item: IModule, index: number) => (
+              <div key={index} className="p-2">
+                <div className="flex flex-col border rounded-lg p-6 h-[28rem]">
+                  <div className="h-64"></div>
 
-                <p className="mb-2 mt-2 text-md">{item.title}</p>
-                <p className="text-[#686767] mb-6 text-xs">{item.subtitle}</p>
-                <button
-                  className={`flex py-3.5 px-6 w-full justify-center text-white bg-[#00B8EC] border-0 focus:outline-none rounded hover:bg-[#007799]`}
-                >
-                  <span className="flex items-center">
-                    <BsPlusLg />
-                    <span className="ml-4">Agregar</span>
-                  </span>
-                </button>
+                  <p className="mb-2 mt-2 text-md">{item.title}</p>
+                  <p className="text-[#686767] mb-6 text-xs">{item.subtitle}</p>
+                  <button
+                    className={`flex py-3.5 px-6 w-full justify-center text-white bg-boo-btn-bg border-0 focus:outline-none rounded hover:bg-boo-btn-bg-hover`}
+                    onClick={() => setShowModalAndModule(item.id) }
+                  >
+                    <span className="flex items-center">
+                      <BsPlusLg />
+                      <span className="ml-4">Agregar</span>
+                    </span>
+                  </button>
+                </div>
               </div>
-            </div>
-          ))}
-        <div className="p-2">
-          <div className="flex flex-col justify-between border rounded-lg p-6 h-[28rem]">
-            <HelpCircle />
-            <div className="flex flex-col">
-              <span className="mt-8 mb-2 text-md">
-                ¿No encuentras tu solución?
-              </span>
-              <span className="mb-6 text-sm text-[#686767]">
-                Tenemos una a tu medida
-              </span>
-            </div>
+            ))}
+          <div className="p-2">
+            <div className="flex flex-col justify-between border rounded-lg p-6 h-[28rem]">
+              <HelpCircle />
+              <div className="flex flex-col">
+                <span className="mt-8 mb-2 text-md">
+                  ¿No encuentras tu solución?
+                </span>
+                <span className="mb-6 text-sm text-boo-str-description">
+                  Tenemos una a tu medida
+                </span>
+              </div>
 
-            <p className="text-[#686767] mb-6 text-sm xl:text-md">
-              Arma tu paquete personalizado ó comunícate con nosotros para una
-              atención personalizada.
-            </p>
-            <button
-              className={`flex py-3.5 px-6 w-full justify-center text-white bg-[#00B8EC] border-0 focus:outline-none rounded hover:bg-[#007799]`}
-            >
-              Ver soluciones
-            </button>
-            <button
-              className={`flex py-5 px-6 w-full justify-center text-[#00B8EC] focus:outline-none rounded`}
-            >
-              Contacto
-            </button>
+              <p className="text-boo-str-description mb-6 text-sm xl:text-md">
+                Arma tu paquete personalizado ó comunícate con nosotros para una
+                atención personalizada.
+              </p>
+              <button
+                className={`flex py-3.5 px-6 w-full justify-center text-white bg-boo-btn-bg border-0 focus:outline-none rounded hover:bg-boo-btn-bg-hover`}
+              >
+                Ver soluciones
+              </button>
+              <button
+                className={`flex py-5 px-6 w-full justify-center text-boo-btn-bg focus:outline-none rounded`}
+              >
+                Contacto
+              </button>
+            </div>
           </div>
-        </div>
-      </Slider>
-      <SlidesBtn style={'self-center mt-4'} next={next} previous={previous} />
-    </div>
+        </Slider>
+        <SlidesBtn style={'self-center mt-4'} next={next} previous={previous} />
+      </div>
+    </>
   );
 }
