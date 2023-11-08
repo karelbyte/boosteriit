@@ -52,9 +52,9 @@ export default function Stories(): JSX.Element {
   };
 
   return (
-    <div className="flex flex-col pb-12 bg-[#ECF5FE]">
+    <div className="flex flex-col pb-12 bg-boo-blue">
       <p className="self-center my-6 font-bold">Casos de éxito</p>
-      <p className="self-center w-24 border-t-2 mb-6 border-[#00B8EC]"></p>
+      <p className="self-center w-24 border-t-2 mb-6 border-boo-btn-bg"></p>
       <Slider ref={slider} {...settings}>
         <div className="h-96 lg:h-[450px] xl:h-96 p-4">
           <div className="flex flex-col justify-between items-center border rounded-2xl border-blue-100 h-full bg-white p-6">

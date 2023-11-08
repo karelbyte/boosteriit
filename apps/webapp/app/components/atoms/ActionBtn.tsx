@@ -13,7 +13,7 @@ export default function ActionBtn(props: ActionBtnProps): JSX.Element {
       className={
         styleClass
           ? styleClass
-          : `py-3.5 px-6 w-full justify-center text-white bg-[#00B8EC] border-0 focus:outline-none rounded hover:bg-[#007799]`
+          : `py-3.5 px-6 w-full justify-center text-white bg-boo-btn-bg border-0 focus:outline-none rounded hover:bg-boo-btn-bg-hover`
       }
     >
       <span> {title || ''}</span>

@@ -74,13 +74,13 @@ export default function ProfileOfOurExperts(): JSX.Element {
                 className="flex flex-col sm:flex-row w-full justify-between"
               >
                 <div className="flex m-2 sm:m-6 items-center lg:w-1/2">
-                  <div className="p-4 text-xl text-[#00B8EC] border rounded-full mr-6 border-[#CCF1FB] bg-[#CCF1FB]">
+                  <div className="p-4 text-xl text-boo-btn-bg border rounded-full mr-6 border-boo-blue-2 bg-boo-blue-2">
                     {skill.iconLeft}
                   </div>
                   <p className="text-[#161616]">{skill.textLef}</p>
                 </div>
                 <div className="flex m-2 sm:m-6 items-center lg:w-1/2">
-                  <div className="p-4 text-xl text-[#00B8EC] border rounded-full mr-6 border-[#CCF1FB] bg-[#CCF1FB]">
+                  <div className="p-4 text-xl text-boo-btn-bg border rounded-full mr-6 border-boo-blue-2 bg-boo-blue-2">
                     {skill.iconRight}
                   </div>
                   <p className="text-[#161616]">{skill.textRight}</p>

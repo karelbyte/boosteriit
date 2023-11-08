@@ -11,16 +11,16 @@ export default function SlidesBtn(props: ISlidesBtnProps): JSX.Element {
   return (
     <div className={style}>
       <button
-        className="rounded-full border p-4 border-[#00B8EC] mr-6"
+        className="rounded-full border p-4 border-boo-btn-bg mr-6"
         onClick={previous}
       >
-        <BsChevronLeft className="text-2xl text-[#00B8EC]" />
+        <BsChevronLeft className="text-2xl text-boo-btn-bg" />
       </button>
       <button
-        className="rounded-full border p-4 border-[#00B8EC]"
+        className="rounded-full border p-4 border-boo-btn-bg"
         onClick={next}
       >
-        <BsChevronRight className="text-2xl text-[#00B8EC]" />
+        <BsChevronRight className="text-2xl text-boo-btn-bg" />
       </button>
     </div>
   );

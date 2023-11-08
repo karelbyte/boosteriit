@@ -26,7 +26,7 @@ export default function MethCard(props: IMethCard): JSX.Element {
           <BsCheckCircleFill className="text-green-600" />
           <p className="ml-2 font-bold">{title}</p>
         </div>
-        <p className="mt-2 text-justify text-[#686767]">{description}</p>
+        <p className="mt-2 text-justify text-boo-str-description">{description}</p>
       </div>
     </div>
   );
