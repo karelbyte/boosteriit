@@ -1,9 +1,11 @@
 import React, { JSX, useEffect, useState } from 'react';
+import Axios from 'axios'
 import { AiOutlineClose } from 'react-icons/ai';
 import { BsShield } from 'react-icons/bs';
 import ActionBtn from '../atoms/ActionBtn';
 import Link from 'next/link';
 import { getDateNowFormat, isValidEmail } from '../../../utils';
+
 interface IContactModalProps {
   showModal: boolean;
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
@@ -50,7 +52,14 @@ export default function ContactModal(props: IContactModalProps): JSX.Element {
     setShowModal(false);
   };
 
-  const sendDataToAdmin = () => {
+  const sendDataToAdmin = async () => {
+    const response = await Axios.post('/api/mail', {
+      name,
+      email,
+      date,
+      time
+    })
+    console.log(response)
     setShowModal(false)
     if (activeModalSendSuccess) activeModalSendSuccess(true);
   };
