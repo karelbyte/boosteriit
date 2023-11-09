@@ -7,9 +7,16 @@ import { getDateNowFormat, isValidEmail } from '../../../utils';
 interface IContactModalProps {
   showModal: boolean;
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+  activeModalSendSuccess?: React.Dispatch<React.SetStateAction<boolean>>;
+  activeModalRequestSuccess?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 export default function ContactModal(props: IContactModalProps): JSX.Element {
-  const { showModal, setShowModal }: IContactModalProps = props;
+  const {
+    showModal,
+    setShowModal,
+    activeModalSendSuccess,
+    activeModalRequestSuccess,
+  }: IContactModalProps = props;
   const [activeTab, setActiveTab] = useState<string>('tab1');
 
   const min = getDateNowFormat();
@@ -34,16 +41,24 @@ export default function ContactModal(props: IContactModalProps): JSX.Element {
     setEnableBtnCall(!(checkName && checkMail && checkPhone));
   }, [name, email, date, time, phone]);
 
-
   const closeModal = () => {
-    setName('')
-    setEmail('')
-    setDate(min)
-    setTime('09:00')
-    setPhone('')
-    setShowModal(false)
-  }
+    setName('');
+    setEmail('');
+    setDate(min);
+    setTime('09:00');
+    setPhone('');
+    setShowModal(false);
+  };
 
+  const sendDataToAdmin = () => {
+    setShowModal(false)
+    if (activeModalSendSuccess) activeModalSendSuccess(true);
+  };
+
+  const sendDataToRequestAdmin = () => {
+    setShowModal(false)
+    if (activeModalRequestSuccess) activeModalRequestSuccess(true);
+  };
   return (
     <>
       {showModal && (
@@ -142,7 +157,7 @@ export default function ContactModal(props: IContactModalProps): JSX.Element {
                         />
                       </div>
                     </div>
-                    <ActionBtn title="Agendar meet" disabled={enableBtnMeet} />
+                    <ActionBtn title="Agendar meet" disabled={enableBtnMeet} actionFn={sendDataToAdmin} />
                     <div className="flex items-center mt-2 text-xs">
                       <BsShield className="text-boo-btn-bg" />
                       <span className="ml-2">
@@ -193,7 +208,11 @@ export default function ContactModal(props: IContactModalProps): JSX.Element {
                         onChange={(event) => setPhone(event.target.value)}
                       />
                     </div>
-                    <ActionBtn title="Agendar meet" disabled={enableBtnCall} />
+                    <ActionBtn
+                      title="Agendar meet"
+                      disabled={enableBtnCall}
+                      actionFn={sendDataToRequestAdmin}
+                    />
                     <div className="flex items-center mt-2 text-xs">
                       <BsShield className="text-boo-btn-bg" />
                       <span className="ml-2">
