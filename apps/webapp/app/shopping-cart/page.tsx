@@ -8,6 +8,7 @@ import { BsChevronCompactDown, BsChevronCompactUp } from 'react-icons/bs';
 import Footer from '../components/organisms/Footer';
 import SolutionSelectorModalEdit from '../components/molecules/SolutionSelectorModalEdit';
 import ActionBtn from '../components/atoms/ActionBtn';
+import ContactModal from "../components/organisms/ContactModal";
 
 export default function ShoppingCart(): JSX.Element {
   const {
@@ -17,11 +18,18 @@ export default function ShoppingCart(): JSX.Element {
     selectedIndustry,
   } = useAppContext();
 
+  const [showModalSelectSolution, setShowModalSelectSolution] =
+    useState<boolean>(false);
+
+  const [showModalContact, setShowModalContact] =
+    useState<boolean>(false);
+
+
+  const [modulesShow, setModulesShow] = useState<string[]>([]);
+
   const currentModulesSelected = modules.filter((nodule: IModule) =>
     selectedModules.includes(nodule.id)
   );
-
-  const [modulesShow, setModulesShow] = useState<string[]>([]);
 
   const setShowStatus = (id: string, status: boolean) => {
     if (status) {
@@ -59,8 +67,7 @@ export default function ShoppingCart(): JSX.Element {
     return formatByCurrencyMXN(subtotal + iva);
   };
 
-  const [showModalSelectSolution, setShowModalSelectSolution] =
-    useState<boolean>(false);
+
 
   const deleteModule = (id: string) => {
     setSelectedModules(
@@ -71,6 +78,7 @@ export default function ShoppingCart(): JSX.Element {
   const solutionsToShow = solutions.filter((solution: ISolution) =>
     selectedSolutions.includes(solution.id)
   );
+
   return (
     <div className="overflow-hidden flex flex-col min-h-screen">
       <SolutionSelectorModalEdit
@@ -197,13 +205,14 @@ export default function ShoppingCart(): JSX.Element {
                     <span>TOTAL</span>
                     <span>${getTotalPriceWhitIVA()}</span>
                   </div>
-                  <ActionBtn title="Construir" />
+                  <ActionBtn title="Construir" actionFn={() => setShowModalContact(true)} />
                 </div>
               </div>
             </div>
           </div>
         )}
       </div>
+      <ContactModal showModal={showModalContact} setShowModal={setShowModalContact}/>
       <Footer />
     </div>
   );

@@ -16,7 +16,7 @@ export interface ISolution {
 }
 const solutions: ISolution[] = [
   {
-    id: 'movil',
+    id: 'mobile',
     icon: <FaMobileAlt />,
     title: 'Aplicación para móvil',
     subtitle: 'Aplicación móvil disponible en las tiendas de Apple y Google.',
@@ -39,6 +39,7 @@ const solutions: ISolution[] = [
 
 // Data Industries
 export interface IAvailable {
+  id: string;
   icon: JSX.Element;
   title: string;
 }
@@ -61,14 +62,17 @@ const industries: IIndustry[] = [
     description: 'Breve descripción de la industria de máximo 2 líneas',
     available: [
       {
+        id: 'mobile',
         icon: <FaMobileAlt />,
         title: 'App móvil',
       },
       {
+        id: 'desktop',
         icon: <BiDesktop />,
         title: 'App de escritorio',
       },
       {
+        id: 'web',
         icon: <MdWeb />,
         title: 'Aplicación web',
       },
@@ -83,14 +87,17 @@ const industries: IIndustry[] = [
     description: 'Breve descripción de la industria de máximo 2 líneas',
     available: [
       {
+        id: 'mobile',
         icon: <FaMobileAlt />,
         title: 'App móvil',
       },
       {
+        id: 'desktop',
         icon: <BiDesktop />,
         title: 'App de escritorio',
       },
       {
+        id: 'web',
         icon: <MdWeb />,
         title: 'Aplicación web',
       },
@@ -105,14 +112,17 @@ const industries: IIndustry[] = [
     description: 'Breve descripción de la industria de máximo 2 líneas',
     available: [
       {
+        id: 'mobile',
         icon: <FaMobileAlt />,
         title: 'App móvil',
       },
       {
+        id: 'desktop',
         icon: <BiDesktop />,
         title: 'App de escritorio',
       },
       {
+        id: 'web',
         icon: <MdWeb />,
         title: 'Aplicación web',
       },
@@ -127,14 +137,17 @@ const industries: IIndustry[] = [
     description: 'Breve descripción de la industria de máximo 2 líneas',
     available: [
       {
+        id: 'mobile',
         icon: <FaMobileAlt />,
         title: 'App móvil',
       },
       {
+        id: 'desktop',
         icon: <BiDesktop />,
         title: 'App de escritorio',
       },
       {
+        id: 'web',
         icon: <MdWeb />,
         title: 'Aplicación web',
       },
@@ -149,14 +162,17 @@ const industries: IIndustry[] = [
     description: 'Breve descripción de la industria de máximo 2 líneas',
     available: [
       {
+        id: 'mobile',
         icon: <FaMobileAlt />,
         title: 'App móvil',
       },
       {
+        id: 'desktop',
         icon: <BiDesktop />,
         title: 'App de escritorio',
       },
       {
+        id: 'web',
         icon: <MdWeb />,
         title: 'Aplicación web',
       },
@@ -171,14 +187,17 @@ const industries: IIndustry[] = [
     description: 'Breve descripción de la industria de máximo 2 líneas',
     available: [
       {
+        id: 'mobile',
         icon: <FaMobileAlt />,
         title: 'App móvil',
       },
       {
+        id: 'desktop',
         icon: <BiDesktop />,
         title: 'App de escritorio',
       },
       {
+        id: 'web',
         icon: <MdWeb />,
         title: 'Aplicación web',
       },
@@ -193,14 +212,17 @@ const industries: IIndustry[] = [
     description: 'Breve descripción de la industria de máximo 2 líneas',
     available: [
       {
+        id: 'mobile',
         icon: <FaMobileAlt />,
         title: 'App móvil',
       },
       {
+        id: 'desktop',
         icon: <BiDesktop />,
         title: 'App de escritorio',
       },
       {
+        id: 'web',
         icon: <MdWeb />,
         title: 'Aplicación web',
       },

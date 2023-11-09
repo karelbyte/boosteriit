@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import CreateNow from '../atoms/CreateNow';
+import CreateNow from './CreateNow';
 import { BsCheck2 } from 'react-icons/bs';
 
 export default function Banner() {

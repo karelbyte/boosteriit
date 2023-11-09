@@ -3,6 +3,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { useRouter } from 'next/navigation';
 import useAppContext from '../../contexts/hookAppContext';
 import { solutions, ISolution } from '../../contexts/appData';
+import { IColorSolutions } from "../../../utils";
 
 interface ISolutionSelectorModalProps {
   children: JSX.Element;
@@ -24,7 +25,7 @@ export default function SolutionSelectorModal(
   const childrenWithProps = React.Children.map(children, (child) => {
     return React.cloneElement(child, {
       actionFn: () => {
-        if (child.props.actionFn) child.props.actionFn()
+        if (child.props.actionFn) child.props.actionFn();
         setShowModalSelectSolution(true);
       },
     });
@@ -52,7 +53,6 @@ export default function SolutionSelectorModal(
     setShowModalSelectSolution(false);
   };
 
-
   useEffect(() => {
     for (const solution of solutions) {
       if (document) {
@@ -72,6 +72,16 @@ export default function SolutionSelectorModal(
       : 'py-2 px-4 text-white bg-boo-btn-bg rounded hover:bg-boo-btn-bg-hover w-5/12';
   };
 
+  const classIconSolutions: IColorSolutions = {
+    web: 'p-4 mr-2 text-xs md:text-xl text-white border rounded-full border-boo-web bg-boo-web',
+    mobile:
+      'p-4 mr-2 text-xs md:text-xl text-boo-white border rounded-full border-boo-mobile bg-boo-mobile',
+    desktop:
+      'p-4 mr-2 text-xs md:text-xl text-white border rounded-full border-boo-desktop bg-boo-desktop',
+  };
+  const getColorIcon = (id: string): string =>  {
+    return classIconSolutions[id] || '';
+  };
 
   return (
     <>
@@ -96,7 +106,7 @@ export default function SolutionSelectorModal(
                     key={solution.id}
                     className="flex border justify-between rounded-lg py-4 px-6 my-2 items-center"
                   >
-                    <div className="p-4 mr-2 text-xs md:text-xl text-boo-btn-bg border rounded-full border-boo-blue-2 bg-boo-blue-2]">
+                    <div className={getColorIcon(solution.id)}>
                       {solution.icon}
                     </div>
                     <div className="w-9/12">

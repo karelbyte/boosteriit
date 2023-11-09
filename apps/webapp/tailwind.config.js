@@ -16,7 +16,10 @@ module.exports = {
         'boo-btn-bg': '#00B8EC',
         'boo-btn-bg-hover': '#007799',
         'boo-str-description': '#686767',
-        'boo-blue-2': '#CCF1FB'
+        'boo-blue-2': '#CCF1FB',
+        'boo-mobile': '#6EB7FF',
+        'boo-desktop': '#AEA1FF',
+        'boo-web': '#63D4DC',
       }
     },
   },

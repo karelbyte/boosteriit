@@ -10,6 +10,7 @@ import { IModule, modules } from '../contexts/appData';
 import ActionBtn from '../components/atoms/ActionBtn';
 import { useRouter } from 'next/navigation';
 import { formatByCurrencyMXN } from '../../utils';
+import { FaMobileAlt } from "react-icons/fa";
 export default function Modules(): JSX.Element {
   const router = useRouter();
   const {
@@ -95,7 +96,12 @@ export default function Modules(): JSX.Element {
                   className="flex flex-col px-2 py-4 w-full md:w-1/3"
                 >
                   <div className="flex flex-col justify-between border-t border-x p-4 rounded-t-lg h-full">
-                    <div className="border rounded-lg h-48 mb-4"></div>
+                    <div className="flex border rounded-lg h-48 mb-4">
+                      <div className="flex bg-boo-mobile h-8 text-white w-7/12 lg:w-6/12 xl:w-5/12 text-xs p-2 rounded-tr-lg self-end">
+                        <FaMobileAlt />
+                        <span className="ml-2">App movil</span>
+                      </div>
+                    </div>
                     <span className="text-[#161616] text-sm font-light mb-4">
                       {module.title}
                     </span>
