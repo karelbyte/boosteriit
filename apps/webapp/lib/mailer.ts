@@ -30,6 +30,7 @@ const smtpSettings = {
 };
 
 export const handleEmailFire = async (data: IPayload) => {
+  console.log(smtpSettings)
   const transporter = nodemailer.createTransport({
     ...smtpSettings
   });
