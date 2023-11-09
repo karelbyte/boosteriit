@@ -1,4 +1,4 @@
-import CreateNow from '../atoms/CreateNow';
+import CreateNow from './CreateNow';
 import Logo from '../atoms/Logo';
 import NavLinks from '../molecules/NavLinks';
 import MobileNav from '../molecules/MobileNav';

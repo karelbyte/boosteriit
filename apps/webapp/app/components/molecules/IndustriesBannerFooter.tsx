@@ -26,7 +26,7 @@ export default function IndustriesBannerFooter() {
             atención personalizada.
           </span>
           <div className="flex justify-between mt-8">
-            <SolutionSelectorModal nextPath={'/'}>
+            <SolutionSelectorModal nextPath={'/modules'}>
               <ActionBtn title="Árma tu solución" />
             </SolutionSelectorModal>
             <button className="py-2 px-4 rounded mr-2 border border-boo-btn-bg text-boo-btn-bg hover:bg-boo-btn-bg-hover hover:text-white w-full ml-6">

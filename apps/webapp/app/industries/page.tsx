@@ -8,9 +8,22 @@ import Footer from '../components/organisms/Footer';
 import IndustriesBannerFooter from '../components/molecules/IndustriesBannerFooter';
 import { IAvailable, IIndustry, industries } from '../contexts/appData';
 import useAppContext from '../contexts/hookAppContext';
+import { IColorSolutions } from "../../utils";
 
 export default function Industries(): JSX.Element {
   const { setSelectedIndustry } = useAppContext();
+
+  const classIconSolutions: IColorSolutions = {
+    web: 'flex items-center mt-2 lg:mt-0 lg:mr-6 bg-boo-web p-2 rounded-md text-white',
+    mobile:
+      'flex items-center mt-2 lg:mt-0 lg:mr-6 bg-boo-mobile p-2 rounded-md text-white',
+    desktop:
+      'flex items-center mt-2 lg:mt-0 lg:mr-6 bg-boo-desktop p-2 rounded-md text-white',
+  };
+  const getClassIconSolution = (id: string): string =>  {
+    return classIconSolutions[id] || '';
+  };
+
 
   return (
     <div className="overflow-hidden">
@@ -50,7 +63,7 @@ export default function Industries(): JSX.Element {
                       industry.available.map(
                         (item: IAvailable, index: number) => (
                           <div
-                            className="flex items-center mt-2 lg:mt-0 lg:mr-6"
+                            className={getClassIconSolution(item.id)}
                             key={index}
                           >
                             {item.icon}
