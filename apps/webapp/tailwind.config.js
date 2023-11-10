@@ -20,6 +20,7 @@ module.exports = {
         'boo-mobile': '#6EB7FF',
         'boo-desktop': '#AEA1FF',
         'boo-web': '#63D4DC',
+        'boo-green': '#24DE9C'
       }
     },
   },

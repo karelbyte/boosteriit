@@ -9,6 +9,8 @@ import Footer from '../components/organisms/Footer';
 import SolutionSelectorModalEdit from '../components/molecules/SolutionSelectorModalEdit';
 import ActionBtn from '../components/atoms/ActionBtn';
 import ContactModal from "../components/organisms/ContactModal";
+import DataSendModal from "../components/organisms/DataSendModal";
+import RequestSentModal from "../components/organisms/RequestSentModal";
 
 export default function ShoppingCart(): JSX.Element {
   const {
@@ -24,7 +26,19 @@ export default function ShoppingCart(): JSX.Element {
   const [showModalContact, setShowModalContact] =
     useState<boolean>(false);
 
+  const [showModalDataSend, setShowDataSend] =
+    useState<boolean>(false);
 
+  const [showModalRequest, setShowModalRequest] =
+    useState<boolean>(false);
+
+
+  const modalContactProps= {
+    showModal:showModalContact,
+    setShowModal:setShowModalContact,
+    activeModalSendSuccess: setShowDataSend,
+    activeModalRequestSuccess: setShowModalRequest
+  }
   const [modulesShow, setModulesShow] = useState<string[]>([]);
 
   const currentModulesSelected = modules.filter((nodule: IModule) =>
@@ -212,7 +226,9 @@ export default function ShoppingCart(): JSX.Element {
           </div>
         )}
       </div>
-      <ContactModal showModal={showModalContact} setShowModal={setShowModalContact}/>
+      <ContactModal {...modalContactProps}/>
+      <DataSendModal showModal={showModalDataSend} setShowModal={setShowDataSend}/>
+      <RequestSentModal showModal={showModalRequest} setShowModal={setShowModalRequest}/>
       <Footer />
     </div>
   );
