@@ -11,6 +11,14 @@ export interface IColorSolutions {
   [key: string]: string;
 }
 
+const classSolutions: IColorSolutions = {
+  web: 'bg-boo-web',
+  mobile:
+    'bg-boo-mobile',
+  desktop:
+    'bg-boo-desktop',
+};
+
 const exprRegEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
 const isValidEmail = (email: string): boolean => {
@@ -38,6 +46,7 @@ const getTotalDays = (current: IModule[]) => {
   }, 0);
 };
 export  {
+  classSolutions,
   getTotalDays,
   getTotalPrice,
   getDateNowFormat,

@@ -11,7 +11,12 @@ import useAppContext from '../contexts/hookAppContext';
 import Sections from '../components/organisms/Sections';
 import { AiOutlineClockCircle } from 'react-icons/ai';
 import { useRouter } from 'next/navigation';
-import { formatByCurrencyMXN, getTotalDays, getTotalPrice } from '../../utils';
+import {
+  classSolutions,
+  formatByCurrencyMXN,
+  getTotalDays,
+  getTotalPrice,
+} from '../../utils';
 import { IModule, ISolutionAvailable, modules } from '../../data/modules';
 import { BsChevronCompactDown, BsChevronCompactUp } from 'react-icons/bs';
 import useModules from '../hooks/modulesHook';
@@ -31,11 +36,8 @@ export default function Modules(): JSX.Element {
     currentModulesSelected,
     setCurrentModulesSelected,
     modulesWeb,
-    setModulesWeb,
     modulesDesktop,
-    setModulesDesktop,
     modulesMobile,
-    setModulesMobile,
   } = useModules();
 
   const [currentModules, setCurrentModules] = useState<IModule[]>(modules);
@@ -78,30 +80,6 @@ export default function Modules(): JSX.Element {
       modules.filter((nodule: IModule) => selectedModules.includes(nodule.id))
     );
   }, [selectedModules]);
-
-  useEffect(() => {
-    setModulesWeb(
-      currentModulesSelected.filter((module) =>
-        module.solutions.some(
-          (solution: ISolutionAvailable) => solution.id === 'web'
-        )
-      )
-    );
-    setModulesDesktop(
-      currentModulesSelected.filter((module) =>
-        module.solutions.some(
-          (solution: ISolutionAvailable) => solution.id === 'desktop'
-        )
-      )
-    );
-    setModulesMobile(
-      currentModulesSelected.filter((module) =>
-        module.solutions.some(
-          (solution: ISolutionAvailable) => solution.id === 'mobile'
-        )
-      )
-    );
-  }, [currentModulesSelected]);
 
   const addModules = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { id, checked } = event.target;
@@ -182,7 +160,11 @@ export default function Modules(): JSX.Element {
                 >
                   <div className="flex flex-col justify-between border-t border-x p-4 rounded-t-lg h-full">
                     <div className="flex border rounded-lg h-48 mb-4">
-                      <div className="flex bg-boo-mobile h-8 text-white w-7/12 lg:w-6/12 xl:w-5/12 text-xs p-2 rounded-tr-lg self-end">
+                      <div
+                        className={`flex ${
+                          classSolutions[module.solutions[0].id]
+                        } h-8 text-white w-7/12 lg:w-6/12 xl:w-5/12 text-xs p-2 rounded-tr-lg self-end`}
+                      >
                         {module.solutions[0].icon}
                         <span className="ml-2">
                           {module.solutions[0].title}

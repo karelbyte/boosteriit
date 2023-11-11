@@ -1,5 +1,5 @@
 'use client';
-import React, { JSX, useEffect, useState } from 'react';
+import React, { JSX, useState } from 'react';
 import Header from '../components/molecules/Header';
 import useAppContext from '../contexts/hookAppContext';
 import Footer from '../components/organisms/Footer';
@@ -9,11 +9,11 @@ import ContactModal from '../components/organisms/ContactModal';
 import DataSendModal from '../components/organisms/DataSendModal';
 import RequestSentModal from '../components/organisms/RequestSentModal';
 import { formatByCurrencyMXN, getTotalDays } from '../../utils';
-import { BsChevronCompactDown, BsChevronCompactUp } from 'react-icons/bs';
 import { ISolution, solutions } from '../../data/solutions';
 import { IModule } from '../../data/modules';
 import { AiOutlineClockCircle } from 'react-icons/ai';
 import useModules from '../hooks/modulesHook';
+import ShoppingCartSection from '../components/organisms/ShoppingCartSection';
 export default function ShoppingCart(): JSX.Element {
   const {
     selectedModules,
@@ -150,59 +150,12 @@ export default function ShoppingCart(): JSX.Element {
                         </p>
                       </div>
                     </div>
-                    {modulesMobile &&
-                      modulesMobile.map((module: IModule) => (
-                        <div key={module.id} className="w-full border-b">
-                          <div className="flex flex-col sm:flex-row  border-x bg-white p-4 justify-between items-center w-full">
-                            <div className="border h-16 w-16 bg-slate-50 mr-4"></div>
-                            <div className="w-8/12">
-                              <p>{module.title}</p>
-                              <span className="flex font-light text-xs text-boo-str-description mb-2 mt-2">
-                                {module.timeStr}
-                                <div
-                                  className="ml-4 text-boo-btn-bg underline cursor-pointer"
-                                  onClick={() => deleteModule(module.id)}
-                                >
-                                  eliminar
-                                </div>
-                              </span>
-                            </div>
-                            <span className="font-semibold text-lg ">
-                              $ {formatByCurrencyMXN(module.price)}
-                            </span>
-                          </div>
-                          <div className="border-x bg-white px-4 py-2 flex flex-col ">
-                            <div className="flex justify-between">
-                              <span className="ml-2 text-boo-gray-hard font-normal text-sm">
-                                Descripción del módulo
-                              </span>
-                              {canShow(module.id) ? (
-                                <div
-                                  onClick={() =>
-                                    setShowStatus(module.id, false)
-                                  }
-                                  className="cursor-pointer"
-                                >
-                                  <BsChevronCompactUp />
-                                </div>
-                              ) : (
-                                <div
-                                  onClick={() => setShowStatus(module.id, true)}
-                                  className="cursor-pointer"
-                                >
-                                  <BsChevronCompactDown />
-                                </div>
-                              )}
-                            </div>
-
-                            {canShow(module.id) && (
-                              <div className="mt-2 font-light text-boo-str-description text-sm p-2 border-t">
-                                <p>{module.description}</p>
-                              </div>
-                            )}
-                          </div>
-                        </div>
-                      ))}
+                    <ShoppingCartSection
+                      modules={modulesMobile}
+                      deleteModule={deleteModule}
+                      canShow={canShow}
+                      setShowStatus={setShowStatus}
+                    />
                     <div className="border-b border-x p-1 rounded-b-lg bg-white"></div>
                   </div>
                 )}
@@ -220,59 +173,12 @@ export default function ShoppingCart(): JSX.Element {
                         </p>
                       </div>
                     </div>
-                    {modulesDesktop &&
-                      modulesDesktop.map((module: IModule) => (
-                        <div key={module.id} className="w-full border-b">
-                          <div className="flex flex-col sm:flex-row  border-x bg-white p-4 justify-between items-center w-full">
-                            <div className="border h-16 w-16 bg-slate-50 mr-4"></div>
-                            <div className="w-8/12">
-                              <p>{module.title}</p>
-                              <span className="flex font-light text-xs text-boo-str-description mb-2 mt-2">
-                                {module.timeStr}
-                                <div
-                                  className="ml-4 text-boo-btn-bg underline cursor-pointer"
-                                  onClick={() => deleteModule(module.id)}
-                                >
-                                  eliminar
-                                </div>
-                              </span>
-                            </div>
-                            <span className="font-semibold text-lg ">
-                              $ {formatByCurrencyMXN(module.price)}
-                            </span>
-                          </div>
-                          <div className="border-x bg-white px-4 py-2 flex flex-col ">
-                            <div className="flex justify-between">
-                              <span className="ml-2 text-boo-gray-hard font-normal text-sm">
-                                Descripción del módulo
-                              </span>
-                              {canShow(module.id) ? (
-                                <div
-                                  onClick={() =>
-                                    setShowStatus(module.id, false)
-                                  }
-                                  className="cursor-pointer"
-                                >
-                                  <BsChevronCompactUp />
-                                </div>
-                              ) : (
-                                <div
-                                  onClick={() => setShowStatus(module.id, true)}
-                                  className="cursor-pointer"
-                                >
-                                  <BsChevronCompactDown />
-                                </div>
-                              )}
-                            </div>
-
-                            {canShow(module.id) && (
-                              <div className="mt-2 font-light text-boo-str-description text-sm p-2 border-t">
-                                <p>{module.description}</p>
-                              </div>
-                            )}
-                          </div>
-                        </div>
-                      ))}
+                    <ShoppingCartSection
+                      modules={modulesDesktop}
+                      deleteModule={deleteModule}
+                      canShow={canShow}
+                      setShowStatus={setShowStatus}
+                    />
                     <div className="border-b border-x p-1 rounded-b-lg bg-white"></div>
                   </div>
                 )}
@@ -290,59 +196,12 @@ export default function ShoppingCart(): JSX.Element {
                         </p>
                       </div>
                     </div>
-                    {modulesWeb &&
-                      modulesWeb.map((module: IModule) => (
-                        <div key={module.id} className="w-full border-b">
-                          <div className="flex flex-col sm:flex-row  border-x bg-white p-4 justify-between items-center w-full">
-                            <div className="border h-16 w-16 bg-slate-50 mr-4"></div>
-                            <div className="w-8/12">
-                              <p>{module.title}</p>
-                              <span className="flex font-light text-xs text-boo-str-description mb-2 mt-2">
-                                {module.timeStr}
-                                <div
-                                  className="ml-4 text-boo-btn-bg underline cursor-pointer"
-                                  onClick={() => deleteModule(module.id)}
-                                >
-                                  eliminar
-                                </div>
-                              </span>
-                            </div>
-                            <span className="font-semibold text-lg ">
-                              $ {formatByCurrencyMXN(module.price)}
-                            </span>
-                          </div>
-                          <div className="border-x bg-white px-4 py-2 flex flex-col ">
-                            <div className="flex justify-between">
-                              <span className="ml-2 text-boo-gray-hard font-normal text-sm">
-                                Descripción del módulo
-                              </span>
-                              {canShow(module.id) ? (
-                                <div
-                                  onClick={() =>
-                                    setShowStatus(module.id, false)
-                                  }
-                                  className="cursor-pointer"
-                                >
-                                  <BsChevronCompactUp />
-                                </div>
-                              ) : (
-                                <div
-                                  onClick={() => setShowStatus(module.id, true)}
-                                  className="cursor-pointer"
-                                >
-                                  <BsChevronCompactDown />
-                                </div>
-                              )}
-                            </div>
-
-                            {canShow(module.id) && (
-                              <div className="mt-2 font-light text-boo-str-description text-sm p-2 border-t">
-                                <p>{module.description}</p>
-                              </div>
-                            )}
-                          </div>
-                        </div>
-                      ))}
+                    <ShoppingCartSection
+                      modules={modulesWeb}
+                      deleteModule={deleteModule}
+                      canShow={canShow}
+                      setShowStatus={setShowStatus}
+                    />
                     <div className="border-b border-x p-1 rounded-b-lg bg-white"></div>
                   </div>
                 )}

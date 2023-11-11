@@ -7,23 +7,11 @@ import SolutionSelectorModal from '../components/molecules/SolutionSelectorModal
 import Footer from '../components/organisms/Footer';
 import IndustriesBannerFooter from '../components/molecules/IndustriesBannerFooter';
 import useAppContext from '../contexts/hookAppContext';
-import { IColorSolutions } from "../../utils";
+import { classSolutions } from '../../utils';
 import { IAvailable, IIndustry, industries } from '../../data/industries';
 
 export default function Industries(): JSX.Element {
   const { setSelectedIndustry } = useAppContext();
-
-  const classIconSolutions: IColorSolutions = {
-    web: 'flex items-center mt-2 lg:mt-0 lg:mr-6 bg-boo-web p-2 rounded-md text-white',
-    mobile:
-      'flex items-center mt-2 lg:mt-0 lg:mr-6 bg-boo-mobile p-2 rounded-md text-white',
-    desktop:
-      'flex items-center mt-2 lg:mt-0 lg:mr-6 bg-boo-desktop p-2 rounded-md text-white',
-  };
-  const getClassIconSolution = (id: string): string =>  {
-    return classIconSolutions[id] || '';
-  };
-
 
   return (
     <div className="overflow-hidden">
@@ -63,7 +51,9 @@ export default function Industries(): JSX.Element {
                       industry.available.map(
                         (item: IAvailable, index: number) => (
                           <div
-                            className={getClassIconSolution(item.id)}
+                            className={`flex items-center mt-2 lg:mt-0 lg:mr-6 ${
+                              classSolutions[item.id]
+                            } p-2 rounded-md text-white`}
                             key={index}
                           >
                             {item.icon}
