@@ -6,9 +6,9 @@ import ActionBtn from '../components/atoms/ActionBtn';
 import SolutionSelectorModal from '../components/molecules/SolutionSelectorModal';
 import Footer from '../components/organisms/Footer';
 import IndustriesBannerFooter from '../components/molecules/IndustriesBannerFooter';
-import { IAvailable, IIndustry, industries } from '../contexts/appData';
 import useAppContext from '../contexts/hookAppContext';
 import { IColorSolutions } from "../../utils";
+import { IAvailable, IIndustry, industries } from '../../data/industries';
 
 export default function Industries(): JSX.Element {
   const { setSelectedIndustry } = useAppContext();

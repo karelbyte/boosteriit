@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import { BsPlusLg } from 'react-icons/bs';
 import { BiHelpCircle } from 'react-icons/bi';
 import SlidesBtn from '../molecules/SlidesBtn';
-import { IIndustry, industries } from '../../contexts/appData';
+import { IIndustry, industries } from '../../../data/industries';
 import SolutionSelectorModalEdit from '../molecules/SolutionSelectorModalEdit';
 import useAppContext from '../../contexts/hookAppContext';
 

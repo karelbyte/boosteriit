@@ -5,7 +5,7 @@ import { BiHelpCircle } from 'react-icons/bi';
 import SlidesBtn from '../molecules/SlidesBtn';
 import SolutionSelectorModalEdit from '../molecules/SolutionSelectorModalEdit';
 import useAppContext from "../../contexts/hookAppContext";
-import { IModule, industries, modules } from "../../contexts/appData";
+import { IModule,  modules } from "../../../data/modules";
 
 interface IItem {
   id: number;

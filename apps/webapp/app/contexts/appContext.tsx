@@ -7,6 +7,8 @@ export interface ContextType {
   setSelectedIndustry: React.Dispatch<React.SetStateAction<string>>;
   selectedModules: string[];
   setSelectedModules: React.Dispatch<React.SetStateAction<string[]>>;
+  selectedSections: string[];
+  setSelectedSections: React.Dispatch<React.SetStateAction<string[]>>;
 }
 const AppContext = createContext<ContextType | null>(null);
 function AppContextProvider({ children }: { children: ReactNode }) {
@@ -16,6 +18,8 @@ function AppContextProvider({ children }: { children: ReactNode }) {
 
   const [selectedModules, setSelectedModules] = useState<string[]>([]);
 
+  const [selectedSections, setSelectedSections] = useState<string[]>([]);
+
   const contextProperties = {
     selectedSolutions,
     setSelectedSolutions,
@@ -23,6 +27,8 @@ function AppContextProvider({ children }: { children: ReactNode }) {
     setSelectedIndustry,
     selectedModules,
     setSelectedModules,
+    selectedSections,
+    setSelectedSections
   };
 
   return (

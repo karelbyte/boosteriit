@@ -1,6 +1,5 @@
 import MethCard, { IMethCard } from '../molecules/MethCard';
 import { JSX } from "react";
-
 export default function Methodologies(): JSX.Element {
   const methodologies: IMethCard[] = [
     {
