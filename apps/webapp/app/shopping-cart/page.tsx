@@ -14,6 +14,7 @@ import { IModule } from '../../data/modules';
 import { AiOutlineClockCircle } from 'react-icons/ai';
 import useModules from '../hooks/modulesHook';
 import ShoppingCartSection from '../components/organisms/ShoppingCartSection';
+import Helper from "../components/molecules/Helper";
 export default function ShoppingCart(): JSX.Element {
   const {
     selectedModules,
@@ -255,6 +256,7 @@ export default function ShoppingCart(): JSX.Element {
         showModal={showModalRequest}
         setShowModal={setShowModalRequest}
       />
+      <Helper/>
       <Footer />
     </div>
   );

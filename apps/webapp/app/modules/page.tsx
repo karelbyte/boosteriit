@@ -20,6 +20,7 @@ import {
 import { IModule, ISolutionAvailable, modules } from '../../data/modules';
 import { BsChevronCompactDown, BsChevronCompactUp } from 'react-icons/bs';
 import useModules from '../hooks/modulesHook';
+import Helper from "../components/molecules/Helper";
 
 export default function Modules(): JSX.Element {
   const router = useRouter();
@@ -401,6 +402,7 @@ export default function Modules(): JSX.Element {
           )}
         </div>
       </div>
+      <Helper/>
       <Footer />
     </div>
   );

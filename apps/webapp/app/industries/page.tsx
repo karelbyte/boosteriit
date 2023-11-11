@@ -9,6 +9,7 @@ import IndustriesBannerFooter from '../components/molecules/IndustriesBannerFoot
 import useAppContext from '../contexts/hookAppContext';
 import { classSolutions } from '../../utils';
 import { IAvailable, IIndustry, industries } from '../../data/industries';
+import Helper from "../components/molecules/Helper";
 
 export default function Industries(): JSX.Element {
   const { setSelectedIndustry } = useAppContext();
@@ -76,6 +77,7 @@ export default function Industries(): JSX.Element {
           </div>
         ))}
       <IndustriesBannerFooter />
+      <Helper/>
       <Footer />
     </div>
   );
