@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import CreateNow from './CreateNow';
 import { BsCheck2 } from 'react-icons/bs';
-
 export default function Banner() {
   return (
     <div className="flex flex-col justify-between py-2 px-8 mt-24 md:flex-row sm:py-4 sm:px-10 lg:px-20">

@@ -2,7 +2,7 @@ import React, { JSX, useEffect, useState } from "react";
 import { AiOutlineClose } from 'react-icons/ai';
 import { useRouter } from 'next/navigation';
 import useAppContext from '../../contexts/hookAppContext';
-import { solutions, ISolution } from '../../contexts/appData';
+import { solutions, ISolution } from '../../../data/solutions';
 import { IColorSolutions } from "../../../utils";
 
 interface ISolutionSelectorModalProps {

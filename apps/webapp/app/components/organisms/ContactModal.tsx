@@ -1,9 +1,9 @@
 import React, { JSX, useEffect, useState } from 'react';
 import Axios from 'axios'
+import Link from 'next/link';
+import ActionBtn from '../atoms/ActionBtn';
 import { AiOutlineClose } from 'react-icons/ai';
 import { BsShield } from 'react-icons/bs';
-import ActionBtn from '../atoms/ActionBtn';
-import Link from 'next/link';
 import { getDateNowFormat, isValidEmail } from '../../../utils';
 
 interface IContactModalProps {

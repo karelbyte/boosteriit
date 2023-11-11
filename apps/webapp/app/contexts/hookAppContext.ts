@@ -14,6 +14,8 @@ const useAppContext = (): ContextType => {
     setSelectedIndustry,
     selectedModules,
     setSelectedModules,
+    selectedSections,
+    setSelectedSections
   }: ContextType = context;
 
   return {
@@ -23,6 +25,8 @@ const useAppContext = (): ContextType => {
     setSelectedIndustry,
     selectedModules,
     setSelectedModules,
+    selectedSections,
+    setSelectedSections
   };
 };
 

@@ -1,8 +1,7 @@
 import type { JSX } from 'react';
 import React, { useEffect } from 'react';
-import ActionBtn from '../atoms/ActionBtn';
 import useAppContext from '../../contexts/hookAppContext';
-import { ISolution, solutions } from '../../contexts/appData';
+import { ISolution, solutions } from '../../../data/solutions';
 export default function SolutionsNav(): JSX.Element {
   const { selectedSolutions, setSelectedSolutions } = useAppContext();
 

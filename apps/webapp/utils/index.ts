@@ -1,3 +1,5 @@
+import { IModule } from "../data/modules";
+
 const formatByCurrencyMXN = (price: number) => {
   return new Intl.NumberFormat().format(price);
 };
@@ -8,6 +10,14 @@ export interface IColorSolutions {
   desktop: string;
   [key: string]: string;
 }
+
+const classSolutions: IColorSolutions = {
+  web: 'bg-boo-web',
+  mobile:
+    'bg-boo-mobile',
+  desktop:
+    'bg-boo-desktop',
+};
 
 const exprRegEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
@@ -23,7 +33,22 @@ const getDateNowFormat = () => {
   return `${year}-${month}-${day}`;
 }
 
+const getTotalPrice = (current: IModule[]) => {
+  const total = current.reduce((carry: number, module: IModule) => {
+    return carry + module.price;
+  }, 0);
+  return formatByCurrencyMXN(total);
+};
+
+const getTotalDays = (current: IModule[]) => {
+  return current.reduce((carry: number, module: IModule) => {
+    return carry + module.days;
+  }, 0);
+};
 export  {
+  classSolutions,
+  getTotalDays,
+  getTotalPrice,
   getDateNowFormat,
   isValidEmail,
   formatByCurrencyMXN
