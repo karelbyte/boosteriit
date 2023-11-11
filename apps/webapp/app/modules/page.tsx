@@ -11,9 +11,10 @@ import useAppContext from '../contexts/hookAppContext';
 import Sections from '../components/organisms/Sections';
 import { AiOutlineClockCircle } from 'react-icons/ai';
 import { useRouter } from 'next/navigation';
-import { formatByCurrencyMXN } from '../../utils';
+import { formatByCurrencyMXN, getTotalDays, getTotalPrice } from '../../utils';
 import { IModule, ISolutionAvailable, modules } from '../../data/modules';
 import { BsChevronCompactDown, BsChevronCompactUp } from 'react-icons/bs';
+import useModules from '../hooks/modulesHook';
 
 export default function Modules(): JSX.Element {
   const router = useRouter();
@@ -26,17 +27,18 @@ export default function Modules(): JSX.Element {
     selectedSections,
   } = useAppContext();
 
+  const {
+    currentModulesSelected,
+    setCurrentModulesSelected,
+    modulesWeb,
+    setModulesWeb,
+    modulesDesktop,
+    setModulesDesktop,
+    modulesMobile,
+    setModulesMobile,
+  } = useModules();
+
   const [currentModules, setCurrentModules] = useState<IModule[]>(modules);
-
-  const [currentModulesSelected, setCurrentModulesSelected] = useState<
-    IModule[]
-  >([]);
-
-  const [modulesWeb, setModulesWeb] = useState<IModule[]>([]);
-
-  const [modulesDesktop, setModulesDesktop] = useState<IModule[]>([]);
-
-  const [modulesMobile, setModulesMobile] = useState<IModule[]>([]);
 
   useEffect(() => {
     if (selectedSolutions.length > 0) {
@@ -115,19 +117,6 @@ export default function Modules(): JSX.Element {
     setSelectedIndustry('');
     setSelectedSolutions([]);
     setSelectedModules([]);
-  };
-
-  const getTotalPrice = (current: IModule[]) => {
-    const total = current.reduce((carry: number, module: IModule) => {
-      return carry + module.price;
-    }, 0);
-    return formatByCurrencyMXN(total);
-  };
-
-  const getTotalDays = (current: IModule[]) => {
-    return current.reduce((carry: number, module: IModule) => {
-      return carry + module.days;
-    }, 0);
   };
 
   const deleteModule = (id: string) => {
@@ -372,7 +361,8 @@ export default function Modules(): JSX.Element {
                   </div>
                 )}
               </div>
-              {modulesWeb && canShow('web') &&
+              {modulesWeb &&
+                canShow('web') &&
                 modulesWeb.map((module: IModule) => (
                   <div className="flex flex-col border-b mb-6 " key={module.id}>
                     <div className="flex text-xs justify-between">

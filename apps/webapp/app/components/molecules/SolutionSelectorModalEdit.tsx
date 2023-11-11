@@ -37,7 +37,9 @@ export default function SolutionSelectorModalEdit(
   };
 
   const closeModal = () => {
-    setSelectedSolutions([])
+    if (!edit) {
+      setSelectedSolutions([]);
+    }
     setShowModalEdit(false);
   };
 

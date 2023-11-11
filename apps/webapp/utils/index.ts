@@ -1,3 +1,5 @@
+import { IModule } from "../data/modules";
+
 const formatByCurrencyMXN = (price: number) => {
   return new Intl.NumberFormat().format(price);
 };
@@ -23,7 +25,21 @@ const getDateNowFormat = () => {
   return `${year}-${month}-${day}`;
 }
 
+const getTotalPrice = (current: IModule[]) => {
+  const total = current.reduce((carry: number, module: IModule) => {
+    return carry + module.price;
+  }, 0);
+  return formatByCurrencyMXN(total);
+};
+
+const getTotalDays = (current: IModule[]) => {
+  return current.reduce((carry: number, module: IModule) => {
+    return carry + module.days;
+  }, 0);
+};
 export  {
+  getTotalDays,
+  getTotalPrice,
   getDateNowFormat,
   isValidEmail,
   formatByCurrencyMXN
