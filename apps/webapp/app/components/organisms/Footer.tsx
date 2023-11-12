@@ -3,6 +3,7 @@ import { JSX } from 'react';
 import { BiLogoLinkedin } from 'react-icons/bi';
 import { FaFacebookF } from 'react-icons/fa';
 import { BiLogoInstagram } from 'react-icons/bi';
+import Link from "next/link";
 export default function Footer(): JSX.Element {
   return (
     <div className="">
@@ -11,12 +12,12 @@ export default function Footer(): JSX.Element {
           <Logo />
         </div>
         <div className="flex flex-col justify-start w-full md:w-1/4">
-          <a className="mb-2 md:mr-20 hover:text-gray-900 cursor-pointer">
+          <Link href={'/industries'} className="mb-2 md:mr-20 hover:text-gray-900 cursor-pointer">
             Industria
-          </a>
-          <a className="mb-4 md:mr-20 hover:text-gray-900 cursor-pointer">
+          </Link>
+          <Link href={'/modules'} className="mb-4 md:mr-20 hover:text-gray-900 cursor-pointer">
             Arma tu solución
-          </a>
+          </Link>
         </div>
         <div className="flex flex-col justify-start w-full md:w-1/4">
           <span className="mb-2">Contacto:</span>

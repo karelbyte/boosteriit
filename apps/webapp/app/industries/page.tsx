@@ -19,7 +19,7 @@ export default function Industries(): JSX.Element {
       <Header title={'Industrias'} urlBack={'/'}>
         <Search placeholder="Buscar por nombre o industria" />
       </Header>
-      <div className="p-6 bg-[#ECF5FE] text-black mt-20 xl:text-center mb-6 py-2 px-8 md:flex-row sm:py-4 sm:px-10 lg:px-20">
+      <div className="p-6 bg-boo-blue text-black mt-20 xl:text-center mb-6 py-2 px-8 md:flex-row sm:py-4 sm:px-10 lg:px-20">
         Elige la industria a la que pertenece tu empresa y personalizaremos una
         solución que se adapte perfectamente a tus necesidades de negocio.
       </div>
@@ -31,7 +31,7 @@ export default function Industries(): JSX.Element {
           >
             <div className="flex flex-col md:flex-row justify-between w-full border-b p-4">
               <div className="border w-full md:w-1/2 h-72 rounded-lg bg-slate-50 md:mr-12 p-4">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center text-[#00B8EC] border border-[#CCF1FB] bg-[#CCF1FB]">
+                <div className="w-8 h-8 rounded-full flex items-center justify-center text-boo-btn-bg border border-boo-blue-2 bg-boo-blue-2">
                   {industry.icon}
                 </div>
               </div>
@@ -46,7 +46,7 @@ export default function Industries(): JSX.Element {
                 </div>
 
                 <div className="">
-                  <span className="text-[#686767]">Disponible para:</span>
+                  <span className="text-boo-gray-hard">Disponible para:</span>
                   <div className="flex flex-col xl:flex-row mb-6 mt-2">
                     {industry.available &&
                       industry.available.map(
@@ -64,7 +64,7 @@ export default function Industries(): JSX.Element {
                       )}
                   </div>
                   <div className="w-full md:w-8/12">
-                    <SolutionSelectorModal nextPath="/modules">
+                    <SolutionSelectorModal nextPath="/industries-details">
                       <ActionBtn
                         title="+ Agregar"
                         actionFn={() => setSelectedIndustry(industry.id)}

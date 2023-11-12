@@ -147,7 +147,7 @@ export const industries: IIndustry[] = [
     ],
   },
   {
-    id: 'Entertainment',
+    id: 'entertainment',
     image: '',
     icon: <FaGuitar />,
     title: 'Entretenimiento',
