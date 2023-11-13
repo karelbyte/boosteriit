@@ -24,8 +24,8 @@ resource "aws_security_group" "boosteriit_dev" {
   }
 
   ingress {
-    from_port   = 4200
-    to_port     = 4200
+    from_port   = 3000
+    to_port     = 3000
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
