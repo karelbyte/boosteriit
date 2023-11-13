@@ -13,6 +13,7 @@ import IndustryOrBuild from "./components/organisms/IndustryOrBuild";
 import CatalogIndustry from "./components/organisms/CatalogIndustry";
 import CatalogBuild from "./components/organisms/CatalogBuild";
 import Glue from "./components/organisms/Glue";
+import Helper from './components/molecules/Helper';
 export default async function Index(): Promise<JSX.Element> {
   return (
     <div className="overflow-hidden">
@@ -25,6 +26,7 @@ export default async function Index(): Promise<JSX.Element> {
       <Stories />
       <Flow/>
       <ProfileOfOurExperts />
+      <Helper/>
       <Footer/>
       <Glue/>
     </div>

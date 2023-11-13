@@ -13,7 +13,7 @@ export default function PdfTemplate(props: any) {
     <Document>
       <Page size="A4" style={styles.page}>
         <View style={styles.banner}>
-          <Image src="./public/assets/boosteriit.svg" />
+          <Image src="./public/assets/boosteriit.png" />
         </View>
         <View style={styles.section}>
           <Text>{name}</Text>

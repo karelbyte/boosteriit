@@ -20,6 +20,7 @@ import {
 import { IModule, ISolutionAvailable, modules } from '../../data/modules';
 import { BsChevronCompactDown, BsChevronCompactUp } from 'react-icons/bs';
 import useModules from '../hooks/modulesHook';
+import Helper from "../components/molecules/Helper";
 
 export default function Modules(): JSX.Element {
   const router = useRouter();
@@ -139,7 +140,6 @@ export default function Modules(): JSX.Element {
         <Search placeholder="Buscar por nombre o industria" />
       </Header>
       <SolutionsNav />
-
       <div className="flex flex-col md:flex-row h-full">
         <div className="flex flex-col w-full md:w-9/12">
           <div className="border-b px-10 md:px-10 py-4">
@@ -402,6 +402,7 @@ export default function Modules(): JSX.Element {
           )}
         </div>
       </div>
+      <Helper/>
       <Footer />
     </div>
   );

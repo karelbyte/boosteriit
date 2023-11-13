@@ -1,5 +1,5 @@
 import React, { JSX, useEffect, useState } from 'react';
-import Axios from 'axios'
+import Axios from 'axios';
 import Link from 'next/link';
 import ActionBtn from '../atoms/ActionBtn';
 import { AiOutlineClose } from 'react-icons/ai';
@@ -21,6 +21,7 @@ export default function ContactModal(props: IContactModalProps): JSX.Element {
   }: IContactModalProps = props;
   const [activeTab, setActiveTab] = useState<string>('tab1');
 
+  const [sending, setSending] = useState<boolean>(false);
   const min = getDateNowFormat();
 
   const [name, setName] = useState<string>('');
@@ -53,19 +54,28 @@ export default function ContactModal(props: IContactModalProps): JSX.Element {
   };
 
   const sendDataToAdmin = async () => {
-    const response = await Axios.post('/api/mail', {
+    setSending(true);
+    await Axios.post('/api/mail', {
       name,
       email,
       date,
-      time
-    })
-    console.log(response)
-    setShowModal(false)
+      time,
+    });
+    setSending(false);
+    setShowModal(false);
     if (activeModalSendSuccess) activeModalSendSuccess(true);
   };
 
-  const sendDataToRequestAdmin = () => {
-    setShowModal(false)
+  const sendDataToRequestAdmin = async () => {
+    setSending(true);
+    await Axios.post('/api/mail', {
+      name,
+      email,
+      date,
+      time,
+    });
+    setSending(false);
+    setShowModal(false);
     if (activeModalRequestSuccess) activeModalRequestSuccess(true);
   };
   return (
@@ -166,7 +176,17 @@ export default function ContactModal(props: IContactModalProps): JSX.Element {
                         />
                       </div>
                     </div>
-                    <ActionBtn title="Agendar meet" disabled={enableBtnMeet} actionFn={sendDataToAdmin} />
+                    {sending ? (
+                      <div className="flex justify-center p-4 text-boo-btn-bg">
+                        <div className="dot-pulse"></div>
+                      </div>
+                    ) : (
+                      <ActionBtn
+                        title="Agendar meet"
+                        disabled={enableBtnMeet}
+                        actionFn={sendDataToAdmin}
+                      />
+                    )}
                     <div className="flex items-center mt-2 text-xs">
                       <BsShield className="text-boo-btn-bg" />
                       <span className="ml-2">
@@ -217,11 +237,18 @@ export default function ContactModal(props: IContactModalProps): JSX.Element {
                         onChange={(event) => setPhone(event.target.value)}
                       />
                     </div>
-                    <ActionBtn
-                      title="Agendar meet"
-                      disabled={enableBtnCall}
-                      actionFn={sendDataToRequestAdmin}
-                    />
+                    {sending ? (
+                      <div className="flex justify-center p-4 text-boo-btn-bg">
+                        <div className="dot-pulse"></div>
+                      </div>
+
+                    ) : (
+                      <ActionBtn
+                        title="Agendar meet"
+                        disabled={enableBtnCall}
+                        actionFn={sendDataToRequestAdmin}
+                      />
+                    )}
                     <div className="flex items-center mt-2 text-xs">
                       <BsShield className="text-boo-btn-bg" />
                       <span className="ml-2">
