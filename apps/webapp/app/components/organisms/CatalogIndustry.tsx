@@ -54,9 +54,9 @@ export default function CatalogIndustry(): JSX.Element {
 
   const [showModal, setShowModal] = useState<boolean>(false);
 
-  const setShowModalAndIndustry = (id: string) => {
+  const setShowModalAndIndustry = (industry: IIndustry) => {
     setShowModal(true);
-    setSelectedIndustry(id);
+    setSelectedIndustry(industry);
   };
 
   return (
@@ -93,7 +93,7 @@ export default function CatalogIndustry(): JSX.Element {
                   </p>
                   <button
                     className="flex py-3.5 px-6 w-full justify-center text-white bg-boo-btn-bg border-0 focus:outline-none rounded hover:bg-boo-btn-bg-hover"
-                    onClick={() => setShowModalAndIndustry(item.id)}
+                    onClick={() => setShowModalAndIndustry(item)}
                   >
                     <span className="flex items-center">
                       <BsPlusLg />

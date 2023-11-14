@@ -11,16 +11,17 @@ import useAppContext from '../contexts/hookAppContext';
 import Sections from '../components/organisms/Sections';
 import { AiOutlineClockCircle } from 'react-icons/ai';
 import { useRouter } from 'next/navigation';
+import { IModule, modules } from '../../data/modules';
+import { BsChevronCompactDown, BsChevronCompactUp } from 'react-icons/bs';
+import useModules from '../hooks/modulesHook';
+import Helper from '../components/molecules/Helper';
+import { ISolution } from '../../data/solutions';
 import {
   classSolutions,
   formatByCurrencyMXN,
   getTotalDays,
   getTotalPrice,
 } from '../../utils';
-import { IModule, ISolutionAvailable, modules } from '../../data/modules';
-import { BsChevronCompactDown, BsChevronCompactUp } from 'react-icons/bs';
-import useModules from '../hooks/modulesHook';
-import Helper from "../components/molecules/Helper";
 
 export default function Modules(): JSX.Element {
   const router = useRouter();
@@ -46,8 +47,10 @@ export default function Modules(): JSX.Element {
   useEffect(() => {
     if (selectedSolutions.length > 0) {
       const modulesSolutions = modules.filter((module: IModule) =>
-        module.solutions.some((solution: ISolutionAvailable) =>
-          selectedSolutions.includes(solution.id)
+        module.solutions.some((solution: ISolution) =>
+          selectedSolutions
+            .map((solution: ISolution) => solution.id)
+            .includes(solution.id)
         )
       );
       if (selectedSections.length > 0) {
@@ -77,23 +80,22 @@ export default function Modules(): JSX.Element {
   }, [selectedSolutions, selectedSections]);
 
   useEffect(() => {
-    setCurrentModulesSelected(
-      modules.filter((nodule: IModule) => selectedModules.includes(nodule.id))
-    );
+    setCurrentModulesSelected(selectedModules);
   }, [selectedModules]);
 
   const addModules = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { id, checked } = event.target;
     if (checked) {
-      setSelectedModules([...selectedModules, id]);
+      const moduleFound = modules.find((module) => module.id == id);
+      if (moduleFound) setSelectedModules([...selectedModules, moduleFound]);
     } else {
       setSelectedModules(
-        selectedModules.filter((option: string) => option !== id)
+        selectedModules.filter((module: IModule) => module.id !== id)
       );
     }
   };
   const backActionBtn = () => {
-    setSelectedIndustry('');
+    setSelectedIndustry(null);
     setSelectedSolutions([]);
     setSelectedModules([]);
   };
@@ -106,7 +108,7 @@ export default function Modules(): JSX.Element {
       if (elem) elem.checked = false;
     }
     setSelectedModules(
-      selectedModules.filter((module: string) => module !== id)
+      selectedModules.filter((module: IModule) => module.id !== id)
     );
   };
   const goToUrl = (url: string) => {
@@ -171,7 +173,7 @@ export default function Modules(): JSX.Element {
                         </span>
                       </div>
                     </div>
-                    <span className="text-[#161616] text-sm font-light mb-4">
+                    <span className="text-boo-gray-hard text-sm font-light mb-4">
                       {module.title}
                     </span>
                     <div className="flex flex-col">
@@ -180,7 +182,7 @@ export default function Modules(): JSX.Element {
                       </span>
                       <div className="flex">
                         <AiOutlineClockCircle />
-                        <span className="font-light text-xs text-[#686767] mb-2 ml-4">
+                        <span className="font-light text-xs text-boo-str-description mb-2 ml-4">
                           {module.timeStr}
                         </span>
                       </div>
@@ -193,7 +195,7 @@ export default function Modules(): JSX.Element {
                       id={module.id}
                       onChange={addModules}
                     />
-                    <span className="ml-2 text-[#161616] font-normal text-sm">
+                    <span className="ml-2 text-boo-gray-hard font-normal text-sm">
                       Agregar a la solución
                     </span>
                   </div>
@@ -201,7 +203,7 @@ export default function Modules(): JSX.Element {
               ))}
           </div>
           <div className="flex justify-center my-6">
-            <button className="py-2 px-4 rounded mr-2 border border-[#00B8EC] text-[#00B8EC] hover:bg-[#007799] hover:text-white w-8/12 md:w-3/12">
+            <button className="py-2 px-4 rounded mr-2 border border-[boo-btn-bg text-boo-btn-bg hover:bg-boo-btn-bg-hover hover:text-white w-8/12 md:w-3/12">
               <i className="fas fa-plus"></i> Cargar mas
             </button>
           </div>
@@ -316,7 +318,6 @@ export default function Modules(): JSX.Element {
                 <span className="font-light text-xs text-boo-str-description mb-2 ml-2">
                   Tiempo aprox de implementación
                   <p className="font-semibold mt-2">
-                    {' '}
                     {getTotalDays(modulesDesktop)} días
                   </p>
                 </span>
@@ -371,7 +372,6 @@ export default function Modules(): JSX.Element {
                 <span className="font-light text-xs text-boo-str-description mb-2 ml-2">
                   Tiempo aprox de implementación
                   <p className="font-semibold mt-2">
-                    {' '}
                     {getTotalDays(modulesWeb)} días
                   </p>
                 </span>
@@ -402,7 +402,7 @@ export default function Modules(): JSX.Element {
           )}
         </div>
       </div>
-      <Helper/>
+      <Helper />
       <Footer />
     </div>
   );

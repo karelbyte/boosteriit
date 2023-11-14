@@ -1,11 +1,11 @@
 import React, { JSX, useEffect } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
-import useAppContext from '../../contexts/hookAppContext';
 import { solutions, ISolution } from '../../../data/solutions';
 import { useRouter } from 'next/navigation';
+import useSolutions from "../../hooks/solutionsHook.ts";
 
 interface ISolutionSelectorModalProps {
-  currentSolutions: string[];
+  currentSolutions: ISolution[];
   showModalEdit: boolean;
   setShowModalEdit: React.Dispatch<React.SetStateAction<boolean>>;
   edit?: boolean;
@@ -22,19 +22,8 @@ export default function SolutionSelectorModalEdit(
     edit,
     nextPath,
   }: ISolutionSelectorModalProps = props;
-  const { setSelectedSolutions, selectedSolutions } = useAppContext();
-
   const router = useRouter();
-  const checkOptions = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { id, checked } = event.target;
-    if (checked) {
-      setSelectedSolutions([...currentSolutions, id]);
-    } else {
-      setSelectedSolutions(
-        selectedSolutions.filter((option: string) => option !== id)
-      );
-    }
-  };
+  const {   checkOptions, setSelectedSolutions, selectedSolutions } = useSolutions();
 
   const closeModal = () => {
     if (!edit) {
@@ -50,17 +39,19 @@ export default function SolutionSelectorModalEdit(
           solution.id
         ) as HTMLInputElement;
         if (elem) {
-          elem.checked = currentSolutions.includes(solution.id);
+          elem.checked = currentSolutions
+            .map((selectedSolution: ISolution) => selectedSolution.id)
+            .includes(solution.id);
         }
       }
     }
-  }, [currentSolutions, showModalEdit]);
+  }, [currentSolutions]);
 
   const goToUrl = () => {
     router.push(nextPath || '/');
   };
 
-  const getStyle = (options: string[]) => {
+  const getStyle = (options: ISolution[]) => {
     return options.length === 0
       ? 'py-2 px-4 text-white bg-gray-300 rounded w-5/12'
       : 'py-2 px-4 text-white bg-[#00B8EC] rounded hover:bg-[#007799] w-5/12';

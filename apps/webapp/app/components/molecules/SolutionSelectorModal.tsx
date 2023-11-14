@@ -1,23 +1,24 @@
-import React, { JSX, useEffect, useState } from "react";
+import React, { JSX, useEffect, useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import { useRouter } from 'next/navigation';
 import useAppContext from '../../contexts/hookAppContext';
 import { solutions, ISolution } from '../../../data/solutions';
-import { IColorSolutions } from "../../../utils";
+import { IColorSolutions } from '../../../utils';
+import useSolutions from '../../hooks/solutionsHook.ts';
 
 interface ISolutionSelectorModalProps {
   children: JSX.Element;
   nextPath: string;
-  edit?: boolean
+  edit?: boolean;
 }
 
 export default function SolutionSelectorModal(
   props: ISolutionSelectorModalProps
 ): JSX.Element {
   const { children, nextPath, edit }: ISolutionSelectorModalProps = props;
-
   const router = useRouter();
   const { selectedSolutions, setSelectedSolutions } = useAppContext();
+  const { checkOptions } = useSolutions();
 
   const [showModalSelectSolution, setShowModalSelectSolution] =
     useState<boolean>(false);
@@ -35,17 +36,6 @@ export default function SolutionSelectorModal(
     router.push(nextPath);
   };
 
-  const checkOptions = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { id, checked } = event.target;
-    if (checked) {
-      setSelectedSolutions([...selectedSolutions, id]);
-    } else {
-      setSelectedSolutions(
-        selectedSolutions.filter((option: string) => option !== id)
-      );
-    }
-  };
-
   const closeModal = () => {
     if (!edit) {
       setSelectedSolutions([]);
@@ -60,13 +50,15 @@ export default function SolutionSelectorModal(
           solution.id
         ) as HTMLInputElement;
         if (elem) {
-          elem.checked = selectedSolutions.includes(solution.id);
+          elem.checked = selectedSolutions
+            .map((selectedSolution: ISolution) => selectedSolution.id)
+            .includes(solution.id);
         }
       }
     }
   }, [selectedSolutions, showModalSelectSolution]);
 
-  const getStyle = (options: string[]) => {
+  const getStyle = (options: ISolution[]) => {
     return options.length === 0
       ? 'py-2 px-4 text-white bg-gray-300 rounded w-5/12'
       : 'py-2 px-4 text-white bg-boo-btn-bg rounded hover:bg-boo-btn-bg-hover w-5/12';
@@ -79,7 +71,7 @@ export default function SolutionSelectorModal(
     desktop:
       'p-4 mr-2 text-xs md:text-xl text-white border rounded-full border-boo-desktop bg-boo-desktop',
   };
-  const getColorIcon = (id: string): string =>  {
+  const getColorIcon = (id: string): string => {
     return classIconSolutions[id] || '';
   };
 

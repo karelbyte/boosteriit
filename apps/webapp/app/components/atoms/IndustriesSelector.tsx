@@ -14,15 +14,18 @@ export default function IndustriesSelector(): JSX.Element {
   };
 
   useEffect(() => {
-    const current = industries.find(
-      (industry: IIndustry) => industry.id == selectedIndustry
-    );
-    if (current) setCurrentIndustrySelected(current);
+    setCurrentIndustrySelected(selectedIndustry);
   }, [selectedIndustry]);
+
+  useEffect(() => {
+    if (selectedIndustry === null) {
+      setSelectedIndustry(industries[0]);
+    }
+  }, []);
 
   const selectOptionFn = (industry: IIndustry) => {
     toggleMenu();
-    setSelectedIndustry(industry.id);
+    setSelectedIndustry(industry);
   };
 
   return (

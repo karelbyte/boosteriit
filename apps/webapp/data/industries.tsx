@@ -27,7 +27,7 @@ export const industries: IIndustry[] = [
     image: '',
     title: 'Viajes',
     subtitle: 'Reservas de viajes y hospedaje',
-    description: 'Breve descripción de la industria de máximo 2 líneas',
+    description: 'Encontrarás una aplicación base, diseñada para gestionar los viajes de tus clientes y recibir el pago de tus productos y servicios de forma automatizada y ágil.',
     available: [
       {
         id: 'mobile',
@@ -77,7 +77,7 @@ export const industries: IIndustry[] = [
     image: '',
     title: 'Bienes y raíces',
     subtitle: 'Compra, venta y renta de inmuebles',
-    description: 'Breve descripción de la industria de máximo 2 líneas',
+    description: 'Encontrarás una aplicación base, diseñada para mostrar las propiedades, dar seguimiento a prospectos y visitas, así como recibir el pago de transacciones de forma automatizada y ágil.',
     available: [
       {
         id: 'mobile',
@@ -97,12 +97,12 @@ export const industries: IIndustry[] = [
     ],
   },
   {
-    id: 'Restaurant',
+    id: 'restaurant',
     icon: <PiHamburgerBold />,
     image: '',
     title: 'Restaurante',
     subtitle: 'Restaurante',
-    description: 'Breve descripción de la industria de máximo 2 líneas',
+    description: 'Encontraras una aplicación base, diseñada para gestionar los pedidos de tus clientes y recibir el pago de sus consumos de forma automatizada y facil.',
     available: [
       {
         id: 'mobile',
