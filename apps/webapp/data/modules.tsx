@@ -2,6 +2,7 @@ import React, { JSX } from 'react';
 import { FaMobileAlt } from "react-icons/fa";
 import { BiDesktop } from "react-icons/bi";
 import { MdWeb } from "react-icons/md";
+import { ISolution } from "./solutions";
 export interface ISolutionAvailable {
   id: string;
   icon: JSX.Element;
@@ -16,7 +17,7 @@ export interface IModule {
   price: number;
   timeStr: string;
   days: number;
-  solutions: ISolutionAvailable[];
+  solutions: ISolution[];
   sections: string[];
 }
 export const modules: IModule[] = [
@@ -35,6 +36,7 @@ export const modules: IModule[] = [
         id: 'mobile',
         icon: <FaMobileAlt />,
         title: 'App móvil',
+        subtitle: ''
       }
     ],
     sections: ['s1']
@@ -53,6 +55,7 @@ export const modules: IModule[] = [
         id: 'desktop',
         icon: <BiDesktop />,
         title: 'App desktop',
+        subtitle: ''
       }
     ],
     sections: ['s2']
@@ -71,6 +74,7 @@ export const modules: IModule[] = [
         id: 'web',
         icon: <MdWeb />,
         title: 'App web',
+        subtitle: ''
       }
     ],
     sections: ['s1']
@@ -89,6 +93,7 @@ export const modules: IModule[] = [
         id: 'mobile',
         icon: <FaMobileAlt />,
         title: 'App móvil',
+        subtitle: ''
       }
     ],
     sections: ['s1']
@@ -107,6 +112,7 @@ export const modules: IModule[] = [
         id: 'mobile',
         icon: <FaMobileAlt />,
         title: 'App móvil',
+        subtitle: ''
       }
     ],
     sections: ['s1']
@@ -125,6 +131,7 @@ export const modules: IModule[] = [
         id: 'mobile',
         icon: <FaMobileAlt />,
         title: 'App móvil',
+        subtitle: ''
       }
     ],
     sections: ['s1']
@@ -143,6 +150,7 @@ export const modules: IModule[] = [
         id: 'mobile',
         icon: <FaMobileAlt />,
         title: 'App móvil',
+        subtitle: ''
       }
     ],
     sections: ['s1']
@@ -161,6 +169,7 @@ export const modules: IModule[] = [
         id: 'mobile',
         icon: <FaMobileAlt />,
         title: 'App móvil',
+        subtitle: ''
       }
     ],
     sections: ['s1']
@@ -179,6 +188,7 @@ export const modules: IModule[] = [
         id: 'mobile',
         icon: <FaMobileAlt />,
         title: 'App móvil',
+        subtitle: ''
       }
     ],
     sections: ['s1']
@@ -197,6 +207,7 @@ export const modules: IModule[] = [
         id: 'mobile',
         icon: <FaMobileAlt />,
         title: 'App móvil',
+        subtitle: ''
       }
     ],
     sections: ['s1']
@@ -215,6 +226,7 @@ export const modules: IModule[] = [
         id: 'mobile',
         icon: <FaMobileAlt />,
         title: 'App móvil',
+        subtitle: ''
       }
     ],
     sections: ['s1']
@@ -233,6 +245,7 @@ export const modules: IModule[] = [
         id: 'mobile',
         icon: <FaMobileAlt />,
         title: 'App móvil',
+        subtitle: ''
       }
     ],
     sections: ['s1']

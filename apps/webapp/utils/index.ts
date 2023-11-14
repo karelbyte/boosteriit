@@ -1,4 +1,5 @@
 import { IModule } from "../data/modules";
+import { additionals, IAdditional } from "../data/addtionals";
 
 const formatByCurrencyMXN = (price: number) => {
   return new Intl.NumberFormat().format(price);
@@ -45,7 +46,14 @@ const getTotalDays = (current: IModule[]) => {
     return carry + module.days;
   }, 0);
 };
+
+const getAdditional = (solution: string, industry: string) => {
+  return additionals
+    .filter((additional: IAdditional) => additional.industry === industry)
+    .filter((additional: IAdditional) => additional.solution === solution);
+};
 export  {
+  getAdditional,
   classSolutions,
   getTotalDays,
   getTotalPrice,

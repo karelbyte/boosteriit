@@ -21,7 +21,9 @@ module.exports = {
         'boo-desktop': '#AEA1FF',
         'boo-web': '#63D4DC',
         'boo-green': '#24DE9C',
-        'boo-bg': '#F4F4F4'
+        'boo-bg': '#F4F4F4',
+        'boo-alert': '#FFC700',
+        'boo-alert-bg': '#ffc7001f'
       }
     },
   },

@@ -67,7 +67,7 @@ export default function Industries(): JSX.Element {
                     <SolutionSelectorModal nextPath="/industries-details">
                       <ActionBtn
                         title="+ Agregar"
-                        actionFn={() => setSelectedIndustry(industry.id)}
+                        actionFn={() => setSelectedIndustry(industry)}
                       />
                     </SolutionSelectorModal>
                   </div>

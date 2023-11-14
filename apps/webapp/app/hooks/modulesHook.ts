@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { IModule, ISolutionAvailable, modules } from '../../data/modules';
+import { IModule, ISolutionAvailable } from '../../data/modules';
 import useAppContext from '../contexts/hookAppContext';
 
 export default function useModules() {
@@ -9,9 +9,7 @@ export default function useModules() {
   >([]);
 
   useEffect(() => {
-    setCurrentModulesSelected(
-      modules.filter((nodule: IModule) => selectedModules.includes(nodule.id))
-    );
+    setCurrentModulesSelected(selectedModules);
   }, [selectedModules]);
 
   const [modulesWeb, setModulesWeb] = useState<IModule[]>([]);

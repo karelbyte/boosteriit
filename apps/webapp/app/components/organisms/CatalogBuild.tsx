@@ -68,9 +68,9 @@ export default function CatalogBuild(): JSX.Element {
 
   const [showModal, setShowModal] = useState<boolean>(false);
 
-  const setShowModalAndModule = (id: string) => {
+  const setShowModalAndModule = (module: IModule) => {
     setShowModal(true);
-    setSelectedModules([id]);
+    setSelectedModules([module]);
   };
 
   return (
@@ -101,7 +101,7 @@ export default function CatalogBuild(): JSX.Element {
                   <p className="text-[#686767] mb-6 text-xs">{item.subtitle}</p>
                   <button
                     className={`flex py-3.5 px-6 w-full justify-center text-white bg-boo-btn-bg border-0 focus:outline-none rounded hover:bg-boo-btn-bg-hover`}
-                    onClick={() => setShowModalAndModule(item.id) }
+                    onClick={() => setShowModalAndModule(item) }
                   >
                     <span className="flex items-center">
                       <BsPlusLg />

@@ -15,7 +15,13 @@ const useAppContext = (): ContextType => {
     selectedModules,
     setSelectedModules,
     selectedSections,
-    setSelectedSections
+    setSelectedSections,
+    selectedIndustriesTemplate,
+    setSelectedIndustriesTemplate,
+    selectedIntegrations,
+    setSelectedIntegrations,
+    selectedAddtionals,
+    setSelectedAddtionals
   }: ContextType = context;
 
   return {
@@ -26,7 +32,13 @@ const useAppContext = (): ContextType => {
     selectedModules,
     setSelectedModules,
     selectedSections,
-    setSelectedSections
+    setSelectedSections,
+    selectedIndustriesTemplate,
+    setSelectedIndustriesTemplate,
+    selectedIntegrations,
+    setSelectedIntegrations,
+    selectedAddtionals,
+    setSelectedAddtionals
   };
 };
 
