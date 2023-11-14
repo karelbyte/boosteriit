@@ -12,4 +12,9 @@ npx nx run webapp:build
 pm2 stop main
 pm2 delete main
 
-pm2 start ./dist/apps/webapp/npm --name "main" -- start
+root_dir=$(pwd)
+
+cd ./dist/apps/webapp
+pm2 start npm --name "main" -- start
+
+cd $root_dir
