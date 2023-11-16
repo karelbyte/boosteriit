@@ -46,7 +46,7 @@ export default function Banner() {
         <CreateNow customStyle="py-3.5 w-full" />
       </div>
       <Image
-        src="/assets/hero.svg"
+        src="/assets/market.svg"
         width="100"
         height="140"
         className="w-auto md:w-1/2 lg:w-2/5"

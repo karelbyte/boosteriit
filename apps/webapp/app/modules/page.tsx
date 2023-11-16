@@ -19,8 +19,8 @@ import { ISolution } from '../../data/solutions';
 import {
   classSolutions,
   formatByCurrencyMXN,
+  getSubtotalPriceFormat,
   getTotalDays,
-  getTotalPrice,
 } from '../../utils';
 
 export default function Modules(): JSX.Element {
@@ -134,11 +134,7 @@ export default function Modules(): JSX.Element {
 
   return (
     <div className="overflow-hidden">
-      <Header
-        title={'Arma tu solución'}
-        urlBack={'/industries'}
-        actionFn={backActionBtn}
-      >
+      <Header title={'Arma tu solución'} urlBack={'/'} actionFn={backActionBtn}>
         <Search placeholder="Buscar por nombre o industria" />
       </Header>
       <SolutionsNav />
@@ -254,7 +250,7 @@ export default function Modules(): JSX.Element {
                 ))}
               <div className="flex justify-between bg-boo-blue p-1 text-sm">
                 <p>Total</p>
-                <p>$ {getTotalPrice(modulesMobile)}</p>
+                <p>$ {getSubtotalPriceFormat(modulesMobile)}</p>
               </div>
               <div className="flex my-4">
                 <AiOutlineClockCircle />
@@ -311,7 +307,7 @@ export default function Modules(): JSX.Element {
                 ))}
               <div className="flex justify-between bg-boo-blue p-1 text-sm">
                 <p>Total</p>
-                <p>$ {getTotalPrice(modulesDesktop)}</p>
+                <p>$ {getSubtotalPriceFormat(modulesDesktop)}</p>
               </div>
               <div className="flex my-4 item">
                 <AiOutlineClockCircle />
@@ -365,7 +361,7 @@ export default function Modules(): JSX.Element {
                 ))}
               <div className="flex justify-between bg-boo-blue p-1 text-sm">
                 <p>Total</p>
-                <p>$ {getTotalPrice(modulesWeb)}</p>
+                <p>$ {getSubtotalPriceFormat(modulesWeb)}</p>
               </div>
               <div className="flex my-4 item">
                 <AiOutlineClockCircle />
@@ -382,7 +378,7 @@ export default function Modules(): JSX.Element {
             <>
               <div className="flex justify-between p-2">
                 <p>Total de los productos</p>
-                <p>$ {getTotalPrice(currentModulesSelected)}</p>
+                <p>$ {getSubtotalPriceFormat(currentModulesSelected)}</p>
               </div>
               <div className="flex my-4 item items-center">
                 <AiOutlineClockCircle className="text-boo-btn-bg" />

@@ -5,6 +5,7 @@ import ActionBtn from '../atoms/ActionBtn';
 import { AiOutlineClose } from 'react-icons/ai';
 import { BsShield } from 'react-icons/bs';
 import { getDateNowFormat, isValidEmail } from '../../../utils';
+import useAppContext from "../../contexts/hookAppContext";
 
 interface IContactModalProps {
   showModal: boolean;
@@ -19,6 +20,14 @@ export default function ContactModal(props: IContactModalProps): JSX.Element {
     activeModalSendSuccess,
     activeModalRequestSuccess,
   }: IContactModalProps = props;
+
+  const {
+    selectedIndustriesTemplate,
+    selectedAddtionals,
+    selectedIntegrations,
+    selectedModules,
+  } = useAppContext();
+
   const [activeTab, setActiveTab] = useState<string>('tab1');
 
   const [sending, setSending] = useState<boolean>(false);
@@ -54,29 +63,56 @@ export default function ContactModal(props: IContactModalProps): JSX.Element {
   };
 
   const sendDataToAdmin = async () => {
-    setSending(true);
-    await Axios.post('/api/mail', {
-      name,
-      email,
-      date,
-      time,
-    });
-    setSending(false);
-    setShowModal(false);
-    if (activeModalSendSuccess) activeModalSendSuccess(true);
+    try {
+      setSending(true);
+      const data = {
+        name,
+        email,
+        date,
+        time,
+        selectedIndustriesTemplate,
+        selectedModules,
+        selectedAddtionals,
+        selectedIntegrations,
+        type: 'agent'
+      }
+      await Axios.post('/api/mail', data);
+      setSending(false);
+      setShowModal(false);
+      if (activeModalSendSuccess) activeModalSendSuccess(true);
+    } catch (e) {
+      setSending(false);
+      setShowModal(false);
+      if (activeModalSendSuccess) activeModalSendSuccess(true);
+    }
+
   };
 
   const sendDataToRequestAdmin = async () => {
-    setSending(true);
-    await Axios.post('/api/mail', {
-      name,
-      email,
-      date,
-      time,
-    });
-    setSending(false);
-    setShowModal(false);
-    if (activeModalRequestSuccess) activeModalRequestSuccess(true);
+    try {
+      setSending(true);
+      const data = {
+        name,
+        email,
+        date,
+        time,
+        phone,
+        selectedIndustriesTemplate,
+        selectedModules,
+        selectedAddtionals,
+        selectedIntegrations,
+        type: 'request'
+      }
+      await Axios.post('/api/mail', data);
+      setSending(false);
+      setShowModal(false);
+      if (activeModalRequestSuccess) activeModalRequestSuccess(true);
+    } catch (e) {
+      setShowModal(false);
+      setShowModal(false);
+      if (activeModalRequestSuccess) activeModalRequestSuccess(true);
+    }
+
   };
   return (
     <>

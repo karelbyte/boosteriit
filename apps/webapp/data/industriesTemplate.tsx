@@ -2,6 +2,7 @@ import React, { JSX } from 'react';
 import { BiDesktop } from 'react-icons/bi';
 import { MdWeb } from 'react-icons/md';
 import { FaMobileAlt } from 'react-icons/fa';
+import { CiPlane } from "react-icons/ci";
 
 export interface IFeature {
   id: string;
@@ -34,11 +35,11 @@ const restaurant: IIndustryTemplate[] = [
     title: 'Aplicación web',
     days: 66,
     price: 487500,
-    image: '/assets/industries/mobile.svg',
-    image_slide1: '/assets/industries/mobile.svg',
-    image_slide2: '/assets/industries/mobile.svg',
-    image_slide3: '/assets/industries/mobile.svg',
-    image_slide4: '/assets/industries/mobile.svg',
+    image: '/assets/industries/restaurant/image.svg',
+    image_slide1: '/assets/industries/restaurant/rest1.svg',
+    image_slide2: '/assets/industries/restaurant/rest2.svg',
+    image_slide3: '/assets/industries/restaurant/rest3.svg',
+    image_slide4: '/assets/industries/restaurant/rest4.svg',
     features: [
       {
         id: 'template_web_restaurant_social',
@@ -106,11 +107,11 @@ const restaurant: IIndustryTemplate[] = [
     days: 73,
     price: 559000,
     title: 'Aplicación de escritorio',
-    image: '/assets/industries/mobile.svg',
-    image_slide1: '/assets/industries/mobile.svg',
-    image_slide2: '/assets/industries/mobile.svg',
-    image_slide3: '/assets/industries/mobile.svg',
-    image_slide4: '/assets/industries/mobile.svg',
+    image: '/assets/industries/restaurant/image.svg',
+    image_slide1: '/assets/industries/restaurant/rest1.svg',
+    image_slide2: '/assets/industries/restaurant/rest2.svg',
+    image_slide3: '/assets/industries/restaurant/rest3.svg',
+    image_slide4: '/assets/industries/restaurant/rest4.svg',
     features: [
       {
         id: 'template_desktop_restaurant_social',
@@ -177,11 +178,11 @@ const restaurant: IIndustryTemplate[] = [
     title: 'Aplicación Móvil',
     days: 50,
     price: 466200,
-    image: '/assets/industries/mobile.svg',
-    image_slide1: '/assets/industries/mobile.svg',
-    image_slide2: '/assets/industries/mobile.svg',
-    image_slide3: '/assets/industries/mobile.svg',
-    image_slide4: '/assets/industries/mobile.svg',
+    image: '/assets/industries/restaurant/image.svg',
+    image_slide1: '/assets/industries/restaurant/rest1.svg',
+    image_slide2: '/assets/industries/restaurant/rest2.svg',
+    image_slide3: '/assets/industries/restaurant/rest3.svg',
+    image_slide4: '/assets/industries/restaurant/rest4.svg',
     features: [
       {
         id: 'template_mobile_restaurant_social',
@@ -241,4 +242,73 @@ const restaurant: IIndustryTemplate[] = [
     ],
   },
 ];
-export const industriesTemplate: IIndustryTemplate[] = [...restaurant];
+
+const trips: IIndustryTemplate[] = [
+  {
+    id: 'template_web_trips',
+    solution: 'web',
+    industry: 'trips',
+    icon: <CiPlane />,
+    title: 'Aplicación web',
+    days: 66,
+    price: 487500,
+    image: '/assets/industries/trips/image.svg',
+    image_slide1: '/assets/industries/trips/trip1.svg',
+    image_slide2: '/assets/industries/trips/trip2.svg',
+    image_slide3: '/assets/industries/trips/trip3.svg',
+    image_slide4: '/assets/industries/trips/trip4.svg',
+    features: [
+      {
+        id: 'template_web_trips_social',
+        title: 'Home público con promociones',
+        days: 30,
+        price: 25000,
+      },
+      {
+        id: 'template_web_trips_catalogo',
+        title: 'Registro de usuario con correo electrónico o redes sociales',
+        days: 80,
+        price: 50000,
+      },
+      {
+        id: 'template_web_trips_system',
+        title: 'Gestión de Hoteles',
+        days: 80,
+        price: 45000,
+      },
+      {
+        id: 'template_web_trips_table',
+        title: 'Gestión de Vuelos',
+        days: 80,
+        price: 50000,
+      },
+
+      {
+        id: 'template_web_trips_profile',
+        title: 'Gestión de Paquetes Turísticos',
+        days: 40,
+        price: 30000,
+      },
+      {
+        id: 'template_web_trips_menu',
+        title: 'Carrito de compras',
+        days: 60,
+        price: 50000,
+      },
+      {
+        id: 'template_web_trips_notification',
+        title:
+          'Notificaciones',
+        days: 40,
+        price: 40000,
+      },
+      {
+        id: 'template_web_trips_payment',
+        title: 'Geolocalización del lugar, hotel o producto',
+        days: 40,
+        price: 45000,
+      },
+    ],
+  },
+]
+export const industriesTemplate: IIndustryTemplate[] = [...restaurant, ...trips];

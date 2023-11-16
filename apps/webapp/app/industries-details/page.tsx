@@ -23,7 +23,11 @@ import {
   industriesTemplate,
 } from '../../data/industriesTemplate';
 import { IIntegration, integrations } from '../../data/integrations';
-import { formatByCurrencyMXN, getAdditional } from "../../utils";
+import {
+  formatByCurrencyMXN,
+  getAdditional,
+  getSubtotalPriceFormat,
+} from '../../utils';
 import { additionals, IAdditional } from '../../data/addtionals';
 
 export default function IndustriesDetails(): JSX.Element {
@@ -35,9 +39,15 @@ export default function IndustriesDetails(): JSX.Element {
     setSelectedIndustriesTemplate,
     selectedAddtionals,
     setSelectedAddtionals,
+    selectedIntegrations,
+    setSelectedIntegrations,
   } = useAppContext();
 
   const [showDetails, setShowDetails] = useState<string[]>(['mobile']);
+
+  const buildShoppingCart = () => {
+    router.push('/shopping-cart');
+  };
 
   const setShowDetailsFn = (id: string, status: boolean) => {
     if (status) {
@@ -49,10 +59,6 @@ export default function IndustriesDetails(): JSX.Element {
 
   const canShowDetails = (id: string) => {
     return showDetails.find((solution: string) => solution === id);
-  };
-
-  const goToUrl = (url: string) => {
-    router.push(url);
   };
 
   useEffect(() => {
@@ -73,20 +79,11 @@ export default function IndustriesDetails(): JSX.Element {
           (additional: IAdditional) =>
             additional.industry === selectedIndustry?.id
         )
-        .filter(
-          (additional: IAdditional) =>
-            solutions.includes(additional.solution)
+        .filter((additional: IAdditional) =>
+          solutions.includes(additional.solution)
         )
     );
   }, [selectedSolutions, selectedIndustry]);
-
-
-  const getTotalPrice = (current: IIndustryTemplate[]) => {
-    const total = current.reduce((carry: number, module: IIndustryTemplate) => {
-      return carry + module.price;
-    }, 0);
-    return formatByCurrencyMXN(total);
-  };
 
   const checkOptions = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { id, checked } = event.target;
@@ -120,6 +117,23 @@ export default function IndustriesDetails(): JSX.Element {
       }
     }
   }, [selectedIndustriesTemplate]);
+
+  const setIntegrations = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { id, checked } = event.target;
+    if (checked) {
+      const integration = integrations.find(
+        (integration: IIntegration) => integration.id == id
+      );
+      if (integration)
+        setSelectedIntegrations([...selectedIntegrations, integration]);
+    } else {
+      setSelectedIntegrations(
+        selectedIntegrations.filter(
+          (integration: IIntegration) => integration.id !== id
+        )
+      );
+    }
+  };
 
   return (
     <div className="overflow-hidden">
@@ -192,7 +206,7 @@ export default function IndustriesDetails(): JSX.Element {
                         </div>
                         <div className="flex justify-center p-4 bg-boo-bg w-4/12">
                           <Image
-                            src={template.image_slide1}
+                            src={template.image_slide2}
                             width="150"
                             height="140"
                             priority
@@ -202,7 +216,7 @@ export default function IndustriesDetails(): JSX.Element {
                         </div>
                         <div className="flex justify-center p-4 bg-boo-bg w-4/12">
                           <Image
-                            src={template.image_slide1}
+                            src={template.image_slide3}
                             width="150"
                             height="140"
                             priority
@@ -212,7 +226,7 @@ export default function IndustriesDetails(): JSX.Element {
                         </div>
                         <div className="flex justify-center p-4 bg-boo-bg w-4/12">
                           <Image
-                            src={template.image_slide1}
+                            src={template.image_slide4}
                             width="150"
                             height="140"
                             priority
@@ -322,6 +336,8 @@ export default function IndustriesDetails(): JSX.Element {
                         <input
                           type="checkbox"
                           className="accent-green-400 cursor-pointer"
+                          onChange={setIntegrations}
+                          id={integration.id}
                         />
                         <span className="text-boo-str-description">
                           {integration.title}
@@ -359,14 +375,13 @@ export default function IndustriesDetails(): JSX.Element {
               ))}
             {selectedIndustriesTemplate.length > 0 && (
               <>
-                {' '}
                 <div className="flex justify-between p-2">
                   <p>Total de los productos</p>
-                  <p>$ {getTotalPrice(selectedIndustriesTemplate)}</p>
+                  <p>$ {getSubtotalPriceFormat(selectedIndustriesTemplate)}</p>
                 </div>
                 <ActionBtn
                   title="Agregar al carrito"
-                  actionFn={() => goToUrl('/shopping-cart')}
+                  actionFn={buildShoppingCart}
                 ></ActionBtn>
               </>
             )}
