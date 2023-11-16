@@ -52,7 +52,7 @@ export default function Industries(): JSX.Element {
                       industry.available.map(
                         (item: IAvailable, index: number) => (
                           <div
-                            className={`flex items-center mt-2 lg:mt-0 lg:mr-6 ${
+                            className={`flex items-center mt-2 lg:mt-2 lg:mr-6 ${
                               classSolutions[item.id]
                             } p-2 rounded-md text-white`}
                             key={index}

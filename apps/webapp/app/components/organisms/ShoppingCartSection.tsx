@@ -23,12 +23,12 @@ export default function ShoppingCartSection(
       {modules &&
         modules.map((module: IModule) => (
           <div key={module.id} className="w-full border-b">
-            <div className="flex flex-col sm:flex-row  border-x bg-white p-4 justify-between items-center w-full">
+            <div className="flex flex-col sm:flex-row border-x bg-white p-4 justify-between items-center w-full">
               <div className="border h-16 w-16 bg-slate-50 mr-4"></div>
-              <div className="w-8/12">
+              <div className="w-full md:w-8/12">
                 <p>{module.title}</p>
                 <span className="flex font-light text-xs text-boo-str-description mb-2 mt-2">
-                  {module.timeStr}
+                  <span> {module.timeStr}</span>
                   <div
                     className="ml-4 text-boo-btn-bg underline cursor-pointer"
                     onClick={() => deleteModule(module.id)}
@@ -36,8 +36,11 @@ export default function ShoppingCartSection(
                     eliminar
                   </div>
                 </span>
+                <span className="flex md:hidden font-semibold text-lg ">
+                $ {formatByCurrencyMXN(module.price)}
+              </span>
               </div>
-              <span className="font-semibold text-lg ">
+              <span className="hidden md:flex font-semibold text-lg ">
                 $ {formatByCurrencyMXN(module.price)}
               </span>
             </div>

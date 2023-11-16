@@ -3,20 +3,27 @@ import { IModule, ISolutionAvailable } from '../../data/modules';
 import useAppContext from '../contexts/hookAppContext';
 
 export default function useModules() {
-  const { selectedModules } = useAppContext();
+  const { selectedModules, setSelectedModules } = useAppContext();
   const [currentModulesSelected, setCurrentModulesSelected] = useState<
     IModule[]
   >([]);
-
-  useEffect(() => {
-    setCurrentModulesSelected(selectedModules);
-  }, [selectedModules]);
 
   const [modulesWeb, setModulesWeb] = useState<IModule[]>([]);
 
   const [modulesDesktop, setModulesDesktop] = useState<IModule[]>([]);
 
   const [modulesMobile, setModulesMobile] = useState<IModule[]>([]);
+
+  const deleteModule = (id: string) => {
+    setSelectedModules(
+      selectedModules.filter((module: IModule) => module.id !== id)
+    );
+  };
+
+
+  useEffect(() => {
+    setCurrentModulesSelected(selectedModules);
+  }, [selectedModules]);
 
   useEffect(() => {
     setModulesWeb(
@@ -43,6 +50,7 @@ export default function useModules() {
   }, [currentModulesSelected]);
 
   return {
+    deleteModule,
     currentModulesSelected,
     setCurrentModulesSelected,
     modulesWeb,
