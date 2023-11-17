@@ -5,13 +5,14 @@ import ActionBtn from '../atoms/ActionBtn';
 import { AiOutlineClose } from 'react-icons/ai';
 import { BsShield } from 'react-icons/bs';
 import { getDateNowFormat, isValidEmail } from '../../../utils';
-import useAppContext from "../../contexts/hookAppContext";
+import useAppContext from '../../contexts/hookAppContext';
 
 interface IContactModalProps {
   showModal: boolean;
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
   activeModalSendSuccess?: React.Dispatch<React.SetStateAction<boolean>>;
   activeModalRequestSuccess?: React.Dispatch<React.SetStateAction<boolean>>;
+  activeModalError?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 export default function ContactModal(props: IContactModalProps): JSX.Element {
   const {
@@ -19,6 +20,7 @@ export default function ContactModal(props: IContactModalProps): JSX.Element {
     setShowModal,
     activeModalSendSuccess,
     activeModalRequestSuccess,
+    activeModalError,
   }: IContactModalProps = props;
 
   const {
@@ -26,6 +28,7 @@ export default function ContactModal(props: IContactModalProps): JSX.Element {
     selectedAddtionals,
     selectedIntegrations,
     selectedModules,
+    selectedIndustry,
   } = useAppContext();
 
   const [activeTab, setActiveTab] = useState<string>('tab1');
@@ -62,58 +65,38 @@ export default function ContactModal(props: IContactModalProps): JSX.Element {
     setShowModal(false);
   };
 
-  const sendDataToAdmin = async () => {
+  const build = async (type: string) => {
+    const data = {
+      name,
+      email,
+      date,
+      time,
+      phone,
+      selectedIndustriesTemplate,
+      selectedModules,
+      selectedAddtionals,
+      selectedIntegrations,
+      selectedIndustry,
+      type,
+    };
     try {
-      setSending(true);
-      const data = {
-        name,
-        email,
-        date,
-        time,
-        selectedIndustriesTemplate,
-        selectedModules,
-        selectedAddtionals,
-        selectedIntegrations,
-        type: 'agent'
+      const result = await Axios.post('/api/mail', data);
+      setSending(false);
+      setShowModal(false);
+      if (type === 'request' && activeModalRequestSuccess) {
+        activeModalRequestSuccess(true);
       }
-      await Axios.post('/api/mail', data);
-      setSending(false);
-      setShowModal(false);
-      if (activeModalSendSuccess) activeModalSendSuccess(true);
+      if (type === 'request' && activeModalSendSuccess) {
+        activeModalSendSuccess(true);
+      }
     } catch (e) {
+      console.log('entro')
       setSending(false);
       setShowModal(false);
-      if (activeModalSendSuccess) activeModalSendSuccess(true);
+      if (activeModalError) activeModalError(true);
     }
-
   };
 
-  const sendDataToRequestAdmin = async () => {
-    try {
-      setSending(true);
-      const data = {
-        name,
-        email,
-        date,
-        time,
-        phone,
-        selectedIndustriesTemplate,
-        selectedModules,
-        selectedAddtionals,
-        selectedIntegrations,
-        type: 'request'
-      }
-      await Axios.post('/api/mail', data);
-      setSending(false);
-      setShowModal(false);
-      if (activeModalRequestSuccess) activeModalRequestSuccess(true);
-    } catch (e) {
-      setShowModal(false);
-      setShowModal(false);
-      if (activeModalRequestSuccess) activeModalRequestSuccess(true);
-    }
-
-  };
   return (
     <>
       {showModal && (
@@ -220,7 +203,7 @@ export default function ContactModal(props: IContactModalProps): JSX.Element {
                       <ActionBtn
                         title="Agendar meet"
                         disabled={enableBtnMeet}
-                        actionFn={sendDataToAdmin}
+                        actionFn={() => build('meet')}
                       />
                     )}
                     <div className="flex items-center mt-2 text-xs">
@@ -277,12 +260,11 @@ export default function ContactModal(props: IContactModalProps): JSX.Element {
                       <div className="flex justify-center p-4 text-boo-btn-bg">
                         <div className="dot-pulse"></div>
                       </div>
-
                     ) : (
                       <ActionBtn
                         title="Agendar meet"
                         disabled={enableBtnCall}
-                        actionFn={sendDataToRequestAdmin}
+                        actionFn={() => build('request')}
                       />
                     )}
                     <div className="flex items-center mt-2 text-xs">

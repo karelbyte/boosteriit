@@ -1,13 +1,20 @@
 import React, { JSX } from 'react';
 import { AiOutlineClose, AiFillCheckCircle } from 'react-icons/ai';
 import ActionBtn from '../atoms/ActionBtn';
+import { useRouter } from "next/navigation";
+import useAppContext from "../../contexts/hookAppContext";
+import useShoppingCart from "../../hooks/shoppingCartHook";
 interface IContactModalProps {
   showModal: boolean;
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 export default function DataSendModal(props: IContactModalProps): JSX.Element {
   const { showModal, setShowModal }: IContactModalProps = props;
-
+  const { clear } = useShoppingCart();
+  const clearShoppingCart = () => {
+    setShowModal(false)
+    clear()
+  }
   return (
     <>
       {showModal && (
@@ -35,7 +42,7 @@ export default function DataSendModal(props: IContactModalProps): JSX.Element {
               <div className="w-1/3 mt-4">
                 <ActionBtn
                   title="Entendido"
-                  actionFn={() => setShowModal(false)}
+                  actionFn={clearShoppingCart}
                 ></ActionBtn>
               </div>
             </div>

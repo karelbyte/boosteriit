@@ -8,11 +8,8 @@ import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
   const res = await request.json();
-  const {
-    name,
-    email,
-    date,
-  } = res;
+  const { name, email, date } = res;
+
   const fileName = `cliente_${name}_${date}.pdf`;
   const unix = new Date().getTime();
   const fullFilePath = `./public/pdfs/${name}_${date}_${unix}.pdf`;

@@ -13,7 +13,7 @@ interface IEmailTemplateProps {
   email: string;
   date: string;
   time: string;
-  phone: string;
+  phone?: string;
   selectedIndustriesTemplate: IIndustryTemplate[];
   selectedModules: IModule[];
   selectedAddtionals: IAdditional[];

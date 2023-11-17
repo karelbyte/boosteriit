@@ -26,6 +26,7 @@ import {
   getSubtotalPrice,
   getSubtotalPriceFormat,
 } from '../../utils';
+import ErrorModal from '../components/organisms/ErrorModal';
 export default function ShoppingCart(): JSX.Element {
   const {
     selectedSolutions,
@@ -51,11 +52,14 @@ export default function ShoppingCart(): JSX.Element {
 
   const [showModalRequest, setShowModalRequest] = useState<boolean>(false);
 
+  const [showModalError, setShowModalError] = useState<boolean>(false);
+
   const modalContactProps = {
     showModal: showModalContact,
     setShowModal: setShowModalContact,
     activeModalSendSuccess: setShowDataSend,
     activeModalRequestSuccess: setShowModalRequest,
+    activeModalError: setShowModalError
   };
   const [modulesShow, setModulesShow] = useState<string[]>([]);
 
@@ -410,6 +414,7 @@ export default function ShoppingCart(): JSX.Element {
         showModal={showModalRequest}
         setShowModal={setShowModalRequest}
       />
+      <ErrorModal showModal={showModalError} setShowModal={setShowModalError} />
       <Helper />
       <div className="mt-10 md:mt-0">
         <Footer />
