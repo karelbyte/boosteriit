@@ -52,7 +52,7 @@ export const industries: IIndustry[] = [
     image: '',
     title: 'Fintech',
     subtitle: 'Para compañías de tecnología financiera',
-    description: 'Breve descripción de la industria de máximo 2 líneas',
+    description: 'Encontrarás una aplicación base, diseñada para gestionar los créditos y sus procesos relacionados, así como recibir el pago de transacciones de forma automatizada y ágil.',
     available: [
       {
         id: 'mobile',
@@ -127,7 +127,7 @@ export const industries: IIndustry[] = [
     image: '',
     title: 'Salud y cuidado',
     subtitle: 'Salud y cuidado',
-    description: 'Breve descripción de la industria de máximo 2 líneas',
+    description: 'Encontrarás una aplicación base, diseñada para gestionar tus ubicaciones y servicios médicos al paciente, así como recibir el pago de transacciones de forma automatizada y ágil.',
     available: [
       {
         id: 'mobile',
@@ -150,9 +150,9 @@ export const industries: IIndustry[] = [
     id: 'entertainment',
     image: '',
     icon: <FaGuitar />,
-    title: 'Entretenimiento',
-    subtitle: 'Entretenimiento',
-    description: 'Breve descripción de la industria de máximo 2 líneas',
+    title: 'Comunicación y Entretenimiento',
+    subtitle: 'Comunicación y Entretenimiento',
+    description: 'Encontrarás una aplicación base, diseñada para gestionar la publicación y venta de tus productos y servicios, así como recibir el pago de transacciones de forma automatizada y ágil.',
     available: [
       {
         id: 'mobile',
@@ -177,7 +177,7 @@ export const industries: IIndustry[] = [
     icon: <LiaHotelSolid />,
     title: 'Hoteleria',
     subtitle: 'Reservas de viajes y hospedaje',
-    description: 'Breve descripción de la industria de máximo 2 líneas',
+    description: 'Encontrarás una aplicación base, diseñada para mostrar tus hoteles y la disponibilidad de habitaciones para reservas, así como recibir el pago de transacciones de forma automatizada y ágil.',
     available: [
       {
         id: 'mobile',

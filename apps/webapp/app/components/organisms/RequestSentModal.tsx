@@ -1,6 +1,7 @@
 import React, { JSX } from 'react';
 import { AiFillCheckCircle, AiOutlineClose } from 'react-icons/ai';
 import ActionBtn from '../atoms/ActionBtn';
+import useShoppingCart from '../../hooks/shoppingCartHook';
 interface IRequestSentModalProps {
   showModal: boolean;
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
@@ -9,6 +10,12 @@ export default function RequestSentModal(
   props: IRequestSentModalProps
 ): JSX.Element {
   const { showModal, setShowModal }: IRequestSentModalProps = props;
+
+  const { clear } = useShoppingCart();
+  const clearShoppingCart = () => {
+    setShowModal(false);
+    clear();
+  };
 
   return (
     <>
@@ -35,7 +42,7 @@ export default function RequestSentModal(
               <div className="w-1/3 mt-4">
                 <ActionBtn
                   title="Entendido"
-                  actionFn={() => setShowModal(false)}
+                  actionFn={clearShoppingCart}
                 ></ActionBtn>
               </div>
             </div>
