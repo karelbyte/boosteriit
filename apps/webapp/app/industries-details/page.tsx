@@ -26,8 +26,8 @@ import { IIntegration, integrations } from '../../data/integrations';
 import {
   formatByCurrencyMXN,
   getAdditional,
-  getSubtotalPriceFormat,
-} from '../../utils';
+  getSubtotalPriceFormat, getTotalDays
+} from "../../utils";
 import { additionals, IAdditional } from '../../data/addtionals';
 
 export default function IndustriesDetails(): JSX.Element {
@@ -154,14 +154,18 @@ export default function IndustriesDetails(): JSX.Element {
                   <div className="flex justify-between items-center bg-white w-full">
                     <div className="bg-boo-mobile p-2 flex rounded-lg items-center text-white text-xs">
                       {template.icon}
-                      <span className="ml-2">{template.title}</span>
+                      <span className="hidden md:flex">{template.title}</span>
+                      <span className="flex md:hidden">{template.short}</span>
                     </div>
-                    <div className="flex my-4 items-center text-xs text-boo-str-description">
-                      <span className="font-light mr-2">
+                    <div className="flex flex-col md:flex-row my-4 items-center text-xs text-boo-str-description">
+                      <span className="font-light md:mr-2">
                         Tiempo de implementación
                       </span>
-                      <AiOutlineClockCircle />
-                      <p className="ml-2 font-semibold">{template.days} días</p>
+                      <div className="flex items-center self-end ">
+                        <AiOutlineClockCircle />
+                        <p className="ml-2 font-semibold">{template.days} días</p>
+                      </div>
+
                     </div>
                   </div>
                   <div className="my-2 flex flex-col w-full">
@@ -174,7 +178,7 @@ export default function IndustriesDetails(): JSX.Element {
                         alt="Boosteriit"
                         className="w-auto"
                       />
-                      <div className="flex flex-col w-6/12">
+                      <div className="flex flex-col w-full mt-8 md:mt-0 md:w-6/12">
                         <span className="font-semibold">
                           Con tu app móvil obtén
                         </span>
@@ -235,7 +239,7 @@ export default function IndustriesDetails(): JSX.Element {
                           />
                         </div>
                       </div>
-                      <div className="mt-8 flex flex-col gap-4">
+                      <div className="mt-8 flex flex-col md:gap-4 mb-4">
                         <span className="font-semibold">
                           Añade módulos con funcionalidades extra y potencia tu
                           producto
@@ -252,9 +256,9 @@ export default function IndustriesDetails(): JSX.Element {
                         ).map((additional: IAdditional) => (
                           <div
                             key={additional.id}
-                            className="flex flex-col px-2 py-4 w-full md:w-1/3"
+                            className="flex flex-col md:px-2 md:py-4 w-full md:w-1/3"
                           >
-                            <div className="flex flex-col justify-between border-t border-x p-4 rounded-t-lg h-full">
+                            <div className="flex flex-col justify-between border-t border-x p-4 md:rounded-t-lg h-full">
                               <span className="text-boo-gray-hard text-sm font-light mb-4">
                                 {additional.title}
                               </span>
@@ -271,7 +275,7 @@ export default function IndustriesDetails(): JSX.Element {
                                 </div>
                               </div>
                             </div>
-                            <div className="border p-4 rounded-b-lg">
+                            <div className="border md:border p-4 md:rounded-b-lg">
                               <input
                                 className="accent-green-400 cursor-pointer"
                                 type="checkbox"
@@ -374,7 +378,7 @@ export default function IndustriesDetails(): JSX.Element {
                 </div>
               ))}
             {selectedIndustriesTemplate.length > 0 && (
-              <>
+              <div className="flex flex-col">
                 <div className="flex justify-between p-2">
                   <p>Total de los productos</p>
                   <p>$ {getSubtotalPriceFormat(selectedIndustriesTemplate)}</p>
@@ -383,13 +387,25 @@ export default function IndustriesDetails(): JSX.Element {
                   title="Agregar al carrito"
                   actionFn={buildShoppingCart}
                 ></ActionBtn>
-              </>
+                <div className="flex my-4 item items-center self-center">
+                  <AiOutlineClockCircle className="text-boo-btn-bg" />
+                  <span className="flex items-center font-light text-xs text-boo-str-description ml-2">
+                  Tiempo total:
+                  <p className="font-semibold ml-2">
+                    {getTotalDays(selectedIndustriesTemplate)} días
+                  </p>
+                </span>
+                </div>
+              </div>
             )}
           </div>
         </div>
       )}
       <Helper />
-      <Footer />
+      <div className="hidden md:flex">
+        <Footer />
+      </div>
+
     </div>
   );
 }

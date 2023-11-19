@@ -41,7 +41,7 @@ export default function Helper(): JSX.Element {
 
   return (
     <div>
-      <div className="hidden md:flex items-center fixed bottom-0 right-0 m-4 text-white rounded">
+      <div className="flex items-center fixed bottom-[8rem] md:bottom-0 right-0 m-4 text-white rounded z-10">
         {visible && (
           <div className="relative flex flex-col bg-boo-gray-hard p-2 h-18 rounded-lg">
             <div className="absolute bottom-2 -right-1 h-4 w-4 border-white rotate-45 bg-boo-gray-hard "></div>

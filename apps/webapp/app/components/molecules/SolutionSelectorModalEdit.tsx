@@ -45,7 +45,7 @@ export default function SolutionSelectorModalEdit(
         }
       }
     }
-  }, [currentSolutions]);
+  }, [currentSolutions, showModalEdit]);
 
   const goToUrl = () => {
     router.push(nextPath || '/');
@@ -60,8 +60,8 @@ export default function SolutionSelectorModalEdit(
   return (
     <>
       {showModalEdit && (
-        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-50 z-10">
-          <div className="bg-white p-4 w-11/12 md:w-8/12 lg:w-8/12 xl:w-6/12 2xl:w-4/12 rounded-lg">
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-50 z-50 md:z-10">
+          <div className="bg-white p-4 w-full h-full md:h-auto md:w-8/12 lg:w-8/12 xl:w-6/12 2xl:w-4/12 md:rounded-lg">
             <div className="flex flex-col p-4">
               <AiOutlineClose
                 className="self-end cursor-pointer"

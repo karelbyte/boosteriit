@@ -81,7 +81,7 @@ export default function Modules(): JSX.Element {
 
   useEffect(() => {
     setCurrentModulesSelected(selectedModules);
-  }, [selectedModules]);
+  }, [selectedModules, setCurrentModulesSelected]);
 
   const addModules = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { id, checked } = event.target;
@@ -385,7 +385,6 @@ export default function Modules(): JSX.Element {
                 <span className="flex items-center font-light text-xs text-boo-str-description ml-2">
                   Tiempo total:
                   <p className="font-semibold ml-4">
-                    {' '}
                     {getTotalDays(currentModulesSelected)} días
                   </p>
                 </span>

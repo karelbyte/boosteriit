@@ -60,8 +60,8 @@ export default function SolutionSelectorModal(
 
   const getStyle = (options: ISolution[]) => {
     return options.length === 0
-      ? 'py-2 px-4 text-white bg-gray-300 rounded w-5/12'
-      : 'py-2 px-4 text-white bg-boo-btn-bg rounded hover:bg-boo-btn-bg-hover w-5/12';
+      ? 'py-2 px-4 text-white bg-gray-300 rounded w-full md:w-5/12 mt-4 md:mt-0'
+      : 'py-2 px-4 text-white bg-boo-btn-bg rounded hover:bg-boo-btn-bg-hover w-full md:w-5/12 mt-4 md:mt-0';
   };
 
   const classIconSolutions: IColorSolutions = {
@@ -79,8 +79,8 @@ export default function SolutionSelectorModal(
     <>
       {childrenWithProps}
       {showModalSelectSolution && (
-        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-50 z-10">
-          <div className="bg-white p-4 w-11/12 md:w-8/12 lg:w-8/12 xl:w-6/12 2xl:w-4/12 rounded-lg">
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-50 z-50 md:z-10">
+          <div className="bg-white p-4 w-full h-full md:h-auto md:w-6/12 lg:w-6/12 xl:w-6/12 2xl:w-4/12 md:rounded-lg">
             <div className="flex flex-col p-4">
               <AiOutlineClose
                 className="self-end cursor-pointer"
@@ -118,13 +118,13 @@ export default function SolutionSelectorModal(
                   </div>
                 ))}
 
-              <div className="flex justify-between py-3 text-right">
+              <div className="flex flex-col-reverse md:flex-row justify-between py-3 text-right">
                 <button
                   type="button"
-                  className="py-2 px-4 rounded mr-2 border border-boo-btn-bg text-boo-btn-bg hover:bg-boo-btn-bg-hover hover:text-white w-5/12"
+                  className="py-2 px-4 rounded mr-2 mt-4 md:mt-0 border border-boo-btn-bg text-boo-btn-bg hover:bg-boo-btn-bg-hover hover:text-white w-full md:w-5/12"
                   onClick={closeModal}
                 >
-                  Cancelar
+                 Cancelar
                 </button>
                 <button
                   type="button"

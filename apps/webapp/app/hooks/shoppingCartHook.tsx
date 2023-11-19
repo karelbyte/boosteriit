@@ -22,7 +22,7 @@ export default function useShoppingCart() {
       setSelectedIndustriesTemplate([]);
       setSelectedIntegrations([]);
       setSelectedAddtionals([]);
-    }, 3000);
+    }, 4000);
   };
 
   return {

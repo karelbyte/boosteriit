@@ -16,7 +16,7 @@ export default function MainNavbar(): JSX.Element {
   ];
 
   return (
-    <header className="text-gray-900 body-font fixed bg-white w-full z-50">
+    <header className="text-gray-900 body-font fixed bg-white w-full z-10">
       <div className="mx-auto flex items-center justify-between sm:border-slate-700 py-2 px-8 sm:py-4 sm:px-10 lg:px-20 md:flex-row border-b-1 shadow-sm">
         <MobileNav options={links} />
         <Logo />

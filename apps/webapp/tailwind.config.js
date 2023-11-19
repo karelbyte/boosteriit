@@ -23,7 +23,8 @@ module.exports = {
         'boo-green': '#24DE9C',
         'boo-bg': '#F4F4F4',
         'boo-alert': '#FFC700',
-        'boo-alert-bg': '#ffc7001f'
+        'boo-alert-bg': '#ffc7001f',
+        'boo-red': '#F51E01'
       }
     },
   },
