@@ -3,13 +3,13 @@ import React from 'react';
 import { IIndustry, industries } from '../../data/industries';
 import useAppContext from '../contexts/hookAppContext';
 import { additionals, IAdditional } from '../../data/addtionals';
-import { IIntegration, integrations } from '../../data/integrations';
+import { IIntegration } from '../../data/integrations';
 import { IIndustryTemplate } from '../../data/industriesTemplate';
 export default function useIndustriesHook() {
   const {
     setSelectedIndustry,
-    setSelectedAddtionals,
-    selectedAddtionals,
+    setSelectedAdditionals,
+    selectedAdditionals,
     selectedIntegrations,
     setSelectedIntegrations,
   } = useAppContext();
@@ -63,15 +63,15 @@ export default function useIndustriesHook() {
         (additional: IAdditional) => additional.id == id
       );
       if (additional) {
-        const currents = [...selectedAddtionals, additional];
-        setSelectedAddtionals(currents);
+        const currents = [...selectedAdditionals, additional];
+        setSelectedAdditionals(currents);
         addAdditionalsStorage(currents);
       }
     } else {
-      const currents = selectedAddtionals.filter(
+      const currents = selectedAdditionals.filter(
         (additional: IAdditional) => additional.id !== id
       );
-      setSelectedAddtionals(currents);
+      setSelectedAdditionals(currents);
       addAdditionalsStorage(currents);
     }
   };
@@ -100,7 +100,7 @@ export default function useIndustriesHook() {
   };
 
   const getStatusCheck = (id: string) => {
-    return selectedAddtionals
+    return selectedAdditionals
       .map((additional: IAdditional) => additional.id)
       .includes(id);
   };

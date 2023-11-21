@@ -36,7 +36,7 @@ export default function ShoppingCart(): JSX.Element {
     selectedSolutions,
     selectedIndustry,
     selectedIndustriesTemplate,
-    selectedAddtionals,
+    selectedAdditionals,
     setSelectedIndustriesTemplate,
   } = useAppContext();
 
@@ -87,7 +87,7 @@ export default function ShoppingCart(): JSX.Element {
   };
 
   const getAdditional = (solution: string, industry: string) => {
-    return selectedAddtionals
+    return selectedAdditionals
       .filter((additional: IAdditional) => additional.industry === industry)
       .filter((additional: IAdditional) => additional.solution === solution);
   };
@@ -104,7 +104,7 @@ export default function ShoppingCart(): JSX.Element {
   };
 
   const getSubtotalOfProductsAndAditionals = () => {
-    const totalAddtionals = getSubtotalPrice(selectedAddtionals);
+    const totalAddtionals = getSubtotalPrice(selectedAdditionals);
     return getSubtotalOfProducts() + totalAddtionals;
   };
 
@@ -373,8 +373,8 @@ export default function ShoppingCart(): JSX.Element {
                 </div>
                 {selectedIndustry && (
                   <div className="flex justify-between mb-4 text-boo-str-description">
-                    <span>Funciones Extras ({selectedAddtionals.length})</span>
-                    <span>{getSubtotalPriceFormat(selectedAddtionals)}</span>
+                    <span>Funciones Extras ({selectedAdditionals.length})</span>
+                    <span>{getSubtotalPriceFormat(selectedAdditionals)}</span>
                   </div>
                 )}
                 <div className="border mb-4"></div>

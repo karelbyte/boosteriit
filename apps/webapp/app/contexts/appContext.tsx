@@ -24,8 +24,8 @@ export interface ContextType {
   >;
   selectedIntegrations: IIntegration[];
   setSelectedIntegrations: React.Dispatch<React.SetStateAction<IIntegration[]>>;
-  selectedAddtionals: IAdditional[];
-  setSelectedAddtionals: React.Dispatch<React.SetStateAction<IAdditional[]>>;
+  selectedAdditionals: IAdditional[];
+  setSelectedAdditionals: React.Dispatch<React.SetStateAction<IAdditional[]>>;
 }
 const AppContext = createContext<ContextType | null>(null);
 function AppContextProvider({ children }: { children: ReactNode }) {
@@ -96,7 +96,7 @@ function AppContextProvider({ children }: { children: ReactNode }) {
     IIntegration[]
   >([]);
 
-  const [selectedAddtionals, setSelectedAddtionals] = useState<IAdditional[]>(
+  const [selectedAdditionals, setSelectedAdditionals] = useState<IAdditional[]>(
     []
   );
 
@@ -113,8 +113,8 @@ function AppContextProvider({ children }: { children: ReactNode }) {
     setSelectedIndustriesTemplate,
     selectedIntegrations,
     setSelectedIntegrations,
-    selectedAddtionals,
-    setSelectedAddtionals,
+    selectedAdditionals,
+    setSelectedAdditionals,
   };
 
   useEffect(() => {

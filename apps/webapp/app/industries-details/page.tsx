@@ -40,8 +40,8 @@ export default function IndustriesDetails(): JSX.Element {
     selectedSolutions,
     selectedIndustriesTemplate,
     setSelectedIndustriesTemplate,
-    selectedAddtionals,
-    setSelectedAddtionals,
+    selectedAdditionals,
+    setSelectedAdditionals,
   } = useAppContext();
 
   const {
@@ -82,7 +82,7 @@ export default function IndustriesDetails(): JSX.Element {
     const currents = templateForIndustries.filter(
       (template: IIndustryTemplate) => solutions.includes(template.solution)
     );
-    const currentAdditionals = selectedAddtionals
+    const currentAdditionals = selectedAdditionals
       .concat(getAdditionalsStorage())
       .filter(
         (additional: IAdditional) =>
@@ -91,7 +91,7 @@ export default function IndustriesDetails(): JSX.Element {
       .filter((additional: IAdditional) =>
         solutions.includes(additional.solution)
       );
-    setSelectedAddtionals(currentAdditionals);
+    setSelectedAdditionals(currentAdditionals);
     setSelectedIndustriesTemplate(currents);
     addTemplatesStorage(currents);
   }, [selectedSolutions, selectedIndustry]);
