@@ -66,6 +66,7 @@ export default function ContactModal(props: IContactModalProps): JSX.Element {
   };
 
   const build = async (type: string) => {
+    setSending(true);
     const data = {
       name,
       email,
@@ -86,11 +87,10 @@ export default function ContactModal(props: IContactModalProps): JSX.Element {
       if (type === 'request' && activeModalRequestSuccess) {
         activeModalRequestSuccess(true);
       }
-      if (type === 'request' && activeModalSendSuccess) {
+      if (type === 'meet' && activeModalSendSuccess) {
         activeModalSendSuccess(true);
       }
     } catch (e) {
-      console.log('entro')
       setSending(false);
       setShowModal(false);
       if (activeModalError) activeModalError(true);
@@ -100,8 +100,8 @@ export default function ContactModal(props: IContactModalProps): JSX.Element {
   return (
     <>
       {showModal && (
-        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-50 z-10">
-          <div className="flex flex-col bg-white p-4 w-11/12 md:w-6/12 xl:w-4/12 rounded-lg">
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-50 z-50 md:z-10">
+          <div className="flex flex-col bg-white p-4 w-full h-full md:h-auto md:w-5/12  2xl:w-4/12 md:rounded-lg">
             <div className="flex flex-col">
               <AiOutlineClose
                 className="self-end cursor-pointer"

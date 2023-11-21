@@ -30,8 +30,8 @@ export default function CreateNow(props: ICreateNowProps): JSX.Element {
         <span> Crear ahora</span>
       </button>
       {showModal && (
-        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-50 z-10">
-          <div className="bg-boo-blue p-4 w-11/12 md:w-7/12 lg:w-6/12 xl:w-5/12 2xl:w-4/12 rounded-lg">
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-50 z-[100] md:z-20">
+          <div className="bg-boo-blue p-4 w-full h-full md:h-auto md:w-7/12 lg:w-6/12 xl:w-5/12 2xl:w-4/12 md:rounded-lg">
             <div className="flex justify-end px-2">
               <AiOutlineClose className="cursor-pointer" onClick={closeModal} />
             </div>

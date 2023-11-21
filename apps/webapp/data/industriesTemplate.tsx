@@ -21,6 +21,7 @@ export interface IIndustryTemplate {
   image_slide3: string;
   image_slide4: string;
   title: string;
+  short: string;
   days: number;
   price: number;
   features: IFeature[];
@@ -33,6 +34,7 @@ const restaurant: IIndustryTemplate[] = [
     industry: 'restaurant',
     icon: <MdWeb />,
     title: 'Aplicación web',
+    short: 'App web',
     days: 66,
     price: 487500,
     image: '/assets/industries/restaurant/image.svg',
@@ -107,6 +109,7 @@ const restaurant: IIndustryTemplate[] = [
     days: 73,
     price: 559000,
     title: 'Aplicación de escritorio',
+    short: 'App escritorio',
     image: '/assets/industries/restaurant/image.svg',
     image_slide1: '/assets/industries/restaurant/rest1.svg',
     image_slide2: '/assets/industries/restaurant/rest2.svg',
@@ -176,6 +179,7 @@ const restaurant: IIndustryTemplate[] = [
     solution: 'mobile',
     icon: <FaMobileAlt />,
     title: 'Aplicación Móvil',
+    short: 'App movil',
     days: 50,
     price: 466200,
     image: '/assets/industries/restaurant/image.svg',
@@ -250,6 +254,7 @@ const trips: IIndustryTemplate[] = [
     industry: 'trips',
     icon: <CiPlane />,
     title: 'Aplicación web',
+    short: 'App web',
     days: 66,
     price: 487500,
     image: '/assets/industries/trips/image.svg',

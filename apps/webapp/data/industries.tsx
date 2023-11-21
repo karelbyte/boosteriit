@@ -99,7 +99,7 @@ export const industries: IIndustry[] = [
   {
     id: 'restaurant',
     icon: <PiHamburgerBold />,
-    image: '',
+    image: '/assets/industries/restaurant/rest1.svg',
     title: 'Restaurante',
     subtitle: 'Restaurante',
     description: 'Encontraras una aplicación base, diseñada para gestionar los pedidos de tus clientes y recibir el pago de sus consumos de forma automatizada y facil.',

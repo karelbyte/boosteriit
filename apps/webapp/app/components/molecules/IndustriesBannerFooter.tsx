@@ -42,12 +42,12 @@ export default function IndustriesBannerFooter() {
             Diseña tu paquete personalizado o contáctanos para recibir una
             atención personalizada.
           </span>
-          <div className="flex justify-between mt-8">
+          <div className="flex flex-col md:flex-row justify-between mt-8">
             <SolutionSelectorModal nextPath={'/modules'}>
               <ActionBtn title="Árma tu solución" />
             </SolutionSelectorModal>
             <button
-              className="py-2 px-4 rounded mr-2 border border-boo-btn-bg text-boo-btn-bg hover:bg-boo-btn-bg-hover hover:text-white w-full ml-6"
+              className="py-2 px-4 rounded mr-2 border border-boo-btn-bg text-boo-btn-bg hover:bg-boo-btn-bg-hover hover:text-white w-full md:ml-6 mt-4 md:mt-0"
               onClick={() => setShowModalContact(true)}
             >
               Agendar llamada

@@ -11,7 +11,7 @@ export default function Search(props: ISearchProps): JSX.Element {
         placeholder={placeholder}
         className="border border-gray-200 rounded-lg p-2 w-full focus:outline-none focus:border-sky-500"
       />
-      <SlMagnifier className="absolute mr-2 w-6" />
+      <SlMagnifier className="absolute mr-2 w-6 text-gray-300" />
     </div>
   );
 }

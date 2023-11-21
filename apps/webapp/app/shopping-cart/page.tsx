@@ -16,23 +16,26 @@ import {
   BsCheck2,
   BsChevronCompactDown,
   BsChevronCompactUp,
+  BsTrash3,
 } from 'react-icons/bs';
 import { IAdditional } from '../../data/addtionals';
-import Link from 'next/link';
-import { ISolution } from '../../data/solutions';
 import { IFeature, IIndustryTemplate } from '../../data/industriesTemplate';
 import {
   formatByCurrencyMXN,
   getSubtotalPrice,
   getSubtotalPriceFormat,
 } from '../../utils';
-import ErrorModal from '../components/organisms/ErrorModal';
+import ErrorModal from '../components/molecules/ErrorModal';
+import SolutionBreadcrumbs from '../components/molecules/SolutionBreadcrumbs';
+import ShoppingCartEmpty from '../components/organisms/ShoppingCartEmpty';
+import DeleteModal from '../components/molecules/DeleteModal';
 export default function ShoppingCart(): JSX.Element {
   const {
     selectedSolutions,
     selectedIndustry,
     selectedIndustriesTemplate,
     selectedAddtionals,
+    setSelectedIndustriesTemplate,
   } = useAppContext();
 
   const {
@@ -54,12 +57,16 @@ export default function ShoppingCart(): JSX.Element {
 
   const [showModalError, setShowModalError] = useState<boolean>(false);
 
+  const [showModalDelete, setShowModalDelete] = useState<boolean>(false);
+
+  const [templateId, setTemplateId] = useState<string>('');
+
   const modalContactProps = {
     showModal: showModalContact,
     setShowModal: setShowModalContact,
     activeModalSendSuccess: setShowDataSend,
     activeModalRequestSuccess: setShowModalRequest,
-    activeModalError: setShowModalError
+    activeModalError: setShowModalError,
   };
   const [modulesShow, setModulesShow] = useState<string[]>([]);
 
@@ -105,6 +112,20 @@ export default function ShoppingCart(): JSX.Element {
     return getSubtotalOfProductsAndAditionals() + getIva();
   };
 
+  const deleteTemplate = (id: string) => {
+    setSelectedIndustriesTemplate(
+      selectedIndustriesTemplate.filter(
+        (template: IIndustryTemplate) => template.id !== id
+      )
+    );
+    setShowModalDelete(false)
+  };
+
+  const showDeleteModal = (id:string) => {
+    setTemplateId(id)
+    setShowModalDelete(true)
+  }
+
   return (
     <div className="overflow-hidden flex flex-col min-h-screen">
       <SolutionSelectorModalEdit
@@ -118,58 +139,17 @@ export default function ShoppingCart(): JSX.Element {
       </Header>
       <div className="flex-1 bg-boo-blue">
         {currentModulesSelected.length == 0 &&
-          selectedIndustriesTemplate.length == 0 && (
-            <div className="flex flex-col justify-center items-center text-black mt-20 py-2 px-8 sm:py-4 sm:px-10 lg:px-20">
-              <p className="text-xl xl:text-2xl mb-4 mt-20 ">
-                Elige el dispositivo en el que deseas crear tu producto.
-              </p>
-              <div className="flex justify-between">
-                <Link className="text-lg text-boo-btn-bg" href={'/industries'}>
-                  Industrias
-                </Link>
-                <Link
-                  className="text-lg ml-4 text-boo-btn-bg"
-                  href={'/industries'}
-                >
-                  Modulos
-                </Link>
-              </div>
-            </div>
-          )}
-        <div className="flex flex-col w-full p-6 text-black mt-20 md:flex-row sm:py-4 sm:px-10 lg:px-20">
+          selectedIndustriesTemplate.length == 0 && <ShoppingCartEmpty />}
+        <div className="flex flex-col w-full p-6 text-black mt-10 md:flex-row sm:py-4 sm:px-10 lg:px-20">
           <div className="flex flex-col w-full">
             {currentModulesSelected.length > 0 && (
               <div className="w-full">
                 <p className="text-xl xl:text-2xl mb-4">
                   Arma una solución a tu medida
                 </p>
-                <div className="flex flex-col md:flex-row items-start md:items-center">
-                  {selectedSolutions &&
-                    selectedSolutions.map(
-                      (solution: ISolution, index: number) => (
-                        <span
-                          key={solution.id}
-                          className="text-sm text-boo-gray-hard"
-                        >
-                          {index == 0 ? (
-                            solution.title
-                          ) : (
-                            <span className="flex">
-                              <span className="hidden md:flex">-</span>
-                              {solution.title}
-                            </span>
-                          )}
-                        </span>
-                      )
-                    )}
-                  {selectedSolutions.length > 0 && (
-                    <ActionBtn
-                      title="editar"
-                      styleClass="border-none md:ml-4 text-boo-btn-bg underline"
-                      actionFn={() => setShowModalSelectSolution(true)}
-                    />
-                  )}
-                </div>
+                <SolutionBreadcrumbs
+                  setShowModalSelectSolution={setShowModalSelectSolution}
+                />
                 <div className="flex flex-col md:flex-row w-full mt-4">
                   <div className="flex flex-col gap-4 w-full pr-0 md:pr-4">
                     {modulesMobile.length > 0 && (
@@ -206,49 +186,28 @@ export default function ShoppingCart(): JSX.Element {
             {selectedIndustriesTemplate.length > 0 && (
               <div className="w-full mt-8">
                 <p className="text-xl xl:text-2xl mb-4">
-                  Industria |{selectedIndustry?.title}
+                  Industria | {selectedIndustry?.title}
                 </p>
-                <div className="flex flex-col md:flex-row md:items-center">
-                  {selectedSolutions &&
-                    selectedSolutions.map(
-                      (solution: ISolution, index: number) => (
-                        <span
-                          key={solution.id}
-                          className="text-sm text-boo-gray-hard"
-                        >
-                          {index == 0 ? (
-                            solution.title
-                          ) : (
-                            <span className="flex">
-                              <span className="hidden md:flex">-</span>
-                              {solution.title}
-                            </span>
-                          )}
-                        </span>
-                      )
-                    )}
-                  {selectedSolutions.length > 0 && (
-                    <ActionBtn
-                      title="editar"
-                      styleClass="border-none ml-4 text-boo-btn-bg underline"
-                      actionFn={() => setShowModalSelectSolution(true)}
-                    />
-                  )}
-                </div>
+                <SolutionBreadcrumbs
+                  setShowModalSelectSolution={setShowModalSelectSolution}
+                />
                 <div className="flex flex-col md:flex-row w-full mt-4">
                   <div className="flex flex-col gap-4 w-full pr-0 md:pr-4">
                     {selectedIndustriesTemplate &&
                       selectedIndustriesTemplate.map(
                         (template: IIndustryTemplate) => (
                           <div key={template.id} className="w-full">
-                            <div className="w-full border-t border-x bg-white rounded-t-lg p-4">
+                            <div className="flex items-center justify-between w-full border-t border-x bg-white rounded-t-lg p-4">
                               <div className="p-2 flex items-center text-md">
                                 {template.icon}
                                 <span className="ml-2">{template.title}</span>
                               </div>
+                              <div className="lg:hidden text-red-800 cursor-pointer" onClick={() => showDeleteModal(template.id)}>
+                                <BsTrash3 />
+                              </div>
                             </div>
                             <div className="border-t bg-white border-x w-full">
-                              <div className="flex justify-between mt-4 px-6 py-4">
+                              <div className="flex justify-between items-start mt-4 px-6 py-4">
                                 <div className="flex">
                                   <Image
                                     src={template.image}
@@ -260,12 +219,20 @@ export default function ShoppingCart(): JSX.Element {
                                   />
                                   <div className="flex flex-col ml-4">
                                     <span>{selectedIndustry?.title}</span>
-                                    <span className="text-boo-str-description mt-2">
-                                      Listo en: {template.days} dias
-                                    </span>
+                                    <div className="flex items-center mt-2">
+                                      <span className="text-xs lg:text-base text-boo-str-description">
+                                        Listo en: {template.days} dias
+                                      </span>
+                                      <div
+                                        className="hidden lg:flex ml-4 text-boo-btn-bg underline cursor-pointer"
+                                        onClick={() => showDeleteModal(template.id)}
+                                      >
+                                        eliminar
+                                      </div>
+                                    </div>
                                   </div>
                                 </div>
-                                <span>
+                                <span className="text-xs lg:text-base">
                                   ${formatByCurrencyMXN(template.price)} MXN
                                 </span>
                               </div>
@@ -364,7 +331,7 @@ export default function ShoppingCart(): JSX.Element {
           </div>
           {(currentModulesSelected.length > 0 ||
             selectedIndustriesTemplate.length > 0) && (
-            <div className="w-full lg:w-5/12 mt-20">
+            <div className="w-full mt-10 md:w-6/12  md:mt-[7rem]">
               <div className="border-x border-t p-4 bg-white rounded-t-lg">
                 Resumen de orden
               </div>
@@ -414,9 +381,15 @@ export default function ShoppingCart(): JSX.Element {
         showModal={showModalRequest}
         setShowModal={setShowModalRequest}
       />
+      <DeleteModal
+        showModal={showModalDelete}
+        setShowModal={setShowModalDelete}
+        caption={'¿Seguro que deseas eliminar el producto de tu carrito?'}
+        deleteAction={() => deleteTemplate(templateId) }
+      />
       <ErrorModal showModal={showModalError} setShowModal={setShowModalError} />
       <Helper />
-      <div className="mt-10 md:mt-0">
+      <div className="hidden md:flex mt-10 md:mt-0">
         <Footer />
       </div>
     </div>

@@ -28,7 +28,7 @@ export default function MobileNav(props: INavLinksProps): JSX.Element {
     <div className="sm:hidden flex items-center">
       <AiOutlineMenu onClick={() => openDrawer()} />
       {isDrawerOpen && (
-        <div className="bg-white h-screen w-full fixed top-0 left-0 transform transition-transform duration-300 ease-in-out z-20 p-8">
+        <div className="bg-white h-screen w-full fixed top-0 left-0 transform transition-transform duration-300 ease-in-out z-10 p-8">
           <div className="flex items-center justify-between mb-3">
             <Logo />
             <button onClick={closeDrawer} className=" top-4 right-4">

@@ -6,6 +6,7 @@ import SlidesBtn from '../molecules/SlidesBtn';
 import { IIndustry, industries } from '../../../data/industries';
 import SolutionSelectorModalEdit from '../molecules/SolutionSelectorModalEdit';
 import useAppContext from '../../contexts/hookAppContext';
+import Image from "next/image";
 
 interface ISettings {
   dots?: boolean;
@@ -80,17 +81,25 @@ export default function CatalogIndustry(): JSX.Element {
           {items &&
             items.map((item: IIndustry, index: number) => (
               <div key={index} className="p-2">
-                <div className="flex flex-col border rounded-lg p-6 h-[28rem]">
-                  <div className="h-64">
-                    <div className="w-8 h-8 rounded-full flex items-center justify-center text-boo-btn-bg border border-boo-blue-2 bg-boo-blue-2">
-                      {item.icon}
-                    </div>
+                <div className="relative w-full flex flex-col border rounded-lg p-4 h-[28rem]">
+                  <div className="flex justify-center h-64 w-full border rounded-lg">
+                    <Image
+                      src={item.image}
+                      width="100"
+                      height="140"
+                      className="w-auto"
+                      loading={'lazy'}
+                      alt="Boosteriit"
+                    />
                   </div>
 
                   <p className="mb-2 mt-2 text-md">{item.title}</p>
                   <p className="text-boo-str-description mb-6 text-xs">
                     {item.subtitle}
                   </p>
+                  <div className="absolute top-2 left-2 w-8 h-8 rounded-full flex items-center justify-center text-boo-btn-bg border border-boo-blue-2 bg-boo-blue-2">
+                    {item.icon}
+                  </div>
                   <button
                     className="flex py-3.5 px-6 w-full justify-center text-white bg-boo-btn-bg border-0 focus:outline-none rounded hover:bg-boo-btn-bg-hover"
                     onClick={() => setShowModalAndIndustry(item)}
