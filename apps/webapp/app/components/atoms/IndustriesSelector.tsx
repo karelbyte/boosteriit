@@ -1,3 +1,4 @@
+'use client'
 import React, { JSX, useEffect, useState } from 'react';
 import { IIndustry, industries } from '../../../data/industries';
 import useAppContext from '../../contexts/hookAppContext';
@@ -8,7 +9,7 @@ export default function IndustriesSelector(): JSX.Element {
   const { addIndustryStorage, getIndustryStorage} = useIndustriesHook();
 
   const [currentIndustrySelected, setCurrentIndustrySelected] =
-    useState<IIndustry | null>( getIndustryStorage());
+    useState<IIndustry | null>();
 
   const [menuVisible, setMenuVisible] = useState(false);
 
