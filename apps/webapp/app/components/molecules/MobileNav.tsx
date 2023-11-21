@@ -2,7 +2,7 @@ import React, { JSX, useState } from 'react';
 import { ILink } from '../organisms/MainNavbar';
 import { BsArrowRightShort } from 'react-icons/bs';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
-import Glue from '../organisms/Glue';
+import Glue from '../atoms/Glue';
 import Logo from '../atoms/Logo';
 import Link from 'next/link';
 interface INavLinksProps {
@@ -31,7 +31,7 @@ export default function MobileNav(props: INavLinksProps): JSX.Element {
         <div className="bg-white h-screen w-full fixed top-0 left-0 transform transition-transform duration-300 ease-in-out z-10 p-8">
           <div className="flex items-center justify-between mb-3">
             <Logo />
-            <button onClick={closeDrawer} className=" top-4 right-4">
+            <button onClick={closeDrawer} className="top-4 right-4">
               <AiOutlineClose />
             </button>
           </div>

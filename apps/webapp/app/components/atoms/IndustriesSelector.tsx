@@ -1,11 +1,14 @@
 import React, { JSX, useEffect, useState } from 'react';
 import { IIndustry, industries } from '../../../data/industries';
 import useAppContext from '../../contexts/hookAppContext';
+import useIndustriesHook from "../../hooks/useIndustriesHook";
 export default function IndustriesSelector(): JSX.Element {
-  const { selectedIndustry, setSelectedIndustry } = useAppContext();
+
+  const {selectedIndustry} = useAppContext()
+  const { addIndustryStorage, getIndustryStorage} = useIndustriesHook();
 
   const [currentIndustrySelected, setCurrentIndustrySelected] =
-    useState<IIndustry | null>(null);
+    useState<IIndustry | null>( getIndustryStorage());
 
   const [menuVisible, setMenuVisible] = useState(false);
 
@@ -18,14 +21,20 @@ export default function IndustriesSelector(): JSX.Element {
   }, [selectedIndustry]);
 
   useEffect(() => {
-    if (selectedIndustry === null) {
-      setSelectedIndustry(industries[0]);
+    const current = getIndustryStorage()
+    if (current === null) {
+      addIndustryStorage(industries[0]);
+    } else {
+      setCurrentIndustrySelected(current)
+      if (selectedIndustry === null) {
+        addIndustryStorage(current);
+      }
     }
   }, []);
 
   const selectOptionFn = (industry: IIndustry) => {
     toggleMenu();
-    setSelectedIndustry(industry);
+    addIndustryStorage(industry);
   };
 
   return (

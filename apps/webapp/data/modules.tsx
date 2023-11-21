@@ -35,7 +35,8 @@ export const modules: IModule[] = [
       {
         id: 'mobile',
         icon: <FaMobileAlt />,
-        title: 'App móvil',
+        title: 'Aplicacion móvil',
+        short: 'App móvil',
         subtitle: ''
       }
     ],
@@ -54,7 +55,8 @@ export const modules: IModule[] = [
       {
         id: 'desktop',
         icon: <BiDesktop />,
-        title: 'App desktop',
+        title: 'Aplicacion desktop',
+        short: 'App desktop',
         subtitle: ''
       }
     ],
@@ -73,7 +75,8 @@ export const modules: IModule[] = [
       {
         id: 'web',
         icon: <MdWeb />,
-        title: 'App web',
+        title: 'Aplicacion web',
+        short: 'App web',
         subtitle: ''
       }
     ],
@@ -93,6 +96,7 @@ export const modules: IModule[] = [
         id: 'mobile',
         icon: <FaMobileAlt />,
         title: 'App móvil',
+        short: 'App web',
         subtitle: ''
       }
     ],
@@ -112,6 +116,7 @@ export const modules: IModule[] = [
         id: 'mobile',
         icon: <FaMobileAlt />,
         title: 'App móvil',
+        short: 'App web',
         subtitle: ''
       }
     ],
@@ -131,6 +136,7 @@ export const modules: IModule[] = [
         id: 'mobile',
         icon: <FaMobileAlt />,
         title: 'App móvil',
+        short: 'App web',
         subtitle: ''
       }
     ],
@@ -150,6 +156,7 @@ export const modules: IModule[] = [
         id: 'mobile',
         icon: <FaMobileAlt />,
         title: 'App móvil',
+        short: 'App web',
         subtitle: ''
       }
     ],
@@ -169,6 +176,7 @@ export const modules: IModule[] = [
         id: 'mobile',
         icon: <FaMobileAlt />,
         title: 'App móvil',
+        short: 'App web',
         subtitle: ''
       }
     ],
@@ -188,6 +196,7 @@ export const modules: IModule[] = [
         id: 'mobile',
         icon: <FaMobileAlt />,
         title: 'App móvil',
+        short: 'App web',
         subtitle: ''
       }
     ],
@@ -207,6 +216,7 @@ export const modules: IModule[] = [
         id: 'mobile',
         icon: <FaMobileAlt />,
         title: 'App móvil',
+        short: 'App web',
         subtitle: ''
       }
     ],
@@ -226,6 +236,7 @@ export const modules: IModule[] = [
         id: 'mobile',
         icon: <FaMobileAlt />,
         title: 'App móvil',
+        short: 'App web',
         subtitle: ''
       }
     ],
@@ -245,6 +256,7 @@ export const modules: IModule[] = [
         id: 'mobile',
         icon: <FaMobileAlt />,
         title: 'App móvil',
+        short: 'App web',
         subtitle: ''
       }
     ],

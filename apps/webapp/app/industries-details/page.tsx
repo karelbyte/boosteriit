@@ -24,11 +24,14 @@ import {
 } from '../../data/industriesTemplate';
 import { IIntegration, integrations } from '../../data/integrations';
 import {
+  classSolutions,
   formatByCurrencyMXN,
   getAdditional,
-  getSubtotalPriceFormat, getTotalDays
-} from "../../utils";
-import { additionals, IAdditional } from '../../data/addtionals';
+  getSubtotalPriceFormat,
+  getTotalDays,
+} from '../../utils';
+import { IAdditional } from '../../data/addtionals';
+import useIndustriesHook from '../hooks/useIndustriesHook';
 
 export default function IndustriesDetails(): JSX.Element {
   const router = useRouter();
@@ -39,9 +42,16 @@ export default function IndustriesDetails(): JSX.Element {
     setSelectedIndustriesTemplate,
     selectedAddtionals,
     setSelectedAddtionals,
-    selectedIntegrations,
-    setSelectedIntegrations,
   } = useAppContext();
+
+  const {
+    checkOptions,
+    setIntegrations,
+    addTemplatesStorage,
+    getAdditionalsStorage,
+    getStatusCheck,
+    getIntegrationStatusCheck
+  } = useIndustriesHook();
 
   const [showDetails, setShowDetails] = useState<string[]>(['mobile']);
 
@@ -68,72 +78,23 @@ export default function IndustriesDetails(): JSX.Element {
         template.industry === selectedIndustry?.id
     );
     const solutions = selectedSolutions.map((solution) => solution.id);
-    setSelectedIndustriesTemplate(
-      templateForIndustries.filter((template: IIndustryTemplate) =>
-        solutions.includes(template.solution)
+
+    const currents = templateForIndustries.filter(
+      (template: IIndustryTemplate) => solutions.includes(template.solution)
+    );
+    const currentAdditionals = selectedAddtionals
+      .concat(getAdditionalsStorage())
+      .filter(
+        (additional: IAdditional) =>
+          additional.industry === selectedIndustry?.id
       )
-    );
-    setSelectedAddtionals(
-      selectedAddtionals
-        .filter(
-          (additional: IAdditional) =>
-            additional.industry === selectedIndustry?.id
-        )
-        .filter((additional: IAdditional) =>
-          solutions.includes(additional.solution)
-        )
-    );
+      .filter((additional: IAdditional) =>
+        solutions.includes(additional.solution)
+      );
+    setSelectedAddtionals(currentAdditionals);
+    setSelectedIndustriesTemplate(currents);
+    addTemplatesStorage(currents);
   }, [selectedSolutions, selectedIndustry]);
-
-  const checkOptions = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { id, checked } = event.target;
-
-    if (checked) {
-      const additional = additionals.find(
-        (additional: IAdditional) => additional.id == id
-      );
-      if (additional)
-        setSelectedAddtionals([...selectedAddtionals, additional]);
-    } else {
-      setSelectedAddtionals(
-        selectedAddtionals.filter(
-          (additional: IAdditional) => additional.id !== id
-        )
-      );
-    }
-  };
-
-  useEffect(() => {
-    for (const additional of additionals) {
-      if (document) {
-        const elem: HTMLInputElement | null = document.getElementById(
-          additional.id
-        ) as HTMLInputElement;
-        if (elem) {
-          elem.checked = selectedAddtionals
-            .map((item: IAdditional) => item.id)
-            .includes(additional.id);
-        }
-      }
-    }
-  }, [selectedIndustriesTemplate]);
-
-  const setIntegrations = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { id, checked } = event.target;
-    if (checked) {
-      const integration = integrations.find(
-        (integration: IIntegration) => integration.id == id
-      );
-      if (integration)
-        setSelectedIntegrations([...selectedIntegrations, integration]);
-    } else {
-      setSelectedIntegrations(
-        selectedIntegrations.filter(
-          (integration: IIntegration) => integration.id !== id
-        )
-      );
-    }
-  };
 
   return (
     <div className="overflow-hidden">
@@ -152,7 +113,11 @@ export default function IndustriesDetails(): JSX.Element {
                   className="flex flex-col md:flex-row w-full flex-wrap mt-4 border rounded-lg p-6"
                 >
                   <div className="flex justify-between items-center bg-white w-full">
-                    <div className="bg-boo-mobile p-2 flex rounded-lg items-center text-white text-xs">
+                    <div
+                      className={`p-2 flex rounded-lg items-center text-white text-xs ${
+                        classSolutions[template.solution]
+                      }`}
+                    >
                       {template.icon}
                       <span className="hidden md:flex">{template.title}</span>
                       <span className="flex md:hidden">{template.short}</span>
@@ -163,9 +128,10 @@ export default function IndustriesDetails(): JSX.Element {
                       </span>
                       <div className="flex items-center self-end ">
                         <AiOutlineClockCircle />
-                        <p className="ml-2 font-semibold">{template.days} días</p>
+                        <p className="ml-2 font-semibold">
+                          {template.days} días
+                        </p>
                       </div>
-
                     </div>
                   </div>
                   <div className="my-2 flex flex-col w-full">
@@ -281,6 +247,7 @@ export default function IndustriesDetails(): JSX.Element {
                                 type="checkbox"
                                 id={additional.id}
                                 onChange={checkOptions}
+                                checked={getStatusCheck(additional.id)}
                               />
                               <span className="ml-2 text-boo-gray-hard font-normal text-sm">
                                 Agregar a la solución
@@ -340,7 +307,8 @@ export default function IndustriesDetails(): JSX.Element {
                         <input
                           type="checkbox"
                           className="accent-green-400 cursor-pointer"
-                          onChange={setIntegrations}
+                          onChange={() => setIntegrations(integration) }
+                          checked={getIntegrationStatusCheck(integration.id)}
                           id={integration.id}
                         />
                         <span className="text-boo-str-description">
@@ -390,11 +358,11 @@ export default function IndustriesDetails(): JSX.Element {
                 <div className="flex my-4 item items-center self-center">
                   <AiOutlineClockCircle className="text-boo-btn-bg" />
                   <span className="flex items-center font-light text-xs text-boo-str-description ml-2">
-                  Tiempo total:
-                  <p className="font-semibold ml-2">
-                    {getTotalDays(selectedIndustriesTemplate)} días
-                  </p>
-                </span>
+                    Tiempo total:
+                    <p className="font-semibold ml-2">
+                      {getTotalDays(selectedIndustriesTemplate)} días
+                    </p>
+                  </span>
                 </div>
               </div>
             )}
@@ -405,7 +373,6 @@ export default function IndustriesDetails(): JSX.Element {
       <div className="hidden md:flex">
         <Footer />
       </div>
-
     </div>
   );
 }

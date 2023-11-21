@@ -1,11 +1,14 @@
 'use client';
-import React, { createContext, useState, ReactNode } from 'react';
+import React, { createContext, useState, ReactNode, useEffect } from 'react';
 import { ISolution } from '../../data/solutions';
-import { IIndustry } from '../../data/industries';
-import { IModule } from '../../data/modules';
-import { IIndustryTemplate } from '../../data/industriesTemplate';
-import { IIntegration } from '../../data/integrations';
-import { IAdditional } from "../../data/addtionals";
+import { IIndustry, industries } from "../../data/industries";
+import { IModule, modules } from '../../data/modules';
+import {
+  IIndustryTemplate,
+  industriesTemplate,
+} from '../../data/industriesTemplate';
+import { IIntegration, integrations } from "../../data/integrations";
+import { IAdditional } from '../../data/addtionals';
 export interface ContextType {
   selectedSolutions: ISolution[];
   setSelectedSolutions: React.Dispatch<React.SetStateAction<ISolution[]>>;
@@ -26,6 +29,55 @@ export interface ContextType {
 }
 const AppContext = createContext<ContextType | null>(null);
 function AppContextProvider({ children }: { children: ReactNode }) {
+  const getTemplateStorage = () => {
+    const templatesStorage = localStorage.getItem('templates');
+    if (templatesStorage) {
+      const templatesIds = JSON.parse(templatesStorage).map(
+        (item: { id: string }) => item.id
+      );
+      const currentTemplates = industriesTemplate.filter(
+        (template: IIndustryTemplate) => templatesIds.includes(template.id)
+      );
+      setSelectedIndustriesTemplate(currentTemplates);
+    }
+  };
+  const getModulesStorage = () => {
+    const currentStorage = localStorage.getItem('modules');
+
+    if (currentStorage) {
+      const modulesIds = JSON.parse(currentStorage).map(
+        (item: { id: string }) => item.id
+      );
+      const currenModules = modules.filter((module: IModule) =>
+        modulesIds.includes(module.id)
+      );
+      setSelectedModules(currenModules);
+    }
+  };
+
+  const getIndustryStorage = () => {
+    const industry = localStorage.getItem('industry');
+    if (!industry) {
+      return null;
+    }
+    const industryStorage = JSON.parse(industry);
+    setSelectedIndustry(industries.find((item: IIndustry) => item.id === industryStorage.id) ||
+      null)
+  };
+
+  const getIntegrationStorage = () => {
+    const currentIntegrationsStorage = localStorage.getItem('integrations');
+    if (currentIntegrationsStorage) {
+      const integrationsIds = JSON.parse(currentIntegrationsStorage).map(
+        (item: { id: string }) => item.id
+      );
+      const currenIntegrations = integrations.filter((integration: IIntegration) =>
+        integrationsIds .includes(integration.id)
+      );
+      setSelectedIntegrations(currenIntegrations);
+    }
+  };
+
   const [selectedSolutions, setSelectedSolutions] = useState<ISolution[]>([]);
 
   const [selectedIndustry, setSelectedIndustry] = useState<IIndustry | null>(
@@ -44,9 +96,9 @@ function AppContextProvider({ children }: { children: ReactNode }) {
     IIntegration[]
   >([]);
 
-  const [selectedAddtionals, setSelectedAddtionals] = useState<
-    IAdditional[]
-  >([]);
+  const [selectedAddtionals, setSelectedAddtionals] = useState<IAdditional[]>(
+    []
+  );
 
   const contextProperties = {
     selectedSolutions,
@@ -62,8 +114,15 @@ function AppContextProvider({ children }: { children: ReactNode }) {
     selectedIntegrations,
     setSelectedIntegrations,
     selectedAddtionals,
-    setSelectedAddtionals
+    setSelectedAddtionals,
   };
+
+  useEffect(() => {
+    getIndustryStorage()
+    getModulesStorage();
+    getTemplateStorage();
+    getIntegrationStorage()
+  }, []);
 
   return (
     <AppContext.Provider value={contextProperties}>

@@ -40,6 +40,9 @@ export default function Modules(): JSX.Element {
     modulesWeb,
     modulesDesktop,
     modulesMobile,
+    deleteModule,
+    getStatusCheck,
+    addModules
   } = useModules();
 
   const [currentModules, setCurrentModules] = useState<IModule[]>(modules);
@@ -83,34 +86,13 @@ export default function Modules(): JSX.Element {
     setCurrentModulesSelected(selectedModules);
   }, [selectedModules, setCurrentModulesSelected]);
 
-  const addModules = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { id, checked } = event.target;
-    if (checked) {
-      const moduleFound = modules.find((module) => module.id == id);
-      if (moduleFound) setSelectedModules([...selectedModules, moduleFound]);
-    } else {
-      setSelectedModules(
-        selectedModules.filter((module: IModule) => module.id !== id)
-      );
-    }
-  };
+
   const backActionBtn = () => {
     setSelectedIndustry(null);
     setSelectedSolutions([]);
     setSelectedModules([]);
   };
 
-  const deleteModule = (id: string) => {
-    if (document) {
-      const elem: HTMLInputElement | null = document.getElementById(
-        id
-      ) as HTMLInputElement;
-      if (elem) elem.checked = false;
-    }
-    setSelectedModules(
-      selectedModules.filter((module: IModule) => module.id !== id)
-    );
-  };
   const goToUrl = (url: string) => {
     router.push(url);
   };
@@ -189,7 +171,8 @@ export default function Modules(): JSX.Element {
                       className="accent-green-400 cursor-pointer"
                       type="checkbox"
                       id={module.id}
-                      onChange={addModules}
+                      onChange={() => addModules(module)}
+                      checked={getStatusCheck(module.id)}
                     />
                     <span className="ml-2 text-boo-gray-hard font-normal text-sm">
                       Agregar a la solución

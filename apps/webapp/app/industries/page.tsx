@@ -6,14 +6,14 @@ import ActionBtn from '../components/atoms/ActionBtn';
 import SolutionSelectorModal from '../components/molecules/SolutionSelectorModal';
 import Footer from '../components/organisms/Footer';
 import IndustriesBannerFooter from '../components/molecules/IndustriesBannerFooter';
-import useAppContext from '../contexts/hookAppContext';
 import { classSolutions } from '../../utils';
 import { IAvailable, IIndustry, industries } from '../../data/industries';
 import Helper from "../components/molecules/Helper";
 import Image from "next/image";
+import useIndustriesHook from "../hooks/useIndustriesHook";
 
 export default function Industries(): JSX.Element {
-  const { setSelectedIndustry } = useAppContext();
+  const { addIndustryStorage} = useIndustriesHook();
 
   return (
     <div className="overflow-hidden">
@@ -54,7 +54,7 @@ export default function Industries(): JSX.Element {
                 <SolutionSelectorModal nextPath="/industries-details">
                   <ActionBtn
                     title="+ Agregar"
-                    actionFn={() => setSelectedIndustry(industry)}
+                    actionFn={() => addIndustryStorage(industry)}
                   />
                 </SolutionSelectorModal>
               </div>
@@ -105,7 +105,7 @@ export default function Industries(): JSX.Element {
                     <SolutionSelectorModal nextPath="/industries-details">
                       <ActionBtn
                         title="+ Agregar"
-                        actionFn={() => setSelectedIndustry(industry)}
+                        actionFn={() => addIndustryStorage(industry)}
                       />
                     </SolutionSelectorModal>
                   </div>

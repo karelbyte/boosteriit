@@ -3,22 +3,11 @@ import React, { useEffect } from 'react';
 import { ISolution, solutions } from '../../../data/solutions';
 import useSolutions from '../../hooks/solutionsHook.ts';
 export default function SolutionsNav(): JSX.Element {
-  const { selectedSolutions, checkOptions } = useSolutions();
+  const { checkOptions, getSolutionsStorage, getStatusCheck } = useSolutions();
 
   useEffect(() => {
-    for (const solution of solutions) {
-      if (document) {
-        const elem: HTMLInputElement | null = document.getElementById(
-          solution.id
-        ) as HTMLInputElement;
-        if (elem) {
-          elem.checked = selectedSolutions
-            .map((selectedSolution: ISolution) => selectedSolution.id)
-            .includes(solution.id);
-        }
-      }
-    }
-  }, [selectedSolutions]);
+    getSolutionsStorage();
+  }, []);
 
   return (
     <div className="p-6 bg-boo-blue text-black mt-16 md:mt-20 xl:text-center md:flex-row sm:px-10 lg:px-20">
@@ -43,6 +32,7 @@ export default function SolutionsNav(): JSX.Element {
                 type="checkbox"
                 className="mr-2 accent-green-400 cursor-pointer"
                 id={solution.id}
+                checked={getStatusCheck(solution.id)}
                 onChange={checkOptions}
               />
               <span className="hidden md:flex">{solution.title}</span>

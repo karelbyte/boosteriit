@@ -18,7 +18,7 @@ export default function SolutionSelectorModal(
   const { children, nextPath, edit }: ISolutionSelectorModalProps = props;
   const router = useRouter();
   const { selectedSolutions, setSelectedSolutions } = useAppContext();
-  const { checkOptions } = useSolutions();
+  const { checkOptions, getStatusCheck } = useSolutions();
 
   const [showModalSelectSolution, setShowModalSelectSolution] =
     useState<boolean>(false);
@@ -42,21 +42,6 @@ export default function SolutionSelectorModal(
     }
     setShowModalSelectSolution(false);
   };
-
-  useEffect(() => {
-    for (const solution of solutions) {
-      if (document) {
-        const elem: HTMLInputElement | null = document.getElementById(
-          solution.id
-        ) as HTMLInputElement;
-        if (elem) {
-          elem.checked = selectedSolutions
-            .map((selectedSolution: ISolution) => selectedSolution.id)
-            .includes(solution.id);
-        }
-      }
-    }
-  }, [selectedSolutions, showModalSelectSolution]);
 
   const getStyle = (options: ISolution[]) => {
     return options.length === 0
@@ -113,6 +98,7 @@ export default function SolutionSelectorModal(
                       type="checkbox"
                       className="accent-green-400 cursor-pointer"
                       id={solution.id}
+                      checked={getStatusCheck(solution.id)}
                       onChange={checkOptions}
                     />
                   </div>
