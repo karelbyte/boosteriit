@@ -29,13 +29,16 @@ import ErrorModal from '../components/molecules/ErrorModal';
 import SolutionBreadcrumbs from '../components/molecules/SolutionBreadcrumbs';
 import ShoppingCartEmpty from '../components/organisms/ShoppingCartEmpty';
 import DeleteModal from '../components/molecules/DeleteModal';
+import { IIntegration, integrations } from '../../data/integrations';
+import useIndustriesHook from '../hooks/useIndustriesHook';
 export default function ShoppingCart(): JSX.Element {
   const {
     selectedSolutions,
     selectedIndustry,
     selectedIndustriesTemplate,
-    selectedAddtionals,
+    selectedAdditionals,
     setSelectedIndustriesTemplate,
+    selectedIntegrations,
   } = useAppContext();
 
   const {
@@ -45,6 +48,8 @@ export default function ShoppingCart(): JSX.Element {
     currentModulesSelected,
     deleteModule,
   } = useModules();
+
+  const { setIntegrations, getIntegrationStatusCheck } = useIndustriesHook();
 
   const [showModalSelectSolution, setShowModalSelectSolution] =
     useState<boolean>(false);
@@ -83,7 +88,7 @@ export default function ShoppingCart(): JSX.Element {
   };
 
   const getAdditional = (solution: string, industry: string) => {
-    return selectedAddtionals
+    return selectedAdditionals
       .filter((additional: IAdditional) => additional.industry === industry)
       .filter((additional: IAdditional) => additional.solution === solution);
   };
@@ -100,7 +105,7 @@ export default function ShoppingCart(): JSX.Element {
   };
 
   const getSubtotalOfProductsAndAditionals = () => {
-    const totalAddtionals = getSubtotalPrice(selectedAddtionals);
+    const totalAddtionals = getSubtotalPrice(selectedAdditionals);
     return getSubtotalOfProducts() + totalAddtionals;
   };
 
@@ -118,13 +123,13 @@ export default function ShoppingCart(): JSX.Element {
         (template: IIndustryTemplate) => template.id !== id
       )
     );
-    setShowModalDelete(false)
+    setShowModalDelete(false);
   };
 
-  const showDeleteModal = (id:string) => {
-    setTemplateId(id)
-    setShowModalDelete(true)
-  }
+  const showDeleteModal = (id: string) => {
+    setTemplateId(id);
+    setShowModalDelete(true);
+  };
 
   return (
     <div className="overflow-hidden flex flex-col min-h-screen">
@@ -144,7 +149,7 @@ export default function ShoppingCart(): JSX.Element {
           <div className="flex flex-col w-full">
             {currentModulesSelected.length > 0 && (
               <div className="w-full">
-                <p className="text-xl xl:text-2xl mb-4">
+                <p className="text-xl xl:text-2xl mb-4 mt-4 md:mt-10">
                   Arma una solución a tu medida
                 </p>
                 <SolutionBreadcrumbs
@@ -202,7 +207,10 @@ export default function ShoppingCart(): JSX.Element {
                                 {template.icon}
                                 <span className="ml-2">{template.title}</span>
                               </div>
-                              <div className="lg:hidden text-red-800 cursor-pointer" onClick={() => showDeleteModal(template.id)}>
+                              <div
+                                className="text-red-800 cursor-pointer"
+                                onClick={() => showDeleteModal(template.id)}
+                              >
                                 <BsTrash3 />
                               </div>
                             </div>
@@ -223,12 +231,6 @@ export default function ShoppingCart(): JSX.Element {
                                       <span className="text-xs lg:text-base text-boo-str-description">
                                         Listo en: {template.days} dias
                                       </span>
-                                      <div
-                                        className="hidden lg:flex ml-4 text-boo-btn-bg underline cursor-pointer"
-                                        onClick={() => showDeleteModal(template.id)}
-                                      >
-                                        eliminar
-                                      </div>
                                     </div>
                                   </div>
                                 </div>
@@ -324,6 +326,32 @@ export default function ShoppingCart(): JSX.Element {
                           </div>
                         )
                       )}
+                    {selectedIntegrations.length > 0 && (
+                      <div className="bg-white border p-4 rounded-lg">
+                        <p className="mb-6 text-md font-semibold">
+                          Integraciones.
+                        </p>
+                        <div className="flex flex-col gap-4">
+                          {integrations &&
+                            integrations.map((integration: IIntegration) => (
+                              <div key={integration.id} className="flex gap-4">
+                                <input
+                                  type="checkbox"
+                                  className="accent-green-400 cursor-pointer"
+                                  onChange={() => setIntegrations(integration)}
+                                  checked={getIntegrationStatusCheck(
+                                    integration.id
+                                  )}
+                                  id={integration.id}
+                                />
+                                <span className="text-boo-str-description">
+                                  {integration.title}
+                                </span>
+                              </div>
+                            ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -342,8 +370,8 @@ export default function ShoppingCart(): JSX.Element {
                 </div>
                 {selectedIndustry && (
                   <div className="flex justify-between mb-4 text-boo-str-description">
-                    <span>Funciones Extras ({selectedAddtionals.length})</span>
-                    <span>{getSubtotalPriceFormat(selectedAddtionals)}</span>
+                    <span>Funciones Extras ({selectedAdditionals.length})</span>
+                    <span>{getSubtotalPriceFormat(selectedAdditionals)}</span>
                   </div>
                 )}
                 <div className="border mb-4"></div>
@@ -385,7 +413,7 @@ export default function ShoppingCart(): JSX.Element {
         showModal={showModalDelete}
         setShowModal={setShowModalDelete}
         caption={'¿Seguro que deseas eliminar el producto de tu carrito?'}
-        deleteAction={() => deleteTemplate(templateId) }
+        deleteAction={() => deleteTemplate(templateId)}
       />
       <ErrorModal showModal={showModalError} setShowModal={setShowModalError} />
       <Helper />

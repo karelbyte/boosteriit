@@ -20,8 +20,8 @@ const useAppContext = (): ContextType => {
     setSelectedIndustriesTemplate,
     selectedIntegrations,
     setSelectedIntegrations,
-    selectedAddtionals,
-    setSelectedAddtionals
+    selectedAdditionals,
+    setSelectedAdditionals
   }: ContextType = context;
 
   return {
@@ -37,8 +37,8 @@ const useAppContext = (): ContextType => {
     setSelectedIndustriesTemplate,
     selectedIntegrations,
     setSelectedIntegrations,
-    selectedAddtionals,
-    setSelectedAddtionals
+    selectedAdditionals,
+    setSelectedAdditionals
   };
 };
 

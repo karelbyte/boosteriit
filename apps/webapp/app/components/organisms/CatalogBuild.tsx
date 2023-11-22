@@ -4,14 +4,13 @@ import { BsPlusLg } from 'react-icons/bs';
 import { BiHelpCircle } from 'react-icons/bi';
 import SlidesBtn from '../molecules/SlidesBtn';
 import SolutionSelectorModalEdit from '../molecules/SolutionSelectorModalEdit';
-import useAppContext from "../../contexts/hookAppContext";
-import { IModule,  modules } from "../../../data/modules";
+import useAppContext from '../../contexts/hookAppContext';
+import { IModule, modules } from '../../../data/modules';
+import { useRouter } from 'next/navigation';
+import ContactModal from './ContactModal';
+import DataSendModal from './DataSendModal';
+import RequestSentModal from './RequestSentModal';
 
-interface IItem {
-  id: number;
-  title: string;
-  subtitle: string;
-}
 interface ISettings {
   dots?: boolean;
   infinite?: boolean;
@@ -25,7 +24,22 @@ interface ISettings {
 }
 
 export default function CatalogBuild(): JSX.Element {
+  const router = useRouter();
+  const goToUrl = (path: string) => {
+    router.push(path);
+  };
+  const [showModalContact, setShowModalContact] = useState<boolean>(false);
 
+  const [showModalDataSend, setShowDataSend] = useState<boolean>(false);
+
+  const [showModalRequest, setShowModalRequest] = useState<boolean>(false);
+
+  const modalContactProps = {
+    showModal: showModalContact,
+    setShowModal: setShowModalContact,
+    activeModalSendSuccess: setShowDataSend,
+    activeModalRequestSuccess: setShowModalRequest,
+  };
   const { selectedSolutions, setSelectedModules } = useAppContext();
   const settings: ISettings = {
     speed: 500,
@@ -101,7 +115,7 @@ export default function CatalogBuild(): JSX.Element {
                   <p className="text-[#686767] mb-6 text-xs">{item.subtitle}</p>
                   <button
                     className={`flex py-3.5 px-6 w-full justify-center text-white bg-boo-btn-bg border-0 focus:outline-none rounded hover:bg-boo-btn-bg-hover`}
-                    onClick={() => setShowModalAndModule(item) }
+                    onClick={() => setShowModalAndModule(item)}
                   >
                     <span className="flex items-center">
                       <BsPlusLg />
@@ -128,12 +142,14 @@ export default function CatalogBuild(): JSX.Element {
                 atención personalizada.
               </p>
               <button
-                className={`flex py-3.5 px-6 w-full justify-center text-white bg-boo-btn-bg border-0 focus:outline-none rounded hover:bg-boo-btn-bg-hover`}
+                className="flex py-3.5 px-6 w-full justify-center text-white bg-boo-btn-bg border-0 focus:outline-none rounded hover:bg-boo-btn-bg-hover"
+                onClick={() => goToUrl('/modules')}
               >
                 Ver soluciones
               </button>
               <button
-                className={`flex py-5 px-6 w-full justify-center text-boo-btn-bg focus:outline-none rounded`}
+                className="flex py-5 px-6 w-full justify-center text-boo-btn-bg focus:outline-none rounded"
+                onClick={() => setShowModalContact(true)}
               >
                 Contacto
               </button>
@@ -142,6 +158,15 @@ export default function CatalogBuild(): JSX.Element {
         </Slider>
         <SlidesBtn style={'self-center mt-4'} next={next} previous={previous} />
       </div>
+      <ContactModal {...modalContactProps} />
+      <DataSendModal
+        showModal={showModalDataSend}
+        setShowModal={setShowDataSend}
+      />
+      <RequestSentModal
+        showModal={showModalRequest}
+        setShowModal={setShowModalRequest}
+      />
     </>
   );
 }

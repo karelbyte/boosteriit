@@ -10,18 +10,27 @@ export default function useShoppingCart() {
     setSelectedSections,
     setSelectedIndustriesTemplate,
     setSelectedIntegrations,
-    setSelectedAddtionals,
+    setSelectedAdditionals,
   } = useAppContext();
+
   const clear = () => {
     router.push('/');
     setTimeout(() => {
       setSelectedSolutions([]);
+      localStorage.removeItem('solutions');
       setSelectedIndustry(null);
+      localStorage.removeItem('industry');
       setSelectedModules([]);
+      localStorage.removeItem('modules');
       setSelectedSections([]);
+      localStorage.removeItem('sections');
       setSelectedIndustriesTemplate([]);
+      localStorage.removeItem('templates');
       setSelectedIntegrations([]);
-      setSelectedAddtionals([]);
+      localStorage.removeItem('integrations');
+      setSelectedAdditionals([]);
+      localStorage.removeItem('additionals');
+      console.log('termino')
     }, 4000);
   };
 

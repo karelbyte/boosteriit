@@ -52,6 +52,38 @@ export default function PdfTemplate(props: IPdfTemplateProps) {
   return (
     <Document>
       {selectedIndustriesTemplate &&
+        selectedIndustriesTemplate.length == 0 &&
+        selectedModules &&
+        selectedModules.length == 0 && (
+          <Page size="A4" style={styles.page}>
+            <View style={styles.banner} fixed>
+              <Image src="./public/assets/boosteriit.png" />
+            </View>
+            <View style={styles.section}>
+              <View style={styles.hr}></View>
+              <Text style={styles.h2}>CLIENTE: {name}</Text>
+              <Text style={styles.h2}>EMAIL: {email}</Text>
+              <View>
+                {type === 'request' ? (
+                  <View>
+                    <Text style={styles.h2}>Prefiere que lo llamen:</Text>
+                    <Text style={styles.h2}>Telefono: {phone}</Text>
+                  </View>
+                ) : (
+                  <View>
+                    <Text style={styles.h2}>Horario del cliente:</Text>
+                    <Text style={styles.h2}>Fecha: {date}</Text>
+                    <Text style={styles.h2}>Hora: {time}</Text>
+                  </View>
+                )}
+              </View>
+            </View>
+            <View style={styles.section}>
+              <Text style={styles.h1}>NO COTIZO</Text>
+            </View>
+          </Page>
+        )}
+      {selectedIndustriesTemplate &&
         selectedIndustriesTemplate.length > 0 &&
         selectedIndustriesTemplate.map((template: IIndustryTemplate) => (
           <Page key={template.id} size="A4" style={styles.page}>
@@ -130,54 +162,56 @@ export default function PdfTemplate(props: IPdfTemplateProps) {
             />
           </Page>
         ))}
-      <Page size="A4" style={styles.page}>
-        <View style={styles.banner} fixed>
-          <Image src="./public/assets/boosteriit.png" />
-        </View>
-        <View style={styles.section}>
-          <Text style={styles.h1}>COTIZACION</Text>
-          <View style={styles.hr}></View>
-          <Text style={styles.h2}>CLIENTE: {name}</Text>
-          <Text style={styles.h2}>EMAIL: {email}</Text>
-          <View>
-            {type === 'request' ? (
-              <View>
-                <Text style={styles.h2}>Prefiere que lo llamen:</Text>
-                <Text style={styles.h2}>Telefono: {phone}</Text>
-              </View>
-            ) : (
-              <View>
-                <Text style={styles.h2}>Horario del cliente:</Text>
-                <Text style={styles.h2}>Fecha: {date}</Text>
-                <Text style={styles.h2}>Hora: {time}</Text>
-              </View>
-            )}
+      {selectedModules && selectedModules.length > 0 && (
+        <Page size="A4" style={styles.page}>
+          <View style={styles.banner} fixed>
+            <Image src="./public/assets/boosteriit.png" />
           </View>
-        </View>
-        {selectedModules && selectedModules.length > 0 && (
-          <View>
-            <Text style={styles.h1}>MODULOS</Text>
-          </View>
-        )}
-        <View style={styles.viewSectionFlex}>
-          <Text style={styles.cel2Header}>Solución</Text>
-          <Text style={styles.cel1Header}>Precio</Text>
-          <Text style={styles.cel1Header}>Tiempo</Text>
-        </View>
-        {selectedModules &&
-          selectedModules.length > 0 &&
-          selectedModules.map((module: IModule) => (
-            <View key={module.id} style={styles.section}>
-              <View style={styles.viewSectionFlex}>
-                <Text style={styles.cel2}>{module.title}</Text>
-                <Text style={styles.cel1}>
-                  ${formatByCurrencyMXN(module.price)}
-                </Text>
-                <Text style={styles.cel1}>{module.days} dias</Text>
-              </View>
+          <View style={styles.section}>
+            <Text style={styles.h1}>COTIZACION</Text>
+            <View style={styles.hr}></View>
+            <Text style={styles.h2}>CLIENTE: {name}</Text>
+            <Text style={styles.h2}>EMAIL: {email}</Text>
+            <View>
+              {type === 'request' ? (
+                <View>
+                  <Text style={styles.h2}>Prefiere que lo llamen:</Text>
+                  <Text style={styles.h2}>Telefono: {phone}</Text>
+                </View>
+              ) : (
+                <View>
+                  <Text style={styles.h2}>Horario del cliente:</Text>
+                  <Text style={styles.h2}>Fecha: {date}</Text>
+                  <Text style={styles.h2}>Hora: {time}</Text>
+                </View>
+              )}
             </View>
-          ))}
-      </Page>
+          </View>
+          {selectedModules && selectedModules.length > 0 && (
+            <View>
+              <Text style={styles.h1}>MODULOS</Text>
+            </View>
+          )}
+          <View style={styles.viewSectionFlex}>
+            <Text style={styles.cel2Header}>Solución</Text>
+            <Text style={styles.cel1Header}>Precio</Text>
+            <Text style={styles.cel1Header}>Tiempo</Text>
+          </View>
+          {selectedModules &&
+            selectedModules.length > 0 &&
+            selectedModules.map((module: IModule) => (
+              <View key={module.id} style={styles.section}>
+                <View style={styles.viewSectionFlex}>
+                  <Text style={styles.cel2}>{module.title}</Text>
+                  <Text style={styles.cel1}>
+                    ${formatByCurrencyMXN(module.price)}
+                  </Text>
+                  <Text style={styles.cel1}>{module.days} dias</Text>
+                </View>
+              </View>
+            ))}
+        </Page>
+      )}
     </Document>
   );
 }
@@ -214,7 +248,7 @@ const styles = StyleSheet.create({
   h1: {
     marginBottom: 6,
     fontSize: '18px',
-    color: 'black'
+    color: 'black',
   },
   h2: {
     marginBottom: 6,
@@ -254,6 +288,6 @@ const styles = StyleSheet.create({
     width: '50%',
     fontSize: '12px',
     padding: '5px 5px 5px 5px',
-    color: 'black'
+    color: 'black',
   },
 });

@@ -25,7 +25,7 @@ export default function ContactModal(props: IContactModalProps): JSX.Element {
 
   const {
     selectedIndustriesTemplate,
-    selectedAddtionals,
+    selectedAdditionals,
     selectedIntegrations,
     selectedModules,
     selectedIndustry,
@@ -75,7 +75,7 @@ export default function ContactModal(props: IContactModalProps): JSX.Element {
       phone,
       selectedIndustriesTemplate,
       selectedModules,
-      selectedAddtionals,
+      selectedAdditionals,
       selectedIntegrations,
       selectedIndustry,
       type,

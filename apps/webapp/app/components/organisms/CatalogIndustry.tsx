@@ -6,7 +6,12 @@ import SlidesBtn from '../molecules/SlidesBtn';
 import { IIndustry, industries } from '../../../data/industries';
 import SolutionSelectorModalEdit from '../molecules/SolutionSelectorModalEdit';
 import useAppContext from '../../contexts/hookAppContext';
-import Image from "next/image";
+import Image from 'next/image';
+import useIndustriesHook from '../../hooks/useIndustriesHook';
+import { useRouter } from 'next/navigation';
+import ContactModal from './ContactModal';
+import DataSendModal from './DataSendModal';
+import RequestSentModal from './RequestSentModal';
 
 interface ISettings {
   dots?: boolean;
@@ -21,7 +26,12 @@ interface ISettings {
 }
 
 export default function CatalogIndustry(): JSX.Element {
-  const { selectedSolutions, setSelectedIndustry } = useAppContext();
+  const { selectedSolutions } = useAppContext();
+  const { addIndustryStorage } = useIndustriesHook();
+  const router = useRouter();
+  const goToUrl = (path: string) => {
+    router.push(path);
+  };
   const settings: ISettings = {
     speed: 500,
     slidesToShow: 4,
@@ -35,6 +45,19 @@ export default function CatalogIndustry(): JSX.Element {
         },
       },
     ],
+  };
+
+  const [showModalContact, setShowModalContact] = useState<boolean>(false);
+
+  const [showModalDataSend, setShowDataSend] = useState<boolean>(false);
+
+  const [showModalRequest, setShowModalRequest] = useState<boolean>(false);
+
+  const modalContactProps = {
+    showModal: showModalContact,
+    setShowModal: setShowModalContact,
+    activeModalSendSuccess: setShowDataSend,
+    activeModalRequestSuccess: setShowModalRequest,
   };
 
   const items = industries.slice(0, 4);
@@ -57,7 +80,7 @@ export default function CatalogIndustry(): JSX.Element {
 
   const setShowModalAndIndustry = (industry: IIndustry) => {
     setShowModal(true);
-    setSelectedIndustry(industry);
+    addIndustryStorage(industry);
   };
 
   return (
@@ -66,7 +89,7 @@ export default function CatalogIndustry(): JSX.Element {
         setShowModalEdit={setShowModal}
         showModalEdit={showModal}
         currentSolutions={selectedSolutions}
-        nextPath={'/industries'}
+        nextPath={'/industries-details'}
       />
       <div className="flex flex-col my-12 px-6 sm:my-24 sm:px-12 xl:my-12 xl:px-24">
         <p className="mb-6 font-bold text-xl text-justify md:text-center md:text-2xl lg:text-4xl">
@@ -131,10 +154,16 @@ export default function CatalogIndustry(): JSX.Element {
                 Arma tu paquete personalizado ó comunícate con nosotros para una
                 atención personalizada.
               </p>
-              <button className="flex py-3.5 px-6 w-full justify-center text-white bg-boo-btn-bg border-0 focus:outline-none rounded hover:bg-boo-btn-bg-hover">
+              <button
+                className="flex py-3.5 px-6 w-full justify-center text-white bg-boo-btn-bg border-0 focus:outline-none rounded hover:bg-boo-btn-bg-hover"
+                onClick={() => goToUrl('/industries')}
+              >
                 Ver soluciones
               </button>
-              <button className="flex py-5 px-6 w-full justify-center text-boo-btn-bg focus:outline-none rounded">
+              <button
+                className="flex py-5 px-6 w-full justify-center text-boo-btn-bg focus:outline-none rounded"
+                onClick={() => setShowModalContact(true)}
+              >
                 Contacto
               </button>
             </div>
@@ -142,6 +171,15 @@ export default function CatalogIndustry(): JSX.Element {
         </Slider>
         <SlidesBtn style={'self-center mt-4'} next={next} previous={previous} />
       </div>
+      <ContactModal {...modalContactProps} />
+      <DataSendModal
+        showModal={showModalDataSend}
+        setShowModal={setShowDataSend}
+      />
+      <RequestSentModal
+        showModal={showModalRequest}
+        setShowModal={setShowModalRequest}
+      />
     </>
   );
 }

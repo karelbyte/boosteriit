@@ -54,7 +54,7 @@ export default function IndustryOrBuild(): JSX.Element {
           <div className="flex flex-col justify-between">
             <div>
               <p className="font-bold text-lg mb-4 text-boo-gray-hard">
-                Catálogo por industria
+                Ármalo desde cero
               </p>
               <p className="mb-4 text-sm text-justify text-boo-gray-hard">
                 Arma tu aplicativo seleccionando sólo los componentes que

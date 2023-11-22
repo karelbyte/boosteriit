@@ -6,44 +6,124 @@ export interface ISection {
 }
 export const sections: ISection[] = [
   {
-    id: 's1',
-    title: 'Pagos s1',
+    id: 'users',
+    title: 'Usuarios',
   },
   {
-    id: 's2',
-    title: 'Autenticación s2',
+    id: 'catalogs',
+    title: 'Catálogos',
   },
   {
-    id: 's3',
-    title: 'Usuarios s3',
+    id: 'reservations_agendas_appointments',
+    title: 'Reservas, agendas y citas',
   },
   {
-    id: 's4',
-    title: 'Pagos s4',
+    id: 'orders',
+    title: 'Pedidos',
   },
   {
-    id: 's5',
-    title: 'Autenticación s5',
+    id: 'wallet_and_payments',
+    title: 'Wallet y Pagos',
   },
   {
-    id: 's6',
-    title: 'Usuarios s6',
+    id: 'notifications',
+    title: 'Notificaciones',
   },
   {
-    id: 's7',
-    title: 'Usuarios s7',
+    id: 'reports',
+    title: 'Reportes',
   },
   {
-    id: 's8',
-    title: 'Pagos s8',
+    id: 'administration',
+    title: 'Administración',
   },
   {
-    id: 's9',
-    title: 'Autenticación s8',
+    id: 'staff',
+    title: 'Personal',
   },
   {
-    id: 's10',
-    title: 'Usuarios s10',
+    id: 'inventories',
+    title: 'Inventarios',
+  },
+  {
+    id: 'suppliers',
+    title: 'Proveedores',
+  },
+  {
+    id: 'customer_service',
+    title: 'Servicio al cliente',
+  },
+  {
+    id: 'histories',
+    title: 'Historiales',
+  },
+  {
+    id: 'help_support',
+    title: 'Ayuda y soporte',
+  },
+  {
+    id: 'clarifications',
+    title: 'Aclaraciones',
+  },
+  {
+    id: 'geolocation',
+    title: 'Geolocalización',
+  },
+  {
+    id: 'billing',
+    title: 'Facturación',
+  },
+  {
+    id: 'promotions',
+    title: 'Promociones',
+  },
+  {
+    id: 'purchasing_process',
+    title: 'Proceso de compra',
+  },
+  {
+    id: 'recommendations',
+    title: 'Recomendaciones',
+  },
+  {
+    id: 'metrics_statistics',
+    title: 'Métricas y estadísticas',
+  },
+  {
+    id: 'crm',
+    title: 'CRM',
+  },
+  {
+    id: 'accounting_finance',
+    title: 'Contabilidad y finanzas',
+  },
+  {
+    id: 'erp',
+    title: 'ERP',
+  },
+  {
+    id: 'videoconferencing_multimedia',
+    title: 'Videoconferencia y Multimedia',
+  },
+  {
+    id: 'integrations',
+    title: 'Integraciones',
+  },
+  {
+    id: 'kyc',
+    title: 'KYC',
+  },
+  {
+    id: 'security',
+    title: 'Seguridad',
+  },
+  {
+    id: 'credits',
+    title: 'Créditos',
+  },
+  {
+    id: 'erp',
+    title: 'ERP',
   },
 ];
 
