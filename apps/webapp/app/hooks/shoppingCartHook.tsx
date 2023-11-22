@@ -30,6 +30,7 @@ export default function useShoppingCart() {
       localStorage.removeItem('integrations');
       setSelectedAdditionals([]);
       localStorage.removeItem('additionals');
+      console.log('termino')
     }, 4000);
   };
 

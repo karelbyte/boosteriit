@@ -38,6 +38,7 @@ export default function ShoppingCart(): JSX.Element {
     selectedIndustriesTemplate,
     selectedAdditionals,
     setSelectedIndustriesTemplate,
+    selectedIntegrations,
   } = useAppContext();
 
   const {
@@ -207,7 +208,7 @@ export default function ShoppingCart(): JSX.Element {
                                 <span className="ml-2">{template.title}</span>
                               </div>
                               <div
-                                className="lg:hidden text-red-800 cursor-pointer"
+                                className="text-red-800 cursor-pointer"
                                 onClick={() => showDeleteModal(template.id)}
                               >
                                 <BsTrash3 />
@@ -230,14 +231,6 @@ export default function ShoppingCart(): JSX.Element {
                                       <span className="text-xs lg:text-base text-boo-str-description">
                                         Listo en: {template.days} dias
                                       </span>
-                                      <div
-                                        className="hidden lg:flex ml-4 text-boo-btn-bg underline cursor-pointer"
-                                        onClick={() =>
-                                          showDeleteModal(template.id)
-                                        }
-                                      >
-                                        eliminar
-                                      </div>
                                     </div>
                                   </div>
                                 </div>
@@ -333,28 +326,32 @@ export default function ShoppingCart(): JSX.Element {
                           </div>
                         )
                       )}
-                    <div className="bg-white border p-4 rounded-lg">
-                      <p className="mb-6 text-md font-semibold">Integraciones.</p>
-                      <div className="flex flex-col gap-4">
-                        {integrations &&
-                          integrations.map((integration: IIntegration) => (
-                            <div key={integration.id} className="flex gap-4">
-                              <input
-                                type="checkbox"
-                                className="accent-green-400 cursor-pointer"
-                                onChange={() => setIntegrations(integration)}
-                                checked={getIntegrationStatusCheck(
-                                  integration.id
-                                )}
-                                id={integration.id}
-                              />
-                              <span className="text-boo-str-description">
-                                {integration.title}
-                              </span>
-                            </div>
-                          ))}
+                    {selectedIntegrations.length > 0 && (
+                      <div className="bg-white border p-4 rounded-lg">
+                        <p className="mb-6 text-md font-semibold">
+                          Integraciones.
+                        </p>
+                        <div className="flex flex-col gap-4">
+                          {integrations &&
+                            integrations.map((integration: IIntegration) => (
+                              <div key={integration.id} className="flex gap-4">
+                                <input
+                                  type="checkbox"
+                                  className="accent-green-400 cursor-pointer"
+                                  onChange={() => setIntegrations(integration)}
+                                  checked={getIntegrationStatusCheck(
+                                    integration.id
+                                  )}
+                                  id={integration.id}
+                                />
+                                <span className="text-boo-str-description">
+                                  {integration.title}
+                                </span>
+                              </div>
+                            ))}
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
                 </div>
               </div>

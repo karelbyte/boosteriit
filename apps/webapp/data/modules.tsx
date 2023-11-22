@@ -19,55 +19,86 @@ export interface IModule {
   days: number;
   solutions: ISolution[];
   sections: string[];
+  industries: string[]
 }
 export const modules: IModule[] = [
   {
     id: 'login_social_networks',
     image: '',
-    title: 'Inicio de sesión, con app de google y redes sociales',
-    subtitle: 'Con app de google y redes sociales',
+    title: 'Registro/Inicio de sesión con correo, google o redes sociales',
+    subtitle: 'Inicio de sesión.',
     description:
-      'El módulo permite al usuario ingresar a una plataforma mediante su usuario o correo y una contraseña, o bien accediendo a través de su cuenta de google o redes sociales: facebook. Incluye el flujo de recuperación de contraseña',
+      'Habilita el acceso a tu plataforma con alguna de las cuentas más populares en Internet',
     price: 20000,
     timeStr: 'Lista en: 12 días',
     days: 12,
     solutions: [
       {
+        id: 'web',
+        icon: <MdWeb />,
+        title: 'Aplicación web',
+        short: 'App web',
+        subtitle: ''
+      },
+      {
         id: 'mobile',
         icon: <FaMobileAlt />,
-        title: 'Aplicacion móvil',
+        title: 'Aplicación móvil',
         short: 'App móvil',
+        subtitle: ''
+      },
+      {
+        id: 'desktop',
+        icon: <BiDesktop />,
+        title: 'Aplicación desktop',
+        short: 'App desktop',
         subtitle: ''
       }
     ],
-    sections: ['s1']
+    sections: ['users'],
+    industries: ['Restaurantero', 'Viajes Turísticos']
   },
   {
-    id: 'payment_management',
+    id: 'restaurant_catalog',
     image: '',
-    title: 'Gestión de pagos',
-    subtitle: 'Gestión de pagos',
+    title: 'Catalogo de Restaurantes o sucursales',
+    subtitle: 'Gestiona los establecimientos que tus clientes podrán elegir',
     description: 'Gestión de pagos',
     price: 40000,
     timeStr: 'Lista en: 12 días',
     days: 12,
     solutions: [
       {
+        id: 'web',
+        icon: <MdWeb />,
+        title: 'Aplicación web',
+        short: 'App web',
+        subtitle: ''
+      },
+      {
+        id: 'mobile',
+        icon: <FaMobileAlt />,
+        title: 'Aplicación móvil',
+        short: 'App móvil',
+        subtitle: ''
+      },
+      {
         id: 'desktop',
         icon: <BiDesktop />,
-        title: 'Aplicacion desktop',
+        title: 'Aplicación desktop',
         short: 'App desktop',
         subtitle: ''
       }
     ],
-    sections: ['s2']
+    sections: ['catalogs'],
+    industries: ['Restaurantero']
   },
   {
-    id: 'notifications',
+    id: 'online_reservation_system',
     image: '',
-    title: 'Notificaciones',
-    subtitle: 'Notificaciones',
-    description: 'Notificaciones',
+    title: 'Sistema de reserva en linea',
+    subtitle: 'Reserva en linea',
+    description: 'Genera y gestiona las reservaciones de tus clientes',
     price: 15000,
     timeStr: 'Lista en: 8 días',
     days: 8,
@@ -75,153 +106,266 @@ export const modules: IModule[] = [
       {
         id: 'web',
         icon: <MdWeb />,
-        title: 'Aplicacion web',
+        title: 'Aplicación web',
         short: 'App web',
+        subtitle: ''
+      },
+      {
+        id: 'mobile',
+        icon: <FaMobileAlt />,
+        title: 'Aplicación móvil',
+        short: 'App móvil',
+        subtitle: ''
+      },
+      {
+        id: 'desktop',
+        icon: <BiDesktop />,
+        title: 'Aplicación desktop',
+        short: 'App desktop',
         subtitle: ''
       }
     ],
-    sections: ['s1']
+    sections: ['reservations_agendas_appointments'],
+    industries: ['Restaurantero']
   },
   {
-    id: 'customer_profile',
+    id: 'table_order_management',
     image: '',
-    title: 'Perfil de cliente',
-    subtitle: 'Perfil de cliente',
-    description: '',
+    title: 'Gestión de pedidos por mesa',
+    subtitle: 'Pedidos',
+    description: 'Organiza y controla los pedidos recibidos por mesa en cada establecimiento',
     price: 28000,
     timeStr: 'Lista en: 15 días',
     days: 15,
     solutions: [
       {
+        id: 'web',
+        icon: <MdWeb />,
+        title: 'Aplicación web',
+        short: 'App web',
+        subtitle: ''
+      },
+      {
         id: 'mobile',
         icon: <FaMobileAlt />,
-        title: 'App móvil',
-        short: 'App web',
+        title: 'Aplicación móvil',
+        short: 'App móvil',
+        subtitle: ''
+      },
+      {
+        id: 'desktop',
+        icon: <BiDesktop />,
+        title: 'Aplicación desktop',
+        short: 'App desktop',
         subtitle: ''
       }
     ],
-    sections: ['s1']
+    sections: ['orders'],
+    industries: ['Restaurantero', 'Viajes Turísticos']
   },
   {
-    id: 'geo',
+    id: 'user_profile',
     image: '',
-    title: 'Geolocalización',
-    subtitle: 'Geolocalización',
-    description: 'Geolocalización',
+    title: 'Perfil de Usuario',
+    subtitle: 'Perfil de Usuario',
+    description: 'Permite que tus usuarios personalicen su cuenta y capturen información que requieras',
     price: 50000,
     timeStr: 'Lista en: 20 días',
     days: 20,
     solutions: [
       {
+        id: 'web',
+        icon: <MdWeb />,
+        title: 'Aplicación web',
+        short: 'App web',
+        subtitle: ''
+      },
+      {
         id: 'mobile',
         icon: <FaMobileAlt />,
-        title: 'App móvil',
-        short: 'App web',
+        title: 'Aplicación móvil',
+        short: 'App móvil',
+        subtitle: ''
+      },
+      {
+        id: 'desktop',
+        icon: <BiDesktop />,
+        title: 'Aplicación desktop',
+        short: 'App desktop',
         subtitle: ''
       }
     ],
-    sections: ['s1']
+    sections: ['users'],
+    industries: ['Restaurantero']
   },
   {
-    id: 'checkin_checkout',
+    id: 'menu_price_management',
     image: '',
-    title: 'Sistema Check In & Check Out',
-    subtitle: 'Sistema Check In & Check Out',
-    description: 'Sistema Check In & Check Out',
+    title: 'Gestion de menus y precios',
+    subtitle: 'Gestion de menus y precios',
+    description: 'Crea y personaliza los menús de tus establecimientos',
     price: 23000,
     timeStr: 'Lista en: 10 días',
     days: 10,
     solutions: [
       {
+        id: 'web',
+        icon: <MdWeb />,
+        title: 'Aplicación web',
+        short: 'App web',
+        subtitle: ''
+      },
+      {
         id: 'mobile',
         icon: <FaMobileAlt />,
-        title: 'App móvil',
-        short: 'App web',
+        title: 'Aplicación móvil',
+        short: 'App móvil',
+        subtitle: ''
+      },
+      {
+        id: 'desktop',
+        icon: <BiDesktop />,
+        title: 'Aplicación desktop',
+        short: 'App desktop',
         subtitle: ''
       }
     ],
-    sections: ['s1']
+    sections: ['catalogs'],
+    industries: ['Restaurantero']
   },
   {
-    id: 'shopping_cart',
+    id: 'payment_systems',
     image: '',
-    title: 'Carrito de compra',
-    subtitle: 'Carrito de compra',
-    description: 'Carrito de compra',
+    title: 'Sistemas de Pagos',
+    subtitle: 'Sistemas de Pagos',
+    description: 'Recibe y gestiona los pagos realizados en tu plataforma',
     price: 28000,
     timeStr: 'Lista en: 10 días',
     days: 10,
     solutions: [
       {
+        id: 'web',
+        icon: <MdWeb />,
+        title: 'Aplicación web',
+        short: 'App web',
+        subtitle: ''
+      },
+      {
         id: 'mobile',
         icon: <FaMobileAlt />,
-        title: 'App móvil',
-        short: 'App web',
+        title: 'Aplicación móvil',
+        short: 'App móvil',
+        subtitle: ''
+      },
+      {
+        id: 'desktop',
+        icon: <BiDesktop />,
+        title: 'Aplicación desktop',
+        short: 'App desktop',
         subtitle: ''
       }
     ],
-    sections: ['s1']
+    sections: ['wallet_and_payments'],
+    industries: ['Restaurantero']
   },
   {
-    id: 'online_reservation_system',
+    id: 'notifications_days',
     image: '',
-    title: 'Sistema de reservas en línea',
-    subtitle: 'Sistema de reservas en línea',
-    description: 'Sistema de reservas en línea',
+    title: 'Notificaciones',
+    subtitle: 'Notificaciones',
+    description: 'Recibe notificaciones útiles para tu operación diaria',
     price: 30000,
     timeStr: 'Lista en: 20 días',
     days: 20,
     solutions: [
       {
+        id: 'web',
+        icon: <MdWeb />,
+        title: 'Aplicación web',
+        short: 'App web',
+        subtitle: ''
+      },
+      {
         id: 'mobile',
         icon: <FaMobileAlt />,
-        title: 'App móvil',
-        short: 'App web',
+        title: 'Aplicación móvil',
+        short: 'App móvil',
+        subtitle: ''
+      },
+      {
+        id: 'desktop',
+        icon: <BiDesktop />,
+        title: 'Aplicación desktop',
+        short: 'App desktop',
         subtitle: ''
       }
     ],
-    sections: ['s1']
+    sections: ['notifications'],
+    industries: ['Restaurantero', 'Viajes Turísticos', 'Bienes Raíces', 'Hotelería', 'Fintech Crowdfunding', 'Comunicación y Entretenimiento']
   },
   {
-    id: 'menu_price_management',
+    id: 'sales_reporting_module',
     image: '',
-    title: 'Gestión de menús y precios',
-    subtitle: 'Gestión de menús y precios',
-    description: 'Gestión de menús y precios',
+    title: 'Módulo de reportes de venta',
+    subtitle: 'Reportes de venta',
+    description: 'Genera reportes de ventas que te permitan medir tus resultados',
     price: 23000,
     timeStr: 'Lista en: 10 días',
     days: 10,
     solutions: [
       {
+        id: 'web',
+        icon: <MdWeb />,
+        title: 'Aplicación web',
+        short: 'App web',
+        subtitle: ''
+      },
+      {
         id: 'mobile',
         icon: <FaMobileAlt />,
-        title: 'App móvil',
-        short: 'App web',
+        title: 'Aplicación móvil',
+        short: 'App móvil',
+        subtitle: ''
+      },
+      {
+        id: 'desktop',
+        icon: <BiDesktop />,
+        title: 'Aplicación desktop',
+        short: 'App desktop',
         subtitle: ''
       }
     ],
-    sections: ['s1']
+    sections: ['reports'],
+    industries: ['Restaurantero']
   },
   {
-    id: 'inventory_supplier_control',
+    id: 'user_administration_module',
     image: '',
-    title: 'Control de inventario y proveedores',
-    subtitle: 'Control de inventario y proveedores',
-    description: 'Control de inventario y proveedores',
+    title: 'Módulo de Administración de Usuarios',
+    subtitle: 'Administración de Usuarios',
+    description: 'Gestiona y controla el acceso a tu plataforma',
     price: 18000,
     timeStr: 'Lista en: 15 días',
     days: 15,
     solutions: [
       {
-        id: 'mobile',
-        icon: <FaMobileAlt />,
-        title: 'App móvil',
+        id: 'web',
+        icon: <MdWeb />,
+        title: 'Aplicación web',
         short: 'App web',
+        subtitle: ''
+      },
+      {
+        id: 'desktop',
+        icon: <BiDesktop />,
+        title: 'Aplicación desktop',
+        short: 'App desktop',
         subtitle: ''
       }
     ],
-    sections: ['s1']
-  },
+    sections: ['administration'],
+    industries: ['Restaurantero', 'Hotelería']
+  }, // se empiesa en el 11
   {
     id: 'help_module',
     image: '',
@@ -240,7 +384,8 @@ export const modules: IModule[] = [
         subtitle: ''
       }
     ],
-    sections: ['s1']
+    sections: ['s1'],
+    industries: ['Restaurantero']
   },
   {
     id: 'home_delivery_system',
@@ -260,6 +405,7 @@ export const modules: IModule[] = [
         subtitle: ''
       }
     ],
-    sections: ['s1']
+    sections: ['s1'],
+    industries: ['Restaurantero']
   },
 ];
