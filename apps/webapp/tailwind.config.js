@@ -24,7 +24,8 @@ module.exports = {
         'boo-bg': '#F4F4F4',
         'boo-alert': '#FFC700',
         'boo-alert-bg': '#ffc7001f',
-        'boo-red': '#F51E01'
+        'boo-red': '#F51E01',
+        'boo-blue-green': '#C8F8F9'
       }
     },
   },

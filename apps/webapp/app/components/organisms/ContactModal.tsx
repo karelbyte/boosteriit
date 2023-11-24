@@ -262,7 +262,7 @@ export default function ContactModal(props: IContactModalProps): JSX.Element {
                       </div>
                     ) : (
                       <ActionBtn
-                        title="Agendar meet"
+                        title="Enviar"
                         disabled={enableBtnCall}
                         actionFn={() => build('request')}
                       />
