@@ -2,7 +2,7 @@ import React, { JSX } from 'react';
 import { BiDesktop } from 'react-icons/bi';
 import { MdWeb } from 'react-icons/md';
 import { FaMobileAlt } from 'react-icons/fa';
-import { CiPlane } from "react-icons/ci";
+import { CiPlane } from 'react-icons/ci';
 
 export interface IFeature {
   id: string;
@@ -27,6 +27,7 @@ export interface IIndustryTemplate {
   features: IFeature[];
 }
 
+// esta full, con funcionalidad y extras
 const restaurant: IIndustryTemplate[] = [
   {
     id: 'template_web_restaurant',
@@ -247,17 +248,18 @@ const restaurant: IIndustryTemplate[] = [
   },
 ];
 
+// faltan tiempo y costo, en los extras faltan tiempo y costo
 const trips: IIndustryTemplate[] = [
   {
     id: 'template_web_trips',
     solution: 'web',
     industry: 'trips',
-    icon: <CiPlane />,
+    icon: <MdWeb />,
     title: 'Aplicación web',
     short: 'App web',
     days: 66,
     price: 487500,
-    image: '/assets/template/trips/image_web.svg',
+    image: '/assets/templates/trips/image_web.svg',
     image_slide1: '/assets/templates/trips/trip1_web.svg',
     image_slide2: '/assets/templates/trips/trip2_web.svg',
     image_slide3: '/assets/templates/trips/trip3_web.svg',
@@ -302,8 +304,7 @@ const trips: IIndustryTemplate[] = [
       },
       {
         id: 'template_web_trips_notification',
-        title:
-          'Notificaciones',
+        title: 'Notificaciones',
         days: 40,
         price: 40000,
       },
@@ -319,12 +320,12 @@ const trips: IIndustryTemplate[] = [
     id: 'template_desk_trips',
     solution: 'desktop',
     industry: 'trips',
-    icon:  <BiDesktop />,
+    icon: <BiDesktop />,
     title: 'Aplicación Escritorio',
     short: 'App escritorio',
     days: 66,
     price: 487500,
-    image: '/assets/template/trips/image_desk.svg',
+    image: '/assets/templates/trips/image_desk.svg',
     image_slide1: '/assets/templates/trips/trip1_desk.svg',
     image_slide2: '/assets/templates/trips/trip2_desk.svg',
     image_slide3: '/assets/templates/trips/trip3_desk.svg',
@@ -369,8 +370,7 @@ const trips: IIndustryTemplate[] = [
       },
       {
         id: 'template_desk_trips_notification',
-        title:
-          'Notificaciones',
+        title: 'Notificaciones',
         days: 40,
         price: 40000,
       },
@@ -391,7 +391,7 @@ const trips: IIndustryTemplate[] = [
     short: 'App movil',
     days: 66,
     price: 487500,
-    image: '/assets/template/trips/image_mob.svg',
+    image: '/assets/templates/trips/image_mob.svg',
     image_slide1: '/assets/templates/trips/trip1_mob.svg',
     image_slide2: '/assets/templates/trips/trip2_mob.svg',
     image_slide3: '/assets/templates/trips/trip3_mob.svg',
@@ -436,8 +436,7 @@ const trips: IIndustryTemplate[] = [
       },
       {
         id: 'template_mob_trips_notification',
-        title:
-          'Notificaciones',
+        title: 'Notificaciones',
         days: 40,
         price: 40000,
       },
@@ -449,14 +448,478 @@ const trips: IIndustryTemplate[] = [
       },
     ],
   },
-]
+];
+
+// faltan tiempo y costo, en los extras faltan tiempo y costo
+const realestate: IIndustryTemplate[] = [
+  {
+    id: 'template_web_realestate',
+    solution: 'web',
+    industry: 'realestate',
+    icon: <MdWeb />,
+    title: 'Aplicación web',
+    short: 'App web',
+    days: 66,
+    price: 487500,
+    image: '/assets/templates/realestate/image_web.svg',
+    image_slide1: '/assets/templates/realestate/realestate1_web.svg',
+    image_slide2: '/assets/templates/realestate/realestate2_web.svg',
+    image_slide3: '/assets/templates/realestate/realestate3_web.svg',
+    image_slide4: '/assets/templates/realestate/realestate4_web.svg',
+    features: [
+      {
+        id: 'template_web_realestate_realstate_user',
+        title: 'Módulo de Administración de Usuario Inmobiliario',
+        days: 30,
+        price: 25000,
+      },
+      {
+        id: 'template_web_realestate_owner_user',
+        title: 'Módulo de Administración y Validación de Usuario Propietario',
+        days: 80,
+        price: 50000,
+      },
+      {
+        id: 'template_web_realestate_tenant_user ',
+        title: 'Módulo de Administración de Usuario Arrendatario',
+        days: 80,
+        price: 45000,
+      },
+      {
+        id: 'template_web_realestate_general_sales_closures',
+        title: 'Sistema de seguimiento de transacciones y cierres de ventas en general',
+        days: 80,
+        price: 50000,
+      },
+
+      {
+        id: 'template_web_realestate_rent',
+        title: 'Sistema de pagos y apartados para renta',
+        days: 40,
+        price: 30000,
+      },
+      {
+        id: 'template_web_realestate_agend',
+        title: 'Sistema de Agenda de visitas',
+        days: 60,
+        price: 50000,
+      },
+      {
+        id: 'template_web_realestate_properties',
+        title: 'Módulo de gestión de Propiedades',
+        days: 40,
+        price: 40000,
+      },
+      {
+        id: 'template_web_realestate_crm_prospect',
+        title: 'CRM - Seguimiento de Prospectos',
+        days: 40,
+        price: 45000,
+      },
+      {
+        id: 'template_web_realestate_crm_visit',
+        title: 'CRM - Gestión de Asignación de Visitas',
+        days: 40,
+        price: 45000,
+      },
+      {
+        id: 'template_web_realestate_notifications',
+        title: 'Notificaciones',
+        days: 40,
+        price: 45000,
+      },
+      {
+        id: 'template_web_realestate_geo_properties',
+        title: 'Geolocalización: Mapa de ubicación de propiedades',
+        days: 40,
+        price: 45000,
+      },
+    ],
+  },
+  {
+    id: 'template_desk_realestate',
+    solution: 'desktop',
+    industry: 'realestate',
+    icon: <BiDesktop />,
+    title: 'Aplicación Escritorio',
+    short: 'App escritorio',
+    days: 66,
+    price: 487500,
+    image: '/assets/templates/realestate/image_desk.svg',
+    image_slide1: '/assets/templates/realestate/realestate1_desk.svg',
+    image_slide2: '/assets/templates/realestate/realestate2_desk.svg',
+    image_slide3: '/assets/templates/realestate/realestate3_desk.svg',
+    image_slide4: '/assets/templates/realestate/realestate4_desk.svg',
+    features: [
+      {
+        id: 'template_desktop_realestate_realstate_user',
+        title: 'Módulo de Administración de Usuario Inmobiliario',
+        days: 30,
+        price: 25000,
+      },
+      {
+        id: 'template_desktop_realestate_owner_user',
+        title: 'Módulo de Administración y Validación de Usuario Propietario',
+        days: 80,
+        price: 50000,
+      },
+      {
+        id: 'template_desktop_realestate_tenant_user ',
+        title: 'Módulo de Administración de Usuario Arrendatario',
+        days: 80,
+        price: 45000,
+      },
+      {
+        id: 'template_desktop_realestate_general_sales_closures',
+        title: 'Sistema de seguimiento de transacciones y cierres de ventas en general',
+        days: 80,
+        price: 50000,
+      },
+
+      {
+        id: 'template_desktop_realestate_rent',
+        title: 'Sistema de pagos y apartados para renta',
+        days: 40,
+        price: 30000,
+      },
+      {
+        id: 'template_desktop_realestate_agend',
+        title: 'Sistema de Agenda de visitas',
+        days: 60,
+        price: 50000,
+      },
+      {
+        id: 'template_desktop_realestate_properties',
+        title: 'Módulo de gestión de Propiedades',
+        days: 40,
+        price: 40000,
+      },
+      {
+        id: 'template_desktop_realestate_crm_prospect',
+        title: 'CRM - Seguimiento de Prospectos',
+        days: 40,
+        price: 45000,
+      },
+      {
+        id: 'template_desktop_realestate_crm_visit',
+        title: 'CRM - Gestión de Asignación de Visitas',
+        days: 40,
+        price: 45000,
+      },
+      {
+        id: 'template_desktop_realestate_notifications',
+        title: 'Notificaciones',
+        days: 40,
+        price: 45000,
+      },
+      {
+        id: 'template_desktop_realestate_geo_properties',
+        title: 'Geolocalización: Mapa de ubicación de propiedades',
+        days: 40,
+        price: 45000,
+      },
+    ],
+  },
+  {
+    id: 'template_mobile_realestate',
+    solution: 'mobile',
+    industry: 'realestate',
+    icon: <FaMobileAlt />,
+    title: 'Aplicación Movil',
+    short: 'App movil',
+    days: 66,
+    price: 487500,
+    image: '/assets/templates/realestate/image_mob.svg',
+    image_slide1: '/assets/templates/realestate/realestate1_mob.svg',
+    image_slide2: '/assets/templates/realestate/realestate2_mob.svg',
+    image_slide3: '/assets/templates/realestate/realestate3_mob.svg',
+    image_slide4: '/assets/templates/realestate/realestate4_mob.svg',
+    features: [
+      {
+        id: 'template_mob_realestate_general_sales_closures',
+        title: 'Sistema de seguimiento de transacciones y cierres de ventas en general',
+        days: 80,
+        price: 50000,
+      },
+
+      {
+        id: 'template_mob_realestate_rent',
+        title: 'Sistema de pagos y apartados para renta',
+        days: 40,
+        price: 30000,
+      },
+      {
+        id: 'template_mob_realestate_agend',
+        title: 'Sistema de Agenda de visitas',
+        days: 60,
+        price: 50000,
+      },
+      {
+        id: 'template_mob_realestate_properties',
+        title: 'Módulo de gestión de Propiedades',
+        days: 40,
+        price: 40000,
+      },
+      {
+        id: 'template_mob_realestate_crm_prospect',
+        title: 'CRM - Seguimiento de Prospectos',
+        days: 40,
+        price: 45000,
+      },
+      {
+        id: 'template_mob_realestate_crm_visit',
+        title: 'CRM - Gestión de Asignación de Visitas',
+        days: 40,
+        price: 45000,
+      },
+      {
+        id: 'template_mob_realestate_notifications',
+        title: 'Notificaciones',
+        days: 40,
+        price: 45000,
+      },
+      {
+        id: 'template_mob_realestate_geo_properties',
+        title: 'Geolocalización: Mapa de ubicación de propiedades',
+        days: 40,
+        price: 45000,
+      },
+    ],
+  },
+];
+
+// faltan tiempo y costo, en los extras faltan tiempo y costo
+const hospitality: IIndustryTemplate[] = [
+  {
+    id: 'template_web_hospitality',
+    solution: 'web',
+    industry: 'hospitality',
+    icon: <MdWeb />,
+    title: 'Aplicación web',
+    short: 'App web',
+    days: 66,
+    price: 487500,
+    image: '/assets/templates/hospitality/image_web.svg',
+    image_slide1: '/assets/templates/hospitality/hospitality1_web.svg',
+    image_slide2: '/assets/templates/hospitality/hospitality2_web.svg',
+    image_slide3: '/assets/templates/hospitality/hospitality3_web.svg',
+    image_slide4: '/assets/templates/hospitality/hospitality4_web.svg',
+    features: [
+      {
+        id: 'template_web_hospitality_promotions',
+        title: 'Pagina inicial con Promociones',
+        days: 30,
+        price: 25000,
+      },
+      {
+        id: 'template_web_hospitality_catalogo',
+        title: 'Catálogo de Hoteles y Habitaciones',
+        days: 80,
+        price: 50000,
+      },
+      {
+        id: 'template_web_hospitality_system',
+        title: 'Sistema de reservas y administración de habitaciones',
+        days: 80,
+        price: 45000,
+      },
+      {
+        id: 'template_web_hospitality_checkIn',
+        title: 'Sistema CheckIn & CheckOut',
+        days: 80,
+        price: 50000,
+      },
+
+      {
+        id: 'template_web_hospitality_profile',
+        title: 'Gestión de Paquetes Turísticos',
+        days: 40,
+        price: 30000,
+      },
+      {
+        id: 'template_web_hospitality_cart_pay',
+        title: 'Sistema de Pagos',
+        days: 60,
+        price: 50000,
+      },
+      {
+        id: 'template_web_hospitality_notification',
+        title: 'Notificaciones',
+        days: 40,
+        price: 40000,
+      },
+      {
+        id: 'template_web_hospitality_user_admin',
+        title: 'Sistema de Administración de Usuarios',
+        days: 40,
+        price: 40000,
+      },
+      {
+        id: 'template_web_hospitality_admin_info',
+        title: 'Sistema de análisis y generación de informes',
+        days: 40,
+        price: 40000,
+      },
+      {
+        id: 'template_web_hospitality_geo_hotels',
+        title: 'Geolocalización de Hoteles',
+        days: 40,
+        price: 45000,
+      },
+    ],
+  },
+  {
+    id: 'template_desk_hospitality',
+    solution: 'desktop',
+    industry: 'hospitality',
+    icon: <BiDesktop />,
+    title: 'Aplicación Escritorio',
+    short: 'App escritorio',
+    days: 66,
+    price: 487500,
+    image: '/assets/templates/hospitality/image_desk.svg',
+    image_slide1: '/assets/templates/hospitality/hospitality1_desk.svg',
+    image_slide2: '/assets/templates/hospitality/hospitality2_desk.svg',
+    image_slide3: '/assets/templates/hospitality/hospitality3_desk.svg',
+    image_slide4: '/assets/templates/hospitality/hospitality4_desk.svg',
+    features: [
+      {
+        id: 'template_desk_hospitality_promotions',
+        title: 'Pagina inicial con Promociones',
+        days: 30,
+        price: 25000,
+      },
+      {
+        id: 'template_desk_hospitality_catalogo',
+        title: 'Catálogo de Hoteles y Habitaciones',
+        days: 80,
+        price: 50000,
+      },
+      {
+        id: 'template_desk_hospitality_system',
+        title: 'Sistema de reservas y administración de habitaciones',
+        days: 80,
+        price: 45000,
+      },
+      {
+        id: 'template_desk_hospitality_checkIn',
+        title: 'Sistema CheckIn & CheckOut',
+        days: 80,
+        price: 50000,
+      },
+
+      {
+        id: 'template_desk_hospitality_profile',
+        title: 'Gestión de Paquetes Turísticos',
+        days: 40,
+        price: 30000,
+      },
+      {
+        id: 'template_desk_hospitality_cart_pay',
+        title: 'Sistema de Pagos',
+        days: 60,
+        price: 50000,
+      },
+      {
+        id: 'template_desk_hospitality_notification',
+        title: 'Notificaciones',
+        days: 40,
+        price: 40000,
+      },
+      {
+        id: 'template_desk_hospitality_user_admin',
+        title: 'Sistema de Administración de Usuarios',
+        days: 40,
+        price: 40000,
+      },
+      {
+        id: 'template_desk_hospitality_admin_info',
+        title: 'Sistema de análisis y generación de informes',
+        days: 40,
+        price: 40000,
+      },
+      {
+        id: 'template_desk_hospitality_geo_hotels',
+        title: 'Geolocalización de Hoteles',
+        days: 40,
+        price: 45000,
+      },
+    ],
+  },
+  {
+    id: 'template_mobile_hospitality',
+    solution: 'mobile',
+    industry: 'hospitality',
+    icon: <FaMobileAlt />,
+    title: 'Aplicación Movil',
+    short: 'App movil',
+    days: 66,
+    price: 487500,
+    image: '/assets/templates/hospitality/image_mob.svg',
+    image_slide1: '/assets/templates/hospitality/hospitality1_mob.svg',
+    image_slide2: '/assets/templates/hospitality/hospitality2_mob.svg',
+    image_slide3: '/assets/templates/hospitality/hospitality3_mob.svg',
+    image_slide4: '/assets/templates/hospitality/hospitality4_mob.svg',
+    features: [
+      {
+        id: 'template_mob_hospitality_promotions',
+        title: 'Pagina inicial con Promociones',
+        days: 30,
+        price: 25000,
+      },
+      {
+        id: 'template_mob_hospitality_catalogo',
+        title: 'Catálogo de Hoteles y Habitaciones',
+        days: 80,
+        price: 50000,
+      },
+      {
+        id: 'template_mob_hospitality_system',
+        title: 'Sistema de reservas y administración de habitaciones',
+        days: 80,
+        price: 45000,
+      },
+      {
+        id: 'template_mob_hospitality_checkIn',
+        title: 'Sistema CheckIn & CheckOut',
+        days: 80,
+        price: 50000,
+      },
+
+      {
+        id: 'template_mob_hospitality_profile',
+        title: 'Gestión de Paquetes Turísticos',
+        days: 40,
+        price: 30000,
+      },
+      {
+        id: 'template_mob_hospitality_cart_pay',
+        title: 'Sistema de Pagos',
+        days: 60,
+        price: 50000,
+      },
+      {
+        id: 'template_mob_hospitality_notification',
+        title: 'Notificaciones',
+        days: 40,
+        price: 40000,
+      },
+      {
+        id: 'template_mob_hospitality_geo_hotels',
+        title: 'Geolocalización de Hoteles',
+        days: 40,
+        price: 45000,
+      },
+    ],
+  },
+];
 
 const fintech: IIndustryTemplate[] = [
   {
     id: 'template_web_fintech',
     solution: 'web',
     industry: 'fintech',
-    icon: <CiPlane />,
+    icon: <MdWeb />,
     title: 'Aplicación web',
     short: 'App web',
     days: 66,
@@ -506,8 +969,7 @@ const fintech: IIndustryTemplate[] = [
       },
       {
         id: 'template_web_fintech_notification',
-        title:
-          'Notificaciones',
+        title: 'Notificaciones',
         days: 40,
         price: 40000,
       },
@@ -523,7 +985,7 @@ const fintech: IIndustryTemplate[] = [
     id: 'template_desk_fintech',
     solution: 'desktop',
     industry: 'fintech',
-    icon:  <BiDesktop />,
+    icon: <BiDesktop />,
     title: 'Aplicación Escritorio',
     short: 'App escritorio',
     days: 66,
@@ -573,8 +1035,7 @@ const fintech: IIndustryTemplate[] = [
       },
       {
         id: 'template_desk_fintech_notification',
-        title:
-          'Notificaciones',
+        title: 'Notificaciones',
         days: 40,
         price: 40000,
       },
@@ -640,8 +1101,7 @@ const fintech: IIndustryTemplate[] = [
       },
       {
         id: 'template_mob_fintech_notification',
-        title:
-          'Notificaciones',
+        title: 'Notificaciones',
         days: 40,
         price: 40000,
       },
@@ -653,5 +1113,623 @@ const fintech: IIndustryTemplate[] = [
       },
     ],
   },
+];
+
+const healthcare: IIndustryTemplate[] = [
+  {
+    id: 'template_web_healthcare',
+    solution: 'web',
+    industry: 'healthcare',
+    icon: <MdWeb />,
+    title: 'Aplicación web',
+    short: 'App web',
+    days: 66,
+    price: 487500,
+    image: '/assets/templates/healthcare/image_web.svg',
+    image_slide1: '/assets/templates/healthcare/healthcare1_web.svg',
+    image_slide2: '/assets/templates/healthcare/healthcare2_web.svg',
+    image_slide3: '/assets/templates/healthcare/healthcare3_web.svg',
+    image_slide4: '/assets/templates/healthcare/healthcare4_web.svg',
+    features: [
+      {
+        id: 'template_web_healthcare_social',
+        title: 'Home público con promociones',
+        days: 30,
+        price: 25000,
+      },
+      {
+        id: 'template_web_healthcare_catalogo',
+        title: 'Registro de usuario con correo electrónico o redes sociales',
+        days: 80,
+        price: 50000,
+      },
+      {
+        id: 'template_web_healthcare_system',
+        title: 'Gestión de Hoteles',
+        days: 80,
+        price: 45000,
+      },
+      {
+        id: 'template_web_healthcare_table',
+        title: 'Gestión de Vuelos',
+        days: 80,
+        price: 50000,
+      },
+
+      {
+        id: 'template_web_healthcare_profile',
+        title: 'Gestión de Paquetes Turísticos',
+        days: 40,
+        price: 30000,
+      },
+      {
+        id: 'template_web_healthcare_menu',
+        title: 'Carrito de compras',
+        days: 60,
+        price: 50000,
+      },
+      {
+        id: 'template_web_healthcare_notification',
+        title: 'Notificaciones',
+        days: 40,
+        price: 40000,
+      },
+      {
+        id: 'template_web_healthcare_payment',
+        title: 'Geolocalización del lugar, hotel o producto',
+        days: 40,
+        price: 45000,
+      },
+    ],
+  },
+  {
+    id: 'template_desk_healthcare',
+    solution: 'desktop',
+    industry: 'healthcare',
+    icon: <BiDesktop />,
+    title: 'Aplicación Escritorio',
+    short: 'App escritorio',
+    days: 66,
+    price: 487500,
+    image: '/assets/templates/healthcare/image_desk.svg',
+    image_slide1: '/assets/templates/healthcare/healthcare1_desk.svg',
+    image_slide2: '/assets/templates/healthcare/healthcare2_desk.svg',
+    image_slide3: '/assets/templates/healthcare/healthcare3_desk.svg',
+    image_slide4: '/assets/templates/healthcare/healthcare4_desk.svg',
+    features: [
+      {
+        id: 'template_desk_healthcare_social',
+        title: 'Home público con promociones',
+        days: 30,
+        price: 25000,
+      },
+      {
+        id: 'template_desk_healthcare_catalogo',
+        title: 'Registro de usuario con correo electrónico o redes sociales',
+        days: 80,
+        price: 50000,
+      },
+      {
+        id: 'template_desk_healthcare_system',
+        title: 'Gestión de Hoteles',
+        days: 80,
+        price: 45000,
+      },
+      {
+        id: 'template_desk_healthcare_table',
+        title: 'Gestión de Vuelos',
+        days: 80,
+        price: 50000,
+      },
+
+      {
+        id: 'template_desk_healthcare_profile',
+        title: 'Gestión de Paquetes Turísticos',
+        days: 40,
+        price: 30000,
+      },
+      {
+        id: 'template_desk_healthcare_menu',
+        title: 'Carrito de compras',
+        days: 60,
+        price: 50000,
+      },
+      {
+        id: 'template_desk_healthcare_notification',
+        title: 'Notificaciones',
+        days: 40,
+        price: 40000,
+      },
+      {
+        id: 'template_desk_healthcare_payment',
+        title: 'Geolocalización del lugar, hotel o producto',
+        days: 40,
+        price: 45000,
+      },
+    ],
+  },
+  {
+    id: 'template_mobile_healthcare',
+    solution: 'mobile',
+    industry: 'healthcare',
+    icon: <FaMobileAlt />,
+    title: 'Aplicación Movil',
+    short: 'App movil',
+    days: 66,
+    price: 487500,
+    image: '/assets/templates/healthcare/image_mob.svg',
+    image_slide1: '/assets/templates/healthcare/healthcare1_mob.svg',
+    image_slide2: '/assets/templates/healthcare/healthcare2_mob.svg',
+    image_slide3: '/assets/templates/healthcare/healthcare3_mob.svg',
+    image_slide4: '/assets/templates/healthcare/healthcare4_mob.svg',
+    features: [
+      {
+        id: 'template_mob_healthcare_social',
+        title: 'Home público con promociones',
+        days: 30,
+        price: 25000,
+      },
+      {
+        id: 'template_mob_healthcare_catalogo',
+        title: 'Registro de usuario con correo electrónico o redes sociales',
+        days: 80,
+        price: 50000,
+      },
+      {
+        id: 'template_mob_healthcare_system',
+        title: 'Gestión de Hoteles',
+        days: 80,
+        price: 45000,
+      },
+      {
+        id: 'template_mob_healthcare_table',
+        title: 'Gestión de Vuelos',
+        days: 80,
+        price: 50000,
+      },
+
+      {
+        id: 'template_mob_healthcare_profile',
+        title: 'Gestión de Paquetes Turísticos',
+        days: 40,
+        price: 30000,
+      },
+      {
+        id: 'template_mob_healthcare_menu',
+        title: 'Carrito de compras',
+        days: 60,
+        price: 50000,
+      },
+      {
+        id: 'template_mob_healthcare_notification',
+        title: 'Notificaciones',
+        days: 40,
+        price: 40000,
+      },
+      {
+        id: 'template_mob_healthcare_payment',
+        title: 'Geolocalización del lugar, hotel o producto',
+        days: 40,
+        price: 45000,
+      },
+    ],
+  },
+];
+
+const entertainment: IIndustryTemplate[] = [
+  {
+    id: 'template_web_entertainment',
+    solution: 'web',
+    industry: 'entertainment',
+    icon: <MdWeb />,
+    title: 'Aplicación web',
+    short: 'App web',
+    days: 66,
+    price: 487500,
+    image: '/assets/templates/entertainment/image_web.svg',
+    image_slide1: '/assets/templates/entertainment/entertainment1_web.svg',
+    image_slide2: '/assets/templates/entertainment/entertainment2_web.svg',
+    image_slide3: '/assets/templates/entertainment/entertainment3_web.svg',
+    image_slide4: '/assets/templates/entertainment/entertainment4_web.svg',
+    features: [
+      {
+        id: 'template_web_entertainment_social',
+        title: 'Home público con promociones',
+        days: 30,
+        price: 25000,
+      },
+      {
+        id: 'template_web_entertainment_catalogo',
+        title: 'Registro de usuario con correo electrónico o redes sociales',
+        days: 80,
+        price: 50000,
+      },
+      {
+        id: 'template_web_entertainment_system',
+        title: 'Gestión de Hoteles',
+        days: 80,
+        price: 45000,
+      },
+      {
+        id: 'template_web_entertainment_table',
+        title: 'Gestión de Vuelos',
+        days: 80,
+        price: 50000,
+      },
+
+      {
+        id: 'template_web_entertainment_profile',
+        title: 'Gestión de Paquetes Turísticos',
+        days: 40,
+        price: 30000,
+      },
+      {
+        id: 'template_web_entertainment_menu',
+        title: 'Carrito de compras',
+        days: 60,
+        price: 50000,
+      },
+      {
+        id: 'template_web_entertainment_notification',
+        title:
+          'Notificaciones',
+        days: 40,
+        price: 40000,
+      },
+      {
+        id: 'template_web_entertainment_payment',
+        title: 'Geolocalización del lugar, hotel o producto',
+        days: 40,
+        price: 45000,
+      },
+    ],
+  },
+  {
+    id: 'template_desk_entertainment',
+    solution: 'desktop',
+    industry: 'entertainment',
+    icon:  <BiDesktop />,
+    title: 'Aplicación Escritorio',
+    short: 'App escritorio',
+    days: 66,
+    price: 487500,
+    image: '/assets/templates/entertainment/image_desk.svg',
+    image_slide1: '/assets/templates/entertainment/entertainment1_desk.svg',
+    image_slide2: '/assets/templates/entertainment/entertainment2_desk.svg',
+    image_slide3: '/assets/templates/entertainment/entertainment3_desk.svg',
+    image_slide4: '/assets/templates/entertainment/entertainment4_desk.svg',
+    features: [
+      {
+        id: 'template_desk_entertainment_social',
+        title: 'Home público con promociones',
+        days: 30,
+        price: 25000,
+      },
+      {
+        id: 'template_desk_entertainment_catalogo',
+        title: 'Registro de usuario con correo electrónico o redes sociales',
+        days: 80,
+        price: 50000,
+      },
+      {
+        id: 'template_desk_entertainment_system',
+        title: 'Gestión de Hoteles',
+        days: 80,
+        price: 45000,
+      },
+      {
+        id: 'template_desk_entertainment_table',
+        title: 'Gestión de Vuelos',
+        days: 80,
+        price: 50000,
+      },
+
+      {
+        id: 'template_desk_entertainment_profile',
+        title: 'Gestión de Paquetes Turísticos',
+        days: 40,
+        price: 30000,
+      },
+      {
+        id: 'template_desk_entertainment_menu',
+        title: 'Carrito de compras',
+        days: 60,
+        price: 50000,
+      },
+      {
+        id: 'template_desk_entertainment_notification',
+        title:
+          'Notificaciones',
+        days: 40,
+        price: 40000,
+      },
+      {
+        id: 'template_desk_entertainment_payment',
+        title: 'Geolocalización del lugar, hotel o producto',
+        days: 40,
+        price: 45000,
+      },
+    ],
+  },
+  {
+    id: 'template_mobile_entertainment',
+    solution: 'mobile',
+    industry: 'entertainment',
+    icon: <FaMobileAlt />,
+    title: 'Aplicación Movil',
+    short: 'App movil',
+    days: 66,
+    price: 487500,
+    image: '/assets/templates/entertainment/image_mob.svg',
+    image_slide1: '/assets/templates/entertainment/entertainment1_mob.svg',
+    image_slide2: '/assets/templates/entertainment/entertainment2_mob.svg',
+    image_slide3: '/assets/templates/entertainment/entertainment3_mob.svg',
+    image_slide4: '/assets/templates/entertainment/entertainment4_mob.svg',
+    features: [
+      {
+        id: 'template_mob_entertainment_social',
+        title: 'Home público con promociones',
+        days: 30,
+        price: 25000,
+      },
+      {
+        id: 'template_mob_entertainment_catalogo',
+        title: 'Registro de usuario con correo electrónico o redes sociales',
+        days: 80,
+        price: 50000,
+      },
+      {
+        id: 'template_mob_entertainment_system',
+        title: 'Gestión de Hoteles',
+        days: 80,
+        price: 45000,
+      },
+      {
+        id: 'template_mob_entertainment_table',
+        title: 'Gestión de Vuelos',
+        days: 80,
+        price: 50000,
+      },
+
+      {
+        id: 'template_mob_entertainment_profile',
+        title: 'Gestión de Paquetes Turísticos',
+        days: 40,
+        price: 30000,
+      },
+      {
+        id: 'template_mob_entertainment_menu',
+        title: 'Carrito de compras',
+        days: 60,
+        price: 50000,
+      },
+      {
+        id: 'template_mob_entertainment_notification',
+        title:
+          'Notificaciones',
+        days: 40,
+        price: 40000,
+      },
+      {
+        id: 'template_mob_entertainment_payment',
+        title: 'Geolocalización del lugar, hotel o producto',
+        days: 40,
+        price: 45000,
+      },
+    ],
+  },
 ]
-export const industriesTemplate: IIndustryTemplate[] = [...restaurant, ...trips, ...fintech];
+
+const fintech_crowdfunding: IIndustryTemplate[] = [
+  {
+    id: 'template_web_fintech_crowdfunding',
+    solution: 'web',
+    industry: 'fintech_crowdfunding',
+    icon: <MdWeb />,
+    title: 'Aplicación web',
+    short: 'App web',
+    days: 66,
+    price: 487500,
+    image: '/assets/templates/fintech_crowdfunding/image_web.svg',
+    image_slide1: '/assets/templates/fintech_crowdfunding/fintech_crowdfunding1_web.svg',
+    image_slide2: '/assets/templates/fintech_crowdfunding/fintech_crowdfunding2_web.svg',
+    image_slide3: '/assets/templates/fintech_crowdfunding/fintech_crowdfunding3_web.svg',
+    image_slide4: '/assets/templates/fintech_crowdfunding/fintech_crowdfunding4_web.svg',
+    features: [
+      {
+        id: 'template_web_fintech_crowdfunding_social',
+        title: 'Home público con promociones',
+        days: 30,
+        price: 25000,
+      },
+      {
+        id: 'template_web_fintech_crowdfunding_catalogo',
+        title: 'Registro de usuario con correo electrónico o redes sociales',
+        days: 80,
+        price: 50000,
+      },
+      {
+        id: 'template_web_fintech_crowdfunding_system',
+        title: 'Gestión de Hoteles',
+        days: 80,
+        price: 45000,
+      },
+      {
+        id: 'template_web_fintech_crowdfunding_table',
+        title: 'Gestión de Vuelos',
+        days: 80,
+        price: 50000,
+      },
+
+      {
+        id: 'template_web_fintech_crowdfunding_profile',
+        title: 'Gestión de Paquetes Turísticos',
+        days: 40,
+        price: 30000,
+      },
+      {
+        id: 'template_web_fintech_crowdfunding_menu',
+        title: 'Carrito de compras',
+        days: 60,
+        price: 50000,
+      },
+      {
+        id: 'template_web_fintech_crowdfunding_notification',
+        title:
+          'Notificaciones',
+        days: 40,
+        price: 40000,
+      },
+      {
+        id: 'template_web_fintech_crowdfunding_payment',
+        title: 'Geolocalización del lugar, hotel o producto',
+        days: 40,
+        price: 45000,
+      },
+    ],
+  },
+  {
+    id: 'template_desk_fintech_crowdfunding',
+    solution: 'desktop',
+    industry: 'fintech_crowdfunding',
+    icon:  <BiDesktop />,
+    title: 'Aplicación Escritorio',
+    short: 'App escritorio',
+    days: 66,
+    price: 487500,
+    image: '/assets/templates/fintech_crowdfunding/image_desk.svg',
+    image_slide1: '/assets/templates/fintech_crowdfunding/fintech_crowdfunding1_desk.svg',
+    image_slide2: '/assets/templates/fintech_crowdfunding/fintech_crowdfunding2_desk.svg',
+    image_slide3: '/assets/templates/fintech_crowdfunding/fintech_crowdfunding3_desk.svg',
+    image_slide4: '/assets/templates/fintech_crowdfunding/fintech_crowdfunding4_desk.svg',
+    features: [
+      {
+        id: 'template_desk_fintech_crowdfunding_social',
+        title: 'Home público con promociones',
+        days: 30,
+        price: 25000,
+      },
+      {
+        id: 'template_desk_fintech_crowdfunding_catalogo',
+        title: 'Registro de usuario con correo electrónico o redes sociales',
+        days: 80,
+        price: 50000,
+      },
+      {
+        id: 'template_desk_fintech_crowdfunding_system',
+        title: 'Gestión de Hoteles',
+        days: 80,
+        price: 45000,
+      },
+      {
+        id: 'template_desk_fintech_crowdfunding_table',
+        title: 'Gestión de Vuelos',
+        days: 80,
+        price: 50000,
+      },
+
+      {
+        id: 'template_desk_fintech_crowdfunding_profile',
+        title: 'Gestión de Paquetes Turísticos',
+        days: 40,
+        price: 30000,
+      },
+      {
+        id: 'template_desk_fintech_crowdfunding_menu',
+        title: 'Carrito de compras',
+        days: 60,
+        price: 50000,
+      },
+      {
+        id: 'template_desk_fintech_crowdfunding_notification',
+        title:
+          'Notificaciones',
+        days: 40,
+        price: 40000,
+      },
+      {
+        id: 'template_desk_fintech_crowdfunding_payment',
+        title: 'Geolocalización del lugar, hotel o producto',
+        days: 40,
+        price: 45000,
+      },
+    ],
+  },
+  {
+    id: 'template_mobile_fintech_crowdfunding',
+    solution: 'mobile',
+    industry: 'fintech_crowdfunding',
+    icon: <FaMobileAlt />,
+    title: 'Aplicación Movil',
+    short: 'App movil',
+    days: 66,
+    price: 487500,
+    image: '/assets/templates/fintech_crowdfunding/image_mob.svg',
+    image_slide1: '/assets/templates/fintech_crowdfunding/fintech_crowdfunding1_mob.svg',
+    image_slide2: '/assets/templates/fintech_crowdfunding/fintech_crowdfunding2_mob.svg',
+    image_slide3: '/assets/templates/fintech_crowdfunding/fintech_crowdfunding3_mob.svg',
+    image_slide4: '/assets/templates/fintech_crowdfunding/fintech_crowdfunding4_mob.svg',
+    features: [
+      {
+        id: 'template_mob_fintech_crowdfunding_social',
+        title: 'Home público con promociones',
+        days: 30,
+        price: 25000,
+      },
+      {
+        id: 'template_mob_fintech_crowdfunding_catalogo',
+        title: 'Registro de usuario con correo electrónico o redes sociales',
+        days: 80,
+        price: 50000,
+      },
+      {
+        id: 'template_mob_fintech_crowdfunding_system',
+        title: 'Gestión de Hoteles',
+        days: 80,
+        price: 45000,
+      },
+      {
+        id: 'template_mob_fintech_crowdfunding_table',
+        title: 'Gestión de Vuelos',
+        days: 80,
+        price: 50000,
+      },
+
+      {
+        id: 'template_mob_fintech_crowdfunding_profile',
+        title: 'Gestión de Paquetes Turísticos',
+        days: 40,
+        price: 30000,
+      },
+      {
+        id: 'template_mob_fintech_crowdfunding_menu',
+        title: 'Carrito de compras',
+        days: 60,
+        price: 50000,
+      },
+      {
+        id: 'template_mob_fintech_crowdfunding_notification',
+        title:
+          'Notificaciones',
+        days: 40,
+        price: 40000,
+      },
+      {
+        id: 'template_mob_fintech_crowdfunding_payment',
+        title: 'Geolocalización del lugar, hotel o producto',
+        days: 40,
+        price: 45000,
+      },
+    ],
+  },
+]
+export const industriesTemplate: IIndustryTemplate[] = [
+  ...restaurant,
+  ...trips,
+  ...fintech,
+  ...realestate,
+  ...hospitality,
+  ...healthcare,
+  ...entertainment,
+  ...fintech_crowdfunding
+];

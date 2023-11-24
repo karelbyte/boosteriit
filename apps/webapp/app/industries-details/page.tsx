@@ -119,8 +119,8 @@ export default function IndustriesDetails(): JSX.Element {
                       }`}
                     >
                       {template.icon}
-                      <span className="hidden md:flex">{template.title}</span>
-                      <span className="flex md:hidden">{template.short}</span>
+                      <span className="hidden md:flex ml-2">{template.title}</span>
+                      <span className="flex md:hidden ml-2">{template.short}</span>
                     </div>
                     <div className="flex flex-col md:flex-row my-4 items-center text-xs text-boo-str-description">
                       <span className="font-light md:mr-2">
@@ -224,7 +224,7 @@ export default function IndustriesDetails(): JSX.Element {
                             key={additional.id}
                             className="flex flex-col md:px-2 md:py-4 w-full md:w-1/3"
                           >
-                            <div className="flex flex-col justify-between border-t border-x p-4 md:rounded-t-lg h-full">
+                            <div className="flex flex-col justify-start border-t border-x p-4 md:rounded-t-lg h-full">
                               <span className="text-boo-gray-hard text-sm font-light mb-4">
                                 {additional.title}
                               </span>
