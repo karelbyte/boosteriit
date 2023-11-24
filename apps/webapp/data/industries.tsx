@@ -5,6 +5,7 @@ import { PiHamburgerBold } from 'react-icons/pi';
 import { LiaHotelSolid } from 'react-icons/lia';
 import { BiDesktop } from 'react-icons/bi';
 import { MdWeb } from 'react-icons/md';
+import { BiNetworkChart } from "react-icons/bi";
 import { FaGuitar, FaHandHoldingHeart, FaMobileAlt } from 'react-icons/fa';
 export interface IAvailable {
   id: string;
@@ -80,34 +81,6 @@ export const industries: readonly IIndustry[] = [
     ],
   }),
   Object.freeze({
-    id: 'healthcare',
-    icon: <FaHandHoldingHeart />,
-    imageBig: '/assets/industries/healthcare/image.svg',
-    imageShort: '',
-    imageMobile: '',
-    title: 'Salud y cuidado',
-    subtitle: 'Salud y cuidado',
-    description:
-      'Encontrarás una aplicación base, diseñada para gestionar tus ubicaciones y servicios médicos al paciente, así como recibir el pago de transacciones de forma automatizada y ágil.',
-    available: [
-      {
-        id: 'mobile',
-        icon: <FaMobileAlt />,
-        title: 'App móvil',
-      },
-      {
-        id: 'desktop',
-        icon: <BiDesktop />,
-        title: 'App de escritorio',
-      },
-      {
-        id: 'web',
-        icon: <MdWeb />,
-        title: 'Aplicación web',
-      },
-    ],
-  }),
-  Object.freeze({
     id: 'realestate',
     icon: <BsBuildings />,
     imageBig: './assets/industries/realestate/image.svg',
@@ -163,7 +136,6 @@ export const industries: readonly IIndustry[] = [
       },
     ],
   }),
-
   Object.freeze({
     id: 'entertainment',
     imageBig: '/assets/industries/entertainment/image.svg',
@@ -202,6 +174,62 @@ export const industries: readonly IIndustry[] = [
     subtitle: 'Reservas de viajes y hospedaje',
     description:
       'Encontrarás una aplicación base, diseñada para mostrar tus hoteles y la disponibilidad de habitaciones para reservas, así como recibir el pago de transacciones de forma automatizada y ágil.',
+    available: [
+      {
+        id: 'mobile',
+        icon: <FaMobileAlt />,
+        title: 'App móvil',
+      },
+      {
+        id: 'desktop',
+        icon: <BiDesktop />,
+        title: 'App de escritorio',
+      },
+      {
+        id: 'web',
+        icon: <MdWeb />,
+        title: 'Aplicación web',
+      },
+    ],
+  }),
+  Object.freeze({
+    id: 'healthcare',
+    icon: <FaHandHoldingHeart />,
+    imageBig: '/assets/industries/healthcare/image.svg',
+    imageShort: '',
+    imageMobile: '',
+    title: 'Salud y cuidado',
+    subtitle: 'Salud y cuidado',
+    description:
+      'Encontrarás una aplicación base, diseñada para gestionar tus ubicaciones y servicios médicos al paciente, así como recibir el pago de transacciones de forma automatizada y ágil.',
+    available: [
+      {
+        id: 'mobile',
+        icon: <FaMobileAlt />,
+        title: 'App móvil',
+      },
+      {
+        id: 'desktop',
+        icon: <BiDesktop />,
+        title: 'App de escritorio',
+      },
+      {
+        id: 'web',
+        icon: <MdWeb />,
+        title: 'Aplicación web',
+      },
+    ],
+  }),
+  Object.freeze({
+    id: 'fintech_crowdfunding',
+    imageBig: '/assets/industries/crowdfunding/image.svg',
+    imageShort: '',
+    imageMobile: '',
+    icon: <BiNetworkChart/>,
+    title: 'Fintech Crowdfunding',
+    subtitle: 'Fintech Crowdfunding diseñada para gestionar tus productos.',
+    description:
+      'Encontrarás una aplicación base, diseñada para gestionar tus productos, proyectos y financiamientos, así como recibir el pago de transacciones de forma automatizada y ágil.',
     available: [
       {
         id: 'mobile',
