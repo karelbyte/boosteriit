@@ -78,7 +78,9 @@ export default function useModules() {
     return selectedModules.map((module: IModule) => module.id).includes(id);
   };
 
+
   return {
+    addModulesStorage,
     addModules,
     getStatusCheck,
     deleteModule,

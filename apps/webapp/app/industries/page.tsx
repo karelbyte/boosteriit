@@ -33,7 +33,7 @@ export default function Industries(): JSX.Element {
             <div className="flex flex-col md:hidden justify-between w-full border-b p-4 pb-6 mb-4">
               <div className="flex items-start w-full md:w-1/2 rounded-lg md:mr-12 p-4">
                 <Image
-                  src={industry.image}
+                  src={industry.imageBig}
                   width="100"
                   height="140"
                   className="w-2/12"
@@ -60,16 +60,16 @@ export default function Industries(): JSX.Element {
               </div>
             </div>
             <div className="hidden md:flex  md:flex-row justify-between w-full border-b p-4">
-              <div className="relative border w-full md:w-1/2 rounded-lg bg-slate-50 md:mr-12 p-4">
+              <div className="relative w-full md:w-1/2 rounded-lg md:mr-12">
                 <Image
-                  src={industry.image}
+                  src={industry.imageBig}
                   width="100"
                   height="140"
-                  className="w-auto md:w-1/2 lg:w-2/5"
+                  className="w-auto"
                   loading={'lazy'}
                   alt="Boosteriit"
                 />
-                <div className="absolute top-2 w-8 h-8 rounded-full flex items-center justify-center text-boo-btn-bg border border-boo-blue-2 bg-boo-blue-2">
+                <div className="absolute -top-2 -left-2 w-8 h-8 rounded-full flex items-center justify-center text-boo-btn-bg border border-boo-blue-2 bg-boo-blue-2">
                   {industry.icon}
                 </div>
               </div>

@@ -1,8 +1,6 @@
-
 export interface ISection {
   id: string;
   title: string;
-
 }
 export const sections: ISection[] = [
   {
@@ -125,6 +123,6 @@ export const sections: ISection[] = [
     id: 'erp',
     title: 'ERP',
   },
+  { id: 'documentation', title: 'Documentación' },
+  { id: 'communication', title: 'Comunicación' },
 ];
-
-

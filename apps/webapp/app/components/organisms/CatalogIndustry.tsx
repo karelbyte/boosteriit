@@ -104,17 +104,15 @@ export default function CatalogIndustry(): JSX.Element {
           {items &&
             items.map((item: IIndustry, index: number) => (
               <div key={index} className="p-2">
-                <div className="relative w-full flex flex-col border rounded-lg p-4 h-[28rem]">
-                  <div className="flex justify-center h-64 w-full border rounded-lg">
-                    <Image
-                      src={item.image}
-                      width="100"
-                      height="140"
-                      className="w-auto"
-                      loading={'lazy'}
-                      alt="Boosteriit"
-                    />
-                  </div>
+                <div className="flex flex-col justify-between relative w-full border rounded-lg p-4 h-[24rem]  md:h-[21rem]">
+                  <Image
+                    src={item.imageBig}
+                    width="100"
+                    height="140"
+                    className="w-full"
+                    loading={'lazy'}
+                    alt="Boosteriit"
+                  />
 
                   <p className="mb-2 mt-2 text-md">{item.title}</p>
                   <p className="text-boo-str-description mb-6 text-xs">
@@ -136,13 +134,13 @@ export default function CatalogIndustry(): JSX.Element {
               </div>
             ))}
           <div className="p-2">
-            <div className="flex flex-col justify-between border rounded-lg p-6 h-[28rem]">
+            <div className="flex flex-col justify-between border rounded-lg p-6 h-[24rem]  md:h-[21rem]">
               <div className="w-8 h-8 rounded-full flex items-center justify-center text-boo-btn-bg border border-boo-blue-2 bg-boo-blue-2">
                 <BiHelpCircle />
               </div>
 
               <div className="flex flex-col">
-                <span className="mt-8 mb-2 text-md">
+                <span className="mt-4 text-md">
                   ¿No encuentras tu solución?
                 </span>
                 <span className="mb-6 text-sm text-boo-str-description">

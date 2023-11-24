@@ -135,14 +135,14 @@ export default function IndustriesDetails(): JSX.Element {
                     </div>
                   </div>
                   <div className="my-2 flex flex-col w-full">
-                    <div className="flex flex-col md:flex-row w-full justify-between">
+                    <div className="flex flex-col md:flex-row w-full justify-between items-start">
                       <Image
                         src={template.image}
                         width="150"
                         height="140"
                         priority
                         alt="Boosteriit"
-                        className="w-auto"
+                        className="w-auto md:w-5/12"
                       />
                       <div className="flex flex-col w-full mt-8 md:mt-0 md:w-6/12">
                         <span className="font-semibold">

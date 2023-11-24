@@ -2,6 +2,8 @@ import React, { JSX, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { AiOutlineClose } from 'react-icons/ai';
 import Image from "next/image";
+import SolutionSelectorModal from "../molecules/SolutionSelectorModal";
+import ActionBtn from "../atoms/ActionBtn";
 interface ICreateNowProps {
   mobileHidden?: boolean;
   customStyle: string;
@@ -40,19 +42,21 @@ export default function CreateNow(props: ICreateNowProps): JSX.Element {
                 Elige según tu industria o ármalo por componentes
               </p>
               <div className="flex flex-col justify-center">
-                <div className="flex flex-col md:flex-row border p-6 mr-0 sm:mr-8 w-full bg-white rounded-2xl mb-6 shadow-sm">
-                  <Image
-                    src="/assets/industries/industries.svg"
-                    width="100"
-                    height="140"
-                    className="w-1/3 self-center md:mr-8"
-                    loading={'lazy'}
-                    alt="Boosteriit"
-                  />
-                  <div className="flex flex-col justify-between">
+                <div className="flex flex-col md:flex-row w-full p-4">
+                  <div className="flex bg-boo-blue-green w-full md:w-1/2 border-t border-x rounded-t-lg  md:border-x-0  md:border-l md:rounded-t-none md:border-y md:rounded-tl-lg md:rounded-bl-lg p-2 justify-center md:justify-start">
+                    <Image
+                      src="/assets/industries/industries2.svg"
+                      width="100"
+                      height="140"
+                      className="w-auto md:w-full self-center mb-8 md:mr-8"
+                      loading={'lazy'}
+                      alt="Boosteriit"
+                    />
+                  </div>
+                  <div className="flex flex-col w-full justify-between  border-b border-x rounded-b-lg md:border-x-0  md:rounded-b-none md:border-y md:rounded-tr-lg md:rounded-br-lg p-4 bg-white">
                     <div>
-                      <p className="font-bold mb-2 text-md text-boo-gray-hard">
-                        Catálogo por industria
+                      <p className="font-bold mb-4 text-lg text-boo-gray-hard">
+                        Catálogo por industrias
                       </p>
                       <p className="mb-4 text-sm text-justify text-boo-gray-hard">
                         Selecciona de nuestro catálogo de paquetes prediseñados por
@@ -67,18 +71,20 @@ export default function CreateNow(props: ICreateNowProps): JSX.Element {
                     </button>
                   </div>
                 </div>
-                <div className="flex flex-col md:flex-row border p-6 mr-0 sm:mr-12 w-full  bg-white rounded-2xl shadow-sm">
-                  <Image
-                    src="/assets/industries/build.svg"
-                    width="100"
-                    height="140"
-                    className="w-1/3 self-center md:mr-8"
-                    priority
-                    alt="Boosteriit"
-                  />
-                  <div className="flex flex-col justify-between">
+                <div className="flex flex-col md:flex-row w-full p-4">
+                  <div className="flex bg-boo-blue-green w-full md:w-1/2 border-t border-x rounded-t-lg  md:border-x-0  md:border-l md:rounded-t-none md:border-y md:rounded-tl-lg md:rounded-bl-lg p-2 justify-center md:justify-start">
+                    <Image
+                      src="/assets/industries/build2.svg"
+                      width="100"
+                      height="140"
+                      className="w-auto md:w-full self-center mb-8 md:mr-8"
+                      loading={'lazy'}
+                      alt="Boosteriit"
+                    />
+                  </div>
+                  <div className="flex flex-col w-full justify-between  border-b border-x rounded-b-lg md:border-x-0  md:rounded-b-none md:border-y md:rounded-tr-lg md:rounded-br-lg p-4 bg-white">
                     <div>
-                      <p className="font-bold text-md mb-2 text-boo-gray-hard">
+                      <p className="font-bold mb-4 text-lg text-boo-gray-hard">
                         Ármalo desde cero
                       </p>
                       <p className="mb-4 text-sm text-justify text-boo-gray-hard">

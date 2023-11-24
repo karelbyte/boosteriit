@@ -36,13 +36,13 @@ export default function Modules(): JSX.Element {
 
   const {
     currentModulesSelected,
-    setCurrentModulesSelected,
     modulesWeb,
     modulesDesktop,
     modulesMobile,
     deleteModule,
     getStatusCheck,
-    addModules
+    addModules,
+    addModulesStorage,
   } = useModules();
 
   const [currentModules, setCurrentModules] = useState<IModule[]>(modules);
@@ -57,34 +57,48 @@ export default function Modules(): JSX.Element {
         )
       );
       if (selectedSections.length > 0) {
-        setCurrentModules(
-          modulesSolutions.filter((module: IModule) =>
-            module.sections.some((section: string) =>
-              selectedSections.includes(section)
-            )
+        const currentSections = modulesSolutions.filter((module: IModule) =>
+          module.sections.some((section: string) =>
+            selectedSections.includes(section)
           )
         );
+        setCurrentModules(currentSections);
+        const enableIds = currentSections.map((module: IModule) => module.id);
+        const currenModulesEnable = selectedModules.filter((module: IModule) =>
+          enableIds.includes(module.id)
+        );
+        setSelectedModules(currenModulesEnable);
+        addModulesStorage(currenModulesEnable);
       } else {
         setCurrentModules(modulesSolutions);
+        const enableIds = modulesSolutions.map((module: IModule) => module.id);
+        const currenModulesEnable = selectedModules.filter((module: IModule) =>
+          enableIds.includes(module.id)
+        );
+        setSelectedModules(currenModulesEnable);
+        addModulesStorage(currenModulesEnable);
       }
     } else {
       if (selectedSections.length > 0) {
-        setCurrentModules(
-          modules.filter((module: IModule) =>
-            module.sections.some((section: string) =>
-              selectedSections.includes(section)
-            )
+        const current = modules.filter((module: IModule) =>
+          module.sections.some((section: string) =>
+            selectedSections.includes(section)
           )
         );
+        setCurrentModules(current);
+        const enableIds = current.map((module: IModule) => module.id);
+        const currenModulesEnable = selectedModules.filter((module: IModule) =>
+          enableIds.includes(module.id)
+        );
+        setSelectedModules(currenModulesEnable);
+        addModulesStorage(currenModulesEnable);
       } else {
         setCurrentModules(modules);
+        setSelectedModules([]);
+        addModulesStorage([]);
       }
     }
   }, [selectedSolutions, selectedSections]);
-
-  useEffect(() => {
-    setCurrentModulesSelected(selectedModules);
-  }, [selectedModules, setCurrentModulesSelected]);
 
 
   const backActionBtn = () => {
@@ -143,11 +157,14 @@ export default function Modules(): JSX.Element {
                       <div
                         className={`flex ${
                           classSolutions[module.solutions[0].id]
-                        } h-8 text-white w-7/12 lg:w-6/12 xl:w-5/12 text-xs p-2 rounded-tr-lg self-end`}
+                        } h-8 text-white w-6/12 lg:w-7/12 xl:w-6/12 text-xs p-2 rounded-tr-lg self-end`}
                       >
                         {module.solutions[0].icon}
-                        <span className="ml-2">
+                        <span className="hidden 2xl:flex ml-2">
                           {module.solutions[0].title}
+                        </span>
+                        <span className="flex 2xl:hidden ml-2">
+                          {module.solutions[0].short}
                         </span>
                       </div>
                     </div>
@@ -223,7 +240,7 @@ export default function Modules(): JSX.Element {
                     <span className="flex font-light text-xs text-boo-str-description mb-2 mt-2">
                       {module.timeStr}
                       <div
-                        className="ml-4 text-[#00B8EC] underline"
+                        className="ml-4 text-boo-btn-bg underline cursor-pointer"
                         onClick={() => deleteModule(module.id)}
                       >
                         eliminar
@@ -240,7 +257,6 @@ export default function Modules(): JSX.Element {
                 <span className="font-light text-xs text-boo-str-description mb-2 ml-2">
                   Tiempo aprox de implementación
                   <p className="font-semibold mt-2">
-                    {' '}
                     {getTotalDays(modulesMobile)} días
                   </p>
                 </span>
@@ -280,7 +296,7 @@ export default function Modules(): JSX.Element {
                     <span className="flex font-light text-xs text-boo-str-description mb-2 mt-2">
                       {module.timeStr}
                       <div
-                        className="ml-4 text-[#00B8EC] underline"
+                        className="ml-4 text-boo-btn-bg underline cursor-pointer"
                         onClick={() => deleteModule(module.id)}
                       >
                         eliminar
@@ -334,7 +350,7 @@ export default function Modules(): JSX.Element {
                     <span className="flex font-light text-xs text-boo-str-description mb-2 mt-2">
                       {module.timeStr}
                       <div
-                        className="ml-4 text-[#00B8EC] underline"
+                        className="ml-4 text-boo-btn-bg underline cursor-pointer"
                         onClick={() => deleteModule(module.id)}
                       >
                         eliminar

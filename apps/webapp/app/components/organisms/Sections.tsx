@@ -31,7 +31,7 @@ export default function Sections(): JSX.Element {
         settings: {
           dots: true,
           slidesToShow: 1,
-          slidesToScroll: 2,
+          slidesToScroll: 4,
         },
       },
     ],
