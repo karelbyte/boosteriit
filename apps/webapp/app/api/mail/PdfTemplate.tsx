@@ -7,7 +7,7 @@ import {
   StyleSheet,
 } from '@joshuajaco/react-pdf-renderer-bundled';
 import { IFeature, IIndustryTemplate } from '../../../data/industriesTemplate';
-import { IModule } from '../../../data/modules';
+import { IModule, ISolutionAvailable } from '../../../data/modules';
 import { IAdditional } from '../../../data/addtionals';
 import { IIntegration } from '../../../data/integrations';
 import { IIndustry } from '../../../data/industries';
@@ -53,6 +53,27 @@ export default function PdfTemplate(props: IPdfTemplateProps) {
   const getClientName = () => {
     return name.toUpperCase();
   };
+
+  let modulesWeb: IModule[] = []
+  let modulesDesktop: IModule[] = []
+  let modulesMobile: IModule[] = []
+  if (selectedModules && selectedModules?.length > 0) {
+    modulesWeb = selectedModules.filter((module: IModule) =>
+      module.solutions.some(
+        (solution: ISolutionAvailable) => solution.id === 'web'
+      )
+    );
+    modulesDesktop = selectedModules.filter((module: IModule) =>
+      module.solutions.some(
+        (solution: ISolutionAvailable) => solution.id === 'desktop'
+      )
+    );
+     modulesMobile = selectedModules.filter((module: IModule) =>
+      module.solutions.some(
+        (solution: ISolutionAvailable) => solution.id === 'mobile'
+      )
+    );
+  }
   return (
     <Document>
       {selectedIndustriesTemplate &&
@@ -221,7 +242,7 @@ export default function PdfTemplate(props: IPdfTemplateProps) {
         </Page>
       )}
 
-      {selectedModules && selectedModules.length > 0 && (
+      {modulesWeb && modulesWeb.length > 0 && (
         <Page size="A4" style={styles.page}>
           <View style={styles.banner} fixed>
             <Image src="./public/assets/boosteriit.png" />
@@ -246,19 +267,127 @@ export default function PdfTemplate(props: IPdfTemplateProps) {
               )}
             </View>
           </View>
-          {selectedModules && selectedModules.length > 0 && (
             <View>
-              <Text style={styles.h1}>MODULOS</Text>
+              <Text style={styles.h1}>MODULOS: WEB</Text>
             </View>
-          )}
           <View style={styles.viewSectionFlex}>
             <Text style={styles.cel2Header}>Solución</Text>
             <Text style={styles.cel1Header}>Precio</Text>
             <Text style={styles.cel1Header}>Tiempo</Text>
           </View>
-          {selectedModules &&
-            selectedModules.length > 0 &&
-            selectedModules.map((module: IModule) => (
+          {modulesWeb &&
+            modulesWeb.length > 0 &&
+            modulesWeb.map((module: IModule) => (
+              <View key={module.id} style={styles.section}>
+                <View style={styles.viewSectionFlex}>
+                  <Text style={styles.cel2}>{module.title}</Text>
+                  <Text style={styles.cel1}>
+                    ${formatByCurrencyMXN(module.price)}
+                  </Text>
+                  <Text style={styles.cel1}>{module.days} dias</Text>
+                </View>
+              </View>
+            ))}
+          <Text
+            style={styles.pageNumber}
+            render={({ pageNumber, totalPages }) =>
+              `${pageNumber} / ${totalPages}`
+            }
+            fixed
+          />
+        </Page>
+      )}
+      {modulesDesktop && modulesDesktop.length > 0 && (
+        <Page size="A4" style={styles.page}>
+          <View style={styles.banner} fixed>
+            <Image src="./public/assets/boosteriit.png" />
+          </View>
+          <View style={styles.section}>
+            <Text style={styles.h1}>COTIZACION</Text>
+            <View style={styles.hr}></View>
+            <Text style={styles.h2}>Cliente: {getClientName()}</Text>
+            <Text style={styles.h2}>email: {email}</Text>
+            <View>
+              {type === 'request' ? (
+                <View>
+                  <Text style={styles.h2}>Prefiere que lo llamen:</Text>
+                  <Text style={styles.h2}>Telefono: {phone}</Text>
+                </View>
+              ) : (
+                <View>
+                  <Text style={styles.h2}>Horario del Cliente:</Text>
+                  <Text style={styles.h2}>Fecha: {date}</Text>
+                  <Text style={styles.h2}>Hora: {time}</Text>
+                </View>
+              )}
+            </View>
+          </View>
+          <View>
+            <Text style={styles.h1}>MODULOS: DESKTOP</Text>
+          </View>
+          <View style={styles.viewSectionFlex}>
+            <Text style={styles.cel2Header}>Solución</Text>
+            <Text style={styles.cel1Header}>Precio</Text>
+            <Text style={styles.cel1Header}>Tiempo</Text>
+          </View>
+          {modulesDesktop &&
+            modulesDesktop.length > 0 &&
+            modulesDesktop.map((module: IModule) => (
+              <View key={module.id} style={styles.section}>
+                <View style={styles.viewSectionFlex}>
+                  <Text style={styles.cel2}>{module.title}</Text>
+                  <Text style={styles.cel1}>
+                    ${formatByCurrencyMXN(module.price)}
+                  </Text>
+                  <Text style={styles.cel1}>{module.days} dias</Text>
+                </View>
+              </View>
+            ))}
+          <Text
+            style={styles.pageNumber}
+            render={({ pageNumber, totalPages }) =>
+              `${pageNumber} / ${totalPages}`
+            }
+            fixed
+          />
+        </Page>
+      )}
+      { modulesMobile &&  modulesMobile.length > 0 && (
+        <Page size="A4" style={styles.page}>
+          <View style={styles.banner} fixed>
+            <Image src="./public/assets/boosteriit.png" />
+          </View>
+          <View style={styles.section}>
+            <Text style={styles.h1}>COTIZACION</Text>
+            <View style={styles.hr}></View>
+            <Text style={styles.h2}>Cliente: {getClientName()}</Text>
+            <Text style={styles.h2}>email: {email}</Text>
+            <View>
+              {type === 'request' ? (
+                <View>
+                  <Text style={styles.h2}>Prefiere que lo llamen:</Text>
+                  <Text style={styles.h2}>Telefono: {phone}</Text>
+                </View>
+              ) : (
+                <View>
+                  <Text style={styles.h2}>Horario del Cliente:</Text>
+                  <Text style={styles.h2}>Fecha: {date}</Text>
+                  <Text style={styles.h2}>Hora: {time}</Text>
+                </View>
+              )}
+            </View>
+          </View>
+          <View>
+            <Text style={styles.h1}>MODULOS: MOVIL</Text>
+          </View>
+          <View style={styles.viewSectionFlex}>
+            <Text style={styles.cel2Header}>Solución</Text>
+            <Text style={styles.cel1Header}>Precio</Text>
+            <Text style={styles.cel1Header}>Tiempo</Text>
+          </View>
+          {modulesMobile &&
+            modulesMobile.length > 0 &&
+            modulesMobile.map((module: IModule) => (
               <View key={module.id} style={styles.section}>
                 <View style={styles.viewSectionFlex}>
                   <Text style={styles.cel2}>{module.title}</Text>
