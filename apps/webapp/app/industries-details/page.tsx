@@ -30,7 +30,7 @@ import {
   getSubtotalPriceFormat,
   getTotalDays,
 } from '../../utils';
-import { IAdditional } from '../../data/addtionals';
+import {IAdditional } from "../../data/addtionals";
 import useIndustriesHook from '../hooks/useIndustriesHook';
 
 export default function IndustriesDetails(): JSX.Element {
@@ -50,7 +50,8 @@ export default function IndustriesDetails(): JSX.Element {
     addTemplatesStorage,
     getAdditionalsStorage,
     getStatusCheck,
-    getIntegrationStatusCheck
+    getIntegrationStatusCheck,
+    addAdditionalsStorage
   } = useIndustriesHook();
 
   const [showDetails, setShowDetails] = useState<string[]>(['mobile']);
@@ -82,8 +83,11 @@ export default function IndustriesDetails(): JSX.Element {
     const currents = templateForIndustries.filter(
       (template: IIndustryTemplate) => solutions.includes(template.solution)
     );
+    const currentAdditionaStorage = getAdditionalsStorage().filter((additional: IAdditional) => {
+        return additional.industry === selectedIndustry?.id && solutions.includes(additional.solution)
+    });
     const currentAdditionals = selectedAdditionals
-      .concat(getAdditionalsStorage())
+      .concat(currentAdditionaStorage)
       .filter(
         (additional: IAdditional) =>
           additional.industry === selectedIndustry?.id
@@ -92,6 +96,7 @@ export default function IndustriesDetails(): JSX.Element {
         solutions.includes(additional.solution)
       );
     setSelectedAdditionals(currentAdditionals);
+    addAdditionalsStorage(currentAdditionals)
     setSelectedIndustriesTemplate(currents);
     addTemplatesStorage(currents);
   }, [selectedSolutions, selectedIndustry]);
