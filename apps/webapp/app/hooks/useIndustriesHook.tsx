@@ -113,8 +113,8 @@ export default function useIndustriesHook() {
 
   return {
     addTemplatesStorage,
-    getAdditionalsStorage,
     addAdditionalsStorage,
+    getAdditionalsStorage,
     getStatusCheck,
     getIntegrationStatusCheck,
     setIntegrations,

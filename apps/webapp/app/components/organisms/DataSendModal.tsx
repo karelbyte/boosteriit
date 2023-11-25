@@ -11,7 +11,7 @@ export default function DataSendModal(props: IContactModalProps): JSX.Element {
   const { clear } = useShoppingCart();
   const clearShoppingCart = () => {
     setShowModal(false)
-    clear()
+    //clear()
   }
   return (
     <>

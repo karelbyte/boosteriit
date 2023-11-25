@@ -14,7 +14,7 @@ export default function RequestSentModal(
   const { clear } = useShoppingCart();
   const clearShoppingCart = () => {
     setShowModal(false);
-    clear();
+    //clear();
   };
 
   return (

@@ -6,12 +6,12 @@ import {
   Image,
   StyleSheet,
 } from '@joshuajaco/react-pdf-renderer-bundled';
-import { IIndustryTemplate } from '../../../data/industriesTemplate';
+import { IFeature, IIndustryTemplate } from '../../../data/industriesTemplate';
 import { IModule } from '../../../data/modules';
-import { additionals, IAdditional } from '../../../data/addtionals';
+import { IAdditional } from '../../../data/addtionals';
 import { IIntegration } from '../../../data/integrations';
 import { IIndustry } from '../../../data/industries';
-import { formatByCurrencyMXN, getAdditional } from '../../../utils';
+import { formatByCurrencyMXN } from '../../../utils';
 
 interface IPdfTemplateProps {
   name: string;
@@ -22,7 +22,7 @@ interface IPdfTemplateProps {
   selectedIndustry?: IIndustry;
   selectedIndustriesTemplate?: IIndustryTemplate[];
   selectedModules?: IModule[];
-  selectedAddtionals?: IAdditional[];
+  selectedAdditionals?: IAdditional[];
   selectedIntegrations?: IIntegration[];
   type: string;
 }
@@ -36,19 +36,23 @@ export default function PdfTemplate(props: IPdfTemplateProps) {
     phone,
     selectedIndustry,
     selectedModules,
-    selectedAddtionals,
+    selectedAdditionals,
     selectedIndustriesTemplate,
+    selectedIntegrations,
   } = props;
 
   const getAdditional = (solution: string, industry: string) => {
-    if (selectedAddtionals) {
-      return selectedAddtionals
+    if (selectedAdditionals) {
+      return selectedAdditionals
         .filter((additional: IAdditional) => additional.industry === industry)
         .filter((additional: IAdditional) => additional.solution === solution);
     }
     return [];
   };
 
+  const getClientName = () => {
+    return name.toUpperCase();
+  };
   return (
     <Document>
       {selectedIndustriesTemplate &&
@@ -61,8 +65,8 @@ export default function PdfTemplate(props: IPdfTemplateProps) {
             </View>
             <View style={styles.section}>
               <View style={styles.hr}></View>
-              <Text style={styles.h2}>CLIENTE: {name}</Text>
-              <Text style={styles.h2}>EMAIL: {email}</Text>
+              <Text style={styles.h2}>Cliente: {getClientName()}</Text>
+              <Text style={styles.h2}>email: {email}</Text>
               <View>
                 {type === 'request' ? (
                   <View>
@@ -71,7 +75,7 @@ export default function PdfTemplate(props: IPdfTemplateProps) {
                   </View>
                 ) : (
                   <View>
-                    <Text style={styles.h2}>Horario del cliente:</Text>
+                    <Text style={styles.h2}>Horario del Cliente:</Text>
                     <Text style={styles.h2}>Fecha: {date}</Text>
                     <Text style={styles.h2}>Hora: {time}</Text>
                   </View>
@@ -93,8 +97,8 @@ export default function PdfTemplate(props: IPdfTemplateProps) {
             <View style={styles.section}>
               <Text style={styles.h1}>COTIZACION</Text>
               <View style={styles.hr}></View>
-              <Text style={styles.h2}>CLIENTE: {name}</Text>
-              <Text style={styles.h2}>EMAIL: {email}</Text>
+              <Text style={styles.h2}>Cliente: {name}</Text>
+              <Text style={styles.h2}>email: {email}</Text>
               <View>
                 {type === 'request' ? (
                   <View>
@@ -103,7 +107,7 @@ export default function PdfTemplate(props: IPdfTemplateProps) {
                   </View>
                 ) : (
                   <View>
-                    <Text style={styles.h2}>Horario del cliente:</Text>
+                    <Text style={styles.h2}>Horario del Cliente:</Text>
                     <Text style={styles.h2}>Fecha: {date}</Text>
                     <Text style={styles.h2}>Hora: {time}</Text>
                   </View>
@@ -128,11 +132,22 @@ export default function PdfTemplate(props: IPdfTemplateProps) {
                 </Text>
                 <Text style={styles.cel1}>{template.days} dias</Text>
               </View>
+              <View style={styles.section1}>
+                <Text style={styles.h3}>Funcionalidades</Text>
+                <View style={styles.section2}>
+                  {template &&
+                    template.features.map((feature: IFeature) => (
+                      <Text key={feature.id} style={styles.h4}>
+                        • {feature.title}
+                      </Text>
+                    ))}
+                </View>
+              </View>
 
               {getAdditional(template.solution, template.industry).length >
                 0 && (
                 <View>
-                  <Text style={styles.h2}>Extras</Text>
+                  <Text style={styles.h3}>Extras</Text>
                   <View style={styles.viewSectionFlex}>
                     <Text style={styles.cel2Header}>Descripcion</Text>
                     <Text style={styles.cel1Header}>Precio</Text>
@@ -152,7 +167,6 @@ export default function PdfTemplate(props: IPdfTemplateProps) {
                 </View>
               )}
             </View>
-
             <Text
               style={styles.pageNumber}
               render={({ pageNumber, totalPages }) =>
@@ -162,7 +176,7 @@ export default function PdfTemplate(props: IPdfTemplateProps) {
             />
           </Page>
         ))}
-      {selectedModules && selectedModules.length > 0 && (
+      {selectedIntegrations && selectedIntegrations.length > 0 && (
         <Page size="A4" style={styles.page}>
           <View style={styles.banner} fixed>
             <Image src="./public/assets/boosteriit.png" />
@@ -170,8 +184,8 @@ export default function PdfTemplate(props: IPdfTemplateProps) {
           <View style={styles.section}>
             <Text style={styles.h1}>COTIZACION</Text>
             <View style={styles.hr}></View>
-            <Text style={styles.h2}>CLIENTE: {name}</Text>
-            <Text style={styles.h2}>EMAIL: {email}</Text>
+            <Text style={styles.h2}>Cliente: {name}</Text>
+            <Text style={styles.h2}>email: {email}</Text>
             <View>
               {type === 'request' ? (
                 <View>
@@ -180,7 +194,52 @@ export default function PdfTemplate(props: IPdfTemplateProps) {
                 </View>
               ) : (
                 <View>
-                  <Text style={styles.h2}>Horario del cliente:</Text>
+                  <Text style={styles.h2}>Horario del Cliente:</Text>
+                  <Text style={styles.h2}>Fecha: {date}</Text>
+                  <Text style={styles.h2}>Hora: {time}</Text>
+                </View>
+              )}
+            </View>
+          </View>
+          <View style={styles.section}>
+            <Text style={styles.h3}>INTEGRACIONES</Text>
+          </View>
+          <View style={styles.section}>
+            {selectedIntegrations.map((integration: IIntegration) => (
+              <Text key={integration.id} style={styles.h2}>
+                {integration.title}
+              </Text>
+            ))}
+          </View>
+          <Text
+            style={styles.pageNumber}
+            render={({ pageNumber, totalPages }) =>
+              `${pageNumber} / ${totalPages}`
+            }
+            fixed
+          />
+        </Page>
+      )}
+
+      {selectedModules && selectedModules.length > 0 && (
+        <Page size="A4" style={styles.page}>
+          <View style={styles.banner} fixed>
+            <Image src="./public/assets/boosteriit.png" />
+          </View>
+          <View style={styles.section}>
+            <Text style={styles.h1}>COTIZACION</Text>
+            <View style={styles.hr}></View>
+            <Text style={styles.h2}>Cliente: {getClientName()}</Text>
+            <Text style={styles.h2}>email: {email}</Text>
+            <View>
+              {type === 'request' ? (
+                <View>
+                  <Text style={styles.h2}>Prefiere que lo llamen:</Text>
+                  <Text style={styles.h2}>Telefono: {phone}</Text>
+                </View>
+              ) : (
+                <View>
+                  <Text style={styles.h2}>Horario del Cliente:</Text>
                   <Text style={styles.h2}>Fecha: {date}</Text>
                   <Text style={styles.h2}>Hora: {time}</Text>
                 </View>
@@ -210,6 +269,13 @@ export default function PdfTemplate(props: IPdfTemplateProps) {
                 </View>
               </View>
             ))}
+          <Text
+            style={styles.pageNumber}
+            render={({ pageNumber, totalPages }) =>
+              `${pageNumber} / ${totalPages}`
+            }
+            fixed
+          />
         </Page>
       )}
     </Document>
@@ -247,16 +313,36 @@ const styles = StyleSheet.create({
   },
   h1: {
     marginBottom: 6,
-    fontSize: '18px',
+    fontSize: '14px',
     color: 'black',
   },
   h2: {
     marginBottom: 6,
     fontSize: '14px',
   },
+  h3: {
+    fontSize: '12px',
+    color: 'black',
+  },
+  h4: {
+    width: '48%',
+    marginBottom: 6,
+    padding: '0 5px 0 0',
+    fontSize: '12px',
+  },
   section: {
     marginBottom: '10px',
     borderBottom: '1px solid gray',
+  },
+  section1: {
+    margin: '15px 0 15px 0',
+  },
+  section2: {
+    margin: '15px 0 0 0',
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
   },
   viewSectionFlex: {
     display: 'flex',
