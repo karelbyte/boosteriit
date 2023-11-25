@@ -487,7 +487,8 @@ const realestate: IIndustryTemplate[] = [
       },
       {
         id: 'template_web_realestate_general_sales_closures',
-        title: 'Sistema de seguimiento de transacciones y cierres de ventas en general',
+        title:
+          'Sistema de seguimiento de transacciones y cierres de ventas en general',
         days: 80,
         price: 50000,
       },
@@ -571,7 +572,8 @@ const realestate: IIndustryTemplate[] = [
       },
       {
         id: 'template_desktop_realestate_general_sales_closures',
-        title: 'Sistema de seguimiento de transacciones y cierres de ventas en general',
+        title:
+          'Sistema de seguimiento de transacciones y cierres de ventas en general',
         days: 80,
         price: 50000,
       },
@@ -637,7 +639,8 @@ const realestate: IIndustryTemplate[] = [
     features: [
       {
         id: 'template_mob_realestate_general_sales_closures',
-        title: 'Sistema de seguimiento de transacciones y cierres de ventas en general',
+        title:
+          'Sistema de seguimiento de transacciones y cierres de ventas en general',
         days: 80,
         price: 50000,
       },
@@ -914,207 +917,7 @@ const hospitality: IIndustryTemplate[] = [
   },
 ];
 
-const fintech: IIndustryTemplate[] = [
-  {
-    id: 'template_web_fintech',
-    solution: 'web',
-    industry: 'fintech',
-    icon: <MdWeb />,
-    title: 'Aplicación web',
-    short: 'App web',
-    days: 66,
-    price: 487500,
-    image: '/assets/templates/fintech/image_web.svg',
-    image_slide1: '/assets/templates/fintech/fintech1_web.svg',
-    image_slide2: '/assets/templates/fintech/fintech2_web.svg',
-    image_slide3: '/assets/templates/fintech/fintech3_web.svg',
-    image_slide4: '/assets/templates/fintech/fintech4_web.svg',
-    features: [
-      {
-        id: 'template_web_fintech_social',
-        title: 'Home público con promociones',
-        days: 30,
-        price: 25000,
-      },
-      {
-        id: 'template_web_fintech_catalogo',
-        title: 'Registro de usuario con correo electrónico o redes sociales',
-        days: 80,
-        price: 50000,
-      },
-      {
-        id: 'template_web_fintech_system',
-        title: 'Gestión de Hoteles',
-        days: 80,
-        price: 45000,
-      },
-      {
-        id: 'template_web_fintech_table',
-        title: 'Gestión de Vuelos',
-        days: 80,
-        price: 50000,
-      },
-
-      {
-        id: 'template_web_fintech_profile',
-        title: 'Gestión de Paquetes Turísticos',
-        days: 40,
-        price: 30000,
-      },
-      {
-        id: 'template_web_fintech_menu',
-        title: 'Carrito de compras',
-        days: 60,
-        price: 50000,
-      },
-      {
-        id: 'template_web_fintech_notification',
-        title: 'Notificaciones',
-        days: 40,
-        price: 40000,
-      },
-      {
-        id: 'template_web_fintech_payment',
-        title: 'Geolocalización del lugar, hotel o producto',
-        days: 40,
-        price: 45000,
-      },
-    ],
-  },
-  {
-    id: 'template_desk_fintech',
-    solution: 'desktop',
-    industry: 'fintech',
-    icon: <BiDesktop />,
-    title: 'Aplicación Escritorio',
-    short: 'App escritorio',
-    days: 66,
-    price: 487500,
-    image: '/assets/templates/fintech/image_desk.svg',
-    image_slide1: '/assets/templates/fintech/fintech1_desk.svg',
-    image_slide2: '/assets/templates/fintech/fintech2_desk.svg',
-    image_slide3: '/assets/templates/fintech/fintech3_desk.svg',
-    image_slide4: '/assets/templates/fintech/fintech4_desk.svg',
-    features: [
-      {
-        id: 'template_desk_fintech_social',
-        title: 'Home público con promociones',
-        days: 30,
-        price: 25000,
-      },
-      {
-        id: 'template_desk_fintech_catalogo',
-        title: 'Registro de usuario con correo electrónico o redes sociales',
-        days: 80,
-        price: 50000,
-      },
-      {
-        id: 'template_desk_fintech_system',
-        title: 'Gestión de Hoteles',
-        days: 80,
-        price: 45000,
-      },
-      {
-        id: 'template_desk_fintech_table',
-        title: 'Gestión de Vuelos',
-        days: 80,
-        price: 50000,
-      },
-
-      {
-        id: 'template_desk_fintech_profile',
-        title: 'Gestión de Paquetes Turísticos',
-        days: 40,
-        price: 30000,
-      },
-      {
-        id: 'template_desk_fintech_menu',
-        title: 'Carrito de compras',
-        days: 60,
-        price: 50000,
-      },
-      {
-        id: 'template_desk_fintech_notification',
-        title: 'Notificaciones',
-        days: 40,
-        price: 40000,
-      },
-      {
-        id: 'template_desk_fintech_payment',
-        title: 'Geolocalización del lugar, hotel o producto',
-        days: 40,
-        price: 45000,
-      },
-    ],
-  },
-  {
-    id: 'template_mobile_fintech',
-    solution: 'mobile',
-    industry: 'fintech',
-    icon: <FaMobileAlt />,
-    title: 'Aplicación Movil',
-    short: 'App movil',
-    days: 66,
-    price: 487500,
-    image: '/assets/templates/fintech/image_mob.svg',
-    image_slide1: '/assets/templates/fintech/fintech1_mob.svg',
-    image_slide2: '/assets/templates/fintech/fintech2_mob.svg',
-    image_slide3: '/assets/templates/fintech/fintech3_mob.svg',
-    image_slide4: '/assets/templates/fintech/fintech4_mob.svg',
-    features: [
-      {
-        id: 'template_mob_fintech_social',
-        title: 'Home público con promociones',
-        days: 30,
-        price: 25000,
-      },
-      {
-        id: 'template_mob_fintech_catalogo',
-        title: 'Registro de usuario con correo electrónico o redes sociales',
-        days: 80,
-        price: 50000,
-      },
-      {
-        id: 'template_mob_fintech_system',
-        title: 'Gestión de Hoteles',
-        days: 80,
-        price: 45000,
-      },
-      {
-        id: 'template_mob_fintech_table',
-        title: 'Gestión de Vuelos',
-        days: 80,
-        price: 50000,
-      },
-
-      {
-        id: 'template_mob_fintech_profile',
-        title: 'Gestión de Paquetes Turísticos',
-        days: 40,
-        price: 30000,
-      },
-      {
-        id: 'template_mob_fintech_menu',
-        title: 'Carrito de compras',
-        days: 60,
-        price: 50000,
-      },
-      {
-        id: 'template_mob_fintech_notification',
-        title: 'Notificaciones',
-        days: 40,
-        price: 40000,
-      },
-      {
-        id: 'template_mob_fintech_payment',
-        title: 'Geolocalización del lugar, hotel o producto',
-        days: 40,
-        price: 45000,
-      },
-    ],
-  },
-];
-
+// faltan tiempo y costo, en los extras faltan tiempo y costo
 const healthcare: IIndustryTemplate[] = [
   {
     id: 'template_web_healthcare',
@@ -1132,41 +935,35 @@ const healthcare: IIndustryTemplate[] = [
     image_slide4: '/assets/templates/healthcare/healthcare4_web.svg',
     features: [
       {
-        id: 'template_web_healthcare_social',
-        title: 'Home público con promociones',
+        id: 'template_web_healthcare_doctors_services',
+        title: 'Catálogo de Hospitales, Doctores y Servicios',
         days: 30,
         price: 25000,
       },
       {
-        id: 'template_web_healthcare_catalogo',
-        title: 'Registro de usuario con correo electrónico o redes sociales',
+        id: 'template_web_healthcare_agent',
+        title: 'Sistema de Agenda de Citas',
         days: 80,
         price: 50000,
       },
       {
-        id: 'template_web_healthcare_system',
-        title: 'Gestión de Hoteles',
+        id: 'template_web_healthcare_pay',
+        title: 'Sistema de Pagos',
         days: 80,
         price: 45000,
       },
       {
-        id: 'template_web_healthcare_table',
-        title: 'Gestión de Vuelos',
+        id: 'template_web_healthcare_patient_reminders',
+        title:
+          'Solución de seguimiento de la salud del paciente y recordatorios',
         days: 80,
         price: 50000,
       },
-
       {
-        id: 'template_web_healthcare_profile',
-        title: 'Gestión de Paquetes Turísticos',
+        id: 'template_web_healthcare_documentation',
+        title: 'Sistema de Carga y Descarga de Documentación',
         days: 40,
         price: 30000,
-      },
-      {
-        id: 'template_web_healthcare_menu',
-        title: 'Carrito de compras',
-        days: 60,
-        price: 50000,
       },
       {
         id: 'template_web_healthcare_notification',
@@ -1175,8 +972,14 @@ const healthcare: IIndustryTemplate[] = [
         price: 40000,
       },
       {
-        id: 'template_web_healthcare_payment',
-        title: 'Geolocalización del lugar, hotel o producto',
+        id: 'template_web_healthcare_file_medical',
+        title: 'Módulo de gestión de historias clínicas y expedientes médicos',
+        days: 40,
+        price: 45000,
+      },
+      {
+        id: 'template_web_healthcare_profile_medical',
+        title: 'Sistema de perfil de paciente',
         days: 40,
         price: 45000,
       },
@@ -1198,51 +1001,51 @@ const healthcare: IIndustryTemplate[] = [
     image_slide4: '/assets/templates/healthcare/healthcare4_desk.svg',
     features: [
       {
-        id: 'template_desk_healthcare_social',
-        title: 'Home público con promociones',
+        id: 'template_desktop_healthcare_doctors_services',
+        title: 'Catálogo de Hospitales, Doctores y Servicios',
         days: 30,
         price: 25000,
       },
       {
-        id: 'template_desk_healthcare_catalogo',
-        title: 'Registro de usuario con correo electrónico o redes sociales',
+        id: 'template_desktop_healthcare_agent',
+        title: 'Sistema de Agenda de Citas',
         days: 80,
         price: 50000,
       },
       {
-        id: 'template_desk_healthcare_system',
-        title: 'Gestión de Hoteles',
+        id: 'template_desktop_healthcare_pay',
+        title: 'Sistema de Pagos',
         days: 80,
         price: 45000,
       },
       {
-        id: 'template_desk_healthcare_table',
-        title: 'Gestión de Vuelos',
+        id: 'template_desktop_healthcare_patient_reminders',
+        title:
+          'Solución de seguimiento de la salud del paciente y recordatorios',
         days: 80,
         price: 50000,
       },
-
       {
-        id: 'template_desk_healthcare_profile',
-        title: 'Gestión de Paquetes Turísticos',
+        id: 'template_desktop_healthcare_documentation',
+        title: 'Sistema de Carga y Descarga de Documentación',
         days: 40,
         price: 30000,
       },
       {
-        id: 'template_desk_healthcare_menu',
-        title: 'Carrito de compras',
-        days: 60,
-        price: 50000,
-      },
-      {
-        id: 'template_desk_healthcare_notification',
+        id: 'template_desktop_healthcare_notification',
         title: 'Notificaciones',
         days: 40,
         price: 40000,
       },
       {
-        id: 'template_desk_healthcare_payment',
-        title: 'Geolocalización del lugar, hotel o producto',
+        id: 'template_desktop_healthcare_file_medical',
+        title: 'Módulo de gestión de historias clínicas y expedientes médicos',
+        days: 40,
+        price: 45000,
+      },
+      {
+        id: 'template_desktop_healthcare_profile_medical',
+        title: 'Sistema de perfil de paciente',
         days: 40,
         price: 45000,
       },
@@ -1264,41 +1067,35 @@ const healthcare: IIndustryTemplate[] = [
     image_slide4: '/assets/templates/healthcare/healthcare4_mob.svg',
     features: [
       {
-        id: 'template_mob_healthcare_social',
-        title: 'Home público con promociones',
+        id: 'template_mob_healthcare_doctors_services',
+        title: 'Catálogo de Hospitales, Doctores y Servicios',
         days: 30,
         price: 25000,
       },
       {
-        id: 'template_mob_healthcare_catalogo',
-        title: 'Registro de usuario con correo electrónico o redes sociales',
+        id: 'template_mob_healthcare_agent',
+        title: 'Sistema de Agenda de Citas',
         days: 80,
         price: 50000,
       },
       {
-        id: 'template_mob_healthcare_system',
-        title: 'Gestión de Hoteles',
+        id: 'template_mob_healthcare_pay',
+        title: 'Sistema de Pagos',
         days: 80,
         price: 45000,
       },
       {
-        id: 'template_mob_healthcare_table',
-        title: 'Gestión de Vuelos',
+        id: 'template_mob_healthcare_patient_reminders',
+        title:
+          'Solución de seguimiento de la salud del paciente y recordatorios',
         days: 80,
         price: 50000,
       },
-
       {
-        id: 'template_mob_healthcare_profile',
-        title: 'Gestión de Paquetes Turísticos',
+        id: 'template_mob_healthcare_documentation',
+        title: 'Sistema de Carga y Descarga de Documentación',
         days: 40,
         price: 30000,
-      },
-      {
-        id: 'template_mob_healthcare_menu',
-        title: 'Carrito de compras',
-        days: 60,
-        price: 50000,
       },
       {
         id: 'template_mob_healthcare_notification',
@@ -1307,8 +1104,8 @@ const healthcare: IIndustryTemplate[] = [
         price: 40000,
       },
       {
-        id: 'template_mob_healthcare_payment',
-        title: 'Geolocalización del lugar, hotel o producto',
+        id: 'template_mob_healthcare_profile_medical',
+        title: 'Sistema de perfil de paciente',
         days: 40,
         price: 45000,
       },
@@ -1316,6 +1113,7 @@ const healthcare: IIndustryTemplate[] = [
   },
 ];
 
+// faltan tiempo y costo, en los extras faltan tiempo y costo
 const entertainment: IIndustryTemplate[] = [
   {
     id: 'template_web_entertainment',
@@ -1333,52 +1131,57 @@ const entertainment: IIndustryTemplate[] = [
     image_slide4: '/assets/templates/entertainment/entertainment4_web.svg',
     features: [
       {
-        id: 'template_web_entertainment_social',
-        title: 'Home público con promociones',
+        id: 'template_web_entertainment_services',
+        title: 'E-Commerce para productos y servicios',
         days: 30,
         price: 25000,
       },
       {
-        id: 'template_web_entertainment_catalogo',
-        title: 'Registro de usuario con correo electrónico o redes sociales',
+        id: 'template_web_entertainment_media',
+        title: 'SIstema de gestión de contenidos y publicaciones multimedia',
         days: 80,
         price: 50000,
       },
       {
-        id: 'template_web_entertainment_system',
-        title: 'Gestión de Hoteles',
+        id: 'template_web_entertainment_pay',
+        title: 'Sistema de pagos',
         days: 80,
         price: 45000,
       },
       {
-        id: 'template_web_entertainment_table',
-        title: 'Gestión de Vuelos',
+        id: 'template_web_entertainment_documents',
+        title: 'Sistema de Carga y Descarga de Documentación',
         days: 80,
         price: 50000,
       },
 
       {
-        id: 'template_web_entertainment_profile',
-        title: 'Gestión de Paquetes Turísticos',
+        id: 'template_web_entertainment_notifications',
+        title: 'Notificaciones',
         days: 40,
         price: 30000,
       },
       {
-        id: 'template_web_entertainment_menu',
-        title: 'Carrito de compras',
+        id: 'template_web_entertainment_view',
+        title: 'Visor de videos',
         days: 60,
         price: 50000,
       },
       {
-        id: 'template_web_entertainment_notification',
-        title:
-          'Notificaciones',
+        id: 'template_web_entertainment_live_broadcast',
+        title: 'Herramienta de programación y transmisión en vivo',
         days: 40,
         price: 40000,
       },
       {
-        id: 'template_web_entertainment_payment',
-        title: 'Geolocalización del lugar, hotel o producto',
+        id: 'template_web_entertainment_subscriptions',
+        title: 'Plataforma de gestión de suscripciones y membresías',
+        days: 40,
+        price: 45000,
+      },
+      {
+        id: 'template_web_entertainment_producers',
+        title: 'Panel de control para creadores de contenido y productores',
         days: 40,
         price: 45000,
       },
@@ -1388,7 +1191,7 @@ const entertainment: IIndustryTemplate[] = [
     id: 'template_desk_entertainment',
     solution: 'desktop',
     industry: 'entertainment',
-    icon:  <BiDesktop />,
+    icon: <BiDesktop />,
     title: 'Aplicación Escritorio',
     short: 'App escritorio',
     days: 66,
@@ -1400,52 +1203,57 @@ const entertainment: IIndustryTemplate[] = [
     image_slide4: '/assets/templates/entertainment/entertainment4_desk.svg',
     features: [
       {
-        id: 'template_desk_entertainment_social',
-        title: 'Home público con promociones',
+        id: 'template_desktop_entertainment_services',
+        title: 'E-Commerce para productos y servicios',
         days: 30,
         price: 25000,
       },
       {
-        id: 'template_desk_entertainment_catalogo',
-        title: 'Registro de usuario con correo electrónico o redes sociales',
+        id: 'template_desktop_entertainment_media',
+        title: 'SIstema de gestión de contenidos y publicaciones multimedia',
         days: 80,
         price: 50000,
       },
       {
-        id: 'template_desk_entertainment_system',
-        title: 'Gestión de Hoteles',
+        id: 'template_desktop_entertainment_pay',
+        title: 'Sistema de pagos',
         days: 80,
         price: 45000,
       },
       {
-        id: 'template_desk_entertainment_table',
-        title: 'Gestión de Vuelos',
+        id: 'template_desktop_entertainment_documents',
+        title: 'Sistema de Carga y Descarga de Documentación',
         days: 80,
         price: 50000,
       },
 
       {
-        id: 'template_desk_entertainment_profile',
-        title: 'Gestión de Paquetes Turísticos',
+        id: 'template_desktop_entertainment_notifications',
+        title: 'Notificaciones',
         days: 40,
         price: 30000,
       },
       {
-        id: 'template_desk_entertainment_menu',
-        title: 'Carrito de compras',
+        id: 'template_desktop_entertainment_view',
+        title: 'Visor de videos',
         days: 60,
         price: 50000,
       },
       {
-        id: 'template_desk_entertainment_notification',
-        title:
-          'Notificaciones',
+        id: 'template_desktop_entertainment_live_broadcast',
+        title: 'Herramienta de programación y transmisión en vivo',
         days: 40,
         price: 40000,
       },
       {
-        id: 'template_desk_entertainment_payment',
-        title: 'Geolocalización del lugar, hotel o producto',
+        id: 'template_desktop_entertainment_subscriptions',
+        title: 'Plataforma de gestión de suscripciones y membresías',
+        days: 40,
+        price: 45000,
+      },
+      {
+        id: 'template_desktop_entertainment_producers',
+        title: 'Panel de control para creadores de contenido y productores',
         days: 40,
         price: 45000,
       },
@@ -1467,58 +1275,343 @@ const entertainment: IIndustryTemplate[] = [
     image_slide4: '/assets/templates/entertainment/entertainment4_mob.svg',
     features: [
       {
-        id: 'template_mob_entertainment_social',
-        title: 'Home público con promociones',
+        id: 'template_mob_entertainment_services',
+        title: 'E-Commerce para productos y servicios',
         days: 30,
         price: 25000,
       },
       {
-        id: 'template_mob_entertainment_catalogo',
-        title: 'Registro de usuario con correo electrónico o redes sociales',
+        id: 'template_mob_entertainment_media',
+        title: 'SIstema de gestión de contenidos y publicaciones multimedia',
         days: 80,
         price: 50000,
       },
       {
-        id: 'template_mob_entertainment_system',
-        title: 'Gestión de Hoteles',
+        id: 'template_mob_entertainment_pay',
+        title: 'Sistema de pagos',
         days: 80,
         price: 45000,
       },
       {
-        id: 'template_mob_entertainment_table',
-        title: 'Gestión de Vuelos',
+        id: 'template_mob_entertainment_documents',
+        title: 'Sistema de Carga y Descarga de Documentación',
         days: 80,
         price: 50000,
       },
 
       {
-        id: 'template_mob_entertainment_profile',
-        title: 'Gestión de Paquetes Turísticos',
+        id: 'template_mob_entertainment_notifications',
+        title: 'Notificaciones',
         days: 40,
         price: 30000,
       },
       {
-        id: 'template_mob_entertainment_menu',
-        title: 'Carrito de compras',
+        id: 'template_mob_entertainment_view',
+        title: 'Visor de videos',
         days: 60,
         price: 50000,
       },
       {
-        id: 'template_mob_entertainment_notification',
-        title:
-          'Notificaciones',
+        id: 'template_mob_entertainment_live_broadcast',
+        title: 'Herramienta de programación y transmisión en vivo',
         days: 40,
         price: 40000,
       },
       {
-        id: 'template_mob_entertainment_payment',
-        title: 'Geolocalización del lugar, hotel o producto',
+        id: 'template_mob_entertainment_subscriptions',
+        title: 'Plataforma de gestión de suscripciones y membresías',
+        days: 40,
+        price: 45000,
+      },
+      {
+        id: 'template_mob_entertainment_producers',
+        title: 'Panel de control para creadores de contenido y productores',
         days: 40,
         price: 45000,
       },
     ],
   },
-]
+];
+
+// faltan tiempo y costo, en los extras faltan tiempo y costo
+const fintech: IIndustryTemplate[] = [
+  {
+    id: 'template_web_fintech',
+    solution: 'web',
+    industry: 'fintech',
+    icon: <MdWeb />,
+    title: 'Aplicación web',
+    short: 'App web',
+    days: 66,
+    price: 487500,
+    image: '/assets/templates/fintech/image_web.svg',
+    image_slide1: '/assets/templates/fintech/fintech1_web.svg',
+    image_slide2: '/assets/templates/fintech/fintech2_web.svg',
+    image_slide3: '/assets/templates/fintech/fintech3_web.svg',
+    image_slide4: '/assets/templates/fintech/fintech4_web.svg',
+    features: [
+      {
+        id: 'template_web_fintech_revenues',
+        title: 'Administración de Ingresos y Egresos',
+        days: 30,
+        price: 25000,
+      },
+      {
+        id: 'template_web_fintech_credits',
+        title: 'Sistema de gestión de créditos',
+        days: 80,
+        price: 50000,
+      },
+      {
+        id: 'template_web_fintech_credits_information',
+        title:
+          'Sistema para solicitud de crédito: Requisitos, documentación e información',
+        days: 80,
+        price: 45000,
+      },
+      {
+        id: 'template_web_fintech_file_client',
+        title: 'Expediente de Cliente',
+        days: 80,
+        price: 50000,
+      },
+
+      {
+        id: 'template_web_fintech_account',
+        title: 'Estado de cuenta',
+        days: 40,
+        price: 30000,
+      },
+      {
+        id: 'template_web_fintech_pay_flow',
+        title: 'Tabla de amortización (Flujo de Pagos)',
+        days: 60,
+        price: 50000,
+      },
+      {
+        id: 'template_web_fintech_support',
+        title: 'Plataforma de atención al cliente y soporte técnico',
+        days: 40,
+        price: 40000,
+      },
+      {
+        id: 'template_web_fintech_debt_recovery',
+        title: 'Herramienta de gestión de cobros y recuperación de deudas',
+        days: 40,
+        price: 45000,
+      },
+      {
+        id: 'template_web_fintech_system_pay',
+        title: 'Sistemas de Pago',
+        days: 40,
+        price: 45000,
+      },
+      {
+        id: 'template_web_fintech_capital_liquidation',
+        title:
+          'Sistema de Cálculo financiero para abonos a capital y liquidación',
+        days: 40,
+        price: 45000,
+      },
+      {
+        id: 'template_web_fintech_status_formalities',
+        title: 'Estatus de trámites',
+        days: 40,
+        price: 45000,
+      },
+      {
+        id: 'template_web_fintech_credits_made',
+        title: 'Estatus de créditos efectuados',
+        days: 40,
+        price: 45000,
+      },
+    ],
+  },
+  {
+    id: 'template_desk_fintech',
+    solution: 'desktop',
+    industry: 'fintech',
+    icon: <BiDesktop />,
+    title: 'Aplicación Escritorio',
+    short: 'App escritorio',
+    days: 66,
+    price: 487500,
+    image: '/assets/templates/fintech/image_desk.svg',
+    image_slide1: '/assets/templates/fintech/fintech1_desk.svg',
+    image_slide2: '/assets/templates/fintech/fintech2_desk.svg',
+    image_slide3: '/assets/templates/fintech/fintech3_desk.svg',
+    image_slide4: '/assets/templates/fintech/fintech4_desk.svg',
+    features: [
+      {
+        id: 'template_desk_fintech_revenues',
+        title: 'Administración de Ingresos y Egresos',
+        days: 30,
+        price: 25000,
+      },
+      {
+        id: 'template_desk_fintech_credits',
+        title: 'Sistema de gestión de créditos',
+        days: 80,
+        price: 50000,
+      },
+      {
+        id: 'template_desk_fintech_credits_information',
+        title:
+          'Sistema para solicitud de crédito: Requisitos, documentación e información',
+        days: 80,
+        price: 45000,
+      },
+      {
+        id: 'template_desk_fintech_file_client',
+        title: 'Expediente de Cliente',
+        days: 80,
+        price: 50000,
+      },
+
+      {
+        id: 'template_desk_fintech_account',
+        title: 'Estado de cuenta',
+        days: 40,
+        price: 30000,
+      },
+      {
+        id: 'template_desk_fintech_pay_flow',
+        title: 'Tabla de amortización (Flujo de Pagos)',
+        days: 60,
+        price: 50000,
+      },
+      {
+        id: 'template_desk_fintech_support',
+        title: 'Plataforma de atención al cliente y soporte técnico',
+        days: 40,
+        price: 40000,
+      },
+      {
+        id: 'template_desk_fintech_debt_recovery',
+        title: 'Herramienta de gestión de cobros y recuperación de deudas',
+        days: 40,
+        price: 45000,
+      },
+      {
+        id: 'template_desk_fintech_system_pay',
+        title: 'Sistemas de Pago',
+        days: 40,
+        price: 45000,
+      },
+      {
+        id: 'template_desk_fintech_capital_liquidation',
+        title:
+          'Sistema de Cálculo financiero para abonos a capital y liquidación',
+        days: 40,
+        price: 45000,
+      },
+      {
+        id: 'template_desk_fintech_status_formalities',
+        title: 'Estatus de trámites',
+        days: 40,
+        price: 45000,
+      },
+      {
+        id: 'template_desk_fintech_credits_made',
+        title: 'Estatus de créditos efectuados',
+        days: 40,
+        price: 45000,
+      },
+    ],
+  },
+  {
+    id: 'template_mobile_fintech',
+    solution: 'mobile',
+    industry: 'fintech',
+    icon: <FaMobileAlt />,
+    title: 'Aplicación Movil',
+    short: 'App movil',
+    days: 66,
+    price: 487500,
+    image: '/assets/templates/fintech/image_mob.svg',
+    image_slide1: '/assets/templates/fintech/fintech1_mob.svg',
+    image_slide2: '/assets/templates/fintech/fintech2_mob.svg',
+    image_slide3: '/assets/templates/fintech/fintech3_mob.svg',
+    image_slide4: '/assets/templates/fintech/fintech4_mob.svg',
+    features: [
+      {
+        id: 'template_mob_fintech_revenues',
+        title: 'Administración de Ingresos y Egresos',
+        days: 30,
+        price: 25000,
+      },
+      {
+        id: 'template_mob_fintech_credits',
+        title: 'Sistema de gestión de créditos',
+        days: 80,
+        price: 50000,
+      },
+      {
+        id: 'template_mob_fintech_credits_information',
+        title:
+          'Sistema para solicitud de crédito: Requisitos, documentación e información',
+        days: 80,
+        price: 45000,
+      },
+      {
+        id: 'template_mob_fintech_file_client',
+        title: 'Expediente de Cliente',
+        days: 80,
+        price: 50000,
+      },
+
+      {
+        id: 'template_mob_fintech_account',
+        title: 'Estado de cuenta',
+        days: 40,
+        price: 30000,
+      },
+      {
+        id: 'template_mob_fintech_pay_flow',
+        title: 'Tabla de amortización (Flujo de Pagos)',
+        days: 60,
+        price: 50000,
+      },
+      {
+        id: 'template_mob_fintech_support',
+        title: 'Plataforma de atención al cliente y soporte técnico',
+        days: 40,
+        price: 40000,
+      },
+      {
+        id: 'template_mob_fintech_debt_recovery',
+        title: 'Herramienta de gestión de cobros y recuperación de deudas',
+        days: 40,
+        price: 45000,
+      },
+      {
+        id: 'template_mob_fintech_system_pay',
+        title: 'Sistemas de Pago',
+        days: 40,
+        price: 45000,
+      },
+      {
+        id: 'template_mob_fintech_capital_liquidation',
+        title:
+          'Sistema de Cálculo financiero para abonos a capital y liquidación',
+        days: 40,
+        price: 45000,
+      },
+      {
+        id: 'template_mob_fintech_status_formalities',
+        title: 'Estatus de trámites',
+        days: 40,
+        price: 45000,
+      },
+      {
+        id: 'template_mob_fintech_credits_made',
+        title: 'Estatus de créditos efectuados',
+        days: 40,
+        price: 45000,
+      },
+    ],
+  },
+];
 
 const fintech_crowdfunding: IIndustryTemplate[] = [
   {
@@ -1531,58 +1624,74 @@ const fintech_crowdfunding: IIndustryTemplate[] = [
     days: 66,
     price: 487500,
     image: '/assets/templates/fintech_crowdfunding/image_web.svg',
-    image_slide1: '/assets/templates/fintech_crowdfunding/fintech_crowdfunding1_web.svg',
-    image_slide2: '/assets/templates/fintech_crowdfunding/fintech_crowdfunding2_web.svg',
-    image_slide3: '/assets/templates/fintech_crowdfunding/fintech_crowdfunding3_web.svg',
-    image_slide4: '/assets/templates/fintech_crowdfunding/fintech_crowdfunding4_web.svg',
+    image_slide1:
+      '/assets/templates/fintech_crowdfunding/fintech_crowdfunding1_web.svg',
+    image_slide2:
+      '/assets/templates/fintech_crowdfunding/fintech_crowdfunding2_web.svg',
+    image_slide3:
+      '/assets/templates/fintech_crowdfunding/fintech_crowdfunding3_web.svg',
+    image_slide4:
+      '/assets/templates/fintech_crowdfunding/fintech_crowdfunding4_web.svg',
     features: [
       {
-        id: 'template_web_fintech_crowdfunding_social',
-        title: 'Home público con promociones',
+        id: 'template_web_fintech_crowdfunding_products',
+        title: 'Gestión de Catálogo de productos',
         days: 30,
         price: 25000,
       },
       {
-        id: 'template_web_fintech_crowdfunding_catalogo',
-        title: 'Registro de usuario con correo electrónico o redes sociales',
+        id: 'template_web_fintech_crowdfunding_document',
+        title: 'Sistema de Subida de Requisitos: Documentación e información',
         days: 80,
         price: 50000,
       },
       {
-        id: 'template_web_fintech_crowdfunding_system',
-        title: 'Gestión de Hoteles',
+        id: 'template_web_fintech_crowdfunding_project',
+        title: 'Estatus de proyectos autorizados',
         days: 80,
         price: 45000,
       },
       {
-        id: 'template_web_fintech_crowdfunding_table',
-        title: 'Gestión de Vuelos',
+        id: 'template_web_fintech_crowdfunding_wallet',
+        title: 'Wallet',
         days: 80,
         price: 50000,
       },
 
       {
-        id: 'template_web_fintech_crowdfunding_profile',
-        title: 'Gestión de Paquetes Turísticos',
+        id: 'template_web_fintech_crowdfunding_pay',
+        title: 'Pasarela de Pagos',
         days: 40,
         price: 30000,
       },
       {
-        id: 'template_web_fintech_crowdfunding_menu',
-        title: 'Carrito de compras',
+        id: 'template_web_fintech_crowdfunding_account',
+        title: 'Módulo de gestión de cuentas bancarias',
         days: 60,
         price: 50000,
       },
       {
         id: 'template_web_fintech_crowdfunding_notification',
-        title:
-          'Notificaciones',
+        title: 'Notificaciones',
         days: 40,
         price: 40000,
       },
       {
-        id: 'template_web_fintech_crowdfunding_payment',
-        title: 'Geolocalización del lugar, hotel o producto',
+        id: 'template_web_fintech_crowdfunding_investment',
+        title: 'Estatus de inversiones realizadas',
+        days: 40,
+        price: 45000,
+      },
+      {
+        id: 'template_web_fintech_crowdfunding_risk',
+        title: 'Sistema de análisis de riesgo',
+        days: 40,
+        price: 45000,
+      },
+      {
+        id: 'template_web_fintech_crowdfunding_financial',
+        title:
+          'Sistema de análisis de datos y generación de informes financieros',
         days: 40,
         price: 45000,
       },
@@ -1592,64 +1701,80 @@ const fintech_crowdfunding: IIndustryTemplate[] = [
     id: 'template_desk_fintech_crowdfunding',
     solution: 'desktop',
     industry: 'fintech_crowdfunding',
-    icon:  <BiDesktop />,
+    icon: <BiDesktop />,
     title: 'Aplicación Escritorio',
     short: 'App escritorio',
     days: 66,
     price: 487500,
     image: '/assets/templates/fintech_crowdfunding/image_desk.svg',
-    image_slide1: '/assets/templates/fintech_crowdfunding/fintech_crowdfunding1_desk.svg',
-    image_slide2: '/assets/templates/fintech_crowdfunding/fintech_crowdfunding2_desk.svg',
-    image_slide3: '/assets/templates/fintech_crowdfunding/fintech_crowdfunding3_desk.svg',
-    image_slide4: '/assets/templates/fintech_crowdfunding/fintech_crowdfunding4_desk.svg',
+    image_slide1:
+      '/assets/templates/fintech_crowdfunding/fintech_crowdfunding1_desk.svg',
+    image_slide2:
+      '/assets/templates/fintech_crowdfunding/fintech_crowdfunding2_desk.svg',
+    image_slide3:
+      '/assets/templates/fintech_crowdfunding/fintech_crowdfunding3_desk.svg',
+    image_slide4:
+      '/assets/templates/fintech_crowdfunding/fintech_crowdfunding4_desk.svg',
     features: [
       {
-        id: 'template_desk_fintech_crowdfunding_social',
-        title: 'Home público con promociones',
+        id: 'template_desk_fintech_crowdfunding_products',
+        title: 'Gestión de Catálogo de productos',
         days: 30,
         price: 25000,
       },
       {
-        id: 'template_desk_fintech_crowdfunding_catalogo',
-        title: 'Registro de usuario con correo electrónico o redes sociales',
+        id: 'template_desk_fintech_crowdfunding_document',
+        title: 'Sistema de Subida de Requisitos: Documentación e información',
         days: 80,
         price: 50000,
       },
       {
-        id: 'template_desk_fintech_crowdfunding_system',
-        title: 'Gestión de Hoteles',
+        id: 'template_desk_fintech_crowdfunding_project',
+        title: 'Estatus de proyectos autorizados',
         days: 80,
         price: 45000,
       },
       {
-        id: 'template_desk_fintech_crowdfunding_table',
-        title: 'Gestión de Vuelos',
+        id: 'template_desk_fintech_crowdfunding_wallet',
+        title: 'Wallet',
         days: 80,
         price: 50000,
       },
 
       {
-        id: 'template_desk_fintech_crowdfunding_profile',
-        title: 'Gestión de Paquetes Turísticos',
+        id: 'template_desk_fintech_crowdfunding_pay',
+        title: 'Pasarela de Pagos',
         days: 40,
         price: 30000,
       },
       {
-        id: 'template_desk_fintech_crowdfunding_menu',
-        title: 'Carrito de compras',
+        id: 'template_desk_fintech_crowdfunding_account',
+        title: 'Módulo de gestión de cuentas bancarias',
         days: 60,
         price: 50000,
       },
       {
         id: 'template_desk_fintech_crowdfunding_notification',
-        title:
-          'Notificaciones',
+        title: 'Notificaciones',
         days: 40,
         price: 40000,
       },
       {
-        id: 'template_desk_fintech_crowdfunding_payment',
-        title: 'Geolocalización del lugar, hotel o producto',
+        id: 'template_desk_fintech_crowdfunding_investment',
+        title: 'Estatus de inversiones realizadas',
+        days: 40,
+        price: 45000,
+      },
+      {
+        id: 'template_desk_fintech_crowdfunding_risk',
+        title: 'Sistema de análisis de riesgo',
+        days: 40,
+        price: 45000,
+      },
+      {
+        id: 'template_desk_fintech_crowdfunding_financial',
+        title:
+          'Sistema de análisis de datos y generación de informes financieros',
         days: 40,
         price: 45000,
       },
@@ -1665,64 +1790,67 @@ const fintech_crowdfunding: IIndustryTemplate[] = [
     days: 66,
     price: 487500,
     image: '/assets/templates/fintech_crowdfunding/image_mob.svg',
-    image_slide1: '/assets/templates/fintech_crowdfunding/fintech_crowdfunding1_mob.svg',
-    image_slide2: '/assets/templates/fintech_crowdfunding/fintech_crowdfunding2_mob.svg',
-    image_slide3: '/assets/templates/fintech_crowdfunding/fintech_crowdfunding3_mob.svg',
-    image_slide4: '/assets/templates/fintech_crowdfunding/fintech_crowdfunding4_mob.svg',
+    image_slide1:
+      '/assets/templates/fintech_crowdfunding/fintech_crowdfunding1_mob.svg',
+    image_slide2:
+      '/assets/templates/fintech_crowdfunding/fintech_crowdfunding2_mob.svg',
+    image_slide3:
+      '/assets/templates/fintech_crowdfunding/fintech_crowdfunding3_mob.svg',
+    image_slide4:
+      '/assets/templates/fintech_crowdfunding/fintech_crowdfunding4_mob.svg',
     features: [
       {
-        id: 'template_mob_fintech_crowdfunding_social',
-        title: 'Home público con promociones',
+        id: 'template_mob_fintech_crowdfunding_products',
+        title: 'Gestión de Catálogo de productos',
         days: 30,
         price: 25000,
       },
       {
-        id: 'template_mob_fintech_crowdfunding_catalogo',
-        title: 'Registro de usuario con correo electrónico o redes sociales',
+        id: 'template_mob_fintech_crowdfunding_document',
+        title: 'Sistema de Subida de Requisitos: Documentación e información',
         days: 80,
         price: 50000,
       },
       {
-        id: 'template_mob_fintech_crowdfunding_system',
-        title: 'Gestión de Hoteles',
+        id: 'template_mob_fintech_crowdfunding_project',
+        title: 'Estatus de proyectos autorizados',
         days: 80,
         price: 45000,
       },
       {
-        id: 'template_mob_fintech_crowdfunding_table',
-        title: 'Gestión de Vuelos',
+        id: 'template_mob_fintech_crowdfunding_wallet',
+        title: 'Wallet',
         days: 80,
         price: 50000,
       },
 
       {
-        id: 'template_mob_fintech_crowdfunding_profile',
-        title: 'Gestión de Paquetes Turísticos',
+        id: 'template_mob_fintech_crowdfunding_pay',
+        title: 'Pasarela de Pagos',
         days: 40,
         price: 30000,
       },
       {
-        id: 'template_mob_fintech_crowdfunding_menu',
-        title: 'Carrito de compras',
+        id: 'template_mob_fintech_crowdfunding_account',
+        title: 'Módulo de gestión de cuentas bancarias',
         days: 60,
         price: 50000,
       },
       {
         id: 'template_mob_fintech_crowdfunding_notification',
-        title:
-          'Notificaciones',
+        title: 'Notificaciones',
         days: 40,
         price: 40000,
       },
       {
-        id: 'template_mob_fintech_crowdfunding_payment',
-        title: 'Geolocalización del lugar, hotel o producto',
+        id: 'template_mob_fintech_crowdfunding_investment',
+        title: 'Estatus de inversiones realizadas',
         days: 40,
         price: 45000,
       },
     ],
   },
-]
+];
 export const industriesTemplate: IIndustryTemplate[] = [
   ...restaurant,
   ...trips,
@@ -1731,5 +1859,5 @@ export const industriesTemplate: IIndustryTemplate[] = [
   ...hospitality,
   ...healthcare,
   ...entertainment,
-  ...fintech_crowdfunding
+  ...fintech_crowdfunding,
 ];

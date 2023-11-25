@@ -962,7 +962,8 @@ const hospitality: IAdditional[] = [
     solution: 'web',
     industry: 'hospitality',
     title: 'Sistema de Pedidos a Habitación',
-    description: 'Automatiza la solicitud y atención de servicios a la habitación.',
+    description:
+      'Automatiza la solicitud y atención de servicios a la habitación.',
     days: 12,
     price: 20000,
   },
@@ -980,7 +981,8 @@ const hospitality: IAdditional[] = [
     solution: 'web',
     industry: 'hospitality',
     title: 'Herramienta de gestión de eventos y conferencias',
-    description: 'Incorpora la programación y gestión de eventos y conferencias en tus salas.',
+    description:
+      'Incorpora la programación y gestión de eventos y conferencias en tus salas.',
     days: 12,
     price: 20000,
   },
@@ -989,7 +991,8 @@ const hospitality: IAdditional[] = [
     solution: 'web',
     industry: 'hospitality',
     title: 'Plataforma de contabilidad y gestión financiera',
-    description: 'Controla en un solo lugar la contabilidad y aspectos financieros de tus hoteles.',
+    description:
+      'Controla en un solo lugar la contabilidad y aspectos financieros de tus hoteles.',
     days: 12,
     price: 20000,
   },
@@ -1025,7 +1028,8 @@ const hospitality: IAdditional[] = [
     solution: 'web',
     industry: 'hospitality',
     title: 'Sistema de promociones para distintos usuarios',
-    description: 'Segmenta y publica tus promociones para atraer a tu clientes potenciales.',
+    description:
+      'Segmenta y publica tus promociones para atraer a tu clientes potenciales.',
     days: 12,
     price: 20000,
   },
@@ -1043,7 +1047,8 @@ const hospitality: IAdditional[] = [
     solution: 'web',
     industry: 'hospitality',
     title: 'Sistema de gestión de mantenimiento y limpieza',
-    description: 'Gestiona los servicios de mantenimiento y limpieza en tus diferentes ubicaciones.',
+    description:
+      'Gestiona los servicios de mantenimiento y limpieza en tus diferentes ubicaciones.',
     days: 12,
     price: 20000,
   },
@@ -1052,7 +1057,8 @@ const hospitality: IAdditional[] = [
     solution: 'web',
     industry: 'hospitality',
     title: 'Plataforma de administración de relaciones con los clientes',
-    description: 'Agrega herramientas que te ayudarán a gestionar las relaciones con tus clientes para ofrecer atención de calidad.',
+    description:
+      'Agrega herramientas que te ayudarán a gestionar las relaciones con tus clientes para ofrecer atención de calidad.',
     days: 12,
     price: 20000,
   },
@@ -1061,7 +1067,8 @@ const hospitality: IAdditional[] = [
     solution: 'web',
     industry: 'hospitality',
     title: 'Historial de reservas',
-    description: 'Obtén un histórico de reservas que te ayudará a medir el desempeño y atender cualquier aclaración con respecto a las reservaciones en tus hoteles.',
+    description:
+      'Obtén un histórico de reservas que te ayudará a medir el desempeño y atender cualquier aclaración con respecto a las reservaciones en tus hoteles.',
     days: 12,
     price: 20000,
   },
@@ -1070,7 +1077,8 @@ const hospitality: IAdditional[] = [
     solution: 'web',
     industry: 'hospitality',
     title: 'Módulo de aclaraciones',
-    description: 'Gestiona los reclamos de tus clientes por medio de aclaraciones.',
+    description:
+      'Gestiona los reclamos de tus clientes por medio de aclaraciones.',
     days: 12,
     price: 20000,
   },
@@ -1080,7 +1088,8 @@ const hospitality: IAdditional[] = [
     solution: 'desktop',
     industry: 'hospitality',
     title: 'Sistema de Pedidos a Habitación',
-    description: 'Automatiza la solicitud y atención de servicios a la habitación.',
+    description:
+      'Automatiza la solicitud y atención de servicios a la habitación.',
     days: 12,
     price: 20000,
   },
@@ -1098,7 +1107,8 @@ const hospitality: IAdditional[] = [
     solution: 'desktop',
     industry: 'hospitality',
     title: 'Herramienta de gestión de eventos y conferencias',
-    description: 'Incorpora la programación y gestión de eventos y conferencias en tus salas.',
+    description:
+      'Incorpora la programación y gestión de eventos y conferencias en tus salas.',
     days: 12,
     price: 20000,
   },
@@ -1107,7 +1117,8 @@ const hospitality: IAdditional[] = [
     solution: 'desktop',
     industry: 'hospitality',
     title: 'Plataforma de contabilidad y gestión financiera',
-    description: 'Controla en un solo lugar la contabilidad y aspectos financieros de tus hoteles.',
+    description:
+      'Controla en un solo lugar la contabilidad y aspectos financieros de tus hoteles.',
     days: 12,
     price: 20000,
   },
@@ -1143,7 +1154,8 @@ const hospitality: IAdditional[] = [
     solution: 'desktop',
     industry: 'hospitality',
     title: 'Sistema de promociones para distintos usuarios',
-    description: 'Segmenta y publica tus promociones para atraer a tu clientes potenciales.',
+    description:
+      'Segmenta y publica tus promociones para atraer a tu clientes potenciales.',
     days: 12,
     price: 20000,
   },
@@ -1161,7 +1173,8 @@ const hospitality: IAdditional[] = [
     solution: 'desktop',
     industry: 'hospitality',
     title: 'Sistema de gestión de mantenimiento y limpieza',
-    description: 'Gestiona los servicios de mantenimiento y limpieza en tus diferentes ubicaciones.',
+    description:
+      'Gestiona los servicios de mantenimiento y limpieza en tus diferentes ubicaciones.',
     days: 12,
     price: 20000,
   },
@@ -1170,7 +1183,8 @@ const hospitality: IAdditional[] = [
     solution: 'desktop',
     industry: 'hospitality',
     title: 'Plataforma de administración de relaciones con los clientes',
-    description: 'Agrega herramientas que te ayudarán a gestionar las relaciones con tus clientes para ofrecer atención de calidad.',
+    description:
+      'Agrega herramientas que te ayudarán a gestionar las relaciones con tus clientes para ofrecer atención de calidad.',
     days: 12,
     price: 20000,
   },
@@ -1179,7 +1193,8 @@ const hospitality: IAdditional[] = [
     solution: 'desktop',
     industry: 'hospitality',
     title: 'Historial de reservas',
-    description: 'Obtén un histórico de reservas que te ayudará a medir el desempeño y atender cualquier aclaración con respecto a las reservaciones en tus hoteles.',
+    description:
+      'Obtén un histórico de reservas que te ayudará a medir el desempeño y atender cualquier aclaración con respecto a las reservaciones en tus hoteles.',
     days: 12,
     price: 20000,
   },
@@ -1188,7 +1203,8 @@ const hospitality: IAdditional[] = [
     solution: 'desktop',
     industry: 'hospitality',
     title: 'Módulo de aclaraciones',
-    description: 'Gestiona los reclamos de tus clientes por medio de aclaraciones.',
+    description:
+      'Gestiona los reclamos de tus clientes por medio de aclaraciones.',
     days: 12,
     price: 20000,
   },
@@ -1198,7 +1214,8 @@ const hospitality: IAdditional[] = [
     solution: 'mobile',
     industry: 'hospitality',
     title: 'Sistema de Pedidos a Habitación',
-    description: 'Automatiza la solicitud y atención de servicios a la habitación.',
+    description:
+      'Automatiza la solicitud y atención de servicios a la habitación.',
     days: 12,
     price: 20000,
   },
@@ -1216,7 +1233,8 @@ const hospitality: IAdditional[] = [
     solution: 'mobile',
     industry: 'hospitality',
     title: 'Herramienta de gestión de eventos y conferencias',
-    description: 'Incorpora la programación y gestión de eventos y conferencias en tus salas.',
+    description:
+      'Incorpora la programación y gestión de eventos y conferencias en tus salas.',
     days: 12,
     price: 20000,
   },
@@ -1234,7 +1252,8 @@ const hospitality: IAdditional[] = [
     solution: 'mobile',
     industry: 'hospitality',
     title: 'Sistema de promociones para distintos usuarios',
-    description: 'Segmenta y publica tus promociones para atraer a tu clientes potenciales.',
+    description:
+      'Segmenta y publica tus promociones para atraer a tu clientes potenciales.',
     days: 12,
     price: 20000,
   },
@@ -1252,7 +1271,8 @@ const hospitality: IAdditional[] = [
     solution: 'mobile',
     industry: 'hospitality',
     title: 'Sistema de gestión de mantenimiento y limpieza',
-    description: 'Gestiona los servicios de mantenimiento y limpieza en tus diferentes ubicaciones.',
+    description:
+      'Gestiona los servicios de mantenimiento y limpieza en tus diferentes ubicaciones.',
     days: 12,
     price: 20000,
   },
@@ -1261,7 +1281,8 @@ const hospitality: IAdditional[] = [
     solution: 'mobile',
     industry: 'hospitality',
     title: 'Historial de reservas',
-    description: 'Obtén un histórico de reservas que te ayudará a medir el desempeño y atender cualquier aclaración con respecto a las reservaciones en tus hoteles.',
+    description:
+      'Obtén un histórico de reservas que te ayudará a medir el desempeño y atender cualquier aclaración con respecto a las reservaciones en tus hoteles.',
     days: 12,
     price: 20000,
   },
@@ -1270,15 +1291,750 @@ const hospitality: IAdditional[] = [
     solution: 'mobile',
     industry: 'hospitality',
     title: 'Módulo de aclaraciones',
-    description: 'Gestiona los reclamos de tus clientes por medio de aclaraciones.',
+    description:
+      'Gestiona los reclamos de tus clientes por medio de aclaraciones.',
     days: 12,
     price: 20000,
   },
 ];
 
+const healthcare: IAdditional[] = [
+  // additionals web healthcare
+  {
+    id: 'additional_web_healthcare_pharmacy_products',
+    solution: 'web',
+    industry: 'healthcare',
+    title: 'Catálogo de medicamentos y productos de farmacia',
+    description:
+      'Agrega la compra de productos farmacéuticos en caso de que también seas un proveedor.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_web_healthcare_video',
+    solution: 'web',
+    industry: 'healthcare',
+    title: 'Sistema de videoconferencia',
+    description:
+      'Implementa sistemas de comunicación por audio y video para conectar a pacientes y médicos.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_web_healthcare_hospitals_clinics',
+    solution: 'web',
+    industry: 'healthcare',
+    title: 'Gestión de colaboradores de hospitales o clínicas',
+    description:
+      'Integra a colaboradores estratégicos en hospitales y clínicas.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_web_healthcare_clarification',
+    solution: 'web',
+    industry: 'healthcare',
+    title: 'Módulo de aclaraciones',
+    description:
+      'Gestiona los reclamos de tus clientes por medio de aclaraciones.',
+    days: 12,
+    price: 20000,
+  },
+  // additionals desktop healthcare
+  {
+    id: 'additional_desktop_healthcare_pharmacy_products',
+    solution: 'desktop',
+    industry: 'healthcare',
+    title: 'Catálogo de medicamentos y productos de farmacia',
+    description:
+      'Agrega la compra de productos farmacéuticos en caso de que también seas un proveedor.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_desktop_healthcare_video',
+    solution: 'desktop',
+    industry: 'healthcare',
+    title: 'Sistema de videoconferencia',
+    description:
+      'Implementa sistemas de comunicación por audio y video para conectar a pacientes y médicos.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_desktop_healthcare_hospitals_clinics',
+    solution: 'desktop',
+    industry: 'healthcare',
+    title: 'Gestión de colaboradores de hospitales o clínicas',
+    description:
+      'Integra a colaboradores estratégicos en hospitales y clínicas.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_desktop_healthcare_clarification',
+    solution: 'desktop',
+    industry: 'healthcare',
+    title: 'Módulo de aclaraciones',
+    description:
+      'Gestiona los reclamos de tus clientes por medio de aclaraciones.',
+    days: 12,
+    price: 20000,
+  },
+  // additionals mobile healthcare
+  {
+    id: 'additional_mobile_healthcare_pharmacy_products',
+    solution: 'mobile',
+    industry: 'healthcare',
+    title: 'Catálogo de medicamentos y productos de farmacia',
+    description:
+      'Agrega la compra de productos farmacéuticos en caso de que también seas un proveedor.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_mobile_healthcare_video',
+    solution: 'mobile',
+    industry: 'healthcare',
+    title: 'Sistema de videoconferencia',
+    description:
+      'Implementa sistemas de comunicación por audio y video para conectar a pacientes y médicos.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_mobile_healthcare_clarification',
+    solution: 'mobile',
+    industry: 'healthcare',
+    title: 'Módulo de aclaraciones',
+    description:
+      'Gestiona los reclamos de tus clientes por medio de aclaraciones.',
+    days: 12,
+    price: 20000,
+  },
+];
+
+const entertainment: IAdditional[] = [
+  // additionals web entertainment
+  {
+    id: 'additional_web_entertainment_appointment_schedule',
+    solution: 'web',
+    industry: 'entertainment',
+    title: 'Sistema de Agenda de Citas',
+    description:
+      'Gestiona y controla las citas que requieras establecer con tus usuarios según disponibilidad.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_web_entertainment_users_data',
+    solution: 'web',
+    industry: 'entertainment',
+    title: 'Módulo de análisis de audiencia y datos de usuarios',
+    description:
+      'Obtén métricas y estadísticas de usuarios y audiencia para tomar decisiones estratégicas en tu negocio.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_web_entertainment_content_licenses',
+    solution: 'web',
+    industry: 'entertainment',
+    title: 'Solución de control de derechos de autor y licencias de contenido',
+    description:
+      'Controla los derechos de tu contenido y asegura que no sea reproducido por alguien más.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_web_entertainment_engagement_audience',
+    solution: 'web',
+    industry: 'entertainment',
+    title: 'Herramienta de interacción y compromiso con la audiencia',
+    description:
+      'Agrega el potencial de interactuar con tu audiencia y genera lealtad de tus usuarios.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_web_entertainment_entertainment_tickets',
+    solution: 'web',
+    industry: 'entertainment',
+    title: 'Plataforma de gestión de eventos y boletos de entretenimiento',
+    description:
+      'Programa eventos y gestiona la venta de boletos según disponibilidad.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_web_entertainment_recommended',
+    solution: 'web',
+    industry: 'entertainment',
+    title: 'Sistemas de recomedados',
+    description: 'Gestiona las recomendaciones y prémialas.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_web_entertainment_clarifications',
+    solution: 'web',
+    industry: 'entertainment',
+    title: 'Módulo de aclaraciones',
+    description:
+      'Gestiona los reclamos de tus clientes por medio de aclaraciones.',
+    days: 12,
+    price: 20000,
+  },
+  // additionals desk entertainment
+  {
+    id: 'additional_desk_entertainment_appointment_schedule',
+    solution: 'desktop',
+    industry: 'entertainment',
+    title: 'Sistema de Agenda de Citas',
+    description:
+      'Gestiona y controla las citas que requieras establecer con tus usuarios según disponibilidad.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_desk_entertainment_users_data',
+    solution: 'desktop',
+    industry: 'entertainment',
+    title: 'Módulo de análisis de audiencia y datos de usuarios',
+    description:
+      'Obtén métricas y estadísticas de usuarios y audiencia para tomar decisiones estratégicas en tu negocio.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_desk_entertainment_content_licenses',
+    solution: 'desktop',
+    industry: 'entertainment',
+    title: 'Solución de control de derechos de autor y licencias de contenido',
+    description:
+      'Controla los derechos de tu contenido y asegura que no sea reproducido por alguien más.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_desk_entertainment_engagement_audience',
+    solution: 'desktop',
+    industry: 'entertainment',
+    title: 'Herramienta de interacción y compromiso con la audiencia',
+    description:
+      'Agrega el potencial de interactuar con tu audiencia y genera lealtad de tus usuarios.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_desk_entertainment_entertainment_tickets',
+    solution: 'desktop',
+    industry: 'entertainment',
+    title: 'Plataforma de gestión de eventos y boletos de entretenimiento',
+    description:
+      'Programa eventos y gestiona la venta de boletos según disponibilidad.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_desk_entertainment_recommended',
+    solution: 'desktop',
+    industry: 'entertainment',
+    title: 'Sistemas de recomedados',
+    description: 'Gestiona las recomendaciones y prémialas.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_desk_entertainment_clarifications',
+    solution: 'desktop',
+    industry: 'entertainment',
+    title: 'Módulo de aclaraciones',
+    description:
+      'Gestiona los reclamos de tus clientes por medio de aclaraciones.',
+    days: 12,
+    price: 20000,
+  },
+  // additionals mob entertainment
+  {
+    id: 'additional_mob_entertainment_appointment_schedule',
+    solution: 'mobile',
+    industry: 'entertainment',
+    title: 'Sistema de Agenda de Citas',
+    description:
+      'Gestiona y controla las citas que requieras establecer con tus usuarios según disponibilidad.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_mob_entertainment_users_data',
+    solution: 'mobile',
+    industry: 'entertainment',
+    title: 'Módulo de análisis de audiencia y datos de usuarios',
+    description:
+      'Obtén métricas y estadísticas de usuarios y audiencia para tomar decisiones estratégicas en tu negocio.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_mob_entertainment_content_licenses',
+    solution: 'mobile',
+    industry: 'entertainment',
+    title: 'Solución de control de derechos de autor y licencias de contenido',
+    description:
+      'Controla los derechos de tu contenido y asegura que no sea reproducido por alguien más.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_mob_entertainment_engagement_audience',
+    solution: 'mobile',
+    industry: 'entertainment',
+    title: 'Herramienta de interacción y compromiso con la audiencia',
+    description:
+      'Agrega el potencial de interactuar con tu audiencia y genera lealtad de tus usuarios.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_mob_entertainment_entertainment_tickets',
+    solution: 'mobile',
+    industry: 'entertainment',
+    title: 'Plataforma de gestión de eventos y boletos de entretenimiento',
+    description:
+      'Programa eventos y gestiona la venta de boletos según disponibilidad.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_mob_entertainment_recommended',
+    solution: 'mobile',
+    industry: 'entertainment',
+    title: 'Sistemas de recomedados',
+    description: 'Gestiona las recomendaciones y prémialas.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_mob_entertainment_clarifications',
+    solution: 'mobile',
+    industry: 'entertainment',
+    title: 'Módulo de aclaraciones',
+    description:
+      'Gestiona los reclamos de tus clientes por medio de aclaraciones.',
+    days: 12,
+    price: 20000,
+  },
+];
+
+const fintech:IAdditional[] = [
+  // additionals web fintech
+  {
+    id: 'additional_web_fintech_credit_institutions',
+    solution: 'web',
+    industry: 'fintech',
+    title: 'Generar un semáforo de salud financiera para otras instituciones crediticias',
+    description:
+      'Coloca en tu plataforma un semáforo que te permita validar la salud financiera de tus clientes en otras instituciones crediticias.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_web_fintech_authorizations_permits',
+    solution: 'web',
+    industry: 'fintech',
+    title: 'Asesoría Legal para autorizaciones y permisos',
+    description:
+      'Integra las bondades de la asesoría legal en procedimientos administrativos y financieros.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_web_fintech_recommendations',
+    solution: 'web',
+    industry: 'fintech',
+    title: 'Sistema de recomendaciones',
+    description:
+      'Gestiona las recomendaciones y prémialas.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_web_fintech_clarifications',
+    solution: 'web',
+    industry: 'fintech',
+    title: 'Módulo de aclaraciones',
+    description:
+      'Gestiona los reclamos de tus clientes por medio de aclaraciones.',
+    days: 12,
+    price: 20000,
+  },
+  // additionals desktop fintech
+  {
+    id: 'additional_desktop_fintech_credit_institutions',
+    solution: 'desktop',
+    industry: 'fintech',
+    title: 'Generar un semáforo de salud financiera para otras instituciones crediticias',
+    description:
+      'Coloca en tu plataforma un semáforo que te permita validar la salud financiera de tus clientes en otras instituciones crediticias.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_desktop_fintech_authorizations_permits',
+    solution: 'desktop',
+    industry: 'fintech',
+    title: 'Asesoría Legal para autorizaciones y permisos',
+    description:
+      'Integra las bondades de la asesoría legal en procedimientos administrativos y financieros.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_desktop_fintech_recommendations',
+    solution: 'desktop',
+    industry: 'fintech',
+    title: 'Sistema de recomendaciones',
+    description:
+      'Gestiona las recomendaciones y prémialas.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_desktop_fintech_clarifications',
+    solution: 'desktop',
+    industry: 'fintech',
+    title: 'Módulo de aclaraciones',
+    description:
+      'Gestiona los reclamos de tus clientes por medio de aclaraciones.',
+    days: 12,
+    price: 20000,
+  },
+  // additionals mobile fintech
+  {
+    id: 'additional_mobile_fintech_credit_institutions',
+    solution: 'mobile',
+    industry: 'fintech',
+    title: 'Generar un semáforo de salud financiera para otras instituciones crediticias',
+    description:
+      'Coloca en tu plataforma un semáforo que te permita validar la salud financiera de tus clientes en otras instituciones crediticias.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_mobile_fintech_authorizations_permits',
+    solution: 'mobile',
+    industry: 'fintech',
+    title: 'Asesoría Legal para autorizaciones y permisos',
+    description:
+      'Integra las bondades de la asesoría legal en procedimientos administrativos y financieros.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_mobile_fintech_recommendations',
+    solution: 'mobile',
+    industry: 'fintech',
+    title: 'Sistema de recomendaciones',
+    description:
+      'Gestiona las recomendaciones y prémialas.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_mobile_fintech_clarifications',
+    solution: 'mobile',
+    industry: 'fintech',
+    title: 'Módulo de aclaraciones',
+    description:
+      'Gestiona los reclamos de tus clientes por medio de aclaraciones.',
+    days: 12,
+    price: 20000,
+  },
+]
+
+const fintech_crowdfunding:IAdditional[] = [
+  // additionals web fintech_crowdfunding
+  {
+    id: 'additional_web_fintech_crowdfunding_advice',
+    solution: 'web',
+    industry: 'fintech_crowdfunding',
+    title: 'Plataforma de educación financiera y asesoramiento',
+    description:
+      'Capacita a tus usuarios en términos de educación financiera y proporciona asesoramiento.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_web_fintech_crowdfunding_help',
+    solution: 'web',
+    industry: 'fintech_crowdfunding',
+    title: 'Herramienta de gestión de ayuda',
+    description:
+      'Incorpora una línea de ayuda y soporte a tu plataforma.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_web_fintech_crowdfunding_project',
+    solution: 'web',
+    industry: 'fintech_crowdfunding',
+    title: 'Herramienta de presentación de proyectos',
+    description:
+      'Integra un proceso guiado para captura y validación de proyectos.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_web_fintech_crowdfunding_campaign_management',
+    solution: 'web',
+    industry: 'fintech_crowdfunding',
+    title: 'Herramienta de seguimiento y gestión de campañas',
+    description:
+      'Agrega un puntual proceso de seguimiento para la obtención de recursos por medio de campañas hacia inversionistas.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_web_fintech_crowdfunding_security',
+    solution: 'web',
+    industry: 'fintech_crowdfunding',
+    title: 'Herramienta de procesamiento de transacciones seguras',
+    description:
+      'Agrega una capa de seguridad en el proceso de transacciones en la plataforma.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_web_fintech_crowdfunding_sponsors',
+    solution: 'web',
+    industry: 'fintech_crowdfunding',
+    title: 'Panel de control de inversores y patrocinadores',
+    description:
+      'Integra un módulo para inversores que permita gestionar sus participaciones en proyectos y sus financiamientos.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_web_fintech_crowdfunding_assessment',
+    solution: 'web',
+    industry: 'fintech_crowdfunding',
+    title: 'Módulo de evaluación de proyectos',
+    description:
+      'Gestiona la validación de proyectos para asegurar que sean viables y con un nivel aceptable de riesgo.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_web_fintech_crowdfunding_normative',
+    solution: 'web',
+    industry: 'fintech_crowdfunding',
+    title: 'Asesoría legal para autorizaciones y permisos (Cumplimiento normativo)',
+    description:
+      'Integra las bondades de la asesoría legal en procedimientos administrativos.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_web_fintech_crowdfunding_clarifications',
+    solution: 'web',
+    industry: 'fintech_crowdfunding',
+    title: 'Módulo de aclaraciones',
+    description:
+      'Gestiona los reclamos de tus clientes por medio de aclaraciones.',
+    days: 12,
+    price: 20000,
+  },
+  // additionals desktop fintech_crowdfunding
+  {
+    id: 'additional_desktop_fintech_crowdfunding_advice',
+    solution: 'desktop',
+    industry: 'fintech_crowdfunding',
+    title: 'Plataforma de educación financiera y asesoramiento',
+    description:
+      'Capacita a tus usuarios en términos de educación financiera y proporciona asesoramiento.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_desktop_fintech_crowdfunding_help',
+    solution: 'desktop',
+    industry: 'fintech_crowdfunding',
+    title: 'Herramienta de gestión de ayuda',
+    description:
+      'Incorpora una línea de ayuda y soporte a tu plataforma.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_desktop_fintech_crowdfunding_project',
+    solution: 'desktop',
+    industry: 'fintech_crowdfunding',
+    title: 'Herramienta de presentación de proyectos',
+    description:
+      'Integra un proceso guiado para captura y validación de proyectos.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_desktop_fintech_crowdfunding_campaign_management',
+    solution: 'desktop',
+    industry: 'fintech_crowdfunding',
+    title: 'Herramienta de seguimiento y gestión de campañas',
+    description:
+      'Agrega un puntual proceso de seguimiento para la obtención de recursos por medio de campañas hacia inversionistas.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_desktop_fintech_crowdfunding_security',
+    solution: 'desktop',
+    industry: 'fintech_crowdfunding',
+    title: 'Herramienta de procesamiento de transacciones seguras',
+    description:
+      'Agrega una capa de seguridad en el proceso de transacciones en la plataforma.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_desktop_fintech_crowdfunding_sponsors',
+    solution: 'desktop',
+    industry: 'fintech_crowdfunding',
+    title: 'Panel de control de inversores y patrocinadores',
+    description:
+      'Integra un módulo para inversores que permita gestionar sus participaciones en proyectos y sus financiamientos.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_desktop_fintech_crowdfunding_assessment',
+    solution: 'desktop',
+    industry: 'fintech_crowdfunding',
+    title: 'Módulo de evaluación de proyectos',
+    description:
+      'Gestiona la validación de proyectos para asegurar que sean viables y con un nivel aceptable de riesgo.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_desktop_fintech_crowdfunding_normative',
+    solution: 'desktop',
+    industry: 'fintech_crowdfunding',
+    title: 'Asesoría legal para autorizaciones y permisos (Cumplimiento normativo)',
+    description:
+      'Integra las bondades de la asesoría legal en procedimientos administrativos.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_desktop_fintech_crowdfunding_clarifications',
+    solution: 'desktop',
+    industry: 'fintech_crowdfunding',
+    title: 'Módulo de aclaraciones',
+    description:
+      'Gestiona los reclamos de tus clientes por medio de aclaraciones.',
+    days: 12,
+    price: 20000,
+  },
+  // additionals mobile fintech_crowdfunding
+  {
+    id: 'additional_mobile_fintech_crowdfunding_advice',
+    solution: 'mobile',
+    industry: 'fintech_crowdfunding',
+    title: 'Plataforma de educación financiera y asesoramiento',
+    description:
+      'Capacita a tus usuarios en términos de educación financiera y proporciona asesoramiento.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_mobile_fintech_crowdfunding_help',
+    solution: 'mobile',
+    industry: 'fintech_crowdfunding',
+    title: 'Herramienta de gestión de ayuda',
+    description:
+      'Incorpora una línea de ayuda y soporte a tu plataforma.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_mobile_fintech_crowdfunding_project',
+    solution: 'mobile',
+    industry: 'fintech_crowdfunding',
+    title: 'Herramienta de presentación de proyectos',
+    description:
+      'Integra un proceso guiado para captura y validación de proyectos.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_mobile_fintech_crowdfunding_campaign_management',
+    solution: 'mobile',
+    industry: 'fintech_crowdfunding',
+    title: 'Herramienta de seguimiento y gestión de campañas',
+    description:
+      'Agrega un puntual proceso de seguimiento para la obtención de recursos por medio de campañas hacia inversionistas.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_mobile_fintech_crowdfunding_security',
+    solution: 'mobile',
+    industry: 'fintech_crowdfunding',
+    title: 'Herramienta de procesamiento de transacciones seguras',
+    description:
+      'Agrega una capa de seguridad en el proceso de transacciones en la plataforma.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_mobile_fintech_crowdfunding_sponsors',
+    solution: 'mobile',
+    industry: 'fintech_crowdfunding',
+    title: 'Panel de control de inversores y patrocinadores',
+    description:
+      'Integra un módulo para inversores que permita gestionar sus participaciones en proyectos y sus financiamientos.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_mobile_fintech_crowdfunding_assessment',
+    solution: 'mobile',
+    industry: 'fintech_crowdfunding',
+    title: 'Módulo de evaluación de proyectos',
+    description:
+      'Gestiona la validación de proyectos para asegurar que sean viables y con un nivel aceptable de riesgo.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_mobile_fintech_crowdfunding_normative',
+    solution: 'mobile',
+    industry: 'fintech_crowdfunding',
+    title: 'Asesoría legal para autorizaciones y permisos (Cumplimiento normativo)',
+    description:
+      'Integra las bondades de la asesoría legal en procedimientos administrativos.',
+    days: 12,
+    price: 20000,
+  },
+  {
+    id: 'additional_mobile_fintech_crowdfunding_clarifications',
+    solution: 'mobile',
+    industry: 'fintech_crowdfunding',
+    title: 'Módulo de aclaraciones',
+    description:
+      'Gestiona los reclamos de tus clientes por medio de aclaraciones.',
+    days: 12,
+    price: 20000,
+  },
+]
 export const additionals: IAdditional[] = [
   ...restaurant,
   ...trips,
   ...realestate,
   ...hospitality,
+  ...healthcare,
+  ...entertainment,
+  ...fintech,
+  ...fintech_crowdfunding
 ];
