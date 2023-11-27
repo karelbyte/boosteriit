@@ -1,5 +1,5 @@
 import React, { JSX, MouseEventHandler } from 'react';
-interface ActionBtnProps {
+export interface ActionBtnProps {
   title?: string;
   styleClass?: string;
   actionFn?: MouseEventHandler<HTMLButtonElement>;

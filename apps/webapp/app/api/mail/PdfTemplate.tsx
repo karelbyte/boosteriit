@@ -26,6 +26,8 @@ interface IPdfTemplateProps {
   selectedIntegrations?: IIntegration[];
   type: string;
 }
+
+
 export default function PdfTemplate(props: IPdfTemplateProps) {
   const {
     name,
@@ -41,6 +43,30 @@ export default function PdfTemplate(props: IPdfTemplateProps) {
     selectedIntegrations,
   } = props;
 
+  const Header = () => {
+    return (
+      <View style={styles.section}>
+        <Text style={styles.h1}>COTIZACION</Text>
+        <View style={styles.hr}></View>
+        <Text style={styles.h2}>Cliente: {getClientName()}</Text>
+        <Text style={styles.h2}>email: {email}</Text>
+        <View>
+          {type === 'request' ? (
+            <View>
+              <Text style={styles.h2}>Prefiere que lo llamen:</Text>
+              <Text style={styles.h2}>Telefono: {phone}</Text>
+            </View>
+          ) : (
+            <View>
+              <Text style={styles.h2}>Horario del Cliente:</Text>
+              <Text style={styles.h2}>Fecha: {date}</Text>
+              <Text style={styles.h2}>Hora: {time}</Text>
+            </View>
+          )}
+        </View>
+      </View>
+    )
+  }
   const getAdditional = (solution: string, industry: string) => {
     if (selectedAdditionals) {
       return selectedAdditionals
@@ -247,26 +273,7 @@ export default function PdfTemplate(props: IPdfTemplateProps) {
           <View style={styles.banner} fixed>
             <Image src="./public/assets/boosteriit.png" />
           </View>
-          <View style={styles.section}>
-            <Text style={styles.h1}>COTIZACION</Text>
-            <View style={styles.hr}></View>
-            <Text style={styles.h2}>Cliente: {getClientName()}</Text>
-            <Text style={styles.h2}>email: {email}</Text>
-            <View>
-              {type === 'request' ? (
-                <View>
-                  <Text style={styles.h2}>Prefiere que lo llamen:</Text>
-                  <Text style={styles.h2}>Telefono: {phone}</Text>
-                </View>
-              ) : (
-                <View>
-                  <Text style={styles.h2}>Horario del Cliente:</Text>
-                  <Text style={styles.h2}>Fecha: {date}</Text>
-                  <Text style={styles.h2}>Hora: {time}</Text>
-                </View>
-              )}
-            </View>
-          </View>
+          <Header/>
             <View>
               <Text style={styles.h1}>MODULOS: WEB</Text>
             </View>
@@ -302,26 +309,7 @@ export default function PdfTemplate(props: IPdfTemplateProps) {
           <View style={styles.banner} fixed>
             <Image src="./public/assets/boosteriit.png" />
           </View>
-          <View style={styles.section}>
-            <Text style={styles.h1}>COTIZACION</Text>
-            <View style={styles.hr}></View>
-            <Text style={styles.h2}>Cliente: {getClientName()}</Text>
-            <Text style={styles.h2}>email: {email}</Text>
-            <View>
-              {type === 'request' ? (
-                <View>
-                  <Text style={styles.h2}>Prefiere que lo llamen:</Text>
-                  <Text style={styles.h2}>Telefono: {phone}</Text>
-                </View>
-              ) : (
-                <View>
-                  <Text style={styles.h2}>Horario del Cliente:</Text>
-                  <Text style={styles.h2}>Fecha: {date}</Text>
-                  <Text style={styles.h2}>Hora: {time}</Text>
-                </View>
-              )}
-            </View>
-          </View>
+          <Header/>
           <View>
             <Text style={styles.h1}>MODULOS: DESKTOP</Text>
           </View>
@@ -357,26 +345,7 @@ export default function PdfTemplate(props: IPdfTemplateProps) {
           <View style={styles.banner} fixed>
             <Image src="./public/assets/boosteriit.png" />
           </View>
-          <View style={styles.section}>
-            <Text style={styles.h1}>COTIZACION</Text>
-            <View style={styles.hr}></View>
-            <Text style={styles.h2}>Cliente: {getClientName()}</Text>
-            <Text style={styles.h2}>email: {email}</Text>
-            <View>
-              {type === 'request' ? (
-                <View>
-                  <Text style={styles.h2}>Prefiere que lo llamen:</Text>
-                  <Text style={styles.h2}>Telefono: {phone}</Text>
-                </View>
-              ) : (
-                <View>
-                  <Text style={styles.h2}>Horario del Cliente:</Text>
-                  <Text style={styles.h2}>Fecha: {date}</Text>
-                  <Text style={styles.h2}>Hora: {time}</Text>
-                </View>
-              )}
-            </View>
-          </View>
+          <Header/>
           <View>
             <Text style={styles.h1}>MODULOS: MOVIL</Text>
           </View>

@@ -2,9 +2,7 @@ import React, { JSX, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { AiOutlineClose } from 'react-icons/ai';
 import Image from "next/image";
-import SolutionSelectorModal from "../molecules/SolutionSelectorModal";
-import ActionBtn from "../atoms/ActionBtn";
-interface ICreateNowProps {
+export interface ICreateNowProps {
   mobileHidden?: boolean;
   customStyle: string;
 }
@@ -29,7 +27,7 @@ export default function CreateNow(props: ICreateNowProps): JSX.Element {
         onClick={() => setShowModal(true)}
         className={`${show} sm:flex justify-center text-white bg-boo-btn-bg border-0 ${customStyle} focus:outline-none rounded hover:bg-boo-btn-bg-hover`}
       >
-        <span> Crear ahora</span>
+        <span>Crear ahora</span>
       </button>
       {showModal && (
         <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-50 z-[100] md:z-20">

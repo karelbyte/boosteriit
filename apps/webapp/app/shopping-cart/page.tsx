@@ -166,7 +166,7 @@ export default function ShoppingCart(): JSX.Element {
                   <div className="flex flex-col gap-4 w-full pr-0 md:pr-4">
                     {modulesMobile.length > 0 && (
                       <ShoppingCartModuleSection
-                        title={'Aplicacion de movil'}
+                        title={'Aplicación movil'}
                         modules={modulesMobile}
                         deleteModule={deleteModule}
                         canShow={canShow}
@@ -175,7 +175,7 @@ export default function ShoppingCart(): JSX.Element {
                     )}
                     {modulesDesktop.length > 0 && (
                       <ShoppingCartModuleSection
-                        title={'Aplicacion de escritorio'}
+                        title={'Aplicación de escritorio'}
                         modules={modulesDesktop}
                         deleteModule={deleteModule}
                         canShow={canShow}
@@ -184,7 +184,7 @@ export default function ShoppingCart(): JSX.Element {
                     )}
                     {modulesWeb.length > 0 && (
                       <ShoppingCartModuleSection
-                        title={'Aplicacion de web'}
+                        title={'Aplicación web'}
                         modules={modulesWeb}
                         deleteModule={deleteModule}
                         canShow={canShow}
