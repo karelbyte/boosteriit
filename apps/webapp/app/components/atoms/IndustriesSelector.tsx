@@ -55,7 +55,7 @@ export default function IndustriesSelector(): JSX.Element {
         </span>
       </div>
       {menuVisible && (
-        <div className="absolute mt-2 w-full bg-white border border-gray-300 rounded-md shadow-md p-2">
+        <div className="absolute mt-2 w-full bg-white border border-gray-300 rounded-md shadow-md p-2" data-testid="menu">
           <ul>
             {industries &&
               industries.map((industry: IIndustry) => (

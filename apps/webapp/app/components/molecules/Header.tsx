@@ -10,6 +10,7 @@ export interface IHeader {
   actionFn?: () => void | MouseEventHandler;
   childrenShow?: boolean
 }
+
 export default function Header(props: IHeader): JSX.Element {
   const { title, children, urlBack, childrenShow, actionFn }: IHeader = props;
   return (
