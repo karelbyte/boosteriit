@@ -1,5 +1,5 @@
 'use client';
-import React, { JSX, useState } from 'react';
+import React, { JSX, useEffect, useState } from "react";
 import Header from '../components/molecules/Header';
 import useAppContext from '../contexts/hookAppContext';
 import Footer from '../components/organisms/Footer';
@@ -39,6 +39,7 @@ export default function ShoppingCart(): JSX.Element {
     selectedAdditionals,
     setSelectedIndustriesTemplate,
     selectedIntegrations,
+    setSelectedAdditionals
   } = useAppContext();
 
   const {
@@ -49,7 +50,7 @@ export default function ShoppingCart(): JSX.Element {
     deleteModule,
   } = useModules();
 
-  const { setIntegrations, getIntegrationStatusCheck } = useIndustriesHook();
+  const { setIntegrations, getIntegrationStatusCheck, getAdditionalsStorage } = useIndustriesHook();
 
   const [showModalSelectSolution, setShowModalSelectSolution] =
     useState<boolean>(false);
@@ -130,6 +131,12 @@ export default function ShoppingCart(): JSX.Element {
     setTemplateId(id);
     setShowModalDelete(true);
   };
+
+  useEffect(() => {
+    if (selectedAdditionals.length === 0) {
+      setSelectedAdditionals(getAdditionalsStorage())
+    }
+  }, []);
 
   return (
     <div className="overflow-hidden flex flex-col min-h-screen">
