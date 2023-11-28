@@ -1,6 +1,5 @@
 import React, { JSX, MouseEventHandler } from "react";
 import { AiOutlineClose } from 'react-icons/ai';
-import ActionBtn from '../atoms/ActionBtn';
 import { IoIosAlert } from "react-icons/io";
 interface IDeleteModalProps {
   showModal: boolean;
@@ -35,7 +34,7 @@ export default function DeleteModal(props: IDeleteModalProps): JSX.Element {
                 </button>
                 <button
                   type="button"
-                  className="py-2 px-4 rounded md:mt-0 border text-white bg-boo-btn-bg border-boo-btn-bg text-boo-btn-bg hover:bg-boo-btn-bg-hover hover:text-white w-full"
+                  className="py-2 px-4 rounded md:mt-0 border text-white bg-boo-btn-bg border-boo-btn-bg hover:bg-boo-btn-bg-hover hover:text-white w-full"
                   onClick={deleteAction}
                 >
                   Eliminar

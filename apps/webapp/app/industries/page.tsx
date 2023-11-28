@@ -1,5 +1,5 @@
 'use client';
-import React, { JSX } from 'react';
+import React, { JSX, useEffect, useState } from 'react';
 import Header from '../components/molecules/Header';
 import Search from '../components/atoms/Search';
 import ActionBtn from '../components/atoms/ActionBtn';
@@ -8,24 +8,37 @@ import Footer from '../components/organisms/Footer';
 import IndustriesBannerFooter from '../components/molecules/IndustriesBannerFooter';
 import { classSolutions } from '../../utils';
 import { IAvailable, IIndustry, industries } from '../../data/industries';
-import Helper from "../components/molecules/Helper";
-import Image from "next/image";
-import useIndustriesHook from "../hooks/useIndustriesHook";
+import Helper from '../components/molecules/Helper';
+import Image from 'next/image';
+import useIndustriesHook from '../hooks/useIndustriesHook';
 
 export default function Industries(): JSX.Element {
-  const { addIndustryStorage} = useIndustriesHook();
+  const { addIndustryStorage } = useIndustriesHook();
+  const [term, setTerm] = useState<string>('');
+  const [currents, setCurrents] = useState<IIndustry[]>([]);
 
+  useEffect(() => {
+    const industriesByTerm =
+      term === ''
+        ? industries
+        : industries.filter(
+            (industry: IIndustry) =>
+              industry.title.toLowerCase().includes(term.toLowerCase()) ||
+              industry.description.toLowerCase().includes(term.toLowerCase())
+          );
+    setCurrents(industriesByTerm);
+  }, [term]);
   return (
     <div className="overflow-hidden">
       <Header title={'Industrias'} urlBack={'/'}>
-        <Search placeholder="Buscar por nombre o industria" />
+        <Search placeholder="Buscar" setTerm={setTerm} />
       </Header>
       <div className="p-6 bg-boo-blue text-black mt-10 md:mt-[4.7rem] xl:text-center mb-6 py-6 px-8 md:flex-row sm:py-6 sm:px-10 lg:px-20">
         Elige la industria a la que pertenece tu empresa y personalizaremos una
         solución que se adapte perfectamente a tus necesidades de negocio.
       </div>
-      {industries &&
-        industries.map((industry: IIndustry) => (
+      {currents &&
+        currents.map((industry: IIndustry) => (
           <div
             key={industry.id}
             className="flex flex-col justify-between md:flex-row sm:py-4 sm:px-10 lg:px-20"
@@ -41,9 +54,7 @@ export default function Industries(): JSX.Element {
                   alt="Boosteriit"
                 />
                 <div className="flex flex-col ml-4">
-                  <span className="font-bold  mb-3">
-                    {industry.title}
-                  </span>
+                  <span className="font-bold  mb-3">{industry.title}</span>
                   <span className="mb-3 text-sm text-boo-gray-hard">
                     {industry.description}
                   </span>
@@ -115,7 +126,7 @@ export default function Industries(): JSX.Element {
           </div>
         ))}
       <IndustriesBannerFooter />
-      <Helper/>
+      <Helper />
       <Footer />
     </div>
   );

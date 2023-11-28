@@ -47,9 +47,18 @@ export default function Modules(): JSX.Element {
 
   const [currentModules, setCurrentModules] = useState<IModule[]>(modules);
 
+  const [term, setTerm] = useState<string>('');
+
   useEffect(() => {
+    const modulesByTerm: IModule[] =
+      term === ''
+        ? modules
+        : modules.filter((module: IModule) =>
+            module.title.toLowerCase().includes(term.toLowerCase())
+          );
+
     if (selectedSolutions.length > 0) {
-      const modulesSolutions = modules.filter((module: IModule) =>
+      const modulesSolutions = modulesByTerm.filter((module: IModule) =>
         module.solutions.some((solution: ISolution) =>
           selectedSolutions
             .map((solution: ISolution) => solution.id)
@@ -80,7 +89,7 @@ export default function Modules(): JSX.Element {
       }
     } else {
       if (selectedSections.length > 0) {
-        const current = modules.filter((module: IModule) =>
+        const current = modulesByTerm.filter((module: IModule) =>
           module.sections.some((section: string) =>
             selectedSections.includes(section)
           )
@@ -93,13 +102,12 @@ export default function Modules(): JSX.Element {
         setSelectedModules(currenModulesEnable);
         addModulesStorage(currenModulesEnable);
       } else {
-        setCurrentModules(modules);
+        setCurrentModules(modulesByTerm);
         setSelectedModules([]);
         addModulesStorage([]);
       }
     }
-  }, [selectedSolutions, selectedSections]);
-
+  }, [selectedSolutions, selectedSections, term]);
 
   const backActionBtn = () => {
     setSelectedIndustry(null);
@@ -131,7 +139,7 @@ export default function Modules(): JSX.Element {
   return (
     <div className="overflow-hidden">
       <Header title={'Arma tu solución'} urlBack={'/'} actionFn={backActionBtn}>
-        <Search placeholder="Buscar por nombre o industria" />
+        <Search placeholder="Buscar" setTerm={setTerm} />
       </Header>
       <SolutionsNav />
       <div className="flex flex-col md:flex-row h-full">

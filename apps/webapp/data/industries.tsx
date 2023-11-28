@@ -23,7 +23,7 @@ export interface IIndustry {
   description: string;
   available: IAvailable[];
 }
-export const industries: readonly IIndustry[] = [
+export const industries:  IIndustry[] = [
   Object.freeze({
     id: 'trips',
     icon: <CiPlane />,
