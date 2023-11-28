@@ -6,7 +6,7 @@ interface ISearchProps {
 export default function Search(props: ISearchProps): JSX.Element {
   const { placeholder } = props;
   return (
-    <div className="flex justify-end items-center relative w-full">
+    <div className="flex justify-end items-center relative w-full mb-2">
       <input
         placeholder={placeholder}
         className="border border-gray-200 rounded-lg p-2 w-full focus:outline-none focus:border-sky-500"

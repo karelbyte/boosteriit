@@ -40,7 +40,7 @@ export default function IndustriesSelector(): JSX.Element {
 
   return (
     <div className="relative inline-block">
-      <div className="border px-4 py-2 rounded-lg w-[20rem] flex justify-between items-center">
+      <div className="border px-4 py-2 rounded-lg w-[20rem] flex justify-between items-center text-xs">
         <div className="flex items-center">
           <div className="w-8 h-8 rounded-full flex items-center justify-center text-boo-btn-bg border border-boo-blue-2 bg-boo-blue-2">
             {currentIndustrySelected?.icon}
@@ -67,7 +67,7 @@ export default function IndustriesSelector(): JSX.Element {
                   <div className="w-8 h-8 rounded-full flex items-center justify-center text-boo-btn-bg border border-boo-blue-2 bg-boo-blue-2">
                     {industry.icon}
                   </div>
-                  <span className="ml-4">{industry.title}</span>
+                  <span className="ml-4 text-xs">{industry.title}</span>
                 </li>
               ))}
           </ul>

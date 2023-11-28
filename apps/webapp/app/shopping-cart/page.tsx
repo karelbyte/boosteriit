@@ -366,7 +366,7 @@ export default function ShoppingCart(): JSX.Element {
           </div>
           {(currentModulesSelected.length > 0 ||
             selectedIndustriesTemplate.length > 0) && (
-            <div className="w-full mt-10 md:w-6/12  md:mt-[7rem]">
+            <div className="w-full mt-10 md:w-6/12  md:mt-[6rem]">
               <div className="border-x border-t p-4 bg-white rounded-t-lg">
                 Resumen de orden
               </div>
