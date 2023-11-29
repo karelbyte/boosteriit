@@ -12,12 +12,12 @@ import Footer from "./components/organisms/Footer";
 import IndustryOrBuild from "./components/organisms/IndustryOrBuild";
 import CatalogIndustry from "./components/organisms/CatalogIndustry";
 import CatalogBuild from "./components/organisms/CatalogBuild";
-import Glue from "./components/atoms/Glue";
+import Glue from "./components/molecules/Glue";
 import Helper from './components/molecules/Helper';
 export default async function Index(): Promise<JSX.Element> {
   return (
     <div className="overflow-hidden">
-      <MainNavbar />
+      <MainNavbar data-testid="MainNavbar"/>
       <Banner />
       <Methodologies />
       <IndustryOrBuild/>

@@ -2,7 +2,8 @@ import React, { JSX } from 'react';
 import Slider from 'react-slick';
 import Image from 'next/image';
 import Stars from '../atoms/Stars';
-import SlidesBtn from "../molecules/SlidesBtn";
+import SlidesBtn from '../molecules/SlidesBtn';
+import HistoryCard from '../molecules/HistoryCard';
 export default function Stories(): JSX.Element {
   const settings = {
     infinite: true,
@@ -107,32 +108,36 @@ export default function Stories(): JSX.Element {
           </div>
         </div>
 
-        <div className="h-96 lg:h-[450px] xl:h-96 p-4">
-          <div className="flex flex-col justify-between items-center border rounded-2xl border-blue-100 h-full bg-white p-6">
-            <p className="pt-6 pb-4 text-slate-400">SUNWAT ENERGY</p>
-            <Stars />
+        <HistoryCard
+          company={'SUNWAT ENERGY'}
+          header={
             <p className="w-9/12 text-center py-6 text-sm lg:text-md xl:text-xl">
               “Una mezcla entre calidad, buen precio y eficiencia en tiempos”
             </p>
-            <div className="flex flex-col xl:flex-row items-center justify-center mb-6">
-              <div className="flex flex-col text-center sm:text-left xl:w-5/12 xl:pl-6">
-                <p className="font-bold">Ing. Luis Lara</p>
-                <p> Presidente</p>
-              </div>
-              <div className="hidden xl:flex h-12 border-e-2 mx-6"></div>
-              <Image
-                src="/assets/stories/sunwat-logo.svg"
-                width="100"
-                height="140"
-                className="w-auto xl:w-5/12 mt-4 md:mt-0"
-                priority
-                alt="Boosteriit"
-              />
+          }
+        >
+          <div className="flex flex-col xl:flex-row items-center justify-center mb-6">
+            <div className="flex flex-col text-center sm:text-left xl:w-5/12 xl:pl-6">
+              <p className="font-bold">Ing. Luis Lara</p>
+              <p> Presidente</p>
             </div>
+            <div className="hidden xl:flex h-12 border-e-2 mx-6"></div>
+            <Image
+              src="/assets/stories/sunwat-logo.svg"
+              width="100"
+              height="140"
+              className="w-auto xl:w-5/12 mt-4 md:mt-0"
+              priority
+              alt="Boosteriit"
+            />
           </div>
-        </div>
+        </HistoryCard>
       </Slider>
-      <SlidesBtn style={'self-center lg:hidden'} next={next} previous={previous}/>
+      <SlidesBtn
+        style={'self-center lg:hidden'}
+        next={next}
+        previous={previous}
+      />
     </div>
   );
 }
