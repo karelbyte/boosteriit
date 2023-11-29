@@ -2,7 +2,7 @@ import React, { JSX, useState } from 'react';
 import { ILink } from '../organisms/MainNavbar';
 import { BsArrowRightShort } from 'react-icons/bs';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
-import Glue from '../atoms/Glue';
+import Glue from './Glue';
 import Logo from '../atoms/Logo';
 import Link from 'next/link';
 interface INavLinksProps {

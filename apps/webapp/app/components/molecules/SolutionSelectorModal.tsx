@@ -1,4 +1,4 @@
-import React, { JSX, useEffect, useState } from 'react';
+import React, { JSX, useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import { useRouter } from 'next/navigation';
 import useAppContext from '../../contexts/hookAppContext';

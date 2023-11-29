@@ -11,7 +11,6 @@ export default function Logo(): JSX.Element {
         priority
         alt="Boosteriit"
         className="w-auto"
-
       />
     </Link>
   );

@@ -13,7 +13,7 @@ export default function Search(props: ISearchProps): JSX.Element {
         className="border border-gray-200 rounded-lg p-2 w-full focus:outline-none focus:border-sky-500"
         onChange={(event) => setTerm(event.target.value)}
       />
-      <SlMagnifier className="absolute mr-2 w-6 text-gray-300" />
+      <SlMagnifier data-testid="magnifying-glass-icon" className="absolute mr-2 w-6 text-gray-300" />
     </div>
   );
 }
