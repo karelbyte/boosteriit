@@ -46,7 +46,7 @@ export default function CreateNow(props: ICreateNowProps): JSX.Element {
                       src="/assets/industries/industries2.svg"
                       width="100"
                       height="140"
-                      className="w-auto md:w-full self-center mb-8 md:mr-8"
+                      className="h-1/3 md:w-full self-center mb-2 md:mb-8 md:mr-8"
                       loading={'lazy'}
                       alt="Boosteriit"
                     />
@@ -75,7 +75,7 @@ export default function CreateNow(props: ICreateNowProps): JSX.Element {
                       src="/assets/industries/build2.svg"
                       width="100"
                       height="140"
-                      className="w-auto md:w-full self-center mb-8 md:mr-8"
+                      className="h-1/3 md:w-full self-center mb-2 md:mb-8 md:mr-8"
                       loading={'lazy'}
                       alt="Boosteriit"
                     />

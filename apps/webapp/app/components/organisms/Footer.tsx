@@ -6,7 +6,7 @@ import { BiLogoInstagram } from 'react-icons/bi';
 import Link from "next/link";
 export default function Footer(): JSX.Element {
   return (
-    <div className="pt-6 border-t">
+    <div className="pt-6 border-t w-full">
       <div className="flex flex-col md:flex-row justify-between border-gray-200 px-8 sm:py-12 sm:px-10 lg:px-20">
         <div className="mb-6 md:mb-0 -ml-2 sm:ml-0 w-full md:w-1/4">
           <Logo />
