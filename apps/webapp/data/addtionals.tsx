@@ -366,7 +366,7 @@ const restaurant: IAdditional[] = [
   },
 ];
 
-// solo data , sin costo y tiempo
+// OK
 const trips: IAdditional[] = [
   // additionals web trips
   {
@@ -375,8 +375,8 @@ const trips: IAdditional[] = [
     industry: 'trips',
     title: 'Sistema de Recomendación y Comisión',
     description: 'Gestiona las recomendaciones y prémialas con una comisión.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_web_trips_shopping',
@@ -384,8 +384,8 @@ const trips: IAdditional[] = [
     industry: 'trips',
     title: 'Historial de compras',
     description: 'Permite la consulta de compras realizadas por tus clientes.',
-    days: 12,
-    price: 20000,
+    days: 7,
+    price: 32000,
   },
   {
     id: 'additional_web_trips_travel_reviews',
@@ -394,8 +394,8 @@ const trips: IAdditional[] = [
     title: 'Módulo de retroalimentación y reseñas de viajes',
     description:
       'Incorpora retroalimentaciones y reseñas por parte de tus clientes que promocionen tus productos y servicios.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 44000,
   },
   {
     id: 'additional_web_trips_help_traveler',
@@ -403,8 +403,8 @@ const trips: IAdditional[] = [
     industry: 'trips',
     title: 'Módulo de Ayuda al Viajero',
     description: 'Incorpora una línea de ayuda y soporte a tu plataforma.',
-    days: 12,
-    price: 20000,
+    days: 5,
+    price: 22000,
   },
   {
     id: 'additional_web_trips_ground_transportation',
@@ -413,8 +413,8 @@ const trips: IAdditional[] = [
     title: 'Módulo de gestión de transporte terrestre',
     description:
       'Agrega la posibilidad de contratar transportes terrestres dentro de tu plataforma.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_web_trips_activities_tours',
@@ -423,8 +423,8 @@ const trips: IAdditional[] = [
     title: 'Sistema para integrar actividades o tours',
     description:
       'Integra experiencias y tours que tus clientes podrán disfrutar.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_web_trips_traveler_preferences',
@@ -433,8 +433,8 @@ const trips: IAdditional[] = [
     title: 'Módulo de análisis de tendencias y preferencias de viajeros',
     description:
       'Agrega herramientas que te ayudarán a comprender tendencias de navegación y compra para mejorar tus servicios y promociones.',
-    days: 12,
-    price: 20000,
+    days: 7,
+    price: 32000,
   },
   {
     id: 'additional_web_trips_clarifications',
@@ -443,8 +443,8 @@ const trips: IAdditional[] = [
     title: 'Módulo de aclaraciones',
     description:
       'Gestiona los reclamos de tus clientes por medio de aclaraciones.',
-    days: 12,
-    price: 20000,
+    days: 5,
+    price: 22000,
   },
   // additionals mobile trips
   {
@@ -453,8 +453,8 @@ const trips: IAdditional[] = [
     industry: 'trips',
     title: 'Sistema de Recomendación y Comisión',
     description: 'Gestiona las recomendaciones y prémialas con una comisión.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_mobile_trips_shopping',
@@ -462,8 +462,8 @@ const trips: IAdditional[] = [
     industry: 'trips',
     title: 'Historial de compras',
     description: 'Permite la consulta de compras realizadas por tus clientes.',
-    days: 12,
-    price: 20000,
+    days: 7,
+    price: 32000,
   },
   {
     id: 'additional_mobile_trips_travel_reviews',
@@ -472,8 +472,8 @@ const trips: IAdditional[] = [
     title: 'Módulo de retroalimentación y reseñas de viajes',
     description:
       'Incorpora retroalimentaciones y reseñas por parte de tus clientes que promocionen tus productos y servicios.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 44000,
   },
   {
     id: 'additional_mobile_trips_help_traveler',
@@ -481,8 +481,8 @@ const trips: IAdditional[] = [
     industry: 'trips',
     title: 'Módulo de Ayuda al Viajero',
     description: 'Incorpora una línea de ayuda y soporte a tu plataforma.',
-    days: 12,
-    price: 20000,
+    days: 5,
+    price: 22000,
   },
   {
     id: 'additional_mobile_trips_ground_transportation',
@@ -491,8 +491,8 @@ const trips: IAdditional[] = [
     title: 'Módulo de gestión de transporte terrestre',
     description:
       'Agrega la posibilidad de contratar transportes terrestres dentro de tu plataforma.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_mobile_trips_activities_tours',
@@ -501,8 +501,8 @@ const trips: IAdditional[] = [
     title: 'Sistema para integrar actividades o tours',
     description:
       'Integra experiencias y tours que tus clientes podrán disfrutar.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_mobile_trips_traveler_preferences',
@@ -511,8 +511,8 @@ const trips: IAdditional[] = [
     title: 'Módulo de análisis de tendencias y preferencias de viajeros',
     description:
       'Agrega herramientas que te ayudarán a comprender tendencias de navegación y compra para mejorar tus servicios y promociones.',
-    days: 12,
-    price: 20000,
+    days: 7,
+    price: 32000,
   },
   {
     id: 'additional_mobile_trips_clarifications',
@@ -521,8 +521,8 @@ const trips: IAdditional[] = [
     title: 'Módulo de aclaraciones',
     description:
       'Gestiona los reclamos de tus clientes por medio de aclaraciones.',
-    days: 12,
-    price: 20000,
+    days: 5,
+    price: 22000,
   },
   // additionals desktop trips
   {
@@ -531,8 +531,8 @@ const trips: IAdditional[] = [
     industry: 'trips',
     title: 'Sistema de Recomendación y Comisión',
     description: 'Gestiona las recomendaciones y prémialas con una comisión.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_desktop_trips_shopping',
@@ -540,8 +540,8 @@ const trips: IAdditional[] = [
     industry: 'trips',
     title: 'Historial de compras',
     description: 'Permite la consulta de compras realizadas por tus clientes.',
-    days: 12,
-    price: 20000,
+    days: 7,
+    price: 32000,
   },
   {
     id: 'additional_desktop_trips_travel_reviews',
@@ -550,8 +550,8 @@ const trips: IAdditional[] = [
     title: 'Módulo de retroalimentación y reseñas de viajes',
     description:
       'Incorpora retroalimentaciones y reseñas por parte de tus clientes que promocionen tus productos y servicios.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 44000,
   },
   {
     id: 'additional_desktop_trips_help_traveler',
@@ -559,8 +559,8 @@ const trips: IAdditional[] = [
     industry: 'trips',
     title: 'Módulo de Ayuda al Viajero',
     description: 'Incorpora una línea de ayuda y soporte a tu plataforma.',
-    days: 12,
-    price: 20000,
+    days: 5,
+    price: 22000,
   },
   {
     id: 'additional_desktop_trips_ground_transportation',
@@ -569,8 +569,8 @@ const trips: IAdditional[] = [
     title: 'Módulo de gestión de transporte terrestre',
     description:
       'Agrega la posibilidad de contratar transportes terrestres dentro de tu plataforma.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_desktop_trips_activities_tours',
@@ -579,8 +579,8 @@ const trips: IAdditional[] = [
     title: 'Sistema para integrar actividades o tours',
     description:
       'Integra experiencias y tours que tus clientes podrán disfrutar.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_desktop_trips_traveler_preferences',
@@ -589,8 +589,8 @@ const trips: IAdditional[] = [
     title: 'Módulo de análisis de tendencias y preferencias de viajeros',
     description:
       'Agrega herramientas que te ayudarán a comprender tendencias de navegación y compra para mejorar tus servicios y promociones.',
-    days: 12,
-    price: 20000,
+    days: 7,
+    price: 32000,
   },
   {
     id: 'additional_desktop_trips_clarifications',
@@ -599,12 +599,12 @@ const trips: IAdditional[] = [
     title: 'Módulo de aclaraciones',
     description:
       'Gestiona los reclamos de tus clientes por medio de aclaraciones.',
-    days: 12,
-    price: 20000,
+    days: 5,
+    price: 22000,
   },
 ];
 
-// solo data , sin costo y tiempo
+// OK
 const realestate: IAdditional[] = [
   // additionals web realestate
   {
@@ -613,8 +613,8 @@ const realestate: IAdditional[] = [
     industry: 'realestate',
     title: 'Sistema de Recomendación y Comisión',
     description: 'Gestiona las recomendaciones y prémialas con una comisión.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_web_realestate_collaborators',
@@ -623,8 +623,8 @@ const realestate: IAdditional[] = [
     title: 'Tarjetas digitales para colaboradores',
     description:
       'Permite que tus colaboradores generen sus tarjetas digitales de presentación .',
-    days: 12,
-    price: 20000,
+    days: 14,
+    price: 72000,
   },
   {
     id: 'additional_web_realestate_real_market',
@@ -633,8 +633,8 @@ const realestate: IAdditional[] = [
     title: 'Herramienta de análisis de mercado inmobiliario',
     description:
       'Impulsa tu negocio con análisis del mercado inmobiliario, descubriendo tendencias que te ayudarán a tomar decisiones estratégicas.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_web_realestate_lease_sale_documentation',
@@ -644,8 +644,8 @@ const realestate: IAdditional[] = [
       'Sistema de administración de contratos y documentación de arrendamiento y venta',
     description:
       'Administra y almacena los contratos y documentación necesaria para tus procesos operativos del día a día.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_web_realestate_properties_valuation',
@@ -654,8 +654,8 @@ const realestate: IAdditional[] = [
     title: 'Solución de evaluación de propiedades y valoración',
     description:
       'Agrega procesos de evaluación y valoración de propiedades que te ayuden a organizar y agilizar tu operación.',
-    days: 12,
-    price: 20000,
+    days: 5,
+    price: 25000,
   },
   {
     id: 'additional_web_realestate_virtual_tours',
@@ -664,8 +664,8 @@ const realestate: IAdditional[] = [
     title: 'Herramienta de tours virtuales',
     description:
       'Permite que tus usuarios conozcan y amen las propiedades por medio de tours virtuales.',
-    days: 12,
-    price: 20000,
+    days: 20,
+    price: 98000,
   },
   {
     id: 'additional_web_realestate_property_repairs',
@@ -675,7 +675,7 @@ const realestate: IAdditional[] = [
     description:
       'Mantén en buen estado tus propiedades planeando el debido mantenimiento y reparación.',
     days: 12,
-    price: 20000,
+    price: 65000,
   },
   {
     id: 'additional_web_realestate_crm_visit',
@@ -683,8 +683,8 @@ const realestate: IAdditional[] = [
     industry: 'realestate',
     title: 'CRM - Reporte de visitas',
     description: 'Digitaliza los reportes de visitas por parte de tus agentes.',
-    days: 12,
-    price: 20000,
+    days: 5,
+    price: 25000,
   },
   {
     id: 'additional_web_realestate_crm_budgets',
@@ -692,8 +692,8 @@ const realestate: IAdditional[] = [
     industry: 'realestate',
     title: 'CRM - Presupuestos',
     description: 'Realiza presupuestos y compártelos con tus usuarios.',
-    days: 12,
-    price: 20000,
+    days: 5,
+    price: 25000,
   },
   {
     id: 'additional_web_realestate_commissions_earned',
@@ -702,8 +702,8 @@ const realestate: IAdditional[] = [
     title: 'CRM - Comisiones ganadas',
     description:
       'Sumariza las comisiones ganadas por tus agentes y motívalos a dar su máximo.',
-    days: 12,
-    price: 20000,
+    days: 7,
+    price: 32000,
   },
   {
     id: 'additional_web_realestate_business_won',
@@ -712,8 +712,8 @@ const realestate: IAdditional[] = [
     title: 'CRM - Negocios ganados',
     description:
       'Genera un reporte de los negocios logrados y dimensiona tus ganancias.',
-    days: 12,
-    price: 20000,
+    days: 5,
+    price: 25000,
   },
   {
     id: 'additional_web_realestate_clarifications',
@@ -722,8 +722,8 @@ const realestate: IAdditional[] = [
     title: 'Módulo de aclaraciones',
     description:
       'Gestiona los reclamos de tus clientes por medio de aclaraciones.',
-    days: 12,
-    price: 20000,
+    days: 5,
+    price: 25000,
   },
   // additionals desktop realestate
   {
@@ -732,8 +732,8 @@ const realestate: IAdditional[] = [
     industry: 'realestate',
     title: 'Sistema de Recomendación y Comisión',
     description: 'Gestiona las recomendaciones y prémialas con una comisión.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_desktop_realestate_collaborators',
@@ -742,8 +742,8 @@ const realestate: IAdditional[] = [
     title: 'Tarjetas digitales para colaboradores',
     description:
       'Permite que tus colaboradores generen sus tarjetas digitales de presentación .',
-    days: 12,
-    price: 20000,
+    days: 14,
+    price: 72000,
   },
   {
     id: 'additional_desktop_realestate_real_market',
@@ -752,8 +752,8 @@ const realestate: IAdditional[] = [
     title: 'Herramienta de análisis de mercado inmobiliario',
     description:
       'Impulsa tu negocio con análisis del mercado inmobiliario, descubriendo tendencias que te ayudarán a tomar decisiones estratégicas.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_desktop_realestate_lease_sale_documentation',
@@ -763,8 +763,8 @@ const realestate: IAdditional[] = [
       'Sistema de administración de contratos y documentación de arrendamiento y venta',
     description:
       'Administra y almacena los contratos y documentación necesaria para tus procesos operativos del día a día.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_desktop_realestate_properties_valuation',
@@ -773,8 +773,8 @@ const realestate: IAdditional[] = [
     title: 'Solución de evaluación de propiedades y valoración',
     description:
       'Agrega procesos de evaluación y valoración de propiedades que te ayuden a organizar y agilizar tu operación.',
-    days: 12,
-    price: 20000,
+    days: 5,
+    price: 25000,
   },
   {
     id: 'additional_desktop_realestate_virtual_tours',
@@ -783,8 +783,8 @@ const realestate: IAdditional[] = [
     title: 'Herramienta de tours virtuales',
     description:
       'Permite que tus usuarios conozcan y amen las propiedades por medio de tours virtuales.',
-    days: 12,
-    price: 20000,
+    days: 20,
+    price: 98000,
   },
   {
     id: 'additional_desktop_realestate_property_repairs',
@@ -794,7 +794,7 @@ const realestate: IAdditional[] = [
     description:
       'Mantén en buen estado tus propiedades planeando el debido mantenimiento y reparación.',
     days: 12,
-    price: 20000,
+    price: 65000,
   },
   {
     id: 'additional_desktop_realestate_crm_visit',
@@ -802,8 +802,8 @@ const realestate: IAdditional[] = [
     industry: 'realestate',
     title: 'CRM - Reporte de visitas',
     description: 'Digitaliza los reportes de visitas por parte de tus agentes.',
-    days: 12,
-    price: 20000,
+    days: 5,
+    price: 25000,
   },
   {
     id: 'additional_desktop_realestate_crm_budgets',
@@ -811,8 +811,8 @@ const realestate: IAdditional[] = [
     industry: 'realestate',
     title: 'CRM - Presupuestos',
     description: 'Realiza presupuestos y compártelos con tus usuarios.',
-    days: 12,
-    price: 20000,
+    days: 5,
+    price: 25000,
   },
   {
     id: 'additional_desktop_realestate_commissions_earned',
@@ -821,8 +821,8 @@ const realestate: IAdditional[] = [
     title: 'CRM - Comisiones ganadas',
     description:
       'Sumariza las comisiones ganadas por tus agentes y motívalos a dar su máximo.',
-    days: 12,
-    price: 20000,
+    days: 7,
+    price: 32000,
   },
   {
     id: 'additional_desktop_realestate_business_won',
@@ -831,8 +831,8 @@ const realestate: IAdditional[] = [
     title: 'CRM - Negocios ganados',
     description:
       'Genera un reporte de los negocios logrados y dimensiona tus ganancias.',
-    days: 12,
-    price: 20000,
+    days: 5,
+    price: 25000,
   },
   {
     id: 'additional_desktop_realestate_clarifications',
@@ -841,8 +841,8 @@ const realestate: IAdditional[] = [
     title: 'Módulo de aclaraciones',
     description:
       'Gestiona los reclamos de tus clientes por medio de aclaraciones.',
-    days: 12,
-    price: 20000,
+    days: 5,
+    price: 25000,
   },
   // additionals mobile realestate
   {
@@ -851,8 +851,8 @@ const realestate: IAdditional[] = [
     industry: 'realestate',
     title: 'Sistema de Recomendación y Comisión',
     description: 'Gestiona las recomendaciones y prémialas con una comisión.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_mobile_realestate_collaborators',
@@ -861,8 +861,8 @@ const realestate: IAdditional[] = [
     title: 'Tarjetas digitales para colaboradores',
     description:
       'Permite que tus colaboradores generen sus tarjetas digitales de presentación .',
-    days: 12,
-    price: 20000,
+    days: 14,
+    price: 72000,
   },
   {
     id: 'additional_mobile_realestate_real_market',
@@ -871,8 +871,19 @@ const realestate: IAdditional[] = [
     title: 'Herramienta de análisis de mercado inmobiliario',
     description:
       'Impulsa tu negocio con análisis del mercado inmobiliario, descubriendo tendencias que te ayudarán a tomar decisiones estratégicas.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
+  },
+  {
+    id: 'additional_mobile_realestate_lease_sale_documentation',
+    solution: 'mobile',
+    industry: 'realestate',
+    title:
+      'Sistema de administración de contratos y documentación de arrendamiento y venta',
+    description:
+      'Administra y almacena los contratos y documentación necesaria para tus procesos operativos del día a día.',
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_mobile_realestate_properties_valuation',
@@ -881,8 +892,8 @@ const realestate: IAdditional[] = [
     title: 'Solución de evaluación de propiedades y valoración',
     description:
       'Agrega procesos de evaluación y valoración de propiedades que te ayuden a organizar y agilizar tu operación.',
-    days: 12,
-    price: 20000,
+    days: 5,
+    price: 25000,
   },
   {
     id: 'additional_mobile_realestate_virtual_tours',
@@ -891,8 +902,8 @@ const realestate: IAdditional[] = [
     title: 'Herramienta de tours virtuales',
     description:
       'Permite que tus usuarios conozcan y amen las propiedades por medio de tours virtuales.',
-    days: 12,
-    price: 20000,
+    days: 20,
+    price: 98000,
   },
   {
     id: 'additional_mobile_realestate_property_repairs',
@@ -902,7 +913,7 @@ const realestate: IAdditional[] = [
     description:
       'Mantén en buen estado tus propiedades planeando el debido mantenimiento y reparación.',
     days: 12,
-    price: 20000,
+    price: 65000,
   },
   {
     id: 'additional_mobile_realestate_crm_visit',
@@ -910,8 +921,8 @@ const realestate: IAdditional[] = [
     industry: 'realestate',
     title: 'CRM - Reporte de visitas',
     description: 'Digitaliza los reportes de visitas por parte de tus agentes.',
-    days: 12,
-    price: 20000,
+    days: 5,
+    price: 25000,
   },
   {
     id: 'additional_mobile_realestate_crm_budgets',
@@ -919,8 +930,8 @@ const realestate: IAdditional[] = [
     industry: 'realestate',
     title: 'CRM - Presupuestos',
     description: 'Realiza presupuestos y compártelos con tus usuarios.',
-    days: 12,
-    price: 20000,
+    days: 5,
+    price: 25000,
   },
   {
     id: 'additional_mobile_realestate_commissions_earned',
@@ -929,8 +940,8 @@ const realestate: IAdditional[] = [
     title: 'CRM - Comisiones ganadas',
     description:
       'Sumariza las comisiones ganadas por tus agentes y motívalos a dar su máximo.',
-    days: 12,
-    price: 20000,
+    days: 7,
+    price: 32000,
   },
   {
     id: 'additional_mobile_realestate_business_won',
@@ -939,8 +950,8 @@ const realestate: IAdditional[] = [
     title: 'CRM - Negocios ganados',
     description:
       'Genera un reporte de los negocios logrados y dimensiona tus ganancias.',
-    days: 12,
-    price: 20000,
+    days: 5,
+    price: 25000,
   },
   {
     id: 'additional_mobile_realestate_clarifications',
@@ -949,8 +960,8 @@ const realestate: IAdditional[] = [
     title: 'Módulo de aclaraciones',
     description:
       'Gestiona los reclamos de tus clientes por medio de aclaraciones.',
-    days: 12,
-    price: 20000,
+    days: 5,
+    price: 25000,
   },
 ];
 
