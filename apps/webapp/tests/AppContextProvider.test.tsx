@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, renderHook } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import {AppContextProvider, AppContext} from '../app/contexts/appContext';
 
 const mockLocalStorage = (function () {

@@ -248,7 +248,7 @@ const restaurant: IIndustryTemplate[] = [
   },
 ];
 
-// faltan tiempo y costo, en los extras faltan tiempo y costo
+// esta full, con funcionalidad y extras
 const trips: IIndustryTemplate[] = [
   {
     id: 'template_web_trips',
@@ -257,8 +257,8 @@ const trips: IIndustryTemplate[] = [
     icon: <MdWeb />,
     title: 'Aplicación web',
     short: 'App web',
-    days: 66,
-    price: 487500,
+    days: 87,
+    price: 627900,
     image: '/assets/templates/trips/image_web.svg',
     image_slide1: '/assets/templates/trips/trip1_web.svg',
     image_slide2: '/assets/templates/trips/trip2_web.svg',
@@ -323,8 +323,8 @@ const trips: IIndustryTemplate[] = [
     icon: <BiDesktop />,
     title: 'Aplicación Escritorio',
     short: 'App escritorio',
-    days: 66,
-    price: 487500,
+    days: 87,
+    price: 627900,
     image: '/assets/templates/trips/image_desk.svg',
     image_slide1: '/assets/templates/trips/trip1_desk.svg',
     image_slide2: '/assets/templates/trips/trip2_desk.svg',
@@ -389,8 +389,8 @@ const trips: IIndustryTemplate[] = [
     icon: <FaMobileAlt />,
     title: 'Aplicación Movil',
     short: 'App movil',
-    days: 66,
-    price: 487500,
+    days: 84,
+    price: 680680,
     image: '/assets/templates/trips/image_mob.svg',
     image_slide1: '/assets/templates/trips/trip1_mob.svg',
     image_slide2: '/assets/templates/trips/trip2_mob.svg',
@@ -450,7 +450,7 @@ const trips: IIndustryTemplate[] = [
   },
 ];
 
-// faltan tiempo y costo, en los extras faltan tiempo y costo
+// esta full, con funcionalidad y extras
 const realestate: IIndustryTemplate[] = [
   {
     id: 'template_web_realestate',
@@ -459,8 +459,8 @@ const realestate: IIndustryTemplate[] = [
     icon: <MdWeb />,
     title: 'Aplicación web',
     short: 'App web',
-    days: 66,
-    price: 487500,
+    days: 88,
+    price: 509340,
     image: '/assets/templates/realestate/image_web.svg',
     image_slide1: '/assets/templates/realestate/realestate1_web.svg',
     image_slide2: '/assets/templates/realestate/realestate2_web.svg',
@@ -544,8 +544,8 @@ const realestate: IIndustryTemplate[] = [
     icon: <BiDesktop />,
     title: 'Aplicación Escritorio',
     short: 'App escritorio',
-    days: 66,
-    price: 487500,
+    days: 88,
+    price: 509340,
     image: '/assets/templates/realestate/image_desk.svg',
     image_slide1: '/assets/templates/realestate/realestate1_desk.svg',
     image_slide2: '/assets/templates/realestate/realestate2_desk.svg',
@@ -629,8 +629,8 @@ const realestate: IIndustryTemplate[] = [
     icon: <FaMobileAlt />,
     title: 'Aplicación Movil',
     short: 'App movil',
-    days: 66,
-    price: 487500,
+    days: 55,
+    price: 378000,
     image: '/assets/templates/realestate/image_mob.svg',
     image_slide1: '/assets/templates/realestate/realestate1_mob.svg',
     image_slide2: '/assets/templates/realestate/realestate2_mob.svg',

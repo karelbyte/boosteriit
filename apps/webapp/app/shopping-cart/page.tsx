@@ -1,5 +1,5 @@
 'use client';
-import React, { JSX, useEffect, useState } from "react";
+import React, { JSX, useEffect, useState } from 'react';
 import Header from '../components/molecules/Header';
 import useAppContext from '../contexts/hookAppContext';
 import Footer from '../components/organisms/Footer';
@@ -24,6 +24,7 @@ import {
   formatByCurrencyMXN,
   getSubtotalPrice,
   getSubtotalPriceFormat,
+  getTotalDays,
 } from '../../utils';
 import ErrorModal from '../components/molecules/ErrorModal';
 import SolutionBreadcrumbs from '../components/molecules/SolutionBreadcrumbs';
@@ -31,6 +32,7 @@ import ShoppingCartEmpty from '../components/organisms/ShoppingCartEmpty';
 import DeleteModal from '../components/molecules/DeleteModal';
 import { IIntegration, integrations } from '../../data/integrations';
 import useIndustriesHook from '../hooks/useIndustriesHook';
+import { AiOutlineClockCircle } from 'react-icons/ai';
 export default function ShoppingCart(): JSX.Element {
   const {
     selectedSolutions,
@@ -39,7 +41,7 @@ export default function ShoppingCart(): JSX.Element {
     selectedAdditionals,
     setSelectedIndustriesTemplate,
     selectedIntegrations,
-    setSelectedAdditionals
+    setSelectedAdditionals,
   } = useAppContext();
 
   const {
@@ -50,7 +52,8 @@ export default function ShoppingCart(): JSX.Element {
     deleteModule,
   } = useModules();
 
-  const { setIntegrations, getIntegrationStatusCheck, getAdditionalsStorage } = useIndustriesHook();
+  const { setIntegrations, getIntegrationStatusCheck, getAdditionalsStorage } =
+    useIndustriesHook();
 
   const [showModalSelectSolution, setShowModalSelectSolution] =
     useState<boolean>(false);
@@ -134,7 +137,7 @@ export default function ShoppingCart(): JSX.Element {
 
   useEffect(() => {
     if (selectedAdditionals.length === 0) {
-      setSelectedAdditionals(getAdditionalsStorage())
+      setSelectedAdditionals(getAdditionalsStorage());
     }
   }, []);
 
@@ -402,6 +405,17 @@ export default function ShoppingCart(): JSX.Element {
                   title="Construir"
                   actionFn={() => setShowModalContact(true)}
                 />
+                {selectedIndustriesTemplate.length > 0 && (
+                  <div className="flex my-4 item items-center w-full justify-center">
+                    <AiOutlineClockCircle className="text-boo-btn-bg" />
+                    <span className="flex items-center font-light text-xs text-boo-str-description ml-2">
+                      Tiempo total:
+                      <p className="font-semibold ml-4">
+                        {getTotalDays(selectedIndustriesTemplate) + getTotalDays(selectedAdditionals)} días
+                      </p>
+                    </span>
+                  </div>
+                )}
               </div>
             </div>
           )}
