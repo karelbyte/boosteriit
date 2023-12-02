@@ -30,7 +30,7 @@ import {
   getSubtotalPriceFormat,
   getTotalDays,
 } from '../../utils';
-import {IAdditional } from "../../data/addtionals";
+import { IAdditional } from '../../data/addtionals';
 import useIndustriesHook from '../hooks/useIndustriesHook';
 
 export default function IndustriesDetails(): JSX.Element {
@@ -51,9 +51,12 @@ export default function IndustriesDetails(): JSX.Element {
     getAdditionalsStorage,
     getStatusCheck,
     getIntegrationStatusCheck,
-    addAdditionalsStorage
+    addAdditionalsStorage,
   } = useIndustriesHook();
 
+  const [currentIntegrations, setCurrentIntegrations] = useState<
+    IIntegration[]
+  >([]);
   const [showDetails, setShowDetails] = useState<string[]>(['mobile']);
 
   const buildShoppingCart = () => {
@@ -74,6 +77,7 @@ export default function IndustriesDetails(): JSX.Element {
 
   useEffect(() => {
     setSelectedIndustriesTemplate([]);
+    setCurrentIntegrations([]);
     const templateForIndustries = industriesTemplate.filter(
       (template: IIndustryTemplate) =>
         template.industry === selectedIndustry?.id
@@ -83,9 +87,14 @@ export default function IndustriesDetails(): JSX.Element {
     const currents = templateForIndustries.filter(
       (template: IIndustryTemplate) => solutions.includes(template.solution)
     );
-    const currentAdditionaStorage = getAdditionalsStorage().filter((additional: IAdditional) => {
-        return additional.industry === selectedIndustry?.id && solutions.includes(additional.solution)
-    });
+    const currentAdditionaStorage = getAdditionalsStorage().filter(
+      (additional: IAdditional) => {
+        return (
+          additional.industry === selectedIndustry?.id &&
+          solutions.includes(additional.solution)
+        );
+      }
+    );
     const currentAdditionals = selectedAdditionals
       .concat(currentAdditionaStorage)
       .filter(
@@ -95,8 +104,20 @@ export default function IndustriesDetails(): JSX.Element {
       .filter((additional: IAdditional) =>
         solutions.includes(additional.solution)
       );
+    const integrationByIndustry = integrations.filter(
+      (integration: IIntegration) =>
+        integration.industries.includes(selectedIndustry?.id || 'trips')
+    );
+    const integrationBySolution = integrationByIndustry.filter(
+      (integration: IIntegration) =>
+        integration.solutions.some((solution: string) =>
+          solutions.includes(solution)
+        )
+    );
+
+    setCurrentIntegrations(integrationBySolution);
     setSelectedAdditionals(currentAdditionals);
-    addAdditionalsStorage(currentAdditionals)
+    addAdditionalsStorage(currentAdditionals);
     setSelectedIndustriesTemplate(currents);
     addTemplatesStorage(currents);
   }, [selectedSolutions, selectedIndustry]);
@@ -124,8 +145,12 @@ export default function IndustriesDetails(): JSX.Element {
                       }`}
                     >
                       {template.icon}
-                      <span className="hidden md:flex ml-2">{template.title}</span>
-                      <span className="flex md:hidden ml-2">{template.short}</span>
+                      <span className="hidden md:flex ml-2">
+                        {template.title}
+                      </span>
+                      <span className="flex md:hidden ml-2">
+                        {template.short}
+                      </span>
                     </div>
                     <div className="flex flex-col md:flex-row my-4 items-center text-xs text-boo-str-description">
                       <span className="font-light md:mr-2">
@@ -289,46 +314,48 @@ export default function IndustriesDetails(): JSX.Element {
                   </div>
                 </div>
               ))}
-            <div className="flex flex-col my-6 w-full border rounded-lg p-6">
-              <div className="flex gap-4">
-                <div className="w-12 h-12 rounded-full text-2xl flex items-center justify-center text-white border border-boo-web bg-boo-web">
-                  <PiPlugLight />
+            {currentIntegrations && currentIntegrations.length > 0 && (
+              <div className="flex flex-col my-6 w-full border rounded-lg p-6">
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 rounded-full text-2xl flex items-center justify-center text-white border border-boo-web bg-boo-web">
+                    <PiPlugLight />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="font-semibold"> Integraciones</span>
+                    <span className="text-boo-str-description">
+                      ¿Requieres conectar una integración en tu solución?
+                    </span>
+                  </div>
                 </div>
-                <div className="flex flex-col">
-                  <span className="font-semibold"> Integraciones</span>
-                  <span className="text-boo-str-description">
-                    ¿Requieres conectar una integración en tu solución?
+                <div className="flex flex-col mt-6 md:ml-16 gap-4">
+                  <span>
+                    Selecciona las integraciones que requiere tu negocio.
                   </span>
+                  <div className="flex flex-col gap-4">
+                    {currentIntegrations &&
+                      currentIntegrations.map((integration: IIntegration) => (
+                        <div key={integration.id} className="flex gap-4">
+                          <input
+                            type="checkbox"
+                            className="accent-green-400 cursor-pointer"
+                            onChange={() => setIntegrations(integration)}
+                            checked={getIntegrationStatusCheck(integration.id)}
+                            id={integration.id}
+                          />
+                          <span className="text-boo-str-description">
+                            {integration.title}
+                          </span>
+                        </div>
+                      ))}
+                  </div>
+                  <div className="mt-2 border p-2 rounded-lg flex items-start xl:items-center gap-4 border-boo-alert bg-boo-alert-bg w-full xl:w-2/3">
+                    <IoMdAlert className="text-boo-alert" />
+                    El costo y tiempo de cada integración se detalla en la
+                    sesión de conocimiento.
+                  </div>
                 </div>
               </div>
-              <div className="flex flex-col mt-6 md:ml-16 gap-4">
-                <span>
-                  Selecciona las integraciones que requiere tu negocio.
-                </span>
-                <div className="flex flex-col gap-4">
-                  {integrations &&
-                    integrations.map((integration: IIntegration) => (
-                      <div key={integration.id} className="flex gap-4">
-                        <input
-                          type="checkbox"
-                          className="accent-green-400 cursor-pointer"
-                          onChange={() => setIntegrations(integration) }
-                          checked={getIntegrationStatusCheck(integration.id)}
-                          id={integration.id}
-                        />
-                        <span className="text-boo-str-description">
-                          {integration.title}
-                        </span>
-                      </div>
-                    ))}
-                </div>
-                <div className="mt-2 border p-2 rounded-lg flex items-start xl:items-center gap-4 border-boo-alert bg-boo-alert-bg w-full xl:w-2/3">
-                  <IoMdAlert className="text-boo-alert" />
-                  El costo y tiempo de cada integración se detalla en la sesión
-                  de conocimiento.
-                </div>
-              </div>
-            </div>
+            )}
           </div>
           <div className="p-4 w-full md:w-3/12 md:border-l-2">
             <p className="mb-6 font-semibold">
