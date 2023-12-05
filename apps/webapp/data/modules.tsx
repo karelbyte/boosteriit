@@ -2904,9 +2904,9 @@ export const modules: IModule[] = [
     title: 'Módulo de gestión de Propiedades',
     subtitle: 'Módulo de gestión de Propiedades',
     description: 'Administra las propiedades y mantén al día tus registros',
-    price: 0,
-    timeStr: 'Lista en: 0  días',
-    days: 0,
+    price: 50000,
+    timeStr: 'Lista en: 10 días',
+    days: 10,
     solutions: [
       {
         id: 'web',
@@ -2925,9 +2925,9 @@ export const modules: IModule[] = [
     title: 'Módulo de gestión de Propiedades',
     subtitle: 'Módulo de gestión de Propiedades',
     description: 'Administra las propiedades y mantén al día tus registros',
-    price: 0,
-    timeStr: 'Lista en: 0 días',
-    days: 0,
+    price: 50000,
+    timeStr: 'Lista en: 10 días',
+    days: 10,
     solutions: [
       {
         id: 'desktop',
@@ -2946,9 +2946,9 @@ export const modules: IModule[] = [
     title: 'Módulo de gestión de Propiedades',
     subtitle: 'Módulo de gestión de Propiedades',
     description: 'Administra las propiedades y mantén al día tus registros',
-    price: 0,
-    timeStr: 'Lista en: 0 días',
-    days: 0,
+    price: 50000,
+    timeStr: 'Lista en: 10 días',
+    days: 10,
     solutions: [
       {
         id: 'mobile',
