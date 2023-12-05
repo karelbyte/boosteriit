@@ -128,7 +128,7 @@ export default function IndustriesDetails(): JSX.Element {
         <IndustriesSelector />
       </Header>
       <SolutionsNav />
-      {selectedIndustriesTemplate && (
+      {selectedSolutions.length > 0 && selectedIndustriesTemplate.length > 0 ? (
         <div className="flex flex-col md:flex-row h-full">
           <div className="flex flex-col w-full md:w-9/12 p-4">
             <p>Industria | {selectedIndustry?.title}</p>
@@ -399,6 +399,12 @@ export default function IndustriesDetails(): JSX.Element {
               </div>
             )}
           </div>
+        </div>
+      ) : (
+        <div className="flex h-96 p-4 justify-center items-center w-full">
+          <p className="text-boo-gray-hard font-semibold">
+            Selecciona tu plataforma para visualizar tus componentes
+          </p>
         </div>
       )}
       <Helper />

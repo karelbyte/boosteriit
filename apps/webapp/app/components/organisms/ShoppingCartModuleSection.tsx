@@ -13,7 +13,7 @@ interface IShoppingCartModuleSectionProps {
 }
 export default function ShoppingCartModuleSection(
   props: IShoppingCartModuleSectionProps
-) {
+):JSX.Element {
   const { title, modules, deleteModule, canShow, setShowStatus } = props;
   return (
     <div className="w-full">

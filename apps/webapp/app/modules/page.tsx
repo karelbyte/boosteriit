@@ -22,6 +22,7 @@ import {
   getSubtotalPriceFormat,
   getTotalDays,
 } from '../../utils';
+import Image from 'next/image';
 
 export default function Modules(): JSX.Element {
   const router = useRouter();
@@ -49,6 +50,23 @@ export default function Modules(): JSX.Element {
 
   const [term, setTerm] = useState<string>('');
 
+  const sortModules = (modules: IModule[]) => {
+    const compareModule = (aModule: IModule, bModule: IModule) => {
+      const order: {
+        web: number;
+        desktop: number;
+        mobile: number;
+        [key: string]: number;
+      } = {
+        web: 0,
+        desktop: 1,
+        mobile: 2,
+      };
+      return order[aModule.solutions[0].id] - order[bModule.solutions[0].id];
+    };
+    return modules.sort(compareModule);
+  };
+
   useEffect(() => {
     const modulesByTerm: IModule[] =
       term === ''
@@ -66,20 +84,20 @@ export default function Modules(): JSX.Element {
         )
       );
       if (selectedSections.length > 0) {
-        const currentSections = modulesSolutions.filter((module: IModule) =>
+        const currentModules = modulesSolutions.filter((module: IModule) =>
           module.sections.some((section: string) =>
             selectedSections.includes(section)
           )
         );
-        setCurrentModules(currentSections);
-        const enableIds = currentSections.map((module: IModule) => module.id);
+        setCurrentModules(sortModules(currentModules));
+        const enableIds = currentModules.map((module: IModule) => module.id);
         const currenModulesEnable = selectedModules.filter((module: IModule) =>
           enableIds.includes(module.id)
         );
         setSelectedModules(currenModulesEnable);
         addModulesStorage(currenModulesEnable);
       } else {
-        setCurrentModules(modulesSolutions);
+        setCurrentModules(sortModules(modulesSolutions));
         const enableIds = modulesSolutions.map((module: IModule) => module.id);
         const currenModulesEnable = selectedModules.filter((module: IModule) =>
           enableIds.includes(module.id)
@@ -88,24 +106,27 @@ export default function Modules(): JSX.Element {
         addModulesStorage(currenModulesEnable);
       }
     } else {
-      if (selectedSections.length > 0) {
-        const current = modulesByTerm.filter((module: IModule) =>
-          module.sections.some((section: string) =>
-            selectedSections.includes(section)
-          )
-        );
-        setCurrentModules(current);
-        const enableIds = current.map((module: IModule) => module.id);
-        const currenModulesEnable = selectedModules.filter((module: IModule) =>
-          enableIds.includes(module.id)
-        );
-        setSelectedModules(currenModulesEnable);
-        addModulesStorage(currenModulesEnable);
-      } else {
-        setCurrentModules(modulesByTerm);
-        setSelectedModules([]);
-        addModulesStorage([]);
-      }
+      setCurrentModules([]);
+      setSelectedModules([]);
+      addModulesStorage([]);
+      // if (selectedSections.length > 0) {
+      //   const current = modulesByTerm.filter((module: IModule) =>
+      //     module.sections.some((section: string) =>
+      //       selectedSections.includes(section)
+      //     )
+      //   );
+      //   setCurrentModules(current);
+      //   const enableIds = current.map((module: IModule) => module.id);
+      //   const currenModulesEnable = selectedModules.filter((module: IModule) =>
+      //     enableIds.includes(module.id)
+      //   );
+      //   setSelectedModules(currenModulesEnable);
+      //   addModulesStorage(currenModulesEnable);
+      // } else {
+      //   setCurrentModules(selectedSolutions.length > 0 ? modulesByTerm : []);
+      //   setSelectedModules([]);
+      //   addModulesStorage([]);
+      // }
     }
   }, [selectedSolutions, selectedSections, term]);
 
@@ -154,18 +175,26 @@ export default function Modules(): JSX.Element {
             </div>
           </div>
           <div className="flex flex-col md:flex-row w-full flex-wrap">
-            {currentModules &&
+            {currentModules.length > 0 ? (
               currentModules.map((module: IModule) => (
                 <div
                   key={module.id}
                   className="flex flex-col px-2 py-4 w-full md:w-1/3"
                 >
                   <div className="flex flex-col justify-between border-t border-x p-4 rounded-t-lg h-full">
-                    <div className="flex border rounded-lg h-48 mb-4">
+                    <div className="relative flex mb-4">
+                      <Image
+                        src={module.image}
+                        width="100"
+                        height="140"
+                        className="w-full"
+                        loading={'lazy'}
+                        alt="Boosteriit"
+                      />
                       <div
                         className={`flex ${
                           classSolutions[module.solutions[0].id]
-                        } h-8 text-white w-6/12 lg:w-7/12 xl:w-6/12 text-xs p-2 rounded-tr-lg self-end`}
+                        } h-8 text-white w-6/12 lg:w-7/12 xl:w-5/12 text-xs p-2 rounded-tr-lg self-end absolute`}
                       >
                         {module.solutions[0].icon}
                         <span className="hidden 2xl:flex ml-2">
@@ -180,8 +209,12 @@ export default function Modules(): JSX.Element {
                       {module.title}
                     </span>
                     <div className="flex flex-col">
-                      <span className="font-semibold text-lg mb-4">
-                        $ {formatByCurrencyMXN(module.price)}
+                      <span>
+                        {module.price == 0 ? (
+                          'Análisis detallado'
+                        ) : (
+                          <pre>$ {formatByCurrencyMXN(module.price)}</pre>
+                        )}
                       </span>
                       <div className="flex">
                         <AiOutlineClockCircle />
@@ -204,13 +237,20 @@ export default function Modules(): JSX.Element {
                     </span>
                   </div>
                 </div>
-              ))}
+              ))
+            ) : (
+              <div className="flex h-96 p-4 justify-center items-center w-full">
+                <p className="text-boo-gray-hard font-semibold">
+                  Selecciona tu plataforma para visualizar tus componentes
+                </p>
+              </div>
+            )}
           </div>
-          <div className="flex justify-center my-6">
-            <button className="py-2 px-4 rounded mr-2 border border-[boo-btn-bg text-boo-btn-bg hover:bg-boo-btn-bg-hover hover:text-white w-8/12 md:w-3/12">
-              <i className="fas fa-plus"></i> Cargar mas
-            </button>
-          </div>
+          {/*<div className="flex justify-center my-6">*/}
+          {/*  <button className="py-2 px-4 rounded mr-2 border border-[boo-btn-bg text-boo-btn-bg hover:bg-boo-btn-bg-hover hover:text-white w-8/12 md:w-3/12">*/}
+          {/*    <i className="fas fa-plus"></i> Cargar mas*/}
+          {/*  </button>*/}
+          {/*</div>*/}
         </div>
         <div className="p-4 w-full md:w-3/12 md:border-l-2">
           <p className="mb-6 font-semibold">
@@ -243,7 +283,13 @@ export default function Modules(): JSX.Element {
                   <div className="flex flex-col border-b mb-6 " key={module.id}>
                     <div className="flex text-xs justify-between">
                       <span className="w-8/12">{module.title}</span>
-                      <span> $ {formatByCurrencyMXN(module.price)}</span>
+                      <span>
+                        {module.price == 0 ? (
+                          'Análisis detallado'
+                        ) : (
+                          <pre>$ {formatByCurrencyMXN(module.price)}</pre>
+                        )}
+                      </span>
                     </div>
                     <span className="flex font-light text-xs text-boo-str-description mb-2 mt-2">
                       {module.timeStr}
@@ -258,14 +304,24 @@ export default function Modules(): JSX.Element {
                 ))}
               <div className="flex justify-between bg-boo-blue p-1 text-sm">
                 <p>Total</p>
-                <p>$ {getSubtotalPriceFormat(modulesMobile)}</p>
+                <p>
+                  {getSubtotalPriceFormat(modulesMobile) !== '0' && (
+                    <pre>
+                      $ {getSubtotalPriceFormat(modulesMobile)}
+                    </pre>
+                  )}
+                </p>
               </div>
               <div className="flex my-4">
                 <AiOutlineClockCircle />
                 <span className="font-light text-xs text-boo-str-description mb-2 ml-2">
                   Tiempo aprox de implementación
                   <p className="font-semibold mt-2">
-                    {getTotalDays(modulesMobile)} días
+                    {getTotalDays(modulesMobile) > 0 ? (
+                      <pre>{getTotalDays(modulesMobile)} días</pre>
+                    ) : (
+                      'Análisis detallado'
+                    )}
                   </p>
                 </span>
               </div>
@@ -299,7 +355,13 @@ export default function Modules(): JSX.Element {
                   <div className="flex flex-col border-b mb-6 " key={module.id}>
                     <div className="flex text-xs justify-between">
                       <span className="w-8/12">{module.title}</span>
-                      <span> $ {formatByCurrencyMXN(module.price)}</span>
+                      <span>
+                        {module.price == 0 ? (
+                          'Análisis detallado'
+                        ) : (
+                          <pre>$ {formatByCurrencyMXN(module.price)}</pre>
+                        )}
+                      </span>
                     </div>
                     <span className="flex font-light text-xs text-boo-str-description mb-2 mt-2">
                       {module.timeStr}
@@ -314,14 +376,24 @@ export default function Modules(): JSX.Element {
                 ))}
               <div className="flex justify-between bg-boo-blue p-1 text-sm">
                 <p>Total</p>
-                <p>$ {getSubtotalPriceFormat(modulesDesktop)}</p>
+                <p>
+                  {getSubtotalPriceFormat(modulesDesktop) !== '0' && (
+                    <pre>
+                      $ {getSubtotalPriceFormat(modulesDesktop)}
+                    </pre>
+                  )}
+                </p>
               </div>
               <div className="flex my-4 item">
                 <AiOutlineClockCircle />
                 <span className="font-light text-xs text-boo-str-description mb-2 ml-2">
                   Tiempo aprox de implementación
                   <p className="font-semibold mt-2">
-                    {getTotalDays(modulesDesktop)} días
+                    {getTotalDays(modulesDesktop) > 0 ? (
+                      <pre>{getTotalDays(modulesDesktop)} días</pre>
+                    ) : (
+                      'Análisis detallado'
+                    )}
                   </p>
                 </span>
               </div>
@@ -353,7 +425,13 @@ export default function Modules(): JSX.Element {
                   <div className="flex flex-col border-b mb-6 " key={module.id}>
                     <div className="flex text-xs justify-between">
                       <span className="w-8/12">{module.title}</span>
-                      <span> $ {formatByCurrencyMXN(module.price)}</span>
+                      <span>
+                        {module.price == 0 ? (
+                          'Análisis detallado'
+                        ) : (
+                          <pre>$ {formatByCurrencyMXN(module.price)}</pre>
+                        )}
+                      </span>
                     </div>
                     <span className="flex font-light text-xs text-boo-str-description mb-2 mt-2">
                       {module.timeStr}
@@ -368,14 +446,24 @@ export default function Modules(): JSX.Element {
                 ))}
               <div className="flex justify-between bg-boo-blue p-1 text-sm">
                 <p>Total</p>
-                <p>$ {getSubtotalPriceFormat(modulesWeb)}</p>
+                <p>
+                  {getSubtotalPriceFormat(modulesWeb) !== '0' && (
+                    <pre>
+                      $ {getSubtotalPriceFormat(modulesWeb)}
+                    </pre>
+                  )}
+                </p>
               </div>
               <div className="flex my-4 item">
                 <AiOutlineClockCircle />
                 <span className="font-light text-xs text-boo-str-description mb-2 ml-2">
                   Tiempo aprox de implementación
                   <p className="font-semibold mt-2">
-                    {getTotalDays(modulesWeb)} días
+                    {getTotalDays(modulesWeb) > 0 ? (
+                      <pre>{getTotalDays(modulesWeb)} días</pre>
+                    ) : (
+                      'Análisis detallado'
+                    )}
                   </p>
                 </span>
               </div>
@@ -385,14 +473,24 @@ export default function Modules(): JSX.Element {
             <>
               <div className="flex justify-between p-2">
                 <p>Total de los productos</p>
-                <p>$ {getSubtotalPriceFormat(currentModulesSelected)}</p>
+                <p>
+                  {getSubtotalPriceFormat(currentModulesSelected) !== '0' && (
+                    <pre>
+                      $ {getSubtotalPriceFormat(currentModulesSelected)}
+                    </pre>
+                  )}
+                </p>
               </div>
               <div className="flex my-4 item items-center">
                 <AiOutlineClockCircle className="text-boo-btn-bg" />
                 <span className="flex items-center font-light text-xs text-boo-str-description ml-2">
                   Tiempo total:
                   <p className="font-semibold ml-4">
-                    {getTotalDays(currentModulesSelected)} días
+                    {getTotalDays(currentModulesSelected) > 0 ? (
+                      <pre>{getTotalDays(currentModulesSelected)} días</pre>
+                    ) : (
+                      'Análisis detallado'
+                    )}
                   </p>
                 </span>
               </div>

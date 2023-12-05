@@ -965,7 +965,7 @@ const realestate: IAdditional[] = [
   },
 ];
 
-// solo data , sin costo y tiempo
+// OK
 const hospitality: IAdditional[] = [
   // additionals web hospitality
   {
@@ -975,8 +975,8 @@ const hospitality: IAdditional[] = [
     title: 'Sistema de Pedidos a Habitación',
     description:
       'Automatiza la solicitud y atención de servicios a la habitación.',
-    days: 12,
-    price: 20000,
+    days: 5,
+    price: 25000,
   },
   {
     id: 'additional_web_hospitality_complaints_suggestions',
@@ -984,8 +984,8 @@ const hospitality: IAdditional[] = [
     industry: 'hospitality',
     title: 'Sistema de Quejas y Sugerencias',
     description: 'Mejora tus procesos al gestionar las quejas y sugerencias.',
-    days: 12,
-    price: 20000,
+    days: 5,
+    price: 25000,
   },
   {
     id: 'additional_web_hospitality_events_conferences',
@@ -994,8 +994,8 @@ const hospitality: IAdditional[] = [
     title: 'Herramienta de gestión de eventos y conferencias',
     description:
       'Incorpora la programación y gestión de eventos y conferencias en tus salas.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_web_hospitality_financial_management',
@@ -1004,8 +1004,8 @@ const hospitality: IAdditional[] = [
     title: 'Plataforma de contabilidad y gestión financiera',
     description:
       'Controla en un solo lugar la contabilidad y aspectos financieros de tus hoteles.',
-    days: 12,
-    price: 20000,
+    days: 15,
+    price: 92000,
   },
   {
     id: 'additional_web_hospitality_rrhh',
@@ -1013,8 +1013,8 @@ const hospitality: IAdditional[] = [
     industry: 'hospitality',
     title: 'Módulo de gestión de recursos humanos',
     description: 'Administra tu plantilla laboral en la plataforma.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_web_hospitality_spa',
@@ -1022,8 +1022,8 @@ const hospitality: IAdditional[] = [
     industry: 'hospitality',
     title: 'Solución para la gestión de Spa y Bienestar',
     description: 'Integra la elección de servicios de Spa y Bienestar.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_web_hospitality_inventories',
@@ -1031,8 +1031,8 @@ const hospitality: IAdditional[] = [
     industry: 'hospitality',
     title: 'Sistema de inventarios',
     description: 'Mantén bajo control tu inventario.',
-    days: 12,
-    price: 20000,
+    days: 15,
+    price: 92000,
   },
   {
     id: 'additional_web_hospitality_different_users',
@@ -1041,8 +1041,8 @@ const hospitality: IAdditional[] = [
     title: 'Sistema de promociones para distintos usuarios',
     description:
       'Segmenta y publica tus promociones para atraer a tu clientes potenciales.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_web_hospitality_food_drinks',
@@ -1050,8 +1050,8 @@ const hospitality: IAdditional[] = [
     industry: 'hospitality',
     title: 'Administración de alimentos y bebidas',
     description: 'Gestiona los menús de tus hoteles según disponibilidad.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_web_hospitality_maintenance_cleaning',
@@ -1060,8 +1060,8 @@ const hospitality: IAdditional[] = [
     title: 'Sistema de gestión de mantenimiento y limpieza',
     description:
       'Gestiona los servicios de mantenimiento y limpieza en tus diferentes ubicaciones.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_web_hospitality_relationships_customers',
@@ -1070,8 +1070,8 @@ const hospitality: IAdditional[] = [
     title: 'Plataforma de administración de relaciones con los clientes',
     description:
       'Agrega herramientas que te ayudarán a gestionar las relaciones con tus clientes para ofrecer atención de calidad.',
-    days: 12,
-    price: 20000,
+    days: 15,
+    price: 92000,
   },
   {
     id: 'additional_web_hospitality_reservation_history',
@@ -1080,8 +1080,8 @@ const hospitality: IAdditional[] = [
     title: 'Historial de reservas',
     description:
       'Obtén un histórico de reservas que te ayudará a medir el desempeño y atender cualquier aclaración con respecto a las reservaciones en tus hoteles.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_web_hospitality_clarifications',
@@ -1090,8 +1090,8 @@ const hospitality: IAdditional[] = [
     title: 'Módulo de aclaraciones',
     description:
       'Gestiona los reclamos de tus clientes por medio de aclaraciones.',
-    days: 12,
-    price: 20000,
+    days: 5,
+    price: 25000,
   },
   // additionals desktop hospitality
   {
@@ -1101,8 +1101,8 @@ const hospitality: IAdditional[] = [
     title: 'Sistema de Pedidos a Habitación',
     description:
       'Automatiza la solicitud y atención de servicios a la habitación.',
-    days: 12,
-    price: 20000,
+    days: 5,
+    price: 25000,
   },
   {
     id: 'additional_desktop_hospitality_complaints_suggestions',
@@ -1110,8 +1110,8 @@ const hospitality: IAdditional[] = [
     industry: 'hospitality',
     title: 'Sistema de Quejas y Sugerencias',
     description: 'Mejora tus procesos al gestionar las quejas y sugerencias.',
-    days: 12,
-    price: 20000,
+    days: 5,
+    price: 25000,
   },
   {
     id: 'additional_desktop_hospitality_events_conferences',
@@ -1120,8 +1120,8 @@ const hospitality: IAdditional[] = [
     title: 'Herramienta de gestión de eventos y conferencias',
     description:
       'Incorpora la programación y gestión de eventos y conferencias en tus salas.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_desktop_hospitality_financial_management',
@@ -1130,8 +1130,8 @@ const hospitality: IAdditional[] = [
     title: 'Plataforma de contabilidad y gestión financiera',
     description:
       'Controla en un solo lugar la contabilidad y aspectos financieros de tus hoteles.',
-    days: 12,
-    price: 20000,
+    days: 15,
+    price: 92000,
   },
   {
     id: 'additional_desktop_hospitality_rrhh',
@@ -1139,8 +1139,8 @@ const hospitality: IAdditional[] = [
     industry: 'hospitality',
     title: 'Módulo de gestión de recursos humanos',
     description: 'Administra tu plantilla laboral en la plataforma.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_desktop_hospitality_spa',
@@ -1148,8 +1148,8 @@ const hospitality: IAdditional[] = [
     industry: 'hospitality',
     title: 'Solución para la gestión de Spa y Bienestar',
     description: 'Integra la elección de servicios de Spa y Bienestar.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_desktop_hospitality_inventories',
@@ -1157,8 +1157,8 @@ const hospitality: IAdditional[] = [
     industry: 'hospitality',
     title: 'Sistema de inventarios',
     description: 'Mantén bajo control tu inventario.',
-    days: 12,
-    price: 20000,
+    days: 15,
+    price: 92000,
   },
   {
     id: 'additional_desktop_hospitality_different_users',
@@ -1167,8 +1167,8 @@ const hospitality: IAdditional[] = [
     title: 'Sistema de promociones para distintos usuarios',
     description:
       'Segmenta y publica tus promociones para atraer a tu clientes potenciales.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_desktop_hospitality_food_drinks',
@@ -1176,8 +1176,8 @@ const hospitality: IAdditional[] = [
     industry: 'hospitality',
     title: 'Administración de alimentos y bebidas',
     description: 'Gestiona los menús de tus hoteles según disponibilidad.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_desktop_hospitality_maintenance_cleaning',
@@ -1186,8 +1186,8 @@ const hospitality: IAdditional[] = [
     title: 'Sistema de gestión de mantenimiento y limpieza',
     description:
       'Gestiona los servicios de mantenimiento y limpieza en tus diferentes ubicaciones.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_desktop_hospitality_relationships_customers',
@@ -1196,8 +1196,8 @@ const hospitality: IAdditional[] = [
     title: 'Plataforma de administración de relaciones con los clientes',
     description:
       'Agrega herramientas que te ayudarán a gestionar las relaciones con tus clientes para ofrecer atención de calidad.',
-    days: 12,
-    price: 20000,
+    days: 15,
+    price: 92000,
   },
   {
     id: 'additional_desktop_hospitality_reservation_history',
@@ -1206,8 +1206,8 @@ const hospitality: IAdditional[] = [
     title: 'Historial de reservas',
     description:
       'Obtén un histórico de reservas que te ayudará a medir el desempeño y atender cualquier aclaración con respecto a las reservaciones en tus hoteles.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_desktop_hospitality_clarifications',
@@ -1216,8 +1216,8 @@ const hospitality: IAdditional[] = [
     title: 'Módulo de aclaraciones',
     description:
       'Gestiona los reclamos de tus clientes por medio de aclaraciones.',
-    days: 12,
-    price: 20000,
+    days: 5,
+    price: 25000,
   },
   // additionals mobile hospitality
   {
@@ -1227,8 +1227,8 @@ const hospitality: IAdditional[] = [
     title: 'Sistema de Pedidos a Habitación',
     description:
       'Automatiza la solicitud y atención de servicios a la habitación.',
-    days: 12,
-    price: 20000,
+    days: 5,
+    price: 25000,
   },
   {
     id: 'additional_mobile_hospitality_complaints_suggestions',
@@ -1236,8 +1236,8 @@ const hospitality: IAdditional[] = [
     industry: 'hospitality',
     title: 'Sistema de Quejas y Sugerencias',
     description: 'Mejora tus procesos al gestionar las quejas y sugerencias.',
-    days: 12,
-    price: 20000,
+    days: 5,
+    price: 25000,
   },
   {
     id: 'additional_mobile_hospitality_events_conferences',
@@ -1246,8 +1246,27 @@ const hospitality: IAdditional[] = [
     title: 'Herramienta de gestión de eventos y conferencias',
     description:
       'Incorpora la programación y gestión de eventos y conferencias en tus salas.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
+  },
+  {
+    id: 'additional_mobile_hospitality_financial_management',
+    solution: 'mobile',
+    industry: 'hospitality',
+    title: 'Plataforma de contabilidad y gestión financiera',
+    description:
+      'Controla en un solo lugar la contabilidad y aspectos financieros de tus hoteles.',
+    days: 15,
+    price: 92000,
+  },
+  {
+    id: 'additional_mobile_hospitality_rrhh',
+    solution: 'mobile',
+    industry: 'hospitality',
+    title: 'Módulo de gestión de recursos humanos',
+    description: 'Administra tu plantilla laboral en la plataforma.',
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_mobile_hospitality_spa',
@@ -1255,8 +1274,17 @@ const hospitality: IAdditional[] = [
     industry: 'hospitality',
     title: 'Solución para la gestión de Spa y Bienestar',
     description: 'Integra la elección de servicios de Spa y Bienestar.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
+  },
+  {
+    id: 'additional_mobile_hospitality_inventories',
+    solution: 'mobile',
+    industry: 'hospitality',
+    title: 'Sistema de inventarios',
+    description: 'Mantén bajo control tu inventario.',
+    days: 15,
+    price: 92000,
   },
   {
     id: 'additional_mobile_hospitality_different_users',
@@ -1265,8 +1293,8 @@ const hospitality: IAdditional[] = [
     title: 'Sistema de promociones para distintos usuarios',
     description:
       'Segmenta y publica tus promociones para atraer a tu clientes potenciales.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_mobile_hospitality_food_drinks',
@@ -1274,8 +1302,8 @@ const hospitality: IAdditional[] = [
     industry: 'hospitality',
     title: 'Administración de alimentos y bebidas',
     description: 'Gestiona los menús de tus hoteles según disponibilidad.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_mobile_hospitality_maintenance_cleaning',
@@ -1284,18 +1312,8 @@ const hospitality: IAdditional[] = [
     title: 'Sistema de gestión de mantenimiento y limpieza',
     description:
       'Gestiona los servicios de mantenimiento y limpieza en tus diferentes ubicaciones.',
-    days: 12,
-    price: 20000,
-  },
-  {
-    id: 'additional_mobile_hospitality_reservation_history',
-    solution: 'mobile',
-    industry: 'hospitality',
-    title: 'Historial de reservas',
-    description:
-      'Obtén un histórico de reservas que te ayudará a medir el desempeño y atender cualquier aclaración con respecto a las reservaciones en tus hoteles.',
-    days: 12,
-    price: 20000,
+    days: 10,
+    price: 50000,
   },
   {
     id: 'additional_mobile_hospitality_clarifications',
@@ -1304,8 +1322,8 @@ const hospitality: IAdditional[] = [
     title: 'Módulo de aclaraciones',
     description:
       'Gestiona los reclamos de tus clientes por medio de aclaraciones.',
-    days: 12,
-    price: 20000,
+    days: 5,
+    price: 25000,
   },
 ];
 

@@ -52,7 +52,7 @@ export default function ShoppingCart(): JSX.Element {
     deleteModule,
   } = useModules();
 
-  const { setIntegrations, getIntegrationStatusCheck, getAdditionalsStorage } =
+  const { setIntegrations, getIntegrationStatusCheck, getAdditionalsStorage, addTemplatesStorage} =
     useIndustriesHook();
 
   const [showModalSelectSolution, setShowModalSelectSolution] =
@@ -122,11 +122,11 @@ export default function ShoppingCart(): JSX.Element {
   };
 
   const deleteTemplate = (id: string) => {
-    setSelectedIndustriesTemplate(
-      selectedIndustriesTemplate.filter(
-        (template: IIndustryTemplate) => template.id !== id
-      )
-    );
+    const currents  =selectedIndustriesTemplate.filter(
+      (template: IIndustryTemplate) => template.id !== id
+    )
+    setSelectedIndustriesTemplate(currents);
+    addTemplatesStorage(currents)
     setShowModalDelete(false);
   };
 

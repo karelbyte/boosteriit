@@ -14,7 +14,7 @@ export default function Methodologies(): JSX.Element {
     },
     {
       imagePath: '/assets/methodologies/www.svg',
-      title: 'Página web',
+      title: 'Aplicación Web',
       description: `Un sitio web responsivo que permite a las personas acceder desde cualquier dispositivo a tu página web 'www', siguiendo el ejemplo de 'apple.com'`,
     },
   ];

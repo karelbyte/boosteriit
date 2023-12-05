@@ -691,7 +691,7 @@ const realestate: IIndustryTemplate[] = [
   },
 ];
 
-// faltan tiempo y costo, en los extras faltan tiempo y costo
+// esta full, con funcionalidad y extras
 const hospitality: IIndustryTemplate[] = [
   {
     id: 'template_web_hospitality',
@@ -700,8 +700,8 @@ const hospitality: IIndustryTemplate[] = [
     icon: <MdWeb />,
     title: 'Aplicación web',
     short: 'App web',
-    days: 66,
-    price: 487500,
+    days: 77,
+    price: 500240,
     image: '/assets/templates/hospitality/image_web.svg',
     image_slide1: '/assets/templates/hospitality/hospitality1_web.svg',
     image_slide2: '/assets/templates/hospitality/hospitality2_web.svg',
@@ -711,8 +711,8 @@ const hospitality: IIndustryTemplate[] = [
       {
         id: 'template_web_hospitality_promotions',
         title: 'Pagina inicial con Promociones',
-        days: 30,
-        price: 25000,
+        days: 80,
+        price: 50000,
       },
       {
         id: 'template_web_hospitality_catalogo',
@@ -778,8 +778,8 @@ const hospitality: IIndustryTemplate[] = [
     icon: <BiDesktop />,
     title: 'Aplicación Escritorio',
     short: 'App escritorio',
-    days: 66,
-    price: 487500,
+    days: 77,
+    price: 500240,
     image: '/assets/templates/hospitality/image_desk.svg',
     image_slide1: '/assets/templates/hospitality/hospitality1_desk.svg',
     image_slide2: '/assets/templates/hospitality/hospitality2_desk.svg',
@@ -856,8 +856,8 @@ const hospitality: IIndustryTemplate[] = [
     icon: <FaMobileAlt />,
     title: 'Aplicación Movil',
     short: 'App movil',
-    days: 66,
-    price: 487500,
+    days: 55,
+    price: 408800,
     image: '/assets/templates/hospitality/image_mob.svg',
     image_slide1: '/assets/templates/hospitality/hospitality1_mob.svg',
     image_slide2: '/assets/templates/hospitality/hospitality2_mob.svg',
