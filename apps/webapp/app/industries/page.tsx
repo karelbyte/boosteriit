@@ -11,12 +11,17 @@ import { IAvailable, IIndustry, industries } from '../../data/industries';
 import Helper from '../components/molecules/Helper';
 import Image from 'next/image';
 import useIndustriesHook from '../hooks/useIndustriesHook';
-
+import useSolutions from '../hooks/solutionsHook.ts';
 export default function Industries(): JSX.Element {
   const { addIndustryStorage } = useIndustriesHook();
   const [term, setTerm] = useState<string>('');
   const [currents, setCurrents] = useState<IIndustry[]>([]);
-
+  const { addSolutionsStorage, setSelectedSolutions } = useSolutions();
+  const setPrimaryIndustry = (industry: IIndustry) => {
+    setSelectedSolutions([]);
+    addSolutionsStorage([]);
+    addIndustryStorage(industry);
+  };
   useEffect(() => {
     const industriesByTerm =
       term === ''
@@ -116,7 +121,7 @@ export default function Industries(): JSX.Element {
                     <SolutionSelectorModal nextPath="/industries-details">
                       <ActionBtn
                         title="+ Agregar"
-                        actionFn={() => addIndustryStorage(industry)}
+                        actionFn={() => setPrimaryIndustry(industry)}
                       />
                     </SolutionSelectorModal>
                   </div>

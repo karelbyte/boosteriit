@@ -47,6 +47,7 @@ export default function useSolutions() {
   }
 
   return {
+    addSolutionsStorage,
     getStatusCheck,
     getSolutionsStorage,
     selectedSolutions,

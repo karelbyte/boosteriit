@@ -475,7 +475,7 @@ export default function IndustriesDetails(): JSX.Element {
         </div>
       ) : (
         <div className="flex h-96 p-4 justify-center items-center w-full">
-          <p className="text-boo-gray-hard font-semibold">
+          <p className="text-boo-gray-hard font-semibold text-3xl">
             Selecciona tu plataforma para visualizar tus componentes
           </p>
         </div>
