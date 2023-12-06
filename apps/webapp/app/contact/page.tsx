@@ -17,9 +17,8 @@ export default async function Page(): Promise<JSX.Element> {
             </h1>
           </div>
 
-          <div className="grid grid-cols-1 gap-12 mt-10 lg:grid-cols-2">
-            <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
-              <div>
+          <div className="grid grid-cols-1 gap-12 mt-10 md:grid-cols-3 w-full">
+            <div>
                 <span className="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -37,15 +36,15 @@ export default async function Page(): Promise<JSX.Element> {
                   </svg>
                 </span>
 
-                <h2 className="mt-4 text-base font-medium text-gray-800 dark:text-white">
-                  Email
-                </h2>
-                <p className="mt-2 text-sm text-blue-500 dark:text-blue-400">
-                  admin@boosteriit.com
-                </p>
-              </div>
+              <h2 className="mt-4 text-base font-medium text-gray-800 dark:text-white">
+                Email
+              </h2>
+              <p className="mt-2 text-md text-boo-gray-hard">
+                admin@boosteriit.com
+              </p>
+            </div>
 
-              <div>
+            <div>
                 <span className="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -63,66 +62,37 @@ export default async function Page(): Promise<JSX.Element> {
                   </svg>
                 </span>
 
-                <h2 className="mt-4 text-base font-medium text-gray-800 dark:text-white">
-                  Telefono
-                </h2>
-                <p className="mt-2 text-sm text-blue-500 dark:text-blue-400">
-                  (+52) 53 312 309 8902
-                </p>
-              </div>
+              <h2 className="mt-4 text-base font-medium text-gray-800 dark:text-white">
+                Telefono
+              </h2>
+              <p className="mt-2 text-md text-boo-gray-hard">
+                (+52) 53 312 309 8902
+              </p>
             </div>
-
-            <div className="p-4 py-6 rounded-lg bg-gray-50 dark:bg-gray-800 md:p-8">
-              <form>
-                <div className="-mx-2 md:items-center md:flex">
-                  <div className="flex-1 px-2">
-                    <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
-                      Nombre
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="John "
-                      className="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+            <div>
+                <span className="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="w-5 h-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
                     />
-                  </div>
+                  </svg>
+                </span>
 
-                  <div className="flex-1 px-2 mt-4 md:mt-0">
-                    <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
-                      Apellidos
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="Juan Perez"
-                      className="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                    />
-                  </div>
-                </div>
-
-                <div className="mt-4">
-                  <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    placeholder="juanp@example.com"
-                    className="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                  />
-                </div>
-
-                <div className="w-full mt-4">
-                  <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
-                    Mensaje
-                  </label>
-                  <textarea
-                    className="block w-full h-32 px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg md:h-56 dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                    placeholder="Mensaje"
-                  ></textarea>
-                </div>
-
-                <button className="w-full px-6 py-3 mt-4 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
-                  Enviar
-                </button>
-              </form>
+              <h2 className="mt-4 text-base font-medium text-gray-800 dark:text-white">
+                Dirección
+              </h2>
+              <p className="mt-2 text-md text-boo-gray-hard ">
+                Torre Aura Corporativa, Av. Parque Royal Country #4650, Puerta de Hierro, Zapopan, Jalisco. C.P. 45116.
+              </p>
             </div>
           </div>
         </div>

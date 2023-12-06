@@ -116,6 +116,7 @@ export default function useIndustriesHook() {
     addAdditionalsStorage,
     getAdditionalsStorage,
     getStatusCheck,
+    addIntegrationsStorage,
     getIntegrationStatusCheck,
     setIntegrations,
     checkOptions,
