@@ -27,7 +27,6 @@ interface IPdfTemplateProps {
   type: string;
 }
 
-
 export default function PdfTemplate(props: IPdfTemplateProps) {
   const {
     name,

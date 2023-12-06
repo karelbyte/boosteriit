@@ -90,7 +90,7 @@ export const modules: IModule[] = [
   },
   {
     id: '2_web_catalogs',
-    image: '/assets/modules/m2.svg',
+    image: '/assets/modules/m2.png',
     title: 'Catalogo de Restaurantes o sucursales',
     subtitle: 'Catalogo de Restaurantes o sucursales',
     description: 'Gestiona los establecimientos que tus clientes podrán elegir',
@@ -111,7 +111,7 @@ export const modules: IModule[] = [
   },
   {
     id: '2_desktop_catalogs',
-    image: '/assets/modules/m2.svg',
+    image: '/assets/modules/m2.png',
     title: 'Catalogo de Restaurantes o sucursales',
     subtitle: 'Catalogo de Restaurantes o sucursales',
     description: 'Gestiona los establecimientos que tus clientes podrán elegir',
@@ -132,7 +132,7 @@ export const modules: IModule[] = [
   },
   {
     id: '2_mobile_catalogs',
-    image: '/assets/modules/m2.svg',
+    image: '/assets/modules/m2.png',
     title: 'Catalogo de Restaurantes o sucursales',
     subtitle: 'Catalogo de Restaurantes o sucursales',
     description: 'Gestiona los establecimientos que tus clientes podrán elegir',
@@ -348,7 +348,7 @@ export const modules: IModule[] = [
   },
   {
     id: '6_web_catalogs',
-    image: '/assets/modules/m6.svg',
+    image: '/assets/modules/m6.png',
     title: 'Gestion de menus y precios',
     subtitle: 'Gestion de menus y precios',
     description: 'Crea y personaliza los menús de tus establecimientos',
@@ -369,7 +369,7 @@ export const modules: IModule[] = [
   },
   {
     id: '6_desktop_catalogs',
-    image: '/assets/modules/m6.svg',
+    image: '/assets/modules/m6.png',
     title: 'Gestion de menus y precios',
     subtitle: 'Gestion de menus y precios',
     description: 'Crea y personaliza los menús de tus establecimientos',
@@ -390,7 +390,7 @@ export const modules: IModule[] = [
   },
   {
     id: '6_mobile_catalogs',
-    image: '/assets/modules/m6.svg',
+    image: '/assets/modules/m6.png',
     title: 'Gestion de menus y precios',
     subtitle: 'Gestion de menus y precios',
     description: 'Crea y personaliza los menús de tus establecimientos',
@@ -834,7 +834,7 @@ export const modules: IModule[] = [
   },
   {
     id: '14_web_inventories',
-    image: '/assets/modules/m14.svg',
+    image: '/assets/modules/m14.png',
     title: 'Módulo de Control de Inventarios',
     subtitle: 'Módulo de Control de Inventarios',
     description: 'Mantén bajo control tu inventario',
@@ -855,7 +855,7 @@ export const modules: IModule[] = [
   },
   {
     id: '14_desktop_inventories',
-    image: '/assets/modules/m14.svg',
+    image: '/assets/modules/m14.png',
     title: 'Módulo de Control de Inventarios',
     subtitle: 'Módulo de Control de Inventarios',
     description: 'Mantén bajo control tu inventario',
@@ -1044,7 +1044,7 @@ export const modules: IModule[] = [
   },
   {
     id: '18_web_customer_service',
-    image: '/assets/modules/m18.svg',
+    image: '/assets/modules/m18.png',
     title: 'Módulo Recomendación de Platillos',
     subtitle: 'Módulo Recomendación de Platillos',
     description:
@@ -1066,7 +1066,7 @@ export const modules: IModule[] = [
   },
   {
     id: '18_desktop_customer_service',
-    image: '/assets/modules/m18.svg',
+    image: '/assets/modules/m18.png',
     title: 'Módulo Recomendación de Platillos',
     subtitle: 'Módulo Recomendación de Platillos',
     description:
@@ -1088,7 +1088,7 @@ export const modules: IModule[] = [
   },
   {
     id: '18_mobile_customer_service',
-    image: '/assets/modules/m18.svg',
+    image: '/assets/modules/m18.png',
     title: 'Módulo Recomendación de Platillos',
     subtitle: 'Módulo Recomendación de Platillos',
     description:
@@ -1635,7 +1635,7 @@ export const modules: IModule[] = [
   },
   {
     id: '27_web_catalogs',
-    image: '/assets/modules/m27.svg',
+    image: '/assets/modules/m27.png',
     title: 'Gestión de Hoteles',
     subtitle: 'Gestión de Hoteles',
     description: 'Gestiona los hoteles que tus clientes podrán reservar',
@@ -1656,7 +1656,7 @@ export const modules: IModule[] = [
   },
   {
     id: '27_desktop_catalogs',
-    image: '/assets/modules/m27.svg',
+    image: '/assets/modules/m27.png',
     title: 'Gestión de Hoteles',
     subtitle: 'Gestión de Hoteles',
     description: 'Gestiona los hoteles que tus clientes podrán reservar',
@@ -1677,7 +1677,7 @@ export const modules: IModule[] = [
   },
   {
     id: '27_mobile_catalogs',
-    image: '/assets/modules/m27.svg',
+    image: '/assets/modules/m27.png',
     title: 'Gestión de Hoteles',
     subtitle: 'Gestión de Hoteles',
     description: 'Gestiona los hoteles que tus clientes podrán reservar',
@@ -1761,7 +1761,7 @@ export const modules: IModule[] = [
   },
   {
     id: '29_web_catalogs',
-    image: '/assets/modules/m29.svg',
+    image: '/assets/modules/m29.png',
     title: 'Gestión de Paquetes Turísticos',
     subtitle: 'Gestión de Paquetes Turísticos',
     description:
@@ -1783,7 +1783,7 @@ export const modules: IModule[] = [
   },
   {
     id: '29_desktop_catalogs',
-    image: '/assets/modules/m29.svg',
+    image: '/assets/modules/m29.png',
     title: 'Gestión de Paquetes Turísticos',
     subtitle: 'Gestión de Paquetes Turísticos',
     description:
@@ -1805,7 +1805,7 @@ export const modules: IModule[] = [
   },
   {
     id: '29_mobile_catalogs',
-    image: '/assets/modules/m29.svg',
+    image: '/assets/modules/m29.png',
     title: 'Gestión de Paquetes Turísticos',
     subtitle: 'Gestión de Paquetes Turísticos',
     description:
@@ -2049,7 +2049,7 @@ export const modules: IModule[] = [
   },
   {
     id: '33_web_histories',
-    image: '/assets/modules/m33.svg',
+    image: '/assets/modules/m33.png',
     title: 'Historial de compras',
     subtitle: 'Historial de compras',
     description: 'Permite la consulta de compras realizadas por tus clientes',
@@ -2070,7 +2070,7 @@ export const modules: IModule[] = [
   },
   {
     id: '33_desktop_histories',
-    image: '/assets/modules/m33.svg',
+    image: '/assets/modules/m33.png',
     title: 'Historial de compras',
     subtitle: 'Historial de compras',
     description: 'Permite la consulta de compras realizadas por tus clientes',
@@ -2091,7 +2091,7 @@ export const modules: IModule[] = [
   },
   {
     id: '33_mobile_histories',
-    image: '/assets/modules/m33.svg',
+    image: '/assets/modules/m33.png',
     title: 'Historial de compras',
     subtitle: 'Historial de compras',
     description: 'Permite la consulta de compras realizadas por tus clientes',
@@ -2963,7 +2963,7 @@ export const modules: IModule[] = [
   },
   {
     id: '48_web_crm',
-    image: '/assets/modules/m48.svg',
+    image: '/assets/modules/m48.png',
     title: 'CRM - Seguimiento de Prospectos',
     subtitle: 'CRM - Seguimiento de Prospectos',
     description:
@@ -2985,7 +2985,7 @@ export const modules: IModule[] = [
   },
   {
     id: '48_desktop_crm',
-    image: '/assets/modules/m48.svg',
+    image: '/assets/modules/m48.png',
     title: 'CRM - Seguimiento de Prospectos',
     subtitle: 'CRM - Seguimiento de Prospectos',
     description:
@@ -3007,7 +3007,7 @@ export const modules: IModule[] = [
   },
   {
     id: '48_mobile_crm',
-    image: '/assets/modules/m48.svg',
+    image: '/assets/modules/m48.png',
     title: 'CRM - Seguimiento de Prospectos',
     subtitle: 'CRM - Seguimiento de Prospectos',
     description:
@@ -4485,7 +4485,7 @@ export const modules: IModule[] = [
   },
   {
     id: '73_web_catalogs',
-    image: '/assets/modules/m73.svg',
+    image: '/assets/modules/m73.png',
     title: 'Administración de alimentos y bebidas',
     subtitle: 'Administración de alimentos y bebidas',
     description: 'Gestiona los menús de tus hoteles según disponibilidad',
@@ -4506,7 +4506,7 @@ export const modules: IModule[] = [
   },
   {
     id: '73_desktop_catalogs',
-    image: '/assets/modules/m73.svg',
+    image: '/assets/modules/m73.png',
     title: 'Administración de alimentos y bebidas',
     subtitle: 'Administración de alimentos y bebidas',
     description: 'Gestiona los menús de tus hoteles según disponibilidad',
@@ -4527,7 +4527,7 @@ export const modules: IModule[] = [
   },
   {
     id: '73_mobile_catalogs',
-    image: '/assets/modules/m73.svg',
+    image: '/assets/modules/m73.png',
     title: 'Administración de alimentos y bebidas',
     subtitle: 'Administración de alimentos y bebidas',
     description: 'Gestiona los menús de tus hoteles según disponibilidad',
@@ -4900,7 +4900,7 @@ export const modules: IModule[] = [
   },
   {
     id: '80_web_reservations_agendas_appointments',
-    image: '/assets/modules/m80.svg',
+    image: '/assets/modules/m80.png',
     title: 'Sistema de Agenda de citas',
     subtitle: 'Sistema de Agenda de citas',
     description:
@@ -4922,7 +4922,7 @@ export const modules: IModule[] = [
   },
   {
     id: '80_desktop_reservations_agendas_appointments',
-    image: '/assets/modules/m80.svg',
+    image: '/assets/modules/m80.png',
     title: 'Sistema de Agenda de citas',
     subtitle: 'Sistema de Agenda de citas',
     description:
@@ -4944,7 +4944,7 @@ export const modules: IModule[] = [
   },
   {
     id: '80_mobile_reservations_agendas_appointments',
-    image: '/assets/modules/m80.svg',
+    image: '/assets/modules/m80.png',
     title: 'Sistema de Agenda de citas',
     subtitle: 'Sistema de Agenda de citas',
     description:

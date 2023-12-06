@@ -26,11 +26,11 @@ import { IIntegration, integrations } from '../../data/integrations';
 import {
   classSolutions,
   formatByCurrencyMXN,
-  getAdditional,
+  getAdditional, getSubtotalPrice,
   getSubtotalPriceFormat,
-  getTotalDays,
-} from '../../utils';
-import { IAdditional } from '../../data/addtionals';
+  getTotalDays
+} from "../../utils";
+import { additionals, IAdditional } from '../../data/addtionals';
 import useIndustriesHook from '../hooks/useIndustriesHook';
 
 export default function IndustriesDetails(): JSX.Element {
@@ -42,6 +42,8 @@ export default function IndustriesDetails(): JSX.Element {
     setSelectedIndustriesTemplate,
     selectedAdditionals,
     setSelectedAdditionals,
+    selectedIntegrations,
+    setSelectedIntegrations,
   } = useAppContext();
 
   const {
@@ -52,6 +54,7 @@ export default function IndustriesDetails(): JSX.Element {
     getStatusCheck,
     getIntegrationStatusCheck,
     addAdditionalsStorage,
+    addIntegrationsStorage,
   } = useIndustriesHook();
 
   const [currentIntegrations, setCurrentIntegrations] = useState<
@@ -75,9 +78,21 @@ export default function IndustriesDetails(): JSX.Element {
     return showDetails.find((solution: string) => solution === id);
   };
 
+  function uniques(coleccion: IAdditional[]) {
+    const idsSee = new Set();
+    return coleccion.filter((objeto: IAdditional) => {
+      if (!idsSee.has(objeto.id)) {
+        idsSee.add(objeto.id);
+        return true;
+      }
+      return false;
+    });
+  }
+
   useEffect(() => {
     setSelectedIndustriesTemplate([]);
     setCurrentIntegrations([]);
+
     const templateForIndustries = industriesTemplate.filter(
       (template: IIndustryTemplate) =>
         template.industry === selectedIndustry?.id
@@ -95,15 +110,17 @@ export default function IndustriesDetails(): JSX.Element {
         );
       }
     );
-    const currentAdditionals = selectedAdditionals
-      .concat(currentAdditionaStorage)
-      .filter(
-        (additional: IAdditional) =>
-          additional.industry === selectedIndustry?.id
-      )
-      .filter((additional: IAdditional) =>
-        solutions.includes(additional.solution)
-      );
+    const currentAdditionals = uniques(
+      selectedAdditionals
+        .concat(currentAdditionaStorage)
+        .filter(
+          (additional: IAdditional) =>
+            additional.industry === selectedIndustry?.id
+        )
+        .filter((additional: IAdditional) =>
+          solutions.includes(additional.solution)
+        )
+    );
     const integrationByIndustry = integrations.filter(
       (integration: IIntegration) =>
         integration.industries.includes(selectedIndustry?.id || 'trips')
@@ -114,7 +131,15 @@ export default function IndustriesDetails(): JSX.Element {
           solutions.includes(solution)
         )
     );
-
+    const enabledIntegrationsIds = integrationBySolution.map(
+      (integration: IIntegration) => integration.id
+    );
+    const enabledIntegrations = selectedIntegrations.filter(
+      (integration: IIntegration) =>
+        enabledIntegrationsIds.includes(integration.id)
+    );
+    setSelectedIntegrations(enabledIntegrations);
+    addIntegrationsStorage(enabledIntegrations);
     setCurrentIntegrations(integrationBySolution);
     setSelectedAdditionals(currentAdditionals);
     addAdditionalsStorage(currentAdditionals);
@@ -122,6 +147,23 @@ export default function IndustriesDetails(): JSX.Element {
     addTemplatesStorage(currents);
   }, [selectedSolutions, selectedIndustry]);
 
+  const getSelectedCount = () => {
+    const industriesCount = selectedIndustriesTemplate.length;
+    const integrationsCount = selectedIntegrations.length;
+    const additionalsCount = selectedAdditionals.length;
+    return industriesCount + integrationsCount + additionalsCount;
+  };
+
+  const getAdditionalByTemplate = (solution: string) => {
+    return selectedAdditionals.filter(
+      (additional: IAdditional) => additional.solution == solution
+    );
+  };
+
+  const calculateSubtotal = () => {
+   const subTotal = getSubtotalPrice(selectedIndustriesTemplate) + getSubtotalPrice(selectedAdditionals)
+    return formatByCurrencyMXN(subTotal)
+  }
   return (
     <div className="overflow-hidden">
       <Header title={'Industrias'} urlBack={'/'}>
@@ -359,15 +401,36 @@ export default function IndustriesDetails(): JSX.Element {
           </div>
           <div className="p-4 w-full md:w-3/12 md:border-l-2">
             <p className="mb-6 font-semibold">
-              Seleccionados ({selectedIndustriesTemplate.length})
+              Seleccionados ({getSelectedCount()})
             </p>
             {selectedIndustriesTemplate.length > 0 &&
               selectedIndustriesTemplate.map((template: IIndustryTemplate) => (
-                <div key={template.id}>
-                  <div className="flex justify-between p-2">
+                <div key={template.id} className="border-b">
+                  <div className="flex justify-between py-2">
                     <p>{template.title}</p>
                     <p>${formatByCurrencyMXN(template.price)}</p>
                   </div>
+                  {getAdditionalByTemplate(template.solution).length > 0 && (
+                    <div>
+                      <p>Extras</p>
+                      {getAdditionalByTemplate(template.solution).map(
+                        (additional: IAdditional) => (
+                          <div
+                            key={additional.id}
+                            className="flex flex-col mb-4"
+                          >
+                            <p className="text-boo-str-description">
+                              {additional.title}
+                            </p>
+                            <div className="flex justify-between">
+                              <p>Dias: {additional.days}</p>
+                              <p>${formatByCurrencyMXN(additional.price)}</p>
+                            </div>
+                          </div>
+                        )
+                      )}
+                    </div>
+                  )}
                   <div className="flex my-4 item items-center">
                     <AiOutlineClockCircle className="text-boo-btn-bg" />
                     <span className="flex items-center font-light text-xs text-boo-str-description ml-2">
@@ -377,11 +440,21 @@ export default function IndustriesDetails(): JSX.Element {
                   </div>
                 </div>
               ))}
+            {selectedIntegrations && selectedIntegrations.length > 0 && (
+              <div className="my-6">
+                <p className="font-semibold my-4">Integraciones</p>
+                {selectedIntegrations.map((integration: IIntegration) => (
+                  <p key={integration.id} className="text-boo-str-description">
+                    • {integration.title}
+                  </p>
+                ))}
+              </div>
+            )}
             {selectedIndustriesTemplate.length > 0 && (
               <div className="flex flex-col">
                 <div className="flex justify-between p-2">
                   <p>Total de los productos</p>
-                  <p>$ {getSubtotalPriceFormat(selectedIndustriesTemplate)}</p>
+                  <p>${calculateSubtotal()}</p>
                 </div>
                 <ActionBtn
                   title="Agregar al carrito"
@@ -392,7 +465,7 @@ export default function IndustriesDetails(): JSX.Element {
                   <span className="flex items-center font-light text-xs text-boo-str-description ml-2">
                     Tiempo total:
                     <p className="font-semibold ml-2">
-                      {getTotalDays(selectedIndustriesTemplate)} días
+                      {getTotalDays(selectedIndustriesTemplate) + getTotalDays(selectedAdditionals)} días
                     </p>
                   </span>
                 </div>

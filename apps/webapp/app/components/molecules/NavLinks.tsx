@@ -14,7 +14,7 @@ export default function NavLinks(props: INavLinksProps): JSX.Element {
           <Link
             href={option.path}
             key={index}
-            className="shrink-0 mr-0 md:mr-10 lg:mr-14 hover:text-gray-900 cursor-pointer"
+            className="shrink-0 mr-0 md:mr-10 lg:mr-14 hover:text-boo-btn-bg cursor-pointer"
           >
             {option.title}
           </Link>

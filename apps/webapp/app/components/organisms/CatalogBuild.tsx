@@ -10,6 +10,7 @@ import { useRouter } from 'next/navigation';
 import ContactModal from './ContactModal';
 import DataSendModal from './DataSendModal';
 import RequestSentModal from './RequestSentModal';
+import Image from 'next/image';
 
 interface ISettings {
   dots?: boolean;
@@ -34,6 +35,17 @@ export default function CatalogBuild(): JSX.Element {
 
   const [showModalRequest, setShowModalRequest] = useState<boolean>(false);
 
+  const [showModal, setShowModal] = useState<boolean>(false);
+
+  // const [items, setItems] = useState<IModule[]>([]);
+
+  // useEffect(() => {
+  //   for (const i of Array.of(1, 2, 3, 4)) {
+  //     const indexRan: number = Math.floor(Math.random() * modules.length)
+  //     setItems([...items, modules[indexRan]]);
+  //   }
+  // }, []);
+
   const modalContactProps = {
     showModal: showModalContact,
     setShowModal: setShowModalContact,
@@ -56,7 +68,7 @@ export default function CatalogBuild(): JSX.Element {
     ],
   };
 
-  const items = modules.slice(0, 4);
+  const items = [modules[5], modules[72], modules[170], modules[150]];
 
   const slider: React.MutableRefObject<any> = React.useRef<any>(Slider);
 
@@ -79,8 +91,6 @@ export default function CatalogBuild(): JSX.Element {
       </div>
     );
   };
-
-  const [showModal, setShowModal] = useState<boolean>(false);
 
   const setShowModalAndModule = (module: IModule) => {
     setShowModal(true);
@@ -109,7 +119,16 @@ export default function CatalogBuild(): JSX.Element {
             items.map((item: IModule, index: number) => (
               <div key={index} className="p-2">
                 <div className="flex flex-col border rounded-lg p-6 h-[28rem]">
-                  <div className="h-64"></div>
+                  <div className="h-64">
+                    <Image
+                      src={item.image}
+                      width="150"
+                      height="140"
+                      priority
+                      alt="Boosteriit"
+                      className="w-full"
+                    />
+                  </div>
 
                   <p className="mb-2 mt-2 text-md">{item.title}</p>
                   <p className="text-[#686767] mb-6 text-xs">{item.subtitle}</p>
