@@ -6,17 +6,18 @@ import {useRouter} from "next/navigation";
 
 interface ISolutionBreadcrumbsProps {
   setShowModalSelectSolution: React.Dispatch<React.SetStateAction<boolean>>;
+  url: string;
 }
 
 export default function SolutionBreadcrumbs(
   props: ISolutionBreadcrumbsProps
 ): JSX.Element {
-  const { setShowModalSelectSolution } = props;
-  const { selectedSolutions } = useAppContext();
+  const { url , setShowModalSelectSolution } = props;
+  const { selectedSolutions, } = useAppContext();
   const router = useRouter()
 
   const goToBack = () => {
-    router.back()
+    router.push(url)
   }
   return (
     <div className="flex items-center">

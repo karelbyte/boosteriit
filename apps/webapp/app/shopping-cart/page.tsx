@@ -162,7 +162,7 @@ export default function ShoppingCart(): JSX.Element {
                 <p className="text-xl xl:text-2xl mb-4 mt-4 md:mt-10">
                   Arma una solución a tu medida
                 </p>
-                <SolutionBreadcrumbs
+                <SolutionBreadcrumbs url={'/modules'}
                   setShowModalSelectSolution={setShowModalSelectSolution}
                 />
                 <div className="flex flex-col md:flex-row w-full mt-4">
@@ -203,7 +203,7 @@ export default function ShoppingCart(): JSX.Element {
                 <p className="text-xl xl:text-2xl mb-4">
                   Industria | {selectedIndustry?.title}
                 </p>
-                <SolutionBreadcrumbs
+                <SolutionBreadcrumbs url={'/industries-details'}
                   setShowModalSelectSolution={setShowModalSelectSolution}
                 />
                 <div className="flex flex-col md:flex-row w-full mt-4">
