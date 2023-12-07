@@ -10,7 +10,7 @@ export default function Back(props: IBackProps): JSX.Element {
   const router = useRouter();
   const goToUrl = () => {
     if (actionFn) actionFn()
-    router.push(url);
+    router.back()
   };
   return <BsArrowLeftCircle onClick={() => goToUrl()} className="cursor-pointer" />;
 }

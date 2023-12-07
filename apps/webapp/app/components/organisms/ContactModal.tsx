@@ -6,6 +6,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { BsShield } from 'react-icons/bs';
 import { getDateNowFormat, isValidEmail } from '../../../utils';
 import useAppContext from '../../contexts/hookAppContext';
+import now = jest.now;
 
 interface IContactModalProps {
   showModal: boolean;
@@ -41,6 +42,7 @@ export default function ContactModal(props: IContactModalProps): JSX.Element {
   const [date, setDate] = useState<string>(min);
   const [time, setTime] = useState<string>('09:00');
   const [phone, setPhone] = useState<string>('');
+  const [styleClock, setStyleClock] = useState<string>('border border rounded-lg mt-4 p-2 mr-4 w-full')
 
   const [enableBtnMeet, setEnableBtnMeet] = useState<boolean>(true);
 
@@ -52,7 +54,8 @@ export default function ContactModal(props: IContactModalProps): JSX.Element {
     const checkDate = date !== '';
     const checkTime = time !== '';
     const checkPhone = phone !== '';
-    setEnableBtnMeet(!(checkName && checkMail && checkDate && checkTime));
+    const goodDate = new Date(date) > new Date()
+    setEnableBtnMeet(!(checkName && checkMail && checkDate && checkTime && goodDate));
     setEnableBtnCall(!(checkName && checkMail && checkPhone));
   }, [name, email, date, time, phone]);
 
@@ -64,6 +67,7 @@ export default function ContactModal(props: IContactModalProps): JSX.Element {
     setPhone('');
     setShowModal(false);
   };
+
 
   const build = async (type: string) => {
     setSending(true);
@@ -96,6 +100,15 @@ export default function ContactModal(props: IContactModalProps): JSX.Element {
       if (activeModalError) activeModalError(true);
     }
   };
+
+  useEffect(() => {
+    if (new Date(date) < new Date()) {
+      setStyleClock('border border-red-600 rounded-lg mt-4 p-2 mr-4 w-full ')
+    } else {
+      setStyleClock('border border rounded-lg mt-4 p-2 mr-4 w-full')
+    }
+  }, [date]);
+
 
   return (
     <>
@@ -146,7 +159,7 @@ export default function ContactModal(props: IContactModalProps): JSX.Element {
                     </span>
                     <div className="border rounded-lg mt-4 p-2">
                       <span className="text-xs text-boo-str-description ">
-                        Nombre completo (obligatorio)
+                        Nombre (obligatorio)
                       </span>
                       <input
                         type="text"
@@ -168,7 +181,7 @@ export default function ContactModal(props: IContactModalProps): JSX.Element {
                       />
                     </div>
                     <div className="flex mb-4 w-full">
-                      <div className="border rounded-lg mt-4 p-2 mr-4 w-full">
+                      <div className={styleClock}>
                         <span className="text-xs text-boo-str-description">
                           Fecha (obligatorio)
                         </span>
