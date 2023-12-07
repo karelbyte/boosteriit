@@ -5,14 +5,18 @@ import { render } from '@react-email/render';
 import PdfTemplate from './PdfTemplate';
 import { renderToFile } from '@joshuajaco/react-pdf-renderer-bundled';
 import { NextResponse } from 'next/server';
-
+import fs from 'fs';
 export async function POST(request: Request) {
   const res = await request.json();
   const { name, email, date } = res;
 
-  const fileName = `cliente_${name}_${date}.pdf`;
+  if (!fs.existsSync('./public/pdfs')) {
+    fs.mkdirSync('./public/pdfs');
+  }
+  const nameSanitize = name.replace(/[#@.;\s]/g, '');
+  const fileName = `cliente_${nameSanitize}_${date}.pdf`;
   const unix = new Date().getTime();
-  const fullFilePath = `./public/pdfs/${name}_${date}_${unix}.pdf`;
+  const fullFilePath = `./public/pdfs/${nameSanitize}_${date}_${unix}.pdf`;
 
   const emailHtml = render(emailTemplate(res));
 
@@ -20,7 +24,7 @@ export async function POST(request: Request) {
 
   await handleEmailFire({
     to: email,
-    subject: 'Autocotización cliente ' + name,
+    subject: 'Autocotización cliente ' + nameSanitize,
     html: emailHtml,
     attachments: [
       {
@@ -30,7 +34,7 @@ export async function POST(request: Request) {
       },
     ],
   });
-
+  console.log('Correo enviado con exito!');
   return NextResponse.json({
     message: 'Mail send success!',
   });
