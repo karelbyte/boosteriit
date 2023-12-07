@@ -3,6 +3,8 @@ import Back from '../atoms/Back';
 import Logo from '../atoms/Logo';
 import React, { MouseEventHandler } from 'react';
 import { SlMagnifier } from 'react-icons/sl';
+import MobileNav from "./MobileNav";
+import { ILink } from "../organisms/MainNavbar";
 export interface IHeader {
   title: string;
   children?: JSX.Element;
@@ -13,11 +15,22 @@ export interface IHeader {
 
 export default function Header(props: IHeader): JSX.Element {
   const { title, children, urlBack, childrenShow, actionFn }: IHeader = props;
+
+  const links: ILink[] = [
+    { path: '/industries', title: 'Industria' },
+    { path: '/modules', title: 'Arma tu solución' },
+    { path: '/contact', title: 'Contacto' },
+  ];
+
   return (
     <header className="text-gray-900 body-font fixed bg-white w-full z-10">
       <div className="mx-auto flex items-center justify-between sm:border-slate-700 py-2 px-8 sm:py-4 sm:px-10 lg:px-20 md:flex-row border-b-1 shadow-sm">
         <div className="flex items-center md:gap-4">
-          {/*<Back url={urlBack} actionFn={actionFn} />*/}
+          <MobileNav options={links} />
+          <div className="ml-4 flex md:hidden">
+            <Back url={urlBack} actionFn={actionFn} />
+          </div>
+
           <div className="hidden md:flex">
             <Logo />
           </div>

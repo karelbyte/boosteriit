@@ -26,10 +26,11 @@ import { IIntegration, integrations } from '../../data/integrations';
 import {
   classSolutions,
   formatByCurrencyMXN,
-  getAdditional, getSubtotalPrice,
+  getAdditional,
+  getSubtotalPrice,
   getSubtotalPriceFormat,
-  getTotalDays
-} from "../../utils";
+  getTotalDays,
+} from '../../utils';
 import { additionals, IAdditional } from '../../data/addtionals';
 import useIndustriesHook from '../hooks/useIndustriesHook';
 
@@ -161,9 +162,11 @@ export default function IndustriesDetails(): JSX.Element {
   };
 
   const calculateSubtotal = () => {
-   const subTotal = getSubtotalPrice(selectedIndustriesTemplate) + getSubtotalPrice(selectedAdditionals)
-    return formatByCurrencyMXN(subTotal)
-  }
+    const subTotal =
+      getSubtotalPrice(selectedIndustriesTemplate) +
+      getSubtotalPrice(selectedAdditionals);
+    return formatByCurrencyMXN(subTotal);
+  };
   return (
     <div className="overflow-hidden">
       <Header title={'Industrias'} urlBack={'/'}>
@@ -194,17 +197,6 @@ export default function IndustriesDetails(): JSX.Element {
                         {template.short}
                       </span>
                     </div>
-                    <div className="flex flex-col md:flex-row my-4 items-center text-xs text-boo-str-description">
-                      <span className="font-light md:mr-2">
-                        Tiempo de implementación
-                      </span>
-                      <div className="flex items-center self-end ">
-                        <AiOutlineClockCircle />
-                        <p className="ml-2 font-semibold">
-                          {template.days} días
-                        </p>
-                      </div>
-                    </div>
                   </div>
                   <div className="my-2 flex flex-col w-full">
                     <div className="flex flex-col md:flex-row w-full justify-between items-start">
@@ -230,6 +222,17 @@ export default function IndustriesDetails(): JSX.Element {
                               <p className="ml-2">{feature.title}</p>
                             </div>
                           ))}
+                        <div className="flex flex-col md:flex-row my-4 items-center text-xs text-boo-str-description">
+                          <span className="font-light md:mr-2">
+                            Tiempo de implementación
+                          </span>
+                          <div className="flex items-center self-end ">
+                            <AiOutlineClockCircle />
+                            <p className="ml-2 font-semibold">
+                              {template.days} días
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -294,17 +297,19 @@ export default function IndustriesDetails(): JSX.Element {
                         ).map((additional: IAdditional) => (
                           <div
                             key={additional.id}
-                            className="flex flex-col md:px-2 md:py-4 w-full md:w-1/3"
+                            className="flex flex-col md:px-2 md:py-4 w-full md:w-1/3 mb-6 md:mb-0"
                           >
                             <div className="flex flex-col justify-start border-t border-x p-4 md:rounded-t-lg h-full">
-                              <span className="text-boo-gray-hard text-sm font-light mb-4">
+                              <span className="text-boo-gray-hard text-sm font-light mb-4 pb-2 border-b-2 md:border-b-0">
                                 {additional.title}
                               </span>
                               <div className="flex flex-col">
                                 <span className="text-boo-str-description mb-4">
                                   {additional.description}
                                 </span>
-                                <p>$ {additional.price} + IVA</p>
+                                <p>
+                                  ${formatByCurrencyMXN(additional.price)} + IVA
+                                </p>
                                 <div className="flex my-4 items-center text-xs text-boo-str-description">
                                   <AiOutlineClockCircle />
                                   <p className="ml-2">
@@ -465,7 +470,9 @@ export default function IndustriesDetails(): JSX.Element {
                   <span className="flex items-center font-light text-xs text-boo-str-description ml-2">
                     Tiempo total:
                     <p className="font-semibold ml-2">
-                      {getTotalDays(selectedIndustriesTemplate) + getTotalDays(selectedAdditionals)} días
+                      {getTotalDays(selectedIndustriesTemplate) +
+                        getTotalDays(selectedAdditionals)}{' '}
+                      días
                     </p>
                   </span>
                 </div>
@@ -475,7 +482,7 @@ export default function IndustriesDetails(): JSX.Element {
         </div>
       ) : (
         <div className="flex h-96 p-4 justify-center items-center w-full">
-          <p className="text-boo-gray-hard font-semibold">
+          <p className="text-boo-gray-hard font-semibold text-3xl">
             Selecciona tu plataforma para visualizar tus componentes
           </p>
         </div>

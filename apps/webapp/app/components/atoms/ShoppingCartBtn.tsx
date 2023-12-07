@@ -25,9 +25,11 @@ export default function ShoppingCartBtn(): JSX.Element {
       onClick={() => goToUrl('/shopping-cart')}
     >
       <AiOutlineShoppingCart />
-      <div className="absolute border px-[5px] -top-2 -right-2 rounded-full text-xs bg-red-700 text-white">
-        {getItemsCount}
-      </div>
+      {getItemsCount > 0 && (
+        <div className="absolute border px-[5px] -top-2 -right-2 rounded-full text-xs bg-red-700 text-white">
+          {getItemsCount}
+        </div>
+      )}
     </button>
   );
 }

@@ -11,12 +11,17 @@ import { IAvailable, IIndustry, industries } from '../../data/industries';
 import Helper from '../components/molecules/Helper';
 import Image from 'next/image';
 import useIndustriesHook from '../hooks/useIndustriesHook';
-
+import useSolutions from '../hooks/solutionsHook.ts';
 export default function Industries(): JSX.Element {
   const { addIndustryStorage } = useIndustriesHook();
   const [term, setTerm] = useState<string>('');
   const [currents, setCurrents] = useState<IIndustry[]>([]);
-
+  const { addSolutionsStorage, setSelectedSolutions } = useSolutions();
+  const setPrimaryIndustry = (industry: IIndustry) => {
+    setSelectedSolutions([]);
+    addSolutionsStorage([]);
+    addIndustryStorage(industry);
+  };
   useEffect(() => {
     const industriesByTerm =
       term === ''
@@ -43,34 +48,34 @@ export default function Industries(): JSX.Element {
             key={industry.id}
             className="flex flex-col justify-between md:flex-row sm:py-4 sm:px-10 lg:px-20"
           >
-            <div className="flex flex-col md:hidden justify-between w-full border-b p-4 pb-6 mb-4">
-              <div className="flex items-start w-full md:w-1/2 rounded-lg md:mr-12 p-4">
-                <Image
-                  src={industry.imageBig}
-                  width="100"
-                  height="140"
-                  className="w-2/12"
-                  loading={'lazy'}
-                  alt="Boosteriit"
-                />
-                <div className="flex flex-col ml-4">
-                  <span className="font-bold  mb-3">{industry.title}</span>
-                  <span className="mb-3 text-sm text-boo-gray-hard">
-                    {industry.description}
-                  </span>
-                </div>
-              </div>
+            {/*<div className="flex flex-col md:hidden justify-between w-full border-b p-4 pb-6 mb-4">*/}
+            {/*  <div className="flex items-start w-full md:w-1/2 rounded-lg md:mr-12 p-4">*/}
+            {/*    <Image*/}
+            {/*      src={industry.imageBig}*/}
+            {/*      width="100"*/}
+            {/*      height="140"*/}
+            {/*      className="w-2/12"*/}
+            {/*      loading={'lazy'}*/}
+            {/*      alt="Boosteriit"*/}
+            {/*    />*/}
+            {/*    <div className="flex flex-col ml-4">*/}
+            {/*      <span className="font-bold  mb-3">{industry.title}</span>*/}
+            {/*      <span className="mb-3 text-sm text-boo-gray-hard">*/}
+            {/*        {industry.description}*/}
+            {/*      </span>*/}
+            {/*    </div>*/}
+            {/*  </div>*/}
 
-              <div className="w-full md:w-8/12">
-                <SolutionSelectorModal nextPath="/industries-details">
-                  <ActionBtn
-                    title="+ Agregar"
-                    actionFn={() => addIndustryStorage(industry)}
-                  />
-                </SolutionSelectorModal>
-              </div>
-            </div>
-            <div className="hidden md:flex  md:flex-row justify-between w-full border-b p-4">
+            {/*  <div className="w-full md:w-8/12">*/}
+            {/*    <SolutionSelectorModal nextPath="/industries-details">*/}
+            {/*      <ActionBtn*/}
+            {/*        title="+ Agregar"*/}
+            {/*        actionFn={() => addIndustryStorage(industry)}*/}
+            {/*      />*/}
+            {/*    </SolutionSelectorModal>*/}
+            {/*  </div>*/}
+            {/*</div>*/}
+            <div className="flex flex-col md:flex-row justify-between w-full border-b p-4">
               <div className="relative w-full md:w-1/2 rounded-lg md:mr-12">
                 <Image
                   src={industry.imageBig}
@@ -96,14 +101,14 @@ export default function Industries(): JSX.Element {
 
                 <div className="">
                   <span className="text-boo-gray-hard">Disponible para:</span>
-                  <div className="flex flex-col xl:flex-row mb-6 mt-2">
+                  <div className="flex flex-row md:flex-col xl:flex-row mb-6 mt-2 justify-between md:justify-start">
                     {industry.available &&
                       industry.available.map(
                         (item: IAvailable, index: number) => (
                           <div
                             className={`flex items-center mt-2 lg:mt-2 lg:mr-6 ${
                               classSolutions[item.id]
-                            } p-2 rounded-md text-white`}
+                            } p-2 rounded-md text-white text-xs md:text-sm`}
                             key={index}
                           >
                             {item.icon}
@@ -116,7 +121,7 @@ export default function Industries(): JSX.Element {
                     <SolutionSelectorModal nextPath="/industries-details">
                       <ActionBtn
                         title="+ Agregar"
-                        actionFn={() => addIndustryStorage(industry)}
+                        actionFn={() => setPrimaryIndustry(industry)}
                       />
                     </SolutionSelectorModal>
                   </div>

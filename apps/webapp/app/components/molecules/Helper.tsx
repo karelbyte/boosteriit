@@ -26,7 +26,7 @@ export default function Helper(): JSX.Element {
   useEffect(() => {
     const flickerInterval = setInterval(() => {
       setVisible((prevVisible) => !prevVisible);
-    }, 6000);
+    }, 10000);
 
     return () => clearInterval(flickerInterval);
   }, []);
@@ -43,7 +43,7 @@ export default function Helper(): JSX.Element {
     <div>
       <div className="flex items-center fixed bottom-[8rem] md:bottom-0 right-0 m-4 text-white rounded z-10">
         {visible && (
-          <div className="relative flex flex-col bg-boo-gray-hard p-2 h-18 rounded-lg">
+          <div className="hidden md:flex relative flex-col bg-boo-gray-hard p-2 h-18 rounded-lg">
             <div className="absolute bottom-2 -right-1 h-4 w-4 border-white rotate-45 bg-boo-gray-hard "></div>
             <span>¿Tienes dudas?</span>
             <span className="z-10">Obtén atención personalizada</span>

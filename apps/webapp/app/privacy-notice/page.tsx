@@ -72,7 +72,6 @@ export default function Privacy(): JSX.Element {
             rastreo o terceros.
           </p>
           <p className="font-semibold mb-4">
-            {' '}
             3.- Datos personales que recabamos
           </p>
           <p className="text-justify mb-4">
@@ -110,7 +109,6 @@ export default function Privacy(): JSX.Element {
             recopilar y utilizar sus datos para los fines antes señalados.
           </p>
           <p className="font-semibold mb-4">
-            {' '}
             4.- Datos Personales Sensibles que recabamos.
           </p>
           <p className="text-justify mb-4">
@@ -118,7 +116,6 @@ export default function Privacy(): JSX.Element {
             través de ningún medio.
           </p>
           <p className="font-semibold mb-4">
-            {' '}
             5.- Recolección de Datos al Navegar en sitios web de “Goldstone
             Inventions SAPI DE CV”.
           </p>
@@ -159,7 +156,6 @@ export default function Privacy(): JSX.Element {
             Inventions SAPI DE CV”.
           </p>
           <p className="font-semibold mb-4">
-            {' '}
             7.- Opciones y medios para limitar el uso o divulgación de datos
             personales
           </p>
@@ -344,15 +340,15 @@ export default function Privacy(): JSX.Element {
             con el objeto de evitar pérdidas, mal uso o alteración de su
             información.
             <br /> <br />
-            Cuando comunicamos o compartimos su información con
-            terceros que nos prestan algún servicio, requerimos y verificamos
-            que cuenten con las medidas de seguridad necesarias para proteger
-            sus datos personales, prohibiendo el uso de su información personal
-            para fines distintos a los encargados; lo anterior en el entendido
-            que no obstante lo anterior, cualquier incumplimiento por dichos
-            terceros a lo previsto en la Ley Federal de Protección de Datos
-            Personales en Posesión de los Particulares y su Reglamento es
-            exclusiva responsabilidad de dichos terceros.
+            Cuando comunicamos o compartimos su información con terceros que nos
+            prestan algún servicio, requerimos y verificamos que cuenten con las
+            medidas de seguridad necesarias para proteger sus datos personales,
+            prohibiendo el uso de su información personal para fines distintos a
+            los encargados; lo anterior en el entendido que no obstante lo
+            anterior, cualquier incumplimiento por dichos terceros a lo previsto
+            en la Ley Federal de Protección de Datos Personales en Posesión de
+            los Particulares y su Reglamento es exclusiva responsabilidad de
+            dichos terceros.
           </p>
           <p className="font-semibold mb-4">
             12.- Uso de imágenes y sonido recabados por medio de nuestros
@@ -379,7 +375,6 @@ export default function Privacy(): JSX.Element {
             13.- Modificaciones al Aviso de Privacidad
           </p>
           <p className="text-justify mb-4">
-            {' '}
             Nos reservamos el derecho de efectuar en cualquier momento
             modificaciones o actualizaciones al presente Aviso de Privacidad
             Integral.
