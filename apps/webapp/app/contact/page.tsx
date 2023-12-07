@@ -9,17 +9,17 @@ export default async function Page(): Promise<JSX.Element> {
     <div className="overflow-hidden">
       <MainNavbar data-testid="MainNavbar" />
       <Banner />
-      <section className="bg-white dark:bg-gray-900">
+      <section className="bg-white">
         <div className="container px-6 py-12 mx-auto">
           <div>
-            <h1 className="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl dark:text-white">
+            <h1 className="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl">
               Contactanos
             </h1>
           </div>
 
           <div className="grid grid-cols-1 gap-12 mt-10 md:grid-cols-3 w-full">
             <div>
-                <span className="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
+                <span className="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -36,7 +36,7 @@ export default async function Page(): Promise<JSX.Element> {
                   </svg>
                 </span>
 
-              <h2 className="mt-4 text-base font-medium text-gray-800 dark:text-white">
+              <h2 className="mt-4 text-base font-medium text-gray-800">
                 Email
               </h2>
               <p className="mt-2 text-md text-boo-gray-hard">
@@ -45,7 +45,7 @@ export default async function Page(): Promise<JSX.Element> {
             </div>
 
             <div>
-                <span className="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
+                <span className="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -62,7 +62,7 @@ export default async function Page(): Promise<JSX.Element> {
                   </svg>
                 </span>
 
-              <h2 className="mt-4 text-base font-medium text-gray-800 dark:text-white">
+              <h2 className="mt-4 text-base font-medium text-gray-800">
                 Telefono
               </h2>
               <p className="mt-2 text-md text-boo-gray-hard">
@@ -70,7 +70,7 @@ export default async function Page(): Promise<JSX.Element> {
               </p>
             </div>
             <div>
-                <span className="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
+                <span className="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -87,7 +87,7 @@ export default async function Page(): Promise<JSX.Element> {
                   </svg>
                 </span>
 
-              <h2 className="mt-4 text-base font-medium text-gray-800 dark:text-white">
+              <h2 className="mt-4 text-base font-medium text-gray-800">
                 Dirección
               </h2>
               <p className="mt-2 text-md text-boo-gray-hard ">

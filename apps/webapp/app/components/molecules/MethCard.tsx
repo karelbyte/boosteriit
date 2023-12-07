@@ -27,6 +27,7 @@ export default function MethCard(props: IMethCard): JSX.Element {
           <p className="ml-2 font-bold">{title}</p>
         </div>
         <p className="mt-2 text-justify text-boo-str-description">{description}</p>
+        <div className="flex md:hidden border-b-2 my-8"></div>
       </div>
     </div>
   );
